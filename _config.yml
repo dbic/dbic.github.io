@@ -1,12 +1,29 @@
 title: Dartmouth Brain Imaging Center
-remote_theme: pages-themes/minimal@v0.2.0   # or another theme
+description: Research resource for brain imaging at Dartmouth College
+
+# If the site is served from a project path (username.github.io/repo),
+# set baseurl to "/repo". For an organization site at dbic.github.io, leave it empty.
+baseurl: ""
+
 plugins:
   - jekyll-relative-links
-  - jekyll-remote-theme
+
 relative_links:
   enabled: true
   collections: false
+
+# Apply our layout to every page that has front matter.
 defaults:
-  - scope: { path: "" }
-    values: { layout: default }
-    
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# Files that live in the repo but should not be published on the site.
+exclude:
+  - README.md
+  - crawl_to_markdown.py
+  - environment.yml
+  - manifest.csv
+  - broken_links.csv
+  - .gitignore
