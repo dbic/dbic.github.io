@@ -1,0 +1,12 @@
+title: Dartmouth Brain Imaging Center
+remote_theme: pages-themes/minimal@v0.2.0   # or another theme
+plugins:
+  - jekyll-relative-links
+  - jekyll-remote-theme
+relative_links:
+  enabled: true
+  collections: false
+defaults:
+  - scope: { path: "" }
+    values: { layout: default }
+    
