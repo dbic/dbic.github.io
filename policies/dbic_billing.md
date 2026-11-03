@@ -18,18 +18,42 @@ Rates for scanning effective July 1, 2021
 
 **Peak rate**
 
-|  |  |  |
-| --- | --- | --- |
-| **Days** | **Timeframe** | **Hourly rate** |
-| Monday-Friday | 8:00am-4:00pm | $500.00 |
+<table>
+<tbody>
+<tr>
+<td><strong>Days</strong></td>
+<td><strong>Timeframe</strong></td>
+<td><strong>Hourly rate</strong></td>
+</tr>
+<tr>
+<td>Monday-Friday</td>
+<td>8:00am-4:00pm</td>
+<td>$500.00</td>
+</tr>
+</tbody>
+</table>
 
 **Off-peak rate**
 
-|  |  |  |
-| --- | --- | --- |
-| **Days** | **Timeframe** | **Hourly rate** |
-| Monday-Friday | after 4:00pm | $400.00 |
-| Saturday/Sunday | all day | $400.00 |
+<table>
+<tbody>
+<tr>
+<td><strong>Days</strong></td>
+<td><strong>Timeframe</strong></td>
+<td><strong>Hourly rate</strong></td>
+</tr>
+<tr>
+<td>Monday-Friday</td>
+<td>after 4:00pm</td>
+<td>$400.00</td>
+</tr>
+<tr>
+<td>Saturday/Sunday</td>
+<td>all day</td>
+<td>$400.00</td>
+</tr>
+</tbody>
+</table>
 
 ### **External funding (e.g., non-Dartmouth funding source)**
 

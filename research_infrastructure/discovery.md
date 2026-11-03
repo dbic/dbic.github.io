@@ -14,6 +14,8 @@ retrieved: 2026-11-03
 - [Storage space on Discovery hard drives](#discoverystorage)
 - [Be a good citizen](#citizen)
 
+<a id="overview"></a>
+
 ## Overview
 
 DBIC owns a share of 15 Nodes on the Research Computing (RC) Discovery cluster, each node comprising 16 cores totaling 240 cores. RC's policy for sharing specifies that all share holders have access to five times the resources owned, giving DBIC account users access to 1200 cores in total at any given time. The SLURM scheduler enforces hard limits on resource allocation so that once the DBIC usage meets the limit, no more DBIC jobs can run until resources are freed. In order to ensure equitable service to all DBIC users and to preserve the peace in our community, we aim to adopt a DBIC-specific set of policies. These policies are explained below. The implementation and enforcement of policies will be carried out by the RC Systems Administrators.
@@ -26,7 +28,7 @@ Access to the Discovery cluster requires logging on to an interactive node using
 
 **Andes and Polaris**: Similar to Ndoli, but not limited to only DBIC users, interactive nodes Andes ([andes.dartmouth.edu](andes.dartmouth.edu/index.md)) and Polaris ([polaris.dartmouth.edu](polaris.dartmouth.edu/index.md)) are also available for interactive jobs that require large amounts of memory. For more information see the High Performance Computing section of the Dartmouth Services Portal."
 
-The link above is :
+The link above is :  
 <https://services.dartmouth.edu/TDClient/1806/Portal/Requests/ServiceCatalog?CategoryID=11669>
 
 ## Using DBIC's Allocation
@@ -35,6 +37,8 @@ The link above is :
 - [Best practices guidelines for SLURM Cluster usage](#bestpractices)
 - [Storage space on Discovery hard drives](#discoverystorage)
 - [Be a good citizen](#citizen)
+
+<a id="clusterusage"></a>
 
 ## Cluster Usage
 
@@ -68,6 +72,8 @@ The most efficient way to get your jobs running is to chunk them into small chun
 
 Fairshare scheduling is not currently active on Discovery, so balancing by historic usage is off, and all jobs are accepted and run on a “first come, first served” basis.
 
+<a id="bestpractices"></a>
+
 ## Best Practices Guidelines for SLURM Cluster Usage
 
 ### Take turns by avoiding excessively long jobs
@@ -84,6 +90,8 @@ Interactive sessions should be used to test and debug code before submitting lar
 
 It is also possible to run interactive jobs without using any cluster resources by running jobs directly from the command line without submitting any jobs to the cluster. There are two nodes available on for this: x01 and ndoli. Just ssh to one of those nodes from Discovery, and have at it.
 
+<a id="discoverystorage"></a>
+
 ## Storage space on Discovery Hard drives
 
 ### Your home directory
@@ -96,8 +104,10 @@ All Dartmouth Faculty can request a storage of 1T for free to host data for thei
 
 ### Temporary Scratch Space
 
-There is a shared scratch space available to all users located at
+There is a shared scratch space available to all users located at  
 /dartfs-hpc/scratch. This should be used as a work-space for all analyses. Temporary files can sit there for long periods of time, and users are notified by RC-SysAdmins before anything gets deleted. So, when processing data, users should utilize this space as needed, and then a final results folder (without intermediate steps) should be copied to a permanent location, such as a user's home directory or a directory owned and managed by the user's Lab, and ultimately (in the near future) for finalized data to a procured derivative on the shared DBIC partition.
+
+<a id="citizen"></a>
 
 ## Be a good citizen
 

@@ -13,6 +13,8 @@ retrieved: 2026-11-03
 - [2026-2027 request deadlines](#ay26-27)
 - [DBIC calendar](#calendar)
 
+<a id="general"></a>
+
 ## Scheduling
 
 Courtney Rogers ([Courtney.Rogers@Dartmouth.EDU](mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20scheduling)) manages scheduling for all scanner activities.
@@ -40,6 +42,8 @@ Courtney Rogers ([Courtney.Rogers@Dartmouth.EDU](mailto:courtney.rogers@dartmout
 
 Information on DBIC's scanning rates is available [here.](dbic_billing.md) An approved DBIC protocol is required before requesting scan time; instructions for submitting a new protocol can be found [here.](dbic_protocol.md)
 
+<a id="schedulingtiers"></a>
+
 ## Scheduling tiers
 
 The DBIC uses a three-tier scheduling system. Requests within each tier are compiled and allocated by Courtney Rogers.
@@ -63,19 +67,99 @@ The DBIC uses a three-tier scheduling system. Requests within each tier are comp
 - Booking window opens on/around the 16th of preceding month.
 - Requests are scheduled on a rolling, first-come, first-served basis.
 
+<a id="ay26-27"></a>
+
 ### Academic year 2026-2027 request deadlines
 
-|  |  |  |  |  |  |
-| --- | --- | --- | --- | --- | --- |
-|  | **Tier 1 open** | **Tier 1 close** | **Tier 2 open** | **Tier 2 close** | **Tier 3 open** |
-| **2026** |  |  |  |  |  |
-| **December** | Monday, November 2 | Thursday, November 5 @ 4pm | Monday, November 9 | Thursday, November 12 @ 4pm | Monday, November 16 |
-| **2027** |  |  |  |  |  |
-| **January** | Tuesday, December 1 | Friday, December 4 @ 4pm | Tuesday, December 8 | Friday, December 11 @ 4pm | Tuesday, December 15 |
-| **February** | Monday, January 4 | Thursday, January 7 @ 4pm | Monday, January 11 | Thursday, January 14 | Monday, January 18 |
-| **March** | Monday, February 1 | Thursday, February 4 @ 4pm | Monday, February 8 | Thursday, February 11 @ 4pm | Monday, February 15 |
-| **April** | Monday, March 1 | Thursday, March 4 @ 4pm | Monday, March 8 | Thursday, March 11 @ 4pm | Monday, March 15 |
-| **May** | Thursday, April 1 | Tuesday, April 6 @ 4pm | Thursday, April 8 | Tuesday, April 13 @ 4pm | Thursday, April 15 |
-| **June** | Monday, May 3 | Thursday, May 6 @ 4pm | Monday, May 10 | Thursday, May 13 @ 4pm | Monday, May 17 |
+<table>
+<tbody>
+<tr>
+<td> </td>
+<td><strong>Tier 1 open</strong></td>
+<td><strong>Tier 1 close</strong></td>
+<td><strong>Tier 2 open</strong></td>
+<td><strong>Tier 2 close</strong></td>
+<td><strong>Tier 3 open</strong></td>
+</tr>
+<tr>
+<td><strong>2026</strong></td>
+<td> </td>
+<td>
+<p> </p>
+</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><strong>December</strong></td>
+<td>Monday, November 2</td>
+<td>Thursday, November 5 @ 4pm</td>
+<td>Monday, November 9</td>
+<td>Thursday, November 12 @ 4pm</td>
+<td>Monday, November 16</td>
+</tr>
+<tr>
+<td><strong>2027</strong></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><strong>January</strong></td>
+<td>Tuesday, December 1</td>
+<td>Friday, December 4 @ 4pm</td>
+<td>Tuesday, December 8</td>
+<td>
+<p>Friday, December 11 @ 4pm</p>
+</td>
+<td>Tuesday, December 15</td>
+</tr>
+<tr>
+<td><strong>February</strong></td>
+<td>Monday, January 4</td>
+<td>Thursday, January 7 @ 4pm</td>
+<td>Monday, January 11</td>
+<td>Thursday, January 14</td>
+<td>Monday, January 18</td>
+</tr>
+<tr>
+<td><strong>March</strong></td>
+<td>Monday, February 1</td>
+<td>Thursday, February 4 @ 4pm</td>
+<td>Monday, February 8</td>
+<td>Thursday, February 11 @ 4pm</td>
+<td>Monday, February 15</td>
+</tr>
+<tr>
+<td><strong>April</strong></td>
+<td>Monday, March 1</td>
+<td>Thursday, March 4 @ 4pm</td>
+<td>Monday, March 8</td>
+<td>Thursday, March 11 @ 4pm</td>
+<td>Monday, March 15</td>
+</tr>
+<tr>
+<td><strong>May</strong></td>
+<td>Thursday, April 1</td>
+<td>Tuesday, April 6 @ 4pm</td>
+<td>Thursday, April 8</td>
+<td>Tuesday, April 13 @ 4pm</td>
+<td>Thursday, April 15</td>
+</tr>
+<tr>
+<td><strong>June</strong></td>
+<td>Monday, May 3</td>
+<td>Thursday, May 6 @ 4pm</td>
+<td>Monday, May 10</td>
+<td>Thursday, May 13 @ 4pm</td>
+<td>Monday, May 17</td>
+</tr>
+</tbody>
+</table>
+
+<a id="calendar"></a>
 
 ### DBIC calendar

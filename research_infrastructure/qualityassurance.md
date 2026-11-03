@@ -13,6 +13,8 @@ retrieved: 2026-11-03
 - [Weekly QA reports](#weeklyQA)
 - [Phantom](#phantom)
 
+<a id="overview"></a>
+
 ## Overview
 
 The Functional Imaging Federated Informatics Research Environment (FBIRN) [QA metrics](#weeklyQA) are generated on [weekly basis](#weeklyQA) to monitor stability of the scanner. These scans run a standardized fMRI protocol executed on an [agar Phantom](#phantom) using the 32- and (since 2018) 64-channel [head coils](coils.md). Details of the protocol can be found at <https://www.nitrc.org/projects/fbirn> and in the references below. Longitudinal results of mean ghost percentage, signal-to-fluctuation noise ratio (SFNR), and signal-to-noise ratio (SNR) recorded and reported weekly. Abnormalities in any of the metrics may indicate instability of some hardware component, and such abnormalities are further investigated. In addition, Siemens customer QA tool is run to check coil elements of the head coil weekly and body coil monthly or whenever needed.
@@ -34,6 +36,8 @@ The acceptable mean ghost percentage threshold is less than 3% percent (ref 2). 
 ![snfr64ch 11.02.2026](../assets/dbic/images/sfnr64ch_20261102.jpg)
 
 ![sfnr64ch 11.02.2026](../assets/dbic/images/snr64ch_20261102.jpg)
+
+<a id="metrics"></a>
 
 ## Weekly qa metrics
 
@@ -64,6 +68,8 @@ References:
 
 3. <https://www.nitrc.org/projects/bxh_xcede_tools>
 
+<a id="weeklyQA"></a>
+
 ## Weekly QA reports
 
 ### [**2026**](qa_2026.md)
@@ -87,6 +93,8 @@ References:
 #### **[2017](qa_2017.md "QA reports 2017")**
 
 #### **[2016](qa_2016.md "QA reports 2016")**
+
+<a id="phantom"></a>
 
 ## Phantom
 

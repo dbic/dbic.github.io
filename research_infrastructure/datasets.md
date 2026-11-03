@@ -31,6 +31,8 @@ Recently, the world-wide neuroscience community has experienced a rise in data s
 
 For questions about existing datasets or requests to add new datasets, please contact Jamie Ford (James.C.Ford@dartmouth.edu)
 
+<a id="dbicqa"></a>
+
 ## Dartmouth brain imaging Center (DBIC) QA dataset
 
 The Dartmouth Brain Imaging Center's QA data, converted to BIDS standard, can be accessed using the DataLad file-sharing and data-versioning utility (see: <https://www.datalad.org/>).
@@ -41,6 +43,8 @@ The Dartmouth Brain Imaging Center's QA data, converted to BIDS standard, can be
 ### Online resources
 
 - [Clone of DBIC QA dataset - DataLad Repository](https://datasets.datalad.org/?dir=/dbic/QA)
+
+<a id="Narratives"></a>
 
 ## Narratives dataset
 
@@ -54,6 +58,8 @@ The Narratives Dataset is a large collection of fMRI studies in natural language
 - [Nastase, S.A., Liu, YF., Hillman, H. et al. The “Narratives” fMRI dataset for evaluating models of naturalistic language comprehension. Sci Data 8, 250 (2021)](https://www.nature.com/articles/s41597-021-01033-3)
 - [Narratives Dataset - DataLad Repository](http://datasets.datalad.org/?dir=/labs/hasson/narratives)
 
+<a id="NaturalScenes"></a>
+
 ## NATURAL SCENES DATASET
 
 The [Natural Scenes Dataset (NSD)](https://naturalscenesdataset.org/) is a large ultra-high-field 7T fMRI dataset conducted by the [Center for Magnetic Resonance Research](https://www.cmrr.umn.edu/) at the University of Minnesota. It consists of high-resolution fMRI data collected from 8 adult subjects while they viewed thousands of images of natural scenes. Each subject was scanned multiple times with 30 to 40 sessions per subject. The NSD dataset is an excellent resource for testing models of visual representation and cognition.
@@ -66,6 +72,8 @@ The [Natural Scenes Dataset (NSD)](https://naturalscenesdataset.org/) is a large
 ### Online resources
 
 - <http://naturalscenesdataset.org>
+
+<a id="HumanConnectomeProject"></a>
 
 ## HCP-Young adult
 
@@ -85,6 +93,8 @@ Information about the directory structure and file names can be found [HERE](../
 
 - <https://www.humanconnectome.org/study/hcp-young-adult>
 
+<a id="hbn"></a>
+
 ## Healthy brain network
 
 The [Healthy Brain Network](https://fcon_1000.projects.nitrc.org/indi/cmi_healthy_brain_network/) (HBN) is a large 3T fMRI dataset conducted by the Child Mind Institute for developing human brains (5-21 yrs) The whole study includes eye tracking, EEG and rich demographic and behavioral data that can be found [here](https://fcon_1000.projects.nitrc.org/indi/cmi_healthy_brain_network/). The data hosted by DBIC only includes the fMRI data. It consists of subjects under resting-state, eye-tracking calibration and watching two short movie clips ("Despicable Me" and "The Present").   We used the version from "[Reproducible Brain Charts](https://reprobrainchart.github.io/) (RBC)" and the 845 subjects passing the quality check by the RBC team (up to "Release 9" by the HBN team). The paper on "Reproducible Brain Charts" can be found [here](https://www.sciencedirect.com/science/article/abs/pii/S0896627325006610). In additional to the downloaded raw BIDS data and Freesurfer 6 outputs,  custom processing derivatives with [fmriprep](https://zenodo.org/records/17087258) and [nb\_prep](https://zenodo.org/records/17087243) were stored.
@@ -101,6 +111,8 @@ The [Healthy Brain Network](https://fcon_1000.projects.nitrc.org/indi/cmi_health
 - <https://www.nature.com/articles/sdata2017181>
 - [https://www.sciencedirect.com/science/article/pii/S0896627325006610](https://www.sciencedirect.com/science/article/abs/pii/S0896627325006610)
 
+<a id="aomic"></a>
+
 ## AMSTERDAM OPEN MRI COLLECTION (AOMIC)
 
 The [Amsterdam Open MRI Collection](https://nilab-uva.github.io/AOMIC.github.io/) (AOMIC) is a collection of three independent, open-access datasets—known as ID1000, PIOP1, and PIOP2—collected at 3T and totaling over 1,300 unique participants (N=928, N=216, N=226, respectively). Participants received T1-weighted, diffusion-weighted (DWI), and fMRI imaging. The functional data in the largest component, ID1000, is from movie watching of natural scenes by 19-26 year olds, while the two PIOP datasets include resting state and task-based fMRI of university students, with the latter targeting emotion matching and working memory (both), face perception, cognitive control, and emotion anticipation (PIOP1 only), and response inhibition (PIOP2 only). Demographics and psychometric variables are also included.
@@ -111,6 +123,8 @@ The [Amsterdam Open MRI Collection](https://nilab-uva.github.io/AOMIC.github.io/
 ### Online Resources
 
 - Snoek, L., van der Miesen, M.M., Beemsterboer, T. et al. The Amsterdam Open MRI Collection, a set of multimodal MRI datasets for individual difference analyses. Sci Data 8, 85 (2021). [https://doi.org/10.1038/s41597-021-00870-6](https://www.nature.com/articles/s41597-021-00870-6)
+
+<a id="bsrd"></a>
 
 ## BISSETT SELF REGULATION DATASET
 
@@ -123,17 +137,21 @@ This dataset includes neuroimaging and behavioral data collected to examine the 
 
 - Bissett, P.G., Eisenberg, I.W., Shim, S. et al. Cognitive tasks, anatomical MRI, and functional MRI data evaluating the construct of self-regulation. Sci Data 11, 809 (2024). [https://doi.org/10.1038/s41597-024-03636-y](https://www.nature.com/articles/s41597-024-03636-y)
 
+<a id="ibc"></a>
+
 ## Individual Brain Charting
 
 The Individual Brain Charting (IBC) dataset is a high-resolution 3T fMRI dataset collected at NeuroSpin, CEA Saclay, France. It consists of extensive functional imaging data from 12 participants who each underwent multiple scanning sessions. Paradigms span over 50 task conditions spanning cognitive domains such as visual perception, language, comprehension, and working memory. Participants also completed multiple naturalistic movie watching sessions. The IBC dataset is particularly valuable for studying individual variability in brain organization and for developing high-precision functional atlases. Two versions are installed: /IBC (EBRAINS, most complete) and /IBC\_openneuro (more strictly BIDS compliant and standardized, slightly fewer sessions).
 
-**Path to dataset on Discovery**:  /dartfs/rc/lab/D/DBIC/DBIC/archive/Individual-Brain-Charting
+**Path to dataset on Discovery**:  /dartfs/rc/lab/D/DBIC/DBIC/archive/Individual-Brain-Charting  
 **Access:** Open (no restrictions to rc-DBIC users)
 
 ### Online resources
 
 - Dataset documentation: <https://individual-brain-charting.github.io/docs/index.html> (EBRAINS), <https://openneuro.org/datasets/ds002685/versions/2.0.0>(OpenNeuro)
 - Pinho, A.L., Amadon, A., Ruest, T. et al. Individual Brain Charting, a high-resolution fMRI dataset for cognitive mapping. Sci Data 5, 180105 (2018). <https://doi.org/10.1038/sdata.2018.105>
+
+<a id="moth"></a>
 
 ## The Moth
 
@@ -146,17 +164,21 @@ The Moth dataset is a naturalistic 3T fMRI dataset conducted at University of Te
 
 - Lebel, A., Jain, S., Pennington, J. et al. The Moth narratives: a naturalistic fMRI dataset. Sci Data 10, 421 (2023). [https://doi.org/10.1038/s41597-023-02437-w](https://www.nature.com/articles/s41597-023-02437-z)
 
+<a id="tasks"></a>
+
 ## 103 tasks dataset
 
 The 103 Tasks dataset is a deep phenotyping dataset that includes 18 scans collected over 3 days from from 6 participants (age 22-33) in Osaka Japan. Each day included 6 scans during which the full battery of tasks was completed. These include visual, auditory, motor, language, memory and introspective tasks. Each scan includes 77-83 tasks, and pairs of scans provide the full complement, thus providing both repeated measures within and across days within participant. Data is collected at 3T using a gradient-echo multiband EPI sequence with a 2s TR and 2x2x2mm voxels. T1 images are also provided. Relative to other dense phenotyping datasets this dataset has relatively poor signal quality, but in exchange is especially task rich within scan and session allowing for characterization of high dimensional neural representations without scan or session confounds.
 
-- **Path to the dataset on Discovery:**
+- **Path to the dataset on Discovery:**  
   /vast/labs/DBIC/datasets/103tasks
 - **Access:** Open (no restrictions to rc-DBIC users)
 
 ### Online Resources
 
 - Nakai, Tomoya and Nishimoto, Shinji (2020). "Quantitative models reveal the organization of diverse cognitive functions in the brain". Nature Communications 11(1). [doi:10.1038/s41467-020-14913-w](https://rdcu.be/fwSiA)
+
+<a id="imagenet"></a>
 
 ## ImageNet database
 
@@ -171,6 +193,8 @@ ImageNet is a large visual database (14M images) used to train visual object rec
 - Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li, Li Fei-Fei. Imagenet: A Large-Scale Hierarchical Image Database. CVPR 2009. bibtex
 - Olga Russakovsky\*, Jia Deng\*, Hao Su, Jonathan Krause, Sanjeev Satheesh, Sean Ma, Zhiheng Huang, Andrej Karpathy, Aditya Khosla, Michael Bernstein, Alexander C. Berg and Li Fei-Fei. (\* = equal contribution) ImageNet Large Scale Visual Recognition Challenge. arXiv:1409.0575, 2014.
 
+<a id="spacetop"></a>
+
 ## Spacetop
 
 Spacetop is a large-scale, multi-task 3T fMRI dataset collected at the Dartmouth Brain Imaging Center (DBIC) : N = 101 participants and 6 hours of scanning per participant, including 6 multifaceted functional tasks, 2 hours of naturalistic movie viewing, structural T1 images and multi-shell diffusion imaging as well as autonomic physiological data. This dataset’s combination of sample size, extensive data per participant (>600 iso-hours of data), and a wide range of experimental conditions — including cognitive, affective, social, and somatic/interoceptive tasks — positions it uniquely for probing important questions in cognitive neuroscience. This hosted version consists of BIDS-compliant fMRIPrep derivatives created using fMRIPrep version 25.1.4 (corresponding to OpenNeuro dataset ds007070, version 1.0.3).
@@ -182,17 +206,21 @@ Spacetop is a large-scale, multi-task 3T fMRI dataset collected at the Dartmouth
 - Dataset documentation: <https://openneuro.org/datasets/ds007070/versions/1.0.3> (OpenNeuro)
 - Jung, H., Amini, M., Hunt, B.J. et al. Spacetop: A multimodal fMRI dataset unifying naturalistic processes with a rich array of experimental tasks. Sci Data **12**, 1465 (2025). <https://doi.org/10.1038/s41597-025-05154-x>
 
+<a id="life"></a>
+
 ## Life
 
 The Life Dataset is a naturalistic 3T fMRI dataset collected at the Dartmouth Brain Imaging Center (DBIC). In this naturalistic dataset, 18 subjects freely viewed segments of the “Life” nature documentary narrated by David Attenborough. The audiovisual stimulus was presented in four ~15-minute segments for ~1 hour of functional data in total for each participant.
 
-**Path to dataset on Discovery:** /vast/labs/DBIC/datasets/Life
+**Path to dataset on Discovery:** /vast/labs/DBIC/datasets/Life  
 **Access:** Open (no restrictions to rc-DBIC users)
 
 ### Online Resources
 
 - Van Uden, C. E., Nastase, S. A., Connolly, A. C., Feilong, M., Hansen, I., Gobbini, M. I., & Haxby, J. V. (2018). Modeling semantic encoding in a common neural representational space. Frontiers in Neuroscience, 12, 437. <https://doi.org/10.3389/fnins.2018.00437>
 - Datalad Repository: <https://datasets.datalad.org/?dir=/labs/haxby/life>
+
+<a id="lifespan"></a>
 
 ## HCP Lifespan: Aging and development
 

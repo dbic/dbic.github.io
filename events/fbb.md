@@ -23,11 +23,15 @@ If you are interested in presenting or nominating an external speaker, please co
 - [2024](#y2024)
 - [2025](#ay2025)
 
+<a id="y2019"></a>
+
 ### 2019
 
 - September 27 - DBIC Orientation
 - November 1 - Yaroslav Halchenko (Dartmouth College)
 - November 12 - Phil Kragel (UC-Boulder) - Understanding emotions as distributed brain representations
+
+<a id="y2020"></a>
 
 ### 2020
 
@@ -45,6 +49,8 @@ If you are interested in presenting or nominating an external speaker, please co
 - November 6 - Heini Saarimaki (Tampere University, Finland) - Examining the neural basis of emotional experiences with naturalistic paradigms
 - November 20 - J. Brendan Ritchie (NIH) - Lost in face space? New frontiers in face perception and its neural basis
 
+<a id="y2021"></a>
+
 ### 2021
 
 - January 8 - Xiang-Zhen Kong (Zhejiang University) - Mapping Brain Asymmetry in Health and Disease via the ENIGMA and UK Biobank
@@ -61,6 +67,8 @@ If you are interested in presenting or nominating an external speaker, please co
 - October 15 - Ruby Kong (National University of Singapore) - Individual-specific parcellations for resting-state functional connectivity behavioral prediction
 - November 5 - Csaba Orban (National University of Singapore) - Time of day effects in resting state fMRI
 
+<a id="y2022"></a>
+
 ### 2022
 
 - January 28 - Kristoffer NT Mansson (Dartmouth College / Karolinska Institutet) - Moment-to-moment variability and sensitivity in functional and structural BRAIN IMAGES: caveats and opportunities
@@ -74,11 +82,15 @@ If you are interested in presenting or nominating an external speaker, please co
 - November 18 - Pierre-Louis Bellec (University of Montreal) - The Courtois project: a deep fMRI dataset to build individual brain models with naturalistic tasks
 - December 2 - Mathias Nau (NIH) - We are agents, not observers: On the inseparability of perception, memory, and behavior
 
+<a id="ay2023"></a>
+
 ### 2023
 
 - April 19 -  **Ke Bo** (Dartmouth College) - Deconstructing the brain bases of emotion regulation: A systems-identification approach using bayes factors and **Feilong** **Ma** (Dartmouth College) - A cortical surface template for human neuroscience
 - November 3 - Natalia Egorova-Brumley (Melbourne School of Psychological Sciences) - White matter changes post-stroke
 - December 8 - Francesca Setti (IMT School for Advanced Studies Lucca, Italy) - Characterizing the functional properties of human (multi)sensory areas using naturalistic conditions
+
+<a id="y2024"></a>
 
 ### 2024
 
@@ -86,6 +98,8 @@ If you are interested in presenting or nominating an external speaker, please co
 - April 26 - Ray Lee (University of Texas, Health Science Center at San Antonio) - Quantitative brain-to-brain interactions in eye gaze between parents and children: their brain networks, communication modes, and information contents
 - August 12 - Haiyan Wu (University of Macau) - The intersections of emotion, decision-making, and memory in the human brain
 - November 8 - Georg Oeltzschner (Johns Hopkins Medicine) - Towards open in-vivo MRS: Modern data analysis methods and infrastructure
+
+<a id="ay2025"></a>
 
 ### 2025
 

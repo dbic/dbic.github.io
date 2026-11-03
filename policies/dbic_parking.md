@@ -14,6 +14,8 @@ retrieved: 2026-11-03
 - [Parking for **Dartmouth-affiliated** DBIC participants](#dart)
 - [Unauthorized vehicle parking](#unauthorized)
 
+<a id="nondart"></a>
+
 ## **Non-Dartmouth research participant parking**
 
 The DBIC has a dedicated parking spot located behind Moore Hall, restricted only to use by **non-Dartmouth** research participants. The parking spot is on the right-hand side as you pull into the parking lot.
@@ -23,6 +25,8 @@ If you have a **non-Dartmouth participant** who would like to use the parking sp
 - date/time of visit
 - vehicle make/license plate
 
+<a id="dart"></a>
+
 ## **Dartmouth-affiliated participant parking**
 
 Use of the DBIC parking space by the **Dartmouth-affiliated** research participants, as well as vendors is **prohibited**, and Safety & Security will ticket unauthorized vehicles.
@@ -30,6 +34,8 @@ Use of the DBIC parking space by the **Dartmouth-affiliated** research participa
 During normal business hours **Dartmouth-affiliated** participants who have a Dartmouth-issued parking pass should plan to park in a [campus parking lot](../assets/transportation/parking/parking_maps/campusparkingmap1132023.pdf). If there isn't a lot nearby in which their pass allows them to park, or there is not available parking, they could use any available [visitor parking](../assets/transportation/parking/parking_maps/visitorparkingmap992022.pdf) space (payable through ParkMobile). If your participant parks in (for example), the Maynard Lot, but doesn't have a parking pass, it is each research group's responsibility to email Transportation Services ([transportation.services@dartmouth.edu](mailto:transportation.services@dartmouth.edu?subject=)) using this [email template](../assets/dbic/docs/forms/ts_email_template.docx).
 
 Please email [Courtney.Rogers@dartmouth.edu](mailto:Courtney.Rogers@dartmouth.edu) with any questions you might have about parking at the DBIC.
+
+<a id="unauthorized"></a>
 
 ## Unauthorized vehicle parking
 
