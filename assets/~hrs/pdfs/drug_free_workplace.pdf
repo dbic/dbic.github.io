@@ -1,0 +1,580 @@
+<!DOCTYPE HTML><html class="no-js">
+   <head>
+<link rel="shortcut icon" href="https://ws.dartmouth.edu/sites/all/themes/dartmouth_base/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="/webpub/xsl/_resources/css/base.css">
+<link rel="stylesheet" href="/webpub/xsl/_resources/css/fonts.css">
+<link rel="stylesheet" href="/webpub/xsl/_resources/css/font-awesome/fontawesome.css">
+<link rel="stylesheet" href="/webpub/xsl/_resources/css/font-awesome/brands.css">
+<link rel="stylesheet" href="/webpub/xsl/_resources/css/font-awesome/all.css">
+<link rel="stylesheet" href="/webpub/xsl/_resources/css/font-awesome/regular.css">
+<link rel="stylesheet" href="/webpub/xsl/_resources/css/font-awesome/light.css">
+<link rel="stylesheet" href="/webpub/xsl/_resources/css/font-awesome/solid.css">
+<link rel="stylesheet" href="/webpub/xsl/_resources/css/font-awesome/svg-with-js.css">
+<link rel="stylesheet" href="/webpub/xsl/_resources/css/layout.css">
+<link rel="stylesheet" href="/webpub/xsl/_resources/css/layout-global.css">
+<link rel="stylesheet" href="/webpub/xsl/_resources/css/layout-global-responsive.css">
+<link rel="stylesheet" href="/webpub/xsl/_resources/css/layout-dept.css">
+<link rel="stylesheet" href="/webpub/xsl/_resources/css/layout-dept-responsive.css">
+<link rel="stylesheet" href="/webpub/xsl/_resources/css/content-dept.css">
+<link rel="stylesheet" href="/webpub/xsl/_resources/css/content-dept-responsive.css">
+<link rel="stylesheet" href="/webpub/xsl/_resources/css/dept-1.css">
+<link rel="stylesheet" href="/webpub/xsl/_resources/css/retina.css">
+<link rel="stylesheet" href="/webpub/xsl/_resources/css/oustyles.css">
+<link rel="stylesheet" href="/webpub/xsl/_resources/css/snippets.css">
+<link rel="stylesheet" href="/webpub/xsl/_resources/css/universal-notification.css">
+
+<!--[if lt IE 10]>
+<link rel="stylesheet" href="css/ie.css">
+<![endif]-->
+<script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0"></script>
+
+<script src="/webpub/xsl/_resources/js/vendor/modernizr-2.6.1.js"></script>
+<script src="/webpub/xsl/_resources/js/vendor/respond.min.js"></script>
+
+<!-- BrightEdge JS -->
+<script src="https://cdn.bc0a.com/autopilot/f00000000283318/autopilot_sdk.js"></script>
+      <title>Human Resources</title>
+   </head>
+   <body class="home">
+      <div id="skip"><a class="offscreen" href="#main-content">Skip Top Navigation</a></div>
+      <div id="emergency-notification" class="emergency-notification" style="display:none;">
+  <div class="row">
+    <div class="twelve column">
+      <div class="emergency-notification__message">
+        <div class="wrapper">
+          <span class="emergency-notification__icon"></span>
+        </div>
+        <div class="wrapper">
+          <span id="raveDate"></span>
+          <h2 id="raveTitle"></h2>
+          <p id="raveDescription">null</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PDSXF64');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDSXF64"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W6T32LW');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6T32LW"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+      <div class="wrapper-main">  <div class="container"><div class="row"><div id="nav-dartmouth" aria-hidden="true" role="navigation" tabindex="-1"><ul class="nav-dartmouth-table" role="list"><li class="three column" role="listitem" aria-labelledby="nav-label-154701"><h3 id="nav-label-154701"><a href="#">Admissions<span class="arrow"></span></a></h3><ul class="group" role="menu"><li role="menuitem"><a class="universal-header-outcomes" href="https://home.dartmouth.edu/outcomes">Outcomes</a></li><li role="menuitem"><a class="universal-header-the-student-experience" href="https://home.dartmouth.edu/admissions/student-experience">The Student Experience</a></li><li role="menuitem"><a class="universal-header-financial-aid" href="https://home.dartmouth.edu/financial-aid">Financial Aid</a></li><li role="menuitem"><a class="universal-header-degree-finder" href="https://home.dartmouth.edu/degrees">Degree Finder</a></li></ul></li><li class="three column" role="listitem" aria-labelledby="nav-label-154706"><h3 id="nav-label-154706"><a href="#">Academics<span class="arrow"></span></a></h3><ul class="group" role="menu"><li role="menuitem"><a class="universal-header-undergraduate-arts-sciences" href="https://home.dartmouth.edu/academics/undergraduate-arts-sciences">Undergraduate Arts & Sciences</a></li><li role="menuitem"><a class="universal-header-departments-and-programs" href="https://home.dartmouth.edu/academics/departments-programs">Departments and Programs</a></li><li role="menuitem"><a class="universal-header-research-scholarship-creativity" href="https://home.dartmouth.edu/academics/research">Research, Scholarship & Creativity</a></li><li role="menuitem"><a class="universal-header-centers-institutes" href="https://home.dartmouth.edu/academics/centers-institutes">Centers & Institutes</a></li><li role="menuitem"><a class="universal-header-geisel-school-of-medicine" href="https://geiselmed.dartmouth.edu/">Geisel School of Medicine</a></li><li role="menuitem"><a class="universal-header-guarini-school-of-graduate-advanced-studies" href="https://graduate.dartmouth.edu/">Guarini School of Graduate & Advanced Studies</a></li><li role="menuitem"><a class="universal-header-thayer-school-of-engineering" href="https://engineering.dartmouth.edu/">Thayer School of Engineering</a></li><li role="menuitem"><a class="universal-header-tuck-school-of-business" href="https://www.tuck.dartmouth.edu/">Tuck School of Business</a></li></ul></li><li class="three column" role="listitem" aria-labelledby="nav-label-154711"><h3 id="nav-label-154711"><a href="#">Campus Life<span class="arrow"></span></a></h3><ul class="group" role="menu"><li role="menuitem"><a class="universal-header-events" href="https://home.dartmouth.edu/events">Events</a></li><li role="menuitem"><a class="universal-header-diversity-inclusion" href="https://home.dartmouth.edu/campus-life/diversity-inclusion">Diversity & Inclusion</a></li><li role="menuitem"><a class="universal-header-athletics-recreation" href="https://home.dartmouth.edu/campus-life/athletics-recreation">Athletics & Recreation</a></li><li role="menuitem"><a class="universal-header-student-groups-activities" href="https://home.dartmouth.edu/campus-life/student-groups-activities">Student Groups & Activities</a></li><li role="menuitem"><a class="universal-header-residential-life" href="https://home.dartmouth.edu/campus-life/residential-life">Residential Life</a></li></ul></li><li class="three column" role="listitem" aria-labelledby="nav-label-154716"><h3 id="nav-label-154716"><a href="#">More<span class="arrow"></span></a></h3><ul class="group" role="menu"><li role="menuitem"><a class="universal-header-about" href="https://home.dartmouth.edu/about">About</a></li><li role="menuitem"><a class="universal-header-news" href="https://home.dartmouth.edu/news">News</a></li><li role="menuitem"><a class="universal-header-giving" href="https://alumni.dartmouth.edu/make-gift">Giving</a></li><li role="menuitem"><a class="universal-header-news-media" href="https://home.dartmouth.edu/news/news-media">News Media</a></li></ul><div id="search-dartmouth" role="search"><form onsubmit="location.href='//home.dartmouth.edu/search/google?keys=' + document.getElementById('input-search-dartmouth').value; return false;"><label for="input-search-dartmouth" class="offscreen">Search</label><input type="text" id="input-search-dartmouth" name="input-search-dartmouth" placeholder="Search" aria-required="true"><input type="submit" class="icn-search" value="GO"></form></div></li></ul></div></div></div><div role="banner" class="container" aria-label="College-wide Universal Header"><header class="row header-main"><div class="eight column"><a href="//home.dartmouth.edu" class="logo">Dartmouth College</a></div><div class="four column"><nav id="btn-nav-dartmouth" aria-label="Universal Header Navigation"><a class="universal-header-menu-toggle closed" aria-label="Explore Dartmouth" href="#"><span class="icn"></span><span class="btn-txt">Explore Dartmouth</span></a></nav></div></header></div>
+<div class="container">
+   <div class="row">
+      <div class="twelve column" id="dept-container" role="contentinfo">
+         <div id="department-banner" class="no-image">
+            <div id="dept-info" aria-labelledby="main-page-header"><span id="main-page-header">Human Resources</span></div>
+            <div id="department-social"><ul role="menubar" aria-label="Contact and Social Navigation">
+   <li class="logo-mail" role="menuitem" aria-label="Contact Information" tabindex="0">
+      <div class="mail-info" tabindex="0"><span class="dept-phone">(603) 646-3411</span><span class="dept-email"><a href="mailto:Human.Resources@dartmouth.edu">Human.Resources@dartmouth.edu</a></span></div><a href="mailto:Human.Resources@dartmouth.edu"><span class="hide-txt">Mail</span></a></li>
+</ul></div>
+         </div>
+         <form action="/hr/search">
+            <fieldset>
+               <nav id="nav-dept" role="navigation">
+                  <ul role="menubar">
+                     <li class="nav-dept-home" role="menuitem"><a href="/hr/"><span class="hide-txt">Home</span></a></li>
+                     <li class="nav-dept-menu closed" role="menuitem" aria-hidden="true">
+                        <div class="wrap"><span class="hide-txt">Menu</span></div>
+                     </li>
+                     <!--navlist:  AboutMission & ServicesNews & UpdatesSummer Hours AnnouncedMontshire Business PartnershipProgramsMeet Up Upper Valley (MUUV)Employee Discounts & Dartmouth ServicesEmployee RecognitionLone Pine Staff Recognition AwardsExcellence AwardsSheila Culbert Distinguished Employee AwardSocial Justice AwardsEmployee Service AwardsGratitude BasketsStaff SnapshotOther Recognition Ideas Recognition Award NominationContact UsEmploymentCareers at DartmouthStudent EmploymentNews & AnnouncementsFor StudentsFor EmployersFor ParentsForms & ResourcesStudent Employee Appreciation WeekTalent Acquisition HubTalent Acquisition TeamSelf-IdentificationDartmouth Online Review & Recruit (DORR)Working At DartmouthEmployee SystemsFlexOnlineKronosI-9 FormName Pronunciation Tool Guide for Staff and FacultyNetID & Hinman BoxHR Business PartnersNew HiresNew Employee OrientationNew To BenefitsRequired PaperworkChildcarePolicies & ProceduresFlexible Work at DartmouthLabor Condition Application NotificationsDepartment of Labor Workplace PostersYouth Employment RequirementsHolidays & Winter BreakTime Away from Work PoliciesHR Forms LibraryTotal RewardsYour BenefitsHealth & Well BeingWellnessRetirementRetiree BenefitsLife and Family SupportBenefit Plan Cost EstimatorLife Events & TransitionsNew to BenefitsLife Event ChangesDependent VerificationLeaves of AbsenceLeaving DartmouthCOBRA ContinuationPay & Financial GrowthResources & ToolsAnnual Statements and Tax FormsProfessional DevelopmentLearning OpportunitiesWorkshops and ProgramsLinkedIn LearningDartmouth Training ProvidersMeet the TeamEducational Assistance BenefitsCertificate ProgramsDartmouth LEADSManagement Foundations ProgramInspiring PathwaysManager & Employee ResourcesOnboarding ToolkitAnnual Performance Plan and Evaluation Process-->
+                     <li class="nav-dept-container">
+                        <div>
+                           <div class="nav-row">
+                              <ul role="menu">
+                                 <li class="nav-item top-level" role="menuitem" aria-haspopup="true" aria-labelledby="deptnav-label-about" tabindex="0"><a href="/hr/about/index.php" id="deptnav-label-about">About<span class="arrow-down"></span><div class="row dept-subnav" role="menu">
+                                          <ul role="menu">
+                                             <li role="menuitem"><a href="/hr/about/mission/index.php">Mission &amp; Services</a></li>
+                                             <li role="menuitem"><a href="/hr/about/news/index.php">News &amp; Updates</a><ul>
+                                                   <li><a href="/hr/about/news/summer_hours_announced.php">Summer Hours Announced</a></li>
+                                                   <li><a href="/hr/about/news/montshire_business_partner.php">Montshire Business Partnership</a></li>
+                                                </ul>
+                                             </li>
+                                             <li role="menuitem"><a href="/hr/about/programs/index.php">Programs</a><ul>
+                                                   <li><a href="/hr/about/programs/after_hours/index.php">Meet Up Upper Valley (MUUV)</a></li>
+                                                   <li><a href="/hr/about/programs/employee_discounts_services/index.php">Employee Discounts &amp; Dartmouth Services</a></li>
+                                                </ul>
+                                             </li>
+                                             <li role="menuitem"><a href="/hr/about/employee_recognition/index.php">Employee Recognition</a><ul>
+                                                   <li><a href="/hr/about/employee_recognition/award_nomination.php">Lone Pine Staff Recognition Awards</a></li>
+                                                   <li><a href="/hr/about/employee_recognition/lone_pine/index.php">Excellence Awards</a></li>
+                                                   <li><a href="/hr/about/employee_recognition/culbert/index.php">Sheila Culbert Distinguished Employee Award</a></li>
+                                                   <li><a href="https://ide.dartmouth.edu/social-justice-awards/about-awards">Social Justice Awards</a></li>
+                                                   <li><a href="/hr/about/employee_recognition/service_awards.php">Employee Service Awards</a></li>
+                                                   <li><a href="/hr/about/employee_recognition/gratitude_baskets/index.php">Gratitude Baskets</a></li>
+                                                   <li><a href="/hr/about/employee_recognition/staff_snapshot.php">Staff Snapshot</a></li>
+                                                   <li><a href="/hr/about/employee_recognition/other.php">Other Recognition Ideas </a></li>
+                                                   <li><a href="/hr/about/employee_recognition/award_nomination.php">Recognition Award Nomination</a></li>
+                                                </ul>
+                                             </li>
+                                             <li role="menuitem"><a href="/hr/about/contact/index.php">Contact Us</a></li>
+                                          </ul>
+                                          <div class="dropclose clearfix"></div>
+                                       </div></a></li>
+                                 <li class="nav-item top-level" role="menuitem" aria-haspopup="true" aria-labelledby="deptnav-label-employment" tabindex="0"><a href="/hr/employment/index.php" id="deptnav-label-employment">Employment<span class="arrow-down"></span><div class="row dept-subnav" role="menu">
+                                          <ul role="menu">
+                                             <li role="menuitem"><a href="/hr/employment/careers_dartmouth/index.php">Careers at Dartmouth</a></li>
+                                             <li role="menuitem"><a href="/hr/employment/student_employment/index.php">Student Employment</a><ul>
+                                                   <li><a href="/hr/employment/student_employment/news/index.php">News &amp; Announcements</a></li>
+                                                   <li><a href="/hr/employment/student_employment/for_students/index.php">For Students</a></li>
+                                                   <li><a href="/hr/employment/student_employment/for_employers/index.php">For Employers</a></li>
+                                                   <li><a href="/hr/employment/student_employment/for_parents.php">For Parents</a></li>
+                                                   <li><a href="/hr/employment/student_employment/forms/index.php">Forms &amp; Resources</a></li>
+                                                   <li><a href="/hr/employment/student_employment/employee_appreciation.php">Student Employee Appreciation Week</a></li>
+                                                </ul>
+                                             </li>
+                                             <li role="menuitem"><a href="/hr/employment/talent_acquisition_hub/index.php">Talent Acquisition Hub</a><ul>
+                                                   <li><a href="https://www.dartmouth.edu/hr/employment/talent_acquisition_hub/ta_team.php">Talent Acquisition Team</a></li>
+                                                   <li><a href="/hr/employment/talent_acquisition_hub/self_id.php">Self-Identification</a></li>
+                                                   <li><a href="/hr/employment/talent_acquisition_hub/dorr.php">Dartmouth Online Review &amp; Recruit (DORR)</a></li>
+                                                </ul>
+                                             </li>
+                                          </ul>
+                                          <div class="dropclose clearfix"></div>
+                                       </div></a></li>
+                                 <li class="nav-item top-level" role="menuitem" aria-haspopup="true" aria-labelledby="deptnav-label-working-at-dartmouth" tabindex="0"><a href="/hr/working_at_dartmouth/index.php" id="deptnav-label-working-at-dartmouth">Working At Dartmouth<span class="arrow-down"></span><div class="row dept-subnav" role="menu">
+                                          <ul role="menu">
+                                             <li role="menuitem"><a href="/hr/working_at_dartmouth/employee_self_service/index.php">Employee Systems</a><ul>
+                                                   <li><a href="/hr/working_at_dartmouth/employee_self_service/flexonline_kronos.php">FlexOnline</a></li>
+                                                   <li><a href="/finance/employee-services/payroll/staff_student_timecards/">Kronos</a></li>
+                                                   <li><a href="/hr/working_at_dartmouth/employee_self_service/i9_form.php">I-9 Form</a></li>
+                                                   <li><a href="/hr/working_at_dartmouth/employee_self_service/pronunciationtool.php">Name Pronunciation Tool Guide for Staff and Faculty</a></li>
+                                                   <li><a href="/hr/working_at_dartmouth/employee_self_service/netid_hinman.php">NetID &amp; Hinman Box</a></li>
+                                                </ul>
+                                             </li>
+                                             <li role="menuitem"><a href="/hr/working_at_dartmouth/hr_business_partners/index.php">HR Business Partners</a></li>
+                                             <li role="menuitem"><a href="/hr/working_at_dartmouth/new_hires/index.php">New Hires</a><ul>
+                                                   <li><a href="/hr/working_at_dartmouth/new_hires/new_employee_orientation/index.php">New Employee Orientation</a></li>
+                                                   <li><a href="/hr/total_rewards/benefits/life_changes/new_to_benefits.php">New To Benefits</a></li>
+                                                   <li><a href="/hr/working_at_dartmouth/new_hires/required_paperwork.php">Required Paperwork</a></li>
+                                                   <li><a href="/dcccc/">Childcare</a></li>
+                                                </ul>
+                                             </li>
+                                             <li role="menuitem"><a href="/hr/working_at_dartmouth/policies_procedures/index.php">Policies &amp; Procedures</a><ul>
+                                                   <li><a href="/hr/working_at_dartmouth/policies_procedures/flexible_work/index.php">Flexible Work at Dartmouth</a></li>
+                                                   <li><a href="/hr/working_at_dartmouth/policies_procedures/restricted/lca_notifications.php">Labor Condition Application Notifications</a></li>
+                                                   <li><a href="/hr/working_at_dartmouth/policies_procedures/dol_posters.php">Department of Labor Workplace Posters</a></li>
+                                                   <li><a href="/hr/working_at_dartmouth/policies_procedures/youth_employment.php">Youth Employment Requirements</a></li>
+                                                   <li><a href="/hr/working_at_dartmouth/policies_procedures/holidays_winter_break.php">Holidays &amp; Winter Break</a></li>
+                                                   <li><a href="/hr/working_at_dartmouth/policies_procedures/timeawayfromwork.php">Time Away from Work Policies</a></li>
+                                                </ul>
+                                             </li>
+                                             <li role="menuitem"><a href="/hr/working_at_dartmouth/forms_library/index.php">HR Forms Library</a></li>
+                                          </ul>
+                                          <div class="dropclose clearfix"></div>
+                                       </div></a></li>
+                              </ul>
+                           </div>
+                           <div class="nav-row">
+                              <ul role="menu">
+                                 <li class="nav-item top-level" role="menuitem" aria-haspopup="true" aria-labelledby="deptnav-label-total-rewards" tabindex="0"><a href="/hr/total_rewards/index.php" id="deptnav-label-total-rewards">Total Rewards<span class="arrow-down"></span><div class="row dept-subnav" role="menu">
+                                          <ul role="menu">
+                                             <li role="menuitem"><a href="/hr/total_rewards/benefits/index.php">Your Benefits</a><ul>
+                                                   <li><a href="/hr/total_rewards/benefits/health_wellbeing/index.php">Health &amp; Well Being</a></li>
+                                                   <li><a href="/wellness/">Wellness</a></li>
+                                                   <li><a href="/hr/total_rewards/benefits/retirement.php">Retirement</a></li>
+                                                   <li><a href="/hr/total_rewards/benefits/retiree_benefits/index.php">Retiree Benefits</a></li>
+                                                   <li><a href="/hr/total_rewards/benefits/life_and_family_support/index.php">Life and Family Support</a></li>
+                                                   <li><a href="/hr/benefits_compensation/benefits/cost_estimator.php">Benefit Plan Cost Estimator</a></li>
+                                                </ul>
+                                             </li>
+                                             <li role="menuitem"><a href="/hr/total_rewards/benefits/life_changes/index.php">Life Events &amp; Transitions</a><ul>
+                                                   <li><a href="/hr/total_rewards/benefits/life_changes/new_to_benefits.php">New to Benefits</a></li>
+                                                   <li><a href="/hr/total_rewards/benefits/life_changes/life_event_changes.php">Life Event Changes</a></li>
+                                                   <li><a href="/hr/total_rewards/benefits/life_changes/dependent_verification.php">Dependent Verification</a></li>
+                                                   <li><a href="/hr/total_rewards/benefits/life_changes/leaves_of_absence.php">Leaves of Absence</a></li>
+                                                   <li><a href="/hr/total_rewards/benefits/life_changes/leaving_dartmouth.php">Leaving Dartmouth</a></li>
+                                                   <li><a href="/hr/total_rewards/benefits/life_changes/cobra.php">COBRA Continuation</a></li>
+                                                </ul>
+                                             </li>
+                                             <li role="menuitem"><a href="/hr/total_rewards/compensation/index.php">Pay &amp; Financial Growth</a></li>
+                                             <li role="menuitem"><a href="/hr/total_rewards/benefits/plan_resources.php">Resources &amp; Tools</a></li>
+                                             <li role="menuitem"><a href="/hr/total_rewards/annual_statements.php">Annual Statements and Tax Forms</a></li>
+                                          </ul>
+                                          <div class="dropclose clearfix"></div>
+                                       </div></a></li>
+                                 <li class="nav-item top-level" role="menuitem" aria-haspopup="true" aria-labelledby="deptnav-label-professional-development" tabindex="0"><a href="/hr/professional_development/index.php" id="deptnav-label-professional-development">Professional Development<span class="arrow-down"></span><div class="row dept-subnav" role="menu">
+                                          <ul role="menu">
+                                             <li role="menuitem"><a href="/hr/professional_development/learning_opportunities/index.php">Learning Opportunities</a><ul>
+                                                   <li><a href="/hr/professional_development/learning_opportunities/workshops_programs.php">Workshops and Programs</a></li>
+                                                   <li><a href="/hr/professional_development/learning_opportunities/untitled.php">LinkedIn Learning</a></li>
+                                                   <li><a href="/hr/professional_development/learning_opportunities/campus_resources.php">Dartmouth Training Providers</a></li>
+                                                   <li><a href="/hr/professional_development/learning_opportunities/team/index.php">Meet the Team</a></li>
+                                                   <li><a href="/hr/total_rewards/benefits/life_and_family_support/index.php">Educational Assistance Benefits</a></li>
+                                                </ul>
+                                             </li>
+                                             <li role="menuitem"><a href="/hr/professional_development/certificate_programs/index.php">Certificate Programs</a><ul>
+                                                   <li><a href="/hr/professional_development/certificate_programs/dartmouth_leads.php">Dartmouth LEADS</a></li>
+                                                   <li><a href="/hr/professional_development/certificate_programs/management_foundations.php">Management Foundations Program</a></li>
+                                                   <li><a href="/hr/professional_development/certificate_programs/inspiring_pathways.php">Inspiring Pathways</a></li>
+                                                </ul>
+                                             </li>
+                                             <li role="menuitem"><a href="/hr/professional_development/for_managers/index.php">Manager &amp; Employee Resources</a><ul>
+                                                   <li><a href="/hr/professional_development/for_managers/onboarding_toolkit.php">Onboarding Toolkit</a></li>
+                                                   <li><a href="/hr/professional_development/for_managers/performance_management/process_overview.php">Annual Performance Plan and Evaluation Process</a></li>
+                                                </ul>
+                                             </li>
+                                          </ul>
+                                          <div class="dropclose clearfix"></div>
+                                       </div></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="nav-dept-search-container" aria-hidden="false" role="menuitem">
+                        <div role="search">
+                           <div class="nav-row search-table"><label for="search" class="offscreen">Search</label><span class="input-wrap"><input type="text" class="search-input" id="search" name="q" placeholder="" aria-required="true"></span><span id="search-close" aria-hidden="true"><a class="hide-txt" tabindex="0">Close Search</a></span></div>
+                        </div>
+                     </li>
+                     <li class="nav-dept-search" aria-hidden="false" role="menuitem"><a id="search-open" tabindex="0"><span class="hide-txt">Search</span></a><input type="submit" id="search-submit" value="GO"></li>
+                  </ul>
+               </nav>
+            </fieldset>
+         </form>
+      </div>
+   </div>
+</div>         <div id="main-content" class="container" role="main">
+            <div class="row">
+               <div class="twelve column">
+                  <section class="dept-section">
+                     <p xmlns:ouc="http://omniupdate.com/XSL/Variables"><!-- Slideshow with Quicklinks --></p>
+                     
+                     <div xmlns:ouc="http://omniupdate.com/XSL/Variables" class="two-third--one-third">
+                        
+                        <div class="slideshow">
+        <div>
+      <style>
+        @import "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css";
+        @import "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css";
+      </style>
+
+      <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+      <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+      
+      <div class="slick">
+                                        <div class="slick-slide">
+              <img class="slick-image" src="slides/baker_daffodils.jpg" />
+              <div class="slick-caption">
+                
+                                  <p>The Office of Human Resources at Dartmouth College provides assistance and resources to our faculty, staff, retirees and prospective employees.</p>
+                
+                <div class="caption-controls">
+                  <a class="caption-prev"><span></span></a>
+                  <a class="caption-next"><span></span></a>
+                </div>
+              </div>
+            </div>
+                        </div>
+
+      <script type="text/javascript">
+        $(window).on('load', function() {
+          $('.slick').show();
+          $('.slick').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: false,
+            arrows: true,
+            prevArrow: $('.caption-prev'),
+            nextArrow: $('.caption-next')
+          });
+        });
+      </script>
+    </div>
+                             </div>
+                        
+                        <div>
+                           
+                           <div class="quicklinks darker">
+                              
+                              <h2>Quicklinks</h2>
+                              
+                              <ul>
+                                 
+                                 <li><a href="/hr/working_at_dartmouth/employee_self_service/index.php">Employee Self Service</a></li>
+                                 
+                                 <li><a href="/hr/employment/talent_acquisition_hub/self_id.php">Self-Identification</a></li>
+                                 
+                                 <li><a href="http://flexonline.dartmouth.edu/">Access Your Benefits - FlexOnline</a></li>
+                                 
+                                 <li><a href="/hr/working_at_dartmouth/hr_business_partners/index.php">Find Your HR Business Partner</a></li>
+                                 
+                                 <li><a href="/hr/total_rewards/index.php">Total Rewards Information</a></li>
+                                 
+                                 <li><a href="/hr/working_at_dartmouth/forms_library/index.php">Forms Library</a></li>
+                                 
+                                 <li><a href="/hr/professional_development/for_managers/performance_management/process_overview.php">Annual Performance Plan and Evaluation Process</a></li>
+                                 
+                                 <li>&nbsp;</li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     
+                     <p xmlns:ouc="http://omniupdate.com/XSL/Variables"><!-- Grid Tile Row (Color, Image, Color) --></p>
+                     
+                     <div xmlns:ouc="http://omniupdate.com/XSL/Variables" class="columnized-content">
+                        
+                        <div class="column">
+                           
+                           <div class="grid-tile color green" aria-label="Grid Tile">
+                              
+                              <h3 class="all-caps"><a href="/hr/employment/careers_dartmouth/index.php">Careers at Dartmouth</a></h3>
+                              
+                              <p style="text-align: left;">Search open non-faculty positions at Dartmouth.</p>
+                              </div>
+                           </div>
+                        
+                        <div class="column">
+                           
+                           <div class="grid-tile image" style="text-align: center;" aria-label="Grid Tile"><a href="/hr/working_at_dartmouth/new_hires/index.php"> <img src="/hr/images/walking_dog.jpg" alt="Two people walk a dog across the Dartmouth Green." width="373" height="210" onerror="this.onerror=null;this.src='https://a.cms.omniupdate.com/files/content?site=hr&amp;path=/images/walking_dog.jpg'">
+                                 
+                                 <h3 class="all-caps" style="text-align: left;">New Hire Information</h3>
+                                 </a>
+                              
+                              <p style="text-align: left;">Information on New Employee Orientation, required paperwork, and enrolling in benefits.</p>
+                              </div>
+                           </div>
+                        
+                        <div class="column">
+                           
+                           <div class="grid-tile color green" aria-label="Grid Tile"><a href="/hr/professional_development/learning_opportunities/index.php">
+                                 
+                                 <h3 class="all-caps">Professional Development</h3>
+                                 </a>
+                              
+                              <p>Explore Learning &amp; Development provided workshops and other resources.</p>
+                              </div>
+                           </div>
+                        </div>
+                     
+                     <p xmlns:ouc="http://omniupdate.com/XSL/Variables">&nbsp;</p>
+                     
+                     <p xmlns:ouc="http://omniupdate.com/XSL/Variables"><!-- Two-Column Quicklinks --></p>
+                     
+                     <div xmlns:ouc="http://omniupdate.com/XSL/Variables" class="columnized-content">
+                        
+                        <div class="column margined">
+                           
+                           <div class="quicklinks">
+                              
+                              <h2>Student Employment</h2>
+                              
+                              <ul>
+                                 
+                                 <li><a href="/hr/employment/student_employment/for_students/index.php">Find a student Job</a></li>
+                                 
+                                 <li><a href="/hr/employment/student_employment/forms/index.php">Forms &amp; Resources for students &amp; Employers</a></li>
+                                 
+                                 <li><a href="/hr/employment/student_employment/for_employers/index.php">Information for Student Employers</a></li>
+                                 
+                                 <li><a href="/hr/employment/student_employment/for_employers/index.php">Student Employee Appreciation Week</a></li>
+                                 </ul>
+                              </div>
+                           </div>
+                        
+                        <div class="column">
+                           
+                           <div class="quicklinks">
+                              
+                              <h2>Quicklinks</h2>
+                              
+                              <ul>
+                                 
+                                 <li><a href="/hr/working_at_dartmouth/policies_procedures/index.php">Policies &amp; Procedures</a></li>
+                                 
+                                 <li><a href="/hr/working_at_dartmouth/employee_self_service/i9_form.php">I-9 Employee Verification</a></li>
+                                 
+                                 <li><a href="/hr/professional_development/for_managers/performance_management/process_overview_2024.php">Annual Performance Plan and Evaluation Process </a></li>
+                                 
+                                 <li><a href="/hr/professional_development/certificate_programs/index.php">Certificate Programs</a></li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                  </section>
+               </div>
+            </div>
+            <div class="container">
+               <div class="row">
+                  <div class="twelve column">
+        <section aria-label='events' class='module events twelve column'>
+          <header class='mod-home-hdr'>
+            <div class='row'>
+              <div class='twelve column'>
+                <h3 class='module-title ital'>events</h3>
+                <a aria-label='view all' class='btn' href='https://home.dartmouth.edu/events?group_ids=37&offset=0&limit=10'>view all</a>
+              </div>
+            </div>
+          </header>
+          <ul class='row event-list' role='list'>
+      
+          <li class='two column event first' role='listitem'>
+            <article aria-labelledby='event00' role='article'>
+              <header>
+                <span aria-label='November' class='month'>Nov</span>
+                <span class='day'>10</span>
+              </header>
+              <footer>
+                <div class='event-details'>
+                  <span class='time'>10:00AM</span>
+                  <h4 class='title'>
+                    <a href='https://news.dartmouth.edu/events/event?event=83156&listing=1' id='event00'>Approaching AI: Mindset & Foundations</a>
+                  </h4>
+                  <em class='venue'>Tuck - Murdough 309</em>
+                </div>
+                <p class='event-desc'>
+                  <a href='https://news.dartmouth.edu/events/event?event=83156&listing=1' id='event00'>Approaching AI: Mindset & Foundations is a workshop designed to help build a thoughtful, confident approach to artificial intelligence before diving into specific tools or tactics.</a>
+                </p>
+              </footer>
+            </article>
+          </li>
+        
+          <li class='two column event second' role='listitem'>
+            <article aria-labelledby='event01' role='article'>
+              <header>
+                <span aria-label='November' class='month'>Nov</span>
+                <span class='day'>11</span>
+              </header>
+              <footer>
+                <div class='event-details'>
+                  <span class='time'>8:00AM</span>
+                  <h4 class='title'>
+                    <a href='https://news.dartmouth.edu/events/event?event=83063&listing=1' id='event01'>2026 Veterans Day Remembrance Breakfast</a>
+                  </h4>
+                  <em class='venue'>Class of 1953 Commons North Dining Hall</em>
+                </div>
+                <p class='event-desc'>
+                  <a href='https://news.dartmouth.edu/events/event?event=83063&listing=1' id='event01'>The Office of Human Resources is pleased to sponsor this event honoring our community's veterans and their families.</a>
+                </p>
+              </footer>
+            </article>
+          </li>
+        
+          <li class='two column event third' role='listitem'>
+            <article aria-labelledby='event02' role='article'>
+              <header>
+                <span aria-label='November' class='month'>Nov</span>
+                <span class='day'>17</span>
+              </header>
+              <footer>
+                <div class='event-details'>
+                  <span class='time'>1:00PM</span>
+                  <h4 class='title'>
+                    <a href='https://news.dartmouth.edu/events/event?event=83157&listing=1' id='event02'>Approaching AI: Mindset & Foundations</a>
+                  </h4>
+                  <em class='venue'>Tuck - Murdough 309</em>
+                </div>
+                <p class='event-desc'>
+                  <a href='https://news.dartmouth.edu/events/event?event=83157&listing=1' id='event02'>Approaching AI: Mindset & Foundations is a workshop designed to help build a thoughtful, confident approach to artificial intelligence before diving into specific tools or tactics.</a>
+                </p>
+              </footer>
+            </article>
+          </li>
+        
+          <li class='two column event fourth' role='listitem'>
+            <article aria-labelledby='event03' role='article'>
+              <header>
+                <span aria-label='April' class='month'>Apr</span>
+                <span class='day'>13</span>
+              </header>
+              <footer>
+                <div class='event-details'>
+                  <span class='time'>3:00PM</span>
+                  <h4 class='title'>
+                    <a href='https://news.dartmouth.edu/events/event?event=83106&listing=1' id='event03'>Student Employee Appreciation Festival</a>
+                  </h4>
+                  <em class='venue'>Collis 107 Common Ground</em>
+                </div>
+                <p class='event-desc'>
+                  <a href='https://news.dartmouth.edu/events/event?event=83106&listing=1' id='event03'>A festival to honor the work and dedication of student employees from 3pm - 5pm in Collis Common Ground. All student employees welcome!</a>
+                </p>
+              </footer>
+            </article>
+          </li>
+        
+          <li class='two column event fifth' role='listitem'>
+            <article aria-labelledby='event04' role='article'>
+              <header>
+                <span aria-label='September' class='month'>Sep</span>
+                <span class='day'>14</span>
+              </header>
+              <footer>
+                <div class='event-details'>
+                  <span class='time'>3:00PM</span>
+                  <h4 class='title'>
+                    <a href='https://news.dartmouth.edu/events/event?event=82834&listing=1' id='event04'>Student Job Fair</a>
+                  </h4>
+                  <em class='venue'>Collis 107 Common Ground</em>
+                </div>
+                <p class='event-desc'>
+                  <a href='https://news.dartmouth.edu/events/event?event=82834&listing=1' id='event04'>Need a job? Several campus employers will be present to talk with you about their part-time jobs. Fall is the best time to start a new job! Open to all Dartmouth students.</a>
+                </p>
+              </footer>
+            </article>
+          </li>
+        </ul></section></div>
+               </div>
+            </div>
+            <div class="container">
+               <div class="row">
+                  <div class="twelve column">
+                     <div class="last-updated"><span id="directedit">Last Updated</span></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="ribbon-footer container jquery-once-13-processed" role="navigation"><div class="row"><div class="twelve column ribbon-footer__popups" tabindex="-1" style="outline: none;"><div aria-hidden="true" class="row equal-columns ribbon-footer__popup ribbon-footer__popup-one"><div class="four column center-text"><article class="node-grid-tile">&nbsp;</article></div><div class="four column center-text"><article class="node-grid-tile"><p xmlns:ouc="http://omniupdate.com/XSL/Variables">&nbsp;</p></article></div><div class="four column center-text"><article class="node-grid-tile"><h3 xmlns:ouc="http://omniupdate.com/XSL/Variables" class="all-caps">&nbsp;</h3></article></div><span class="ribbon-footer__popup-close">Close</span></div><div aria-hidden="true" class="row equal-columns ribbon-footer__popup ribbon-footer__popup-two"><div class="four column center-text"><article class="node-grid-tile">&nbsp;</article></div><div class="four column center-text"><article class="node-grid-tile">&nbsp;</article></div><div class="four column center-text"><article class="node-grid-tile">&nbsp;</article></div><span class="ribbon-footer__popup-close">Close</span></div><div aria-hidden="true" class="row equal-columns ribbon-footer__popup ribbon-footer__popup-three dept-info-section"><div class="four column center-text"><article class="node-grid-tile"><h3 xmlns:ouc="http://omniupdate.com/XSL/Variables" class="all-caps">People</h3><section class="dept-person"><h4 xmlns:ouc="http://omniupdate.com/XSL/Variables">Benefits</h4>
+Phone: 603-646-3588<br xmlns:ouc="http://omniupdate.com/XSL/Variables"><p xmlns:ouc="http://omniupdate.com/XSL/Variables"><a href="/hr/benefits_compensation/about_benefits/benefits_team.php">Human.Resources.Benefits@dartmouth.edu</a></p></section></article></div><div class="four column center-text"><article class="node-grid-tile"><h3 class="all-caps">Find Us</h3><h4>Address</h4><p>7 Lebanon Street, Suite 203<br>Hanover, NH 03755</p><p xmlns:ouc="http://omniupdate.com/XSL/Variables">Check out the <a href="http://m.dartmouth.edu/map/">Campus Map</a>.</p></article></div><div class="four column center-text"><article class="node-grid-tile"><h3 class="all-caps">Talk to Us</h3><p>Phone: (603) 646-3411<br>HB: 6042<br>Email: <a href="mailto:Human.Resources@dartmouth.edu">Human.Resources@dartmouth.edu</a></p><p xmlns:ouc="http://omniupdate.com/XSL/Variables"><a href="/hr/about/contact/index.php">More Contact Information</a></p></article></div><span class="ribbon-footer__popup-close">Close</span></div></div></div><div class="ribbon-footer__callout-wrapper"><div class="row" role="menu"><a href="#module-depts" class="four column center-text ribbon-footer__callout" data-target=".ribbon-footer__popup-one" role="menuitem"><span></span></a><a href="#module-depts" class="four column center-text ribbon-footer__callout" data-target=".ribbon-footer__popup-two" role="menuitem"><span></span></a><a href="#module-depts" class="four column center-text ribbon-footer__callout" data-target=".ribbon-footer__popup-three" role="menuitem"><span>Contact Us</span></a></div></div></div>  <footer class="container" id="footer-container" role="contentinfo" aria-label="Page Footer"><div class="row"><div class="twelve column main-footer"><ul class="row" role="menu"><li class="nav-footer four column" role="menuitem" aria-labelledby="footer-label-my-dartmouth"><h3 id="footer-label-my-dartmouth" class="menu__toggle">My Dartmouth<span></span><span class="show-for-sr toggle-text">Click to Open</span></h3><ul role="menu"><li role="menuitem"><a class="universal-footer-students" href="https://home.dartmouth.edu/students">Students</a></li><li role="menuitem"><a class="universal-footer-faculty" href="https://home.dartmouth.edu/faculty">Faculty</a></li><li role="menuitem"><a class="universal-footer-staff" href="https://home.dartmouth.edu/staff">Staff</a></li><li role="menuitem"><a class="universal-footer-alumni" href="https://alumni.dartmouth.edu">Alumni</a></li><li role="menuitem"><a class="universal-footer-families" href="https://home.dartmouth.edu/families">Families</a></li></ul></li><li class="nav-footer four column" role="menuitem" aria-labelledby="footer-label-find-it-fast"><h3 id="footer-label-find-it-fast" class="menu__toggle">Find it Fast<span></span><span class="show-for-sr toggle-text">Click to Open</span></h3><ul role="menu"><li role="menuitem"><a class="universal-footer-a-z-index" href="https://home.dartmouth.edu/a-z-site-index">A-Z Index</a></li><li role="menuitem"><a class="universal-footer-campus-map" href="https://home.dartmouth.edu/about/campus-map">Campus Map</a></li><li role="menuitem"><a class="universal-footer-directory" href="https://home.dartmouth.edu/directory">Directory</a></li><li role="menuitem"><a class="universal-footer-events" href="https://home.dartmouth.edu/events">Events</a></li><li role="menuitem"><a class="universal-footer-news" href="https://home.dartmouth.edu/news">News</a></li><li role="menuitem"><a class="universal-footer-visit" href="https://home.dartmouth.edu/about/visit">Visit</a></li></ul></li><li class="nav-footer four column" role="menuitem" aria-labelledby="footer-label-resources"><h3 id="footer-label-resources" class="menu__toggle">Resources<span></span><span class="show-for-sr toggle-text">Click to Open</span></h3><ul role="menu"><li role="menuitem"><a class="universal-footer-dartmouth-at-a-glance" href="https://home.dartmouth.edu/about">Dartmouth at a Glance</a></li><li role="menuitem"><a class="universal-footer-accessibility" href="https://home.dartmouth.edu/legal/accessibility">Accessibility</a></li><li role="menuitem"><a class="universal-footer-administrative-offices" href="https://home.dartmouth.edu/administrative-offices">Administrative Offices</a></li><li role="menuitem"><a class="universal-footer-emergency-preparedness" href="https://safetyandsecurity.dartmouth.edu/emergency-management-office/about-office">Emergency Preparedness</a></li><li role="menuitem"><a class="universal-footer-careers" href="https://jobs.dartmouth.edu/">Careers</a></li><li role="menuitem"><a class="universal-footer-sexual-respect-title-ix" href="https://eoatix.dartmouth.edu/support-services/sexual-respect-and-title-ix">Sexual Respect & Title IX</a></li></ul></li><li class="nav-footer four column also-of-interest" role="menuitem" aria-labelledby="footer-label-also-of-interest">
+  <div class="be-ix-link-block"></div>
+</li></ul></div></div><div class="row brightedge">
+  <div class="be-ix-link-block"></div>
+</div><div class="row tiny-footer"><ul id="nav-privacy" role="menu"><li role="menuitem"><a class="universal-sub-footer-link" href="http://www.dartmouth.edu/copyright/">Copyright © 2026 Trustees of Dartmouth College</a></li><li aria-hidden="true" class="disc" role="menuitem">&#149;</li><li role="menuitem"><a class="universal-sub-footer-link" href="https://policies.dartmouth.edu/policy/privacy-policy-dartmouth-websites">Privacy</a></li><li aria-hidden="true" class="disc" role="menuitem">&#149;</li><li role="menuitem"><a class="universal-sub-footer-link" href="https://policies.dartmouth.edu/">Policies</a></li><li aria-hidden="true" class="disc" role="menuitem">&#149;</li><li role="menuitem"><a class="universal-sub-footer-link" href="https://home.dartmouth.edu/contact">Contact</a></li><li aria-hidden="true" class="disc" role="menuitem">&#149;</li><li role="menuitem"><a class="universal-sub-footer-link" href="https://itc.dartmouth.edu/site-feedback">Site or Accessibility Feedback</a></li></ul><nav class="nav-footer nav-footer-four" aria-labelledby="footer-label-follow"><h3 id="footer-label-follow">Connect With Us</h3><ul id="footer-social" class="group" role="menu"><li role="menuitem"><a href="https://www.facebook.com/Dartmouth" class="logo-facebook hide-txt" aria-label="Facebook"><div class="show-for-sr">Facebook</div></a></li><li role="menuitem"><a href="https://www.instagram.com/dartmouthcollege/" class="logo-instagram hide-txt" aria-label="Instagram"><div class="show-for-sr">Instagram</div></a></li><li role="menuitem"><a href="https://www.twitter.com/dartmouth" class="logo-twitter hide-txt" aria-label="Twitter"><div class="show-for-sr">Twitter</div></a></li><li role="menuitem"><a href="http://www.youtube.com/Dartmouth" class="logo-youtube hide-txt" aria-label="YouTube"><div class="show-for-sr">YouTube</div></a></li></ul></nav></div></footer>
+</div>
+      <div id="mobile-nav-container" class="container"><div class="row"><div class="twelve column"><header><span class="logo hide-txt">Dartmouth College</span></header><div id="mobile-nav-inner"><div id="mobile-nav-inner-alpha"><ul id="root" class="current-page current"><li class="current"><a href="/" class="parent">Human Resources</a></li><li><a href="/hr/about/index.php" class="parent">About</a><a href="#about" class="child"><span class="arrow"></span></a></li><li><a href="/hr/employment/index.php" class="parent">Employment</a><a href="#employment" class="child"><span class="arrow"></span></a></li><li><a href="/hr/working_at_dartmouth/index.php" class="parent">Working At Dartmouth</a><a href="#working-at-dartmouth" class="child"><span class="arrow"></span></a></li><li><a href="/hr/total_rewards/index.php" class="parent">Total Rewards</a><a href="#total-rewards" class="child"><span class="arrow"></span></a></li><li><a href="/hr/professional_development/index.php" class="parent">Professional Development</a><a href="#professional-development" class="child"><span class="arrow"></span></a></li></ul><ul id="about" class=""><li class="nav-back"><a href="#root" class="parent"><span class="btn-back hide-txt">Back</span></a></li><li><a href="/hr/about/mission/index.php" class="parent">Mission &amp; Services</a></li><li><a href="/hr/about/news/index.php" class="parent">News &amp; Updates</a><a href="#about-news-updates" class="child"><span class="arrow"></span></a></li><li><a href="/hr/about/programs/index.php" class="parent">Programs</a><a href="#about-programs" class="child"><span class="arrow"></span></a></li><li><a href="/hr/about/employee_recognition/index.php" class="parent">Employee Recognition</a><a href="#about-employee-recognition" class="child"><span class="arrow"></span></a></li><li><a href="/hr/about/contact/index.php" class="parent">Contact Us</a></li></ul><ul id="employment" class=""><li class="nav-back"><a href="#root" class="parent"><span class="btn-back hide-txt">Back</span></a></li><li><a href="/hr/employment/careers_dartmouth/index.php" class="parent">Careers at Dartmouth</a></li><li><a href="/hr/employment/student_employment/index.php" class="parent">Student Employment</a><a href="#employment-student-employment" class="child"><span class="arrow"></span></a></li><li><a href="/hr/employment/talent_acquisition_hub/index.php" class="parent">Talent Acquisition Hub</a><a href="#employment-talent-acquisition-hub" class="child"><span class="arrow"></span></a></li></ul><ul id="working-at-dartmouth" class=""><li class="nav-back"><a href="#root" class="parent"><span class="btn-back hide-txt">Back</span></a></li><li><a href="/hr/working_at_dartmouth/employee_self_service/index.php" class="parent">Employee Systems</a><a href="#working-at-dartmouth-employee-systems" class="child"><span class="arrow"></span></a></li><li><a href="/hr/working_at_dartmouth/hr_business_partners/index.php" class="parent">HR Business Partners</a></li><li><a href="/hr/working_at_dartmouth/new_hires/index.php" class="parent">New Hires</a><a href="#working-at-dartmouth-new-hires" class="child"><span class="arrow"></span></a></li><li><a href="/hr/working_at_dartmouth/policies_procedures/index.php" class="parent">Policies &amp; Procedures</a><a href="#working-at-dartmouth-policies-procedures" class="child"><span class="arrow"></span></a></li><li><a href="/hr/working_at_dartmouth/forms_library/index.php" class="parent">HR Forms Library</a></li></ul><ul id="total-rewards" class=""><li class="nav-back"><a href="#root" class="parent"><span class="btn-back hide-txt">Back</span></a></li><li><a href="/hr/total_rewards/benefits/index.php" class="parent">Your Benefits</a><a href="#total-rewards-your-benefits" class="child"><span class="arrow"></span></a></li><li><a href="/hr/total_rewards/benefits/life_changes/index.php" class="parent">Life Events &amp; Transitions</a><a href="#total-rewards-life-events-transitions" class="child"><span class="arrow"></span></a></li><li><a href="/hr/total_rewards/compensation/index.php" class="parent">Pay &amp; Financial Growth</a></li><li><a href="/hr/total_rewards/benefits/plan_resources.php" class="parent">Resources &amp; Tools</a></li><li><a href="/hr/total_rewards/annual_statements.php" class="parent">Annual Statements and Tax Forms</a></li></ul><ul id="professional-development" class=""><li class="nav-back"><a href="#root" class="parent"><span class="btn-back hide-txt">Back</span></a></li><li><a href="/hr/professional_development/learning_opportunities/index.php" class="parent">Learning Opportunities</a><a href="#professional-development-learning-opportunities" class="child"><span class="arrow"></span></a></li><li><a href="/hr/professional_development/certificate_programs/index.php" class="parent">Certificate Programs</a><a href="#professional-development-certificate-programs" class="child"><span class="arrow"></span></a></li><li><a href="/hr/professional_development/for_managers/index.php" class="parent">Manager &amp; Employee Resources</a><a href="#professional-development-manager-employee-resources" class="child"><span class="arrow"></span></a></li></ul><ul id="about-news-updates"><li class="nav-back"><a href="#about" class="parent"><span class="btn-back hide-txt">Back</span></a></li><li><a href="/hr/about/news/summer_hours_announced.php" class="parent">Summer Hours Announced</a></li><li><a href="/hr/about/news/montshire_business_partner.php" class="parent">Montshire Business Partnership</a></li></ul><ul id="about-programs"><li class="nav-back"><a href="#about" class="parent"><span class="btn-back hide-txt">Back</span></a></li><li><a href="/hr/about/programs/after_hours/index.php" class="parent">Meet Up Upper Valley (MUUV)</a></li><li><a href="/hr/about/programs/employee_discounts_services/index.php" class="parent">Employee Discounts &amp; Dartmouth Services</a></li></ul><ul id="about-employee-recognition"><li class="nav-back"><a href="#about" class="parent"><span class="btn-back hide-txt">Back</span></a></li><li><a href="/hr/about/employee_recognition/award_nomination.php" class="parent">Lone Pine Staff Recognition Awards</a></li><li><a href="/hr/about/employee_recognition/lone_pine/index.php" class="parent">Excellence Awards</a></li><li><a href="/hr/about/employee_recognition/culbert/index.php" class="parent">Sheila Culbert Distinguished Employee Award</a></li><li><a href="https://ide.dartmouth.edu/social-justice-awards/about-awards" class="parent">Social Justice Awards</a></li><li><a href="/hr/about/employee_recognition/service_awards.php" class="parent">Employee Service Awards</a></li><li><a href="/hr/about/employee_recognition/gratitude_baskets/index.php" class="parent">Gratitude Baskets</a></li><li><a href="/hr/about/employee_recognition/staff_snapshot.php" class="parent">Staff Snapshot</a></li><li><a href="/hr/about/employee_recognition/other.php" class="parent">Other Recognition Ideas</a></li><li><a href="/hr/about/employee_recognition/award_nomination.php" class="parent">Recognition Award Nomination</a></li></ul><ul id="employment-student-employment"><li class="nav-back"><a href="#employment" class="parent"><span class="btn-back hide-txt">Back</span></a></li><li><a href="/hr/employment/student_employment/news/index.php" class="parent">News &amp; Announcements</a></li><li><a href="/hr/employment/student_employment/for_students/index.php" class="parent">For Students</a></li><li><a href="/hr/employment/student_employment/for_employers/index.php" class="parent">For Employers</a></li><li><a href="/hr/employment/student_employment/for_parents.php" class="parent">For Parents</a></li><li><a href="/hr/employment/student_employment/forms/index.php" class="parent">Forms &amp; Resources</a></li><li><a href="/hr/employment/student_employment/employee_appreciation.php" class="parent">Student Employee Appreciation Week</a></li></ul><ul id="employment-talent-acquisition-hub"><li class="nav-back"><a href="#employment" class="parent"><span class="btn-back hide-txt">Back</span></a></li><li><a href="https://www.dartmouth.edu/hr/employment/talent_acquisition_hub/ta_team.php" class="parent">Talent Acquisition Team</a></li><li><a href="/hr/employment/talent_acquisition_hub/self_id.php" class="parent">Self-Identification</a></li><li><a href="/hr/employment/talent_acquisition_hub/dorr.php" class="parent">Dartmouth Online Review &amp; Recruit (DORR)</a></li></ul><ul id="working-at-dartmouth-employee-systems"><li class="nav-back"><a href="#working-at-dartmouth" class="parent"><span class="btn-back hide-txt">Back</span></a></li><li><a href="/hr/working_at_dartmouth/employee_self_service/flexonline_kronos.php" class="parent">FlexOnline</a></li><li><a href="/finance/employee-services/payroll/staff_student_timecards/" class="parent">Kronos</a></li><li><a href="/hr/working_at_dartmouth/employee_self_service/i9_form.php" class="parent">I-9 Form</a></li><li><a href="/hr/working_at_dartmouth/employee_self_service/pronunciationtool.php" class="parent">Name Pronunciation Tool Guide for Staff and Faculty</a></li><li><a href="/hr/working_at_dartmouth/employee_self_service/netid_hinman.php" class="parent">NetID &amp; Hinman Box</a></li></ul><ul id="working-at-dartmouth-new-hires"><li class="nav-back"><a href="#working-at-dartmouth" class="parent"><span class="btn-back hide-txt">Back</span></a></li><li><a href="/hr/working_at_dartmouth/new_hires/new_employee_orientation/index.php" class="parent">New Employee Orientation</a></li><li><a href="/hr/total_rewards/benefits/life_changes/new_to_benefits.php" class="parent">New To Benefits</a></li><li><a href="/hr/working_at_dartmouth/new_hires/required_paperwork.php" class="parent">Required Paperwork</a></li><li><a href="/dcccc/" class="parent">Childcare</a></li></ul><ul id="working-at-dartmouth-policies-procedures"><li class="nav-back"><a href="#working-at-dartmouth" class="parent"><span class="btn-back hide-txt">Back</span></a></li><li><a href="/hr/working_at_dartmouth/policies_procedures/flexible_work/index.php" class="parent">Flexible Work at Dartmouth</a></li><li><a href="/hr/working_at_dartmouth/policies_procedures/restricted/lca_notifications.php" class="parent">Labor Condition Application Notifications</a></li><li><a href="/hr/working_at_dartmouth/policies_procedures/dol_posters.php" class="parent">Department of Labor Workplace Posters</a></li><li><a href="/hr/working_at_dartmouth/policies_procedures/youth_employment.php" class="parent">Youth Employment Requirements</a></li><li><a href="/hr/working_at_dartmouth/policies_procedures/holidays_winter_break.php" class="parent">Holidays &amp; Winter Break</a></li><li><a href="/hr/working_at_dartmouth/policies_procedures/timeawayfromwork.php" class="parent">Time Away from Work Policies</a></li></ul><ul id="total-rewards-your-benefits"><li class="nav-back"><a href="#total-rewards" class="parent"><span class="btn-back hide-txt">Back</span></a></li><li><a href="/hr/total_rewards/benefits/health_wellbeing/index.php" class="parent">Health &amp; Well Being</a></li><li><a href="/wellness/" class="parent">Wellness</a></li><li><a href="/hr/total_rewards/benefits/retirement.php" class="parent">Retirement</a></li><li><a href="/hr/total_rewards/benefits/retiree_benefits/index.php" class="parent">Retiree Benefits</a></li><li><a href="/hr/total_rewards/benefits/life_and_family_support/index.php" class="parent">Life and Family Support</a></li><li><a href="/hr/benefits_compensation/benefits/cost_estimator.php" class="parent">Benefit Plan Cost Estimator</a></li></ul><ul id="total-rewards-life-events-transitions"><li class="nav-back"><a href="#total-rewards" class="parent"><span class="btn-back hide-txt">Back</span></a></li><li><a href="/hr/total_rewards/benefits/life_changes/new_to_benefits.php" class="parent">New to Benefits</a></li><li><a href="/hr/total_rewards/benefits/life_changes/life_event_changes.php" class="parent">Life Event Changes</a></li><li><a href="/hr/total_rewards/benefits/life_changes/dependent_verification.php" class="parent">Dependent Verification</a></li><li><a href="/hr/total_rewards/benefits/life_changes/leaves_of_absence.php" class="parent">Leaves of Absence</a></li><li><a href="/hr/total_rewards/benefits/life_changes/leaving_dartmouth.php" class="parent">Leaving Dartmouth</a></li><li><a href="/hr/total_rewards/benefits/life_changes/cobra.php" class="parent">COBRA Continuation</a></li></ul><ul id="professional-development-learning-opportunities"><li class="nav-back"><a href="#professional-development" class="parent"><span class="btn-back hide-txt">Back</span></a></li><li><a href="/hr/professional_development/learning_opportunities/workshops_programs.php" class="parent">Workshops and Programs</a></li><li><a href="/hr/professional_development/learning_opportunities/untitled.php" class="parent">LinkedIn Learning</a></li><li><a href="/hr/professional_development/learning_opportunities/campus_resources.php" class="parent">Dartmouth Training Providers</a></li><li><a href="/hr/professional_development/learning_opportunities/team/index.php" class="parent">Meet the Team</a></li><li><a href="/hr/total_rewards/benefits/life_and_family_support/index.php" class="parent">Educational Assistance Benefits</a></li></ul><ul id="professional-development-certificate-programs"><li class="nav-back"><a href="#professional-development" class="parent"><span class="btn-back hide-txt">Back</span></a></li><li><a href="/hr/professional_development/certificate_programs/dartmouth_leads.php" class="parent">Dartmouth LEADS</a></li><li><a href="/hr/professional_development/certificate_programs/management_foundations.php" class="parent">Management Foundations Program</a></li><li><a href="/hr/professional_development/certificate_programs/inspiring_pathways.php" class="parent">Inspiring Pathways</a></li></ul><ul id="professional-development-manager-employee-resources"><li class="nav-back"><a href="#professional-development" class="parent"><span class="btn-back hide-txt">Back</span></a></li><li><a href="/hr/professional_development/for_managers/onboarding_toolkit.php" class="parent">Onboarding Toolkit</a></li><li><a href="/hr/professional_development/for_managers/performance_management/process_overview.php" class="parent">Annual Performance Plan and Evaluation Process</a></li></ul></div></div></div></div></div>
+<script>window.jQuery || document.write('<script src="https://www.dartmouth.edu/webpub/xsl/_resources/js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+
+<script src="https://www.dartmouth.edu/webpub/xsl/_resources/js/vendor/jquery.ba-dotimeout.min.js"></script>
+<script src="https://www.dartmouth.edu/webpub/xsl/_resources/js/vendor/jquery.touchSwipe.min.js"></script>
+<script src="https://www.dartmouth.edu/webpub/xsl/_resources/js/vendor/jquery.mobile.vmouse.js"></script>
+<script src="https://www.dartmouth.edu/webpub/xsl/_resources/js/vendor/jquery.fittext.js"></script>
+<script src="https://www.dartmouth.edu/webpub/xsl/_resources/js/vendor/jquery.matchHeight.js"></script>
+<script src="https://www.dartmouth.edu/webpub/xsl/_resources/js/vendor/jquery.cycle2.min.js"></script>
+<script src="https://www.dartmouth.edu/webpub/xsl/_resources/js/vendor/focus-visible.min.js"></script>
+<script src="https://www.dartmouth.edu/webpub/xsl/_resources/js/scripts.js"></script>
+<script src="https://www.dartmouth.edu/webpub/xsl/_resources/js/rave.js"></script>
+<script src="https://www.dartmouth.edu/webpub/xsl/_resources/js/ribbon-footer.js"></script>
+<script src="https://www.dartmouth.edu/webpub/xsl/_resources/js/cas-to-dnd-form-autofill.js"></script>
+<script src="https://www.dartmouth.edu/webpub/xsl/_resources/js/people-listing.js"></script>
+<script src="https://www.dartmouth.edu/webpub/xsl/_resources/js/snippets.js"></script>
+<script src="https://www.dartmouth.edu/webpub/xsl/_resources/js/universal-notification.js"></script>
+
+<script>$('#search-dartmouth > form').attr('action', $('#dept-container > form').attr('action'));</script>
+<script src="https://www.dartmouth.edu/webpub/xsl//_resources/js/nav.js"></script>
+      <!-- Insert google analytics here -->
+<script type="text/javascript" src="//us1.siteimprove.com/js/siteanalyze_66356409.js">/**/</script><script src="https://www.dartmouth.edu/webpub/xsl//_resources/js/direct-edit.js"></script><div id="hidden" style="display:none;"><a id="de" href="https://a.cms.omniupdate.com/11/?skin=dc&amp;account=dartmouth&amp;site=hr&amp;action=de&amp;path=/index.pcf" target="_top" rel="nofollow">Last Updated: Oct 23, 2026</a></div>
+   </body>
+</html>
