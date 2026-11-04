@@ -9,4 +9,14 @@ retrieved: 2026-11-04
 
 # Director and Staff
 
-{% include people.html people=site.data.directors_staff layout="list" %}
+<div class="people">
+{%- for person in site.data.directors_staff %}
+{%- assign lines = person.Details | split: " | " %}
+<div class="person">
+<img src="{{ '/' | append: person['Local Image'] | relative_url }}" alt="{{ person.Name }}">
+<div><a href="{{ person['Profile Link'] }}"><strong>{{ person.Name }}</strong></a>
+{person.Bio}
+{%- for line in lines %}<br>{{ line }}{% endfor %}</div>
+</div>
+{%- endfor %}
+</div>
