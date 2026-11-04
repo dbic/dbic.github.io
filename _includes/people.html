@@ -1,5 +1,22 @@
-{%- for person in include.people %} {%- assign lines = person.Bio | split: " | " %}
-{%- if person['Local Image'] and person['Local Image'] != "" %} {{ person.Name }} {%- else %} {%- endif %}
-{%- if person['Profile Link'] and person['Profile Link'] != "" %}{{ person.Name }}{% else %}{{ person.Name }}{% endif %} {%- for line in lines %}
-{{ line }}{% endfor %} {%- if person.Details and person.Details != "" %} {%- assign paras = person.Details | split: " || " %} {%- for para in paras %} {{ para | markdownify }} {%- endfor %} {%- endif %}
+<div class="people{% if include.layout == 'list' %} list{% endif %}">
+{%- for person in include.people %}
+{%- assign lines = person.Bio | split: " | " %}
+<div class="person">
+{%- if person['Local Image'] and person['Local Image'] != "" %}
+<img src="{{ '/' | append: person['Local Image'] | relative_url }}" alt="{{ person.Name }}">
+{%- else %}
+<span class="noimg"></span>
+{%- endif %}
+<div>
+{%- if person['Profile Link'] and person['Profile Link'] != "" %}<a href="{{ person['Profile Link'] }}"><strong>{{ person.Name }}</strong></a>{% else %}<strong>{{ person.Name }}</strong>{% endif %}
+{%- for line in lines %}<br>{{ line }}{% endfor %}
+{%- if person.Details and person.Details != "" %}
+{%- assign paras = person.Details | split: " || " %}
+{%- for para in paras %}
+{{ para | markdownify }}
 {%- endfor %}
+{%- endif %}
+</div>
+</div>
+{%- endfor %}
+</div>
