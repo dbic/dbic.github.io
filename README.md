@@ -17,3 +17,12 @@ _data/navigation.yml
 ```
 
 (plus this `README.md`, `.gitignore`, etc.).
+
+There is a link checker built in, but it is quite limited: it won't flag redirections
+(which may be "soft 404" results in actuality) and doesn't check any links that aren't
+included in the conversion (so no "external" links, including pages at dartmouth.edu).
+The `check_links.py` program can be used to check links in the converted verison,
+including external ones if `--external` is supplied.
+
+Note: we are ignoring the flagging of "http" links that redirect at the webserver to
+"https" since they're handled automatically.
