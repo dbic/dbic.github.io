@@ -9,8 +9,10 @@ retrieved: 2026-11-04
 
 # DBIC Advisory Committee
 
- {%- for person in include.people %} {%- assign lines = person.Bio | split: " | " %}
+<div class="people">
+{%- for person in include.people %} {%- assign lines = person.Bio | split: " | " %}
 {{ person.Name }}
 {%- if person['Profile Link'] != "" %}{{ person.Name }}{% else %}{{ person.Name }}{% endif %} {%- for line in lines %}
 {{ line }}{% endfor %}
 {%- endfor %} 
+</div>
