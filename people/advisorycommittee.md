@@ -10,9 +10,12 @@ retrieved: 2026-11-04
 # DBIC Advisory Committee
 
 <div class="people">
-{%- for person in include.people %} {%- assign lines = person.Bio | split: " | " %}
-{{ person.Name }}
-{%- if person['Profile Link'] != "" %}{{ person.Name }}{% else %}{{ person.Name }}{% endif %} {%- for line in lines %}
-{{ line }}{% endfor %}
-{%- endfor %} 
+{%- for person in site.data.advisory_committee %}
+{%- assign lines = person.Bio | split: " | " %}
+<div class="person">
+<img src="{{ '/' | append: person['Local Image'] | relative_url }}" alt="{{ person.Name }}">
+<div><a href="{{ person['Profile Link'] }}"><strong>{{ person.Name }}</strong></a>
+{%- for line in lines %}<br>{{ line }}{% endfor %}</div>
+</div>
+{%- endfor %}
 </div>
