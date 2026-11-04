@@ -65,7 +65,10 @@ HEADINGS = ["h1", "h2", "h3", "h4", "h5", "h6"]
 BLOCKS = {"p", "div", "li", "td", "th", "tr", "table", "ul", "ol", "section",
           "article", "blockquote", "pre"} | set(HEADINGS)
 CELL_HOLDERS = {"li", "td", "th", "tr"}
-VIDEO_HOSTS = ("youtube.com", "youtube-nocookie.com", "youtu.be", "vimeo.com")
+# Iframes from these hosts are kept as embeds; all other iframes are dropped.
+# Add more with --embed-host.
+EMBED_HOSTS = ("youtube.com", "youtube-nocookie.com", "youtu.be", "vimeo.com",
+               "outlook.office365.com", "outlook.office.com", "calendar.google.com")
 # markdownify normally reduces images inside headings and table cells to their
 # alt text; listing the parent tags here keeps them as real images.
 KEEP_IMG_PARENTS = ["td", "th", "a", "span", "strong", "b", "em", "i", "p", "div",
@@ -119,6 +122,7 @@ class Crawler:
         self.delay = args.delay
         self.max_pages = args.max_pages
         self.table_mode = args.tables
+        self.embed_hosts = EMBED_HOSTS + tuple(h.lower() for h in (args.embed_host or []))
         self.selectors = ([args.selector] if args.selector else []) + DEFAULT_SELECTORS
         self.strip = ALWAYS_STRIP + (args.strip or [])
         self.asset_hosts = {self.host} | set(args.asset_host or [])
@@ -327,16 +331,22 @@ class Crawler:
                 h.decompose()
 
     def protect_videos(self, root, page_url, raw):
+        """Keep iframes from trusted embed hosts (video, calendars); drop the rest."""
+        size_ok = re.compile(r"^\d+%?$")
         for el in list(root.find_all(["iframe", "embed"])):
             src = el.get("src") or el.get("data-src") or ""
             absolute = urljoin(page_url, src.strip()) if src else ""
             host = urlparse(absolute).netloc.lower()
-            if any(host == h or host.endswith("." + h) for h in VIDEO_HOSTS):
-                w = el.get("width") if str(el.get("width", "")).isdigit() else "560"
-                h = el.get("height") if str(el.get("height", "")).isdigit() else "315"
-                title = htmlmod.escape(el.get("title") or "Embedded video", quote=True)
-                markup = (f'<iframe src="{htmlmod.escape(absolute, quote=True)}" width="{w}" '
-                          f'height="{h}" title="{title}" loading="lazy" allowfullscreen></iframe>')
+            if any(host == h or host.endswith("." + h) for h in self.embed_hosts):
+                w = el.get("width") if size_ok.match(str(el.get("width", ""))) else "560"
+                h = el.get("height") if size_ok.match(str(el.get("height", ""))) else "315"
+                title = htmlmod.escape(el.get("title") or "Embedded content", quote=True)
+                ident = el.get("id")
+                id_attr = (f' id="{htmlmod.escape(ident, quote=True)}"'
+                           if isinstance(ident, str) and re.match(r"^[\w.:-]+$", ident) else "")
+                markup = (f'<iframe{id_attr} src="{htmlmod.escape(absolute, quote=True)}" '
+                          f'width="{w}" height="{h}" title="{title}" loading="lazy" '
+                          f'allowfullscreen></iframe>')
                 token = f"ZZRAW{len(raw)}ZZ"
                 raw[token] = markup
                 para = FACTORY.new_tag("p")
@@ -608,6 +618,8 @@ def main():
                          "css_images.csv, 'download' also fetches them as assets")
     ap.add_argument("--extra-asset", action="append",
                     help="URL of an extra file to download into assets/ (repeatable)")
+    ap.add_argument("--embed-host", action="append",
+                    help="extra host whose iframes should be kept as embeds (repeatable)")
     ap.add_argument("--asset-host", action="append",
                     help="extra host to download assets from (repeatable)")
     args = ap.parse_args()
@@ -628,3 +640,4 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+    
