@@ -14,6 +14,8 @@
     a { color: var(--green); }
     .site-header { background: #00693e; padding: .9rem 1.25rem; }
     .site-header a { color: #fff; font-size: 1.25rem; font-weight: 600; text-decoration: none; }
+    .site-header.has-banner { padding: 0; text-align: center; }
+    .site-header .banner { display: block; width: 100%; max-width: 74rem; height: auto; margin: 0 auto; }
     .wrap { display: flex; align-items: flex-start; max-width: 74rem; margin: 0 auto; }
     .sidebar { flex: 0 0 17rem; background: var(--side); border-right: 1px solid var(--line);
                padding: 1rem 1.25rem; position: sticky; top: 0; max-height: 100vh; overflow-y: auto; }
@@ -27,7 +29,8 @@
     .content { flex: 1 1 auto; min-width: 0; padding: 1rem 2rem 3rem; }
     .content img { max-width: 100%; height: auto; }
     .content table { display: block; overflow-x: auto; border-collapse: collapse; }
-    .content th, .content td { border: 1px solid var(--line); padding: .35rem .6rem; }
+    .content th, .content td { border: 1px solid var(--line); padding: .35rem .6rem; vertical-align: top; }
+    .content iframe { max-width: 100%; border: 0; }
     footer { border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; padding: 1rem 1.25rem; text-align: center; }
     @media (max-width: 52rem) {
       .wrap { display: block; }
@@ -37,8 +40,14 @@
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+  <header class="site-header{% if site.header_image %} has-banner{% endif %}">
+    <a href="{{ '/' | relative_url }}">
+      {% if site.header_image %}
+        <img class="banner" src="{{ site.header_image | relative_url }}" alt="{{ site.title }}">
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+    </a>
   </header>
 
   <div class="wrap">
@@ -77,5 +86,15 @@
   <footer>
     Dartmouth Brain Imaging Center &middot; Moore Hall, HB 6207, Hanover, NH 03755
   </footer>
+
+  <script>
+    // Open links to other sites in a new tab (keeps the Markdown source clean).
+    document.querySelectorAll('a[href^="http"], a[href^="//"]').forEach(function (a) {
+      if (a.hostname && a.hostname !== window.location.hostname) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+      }
+    });
+  </script>
 </body>
 </html>

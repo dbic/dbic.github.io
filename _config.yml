@@ -5,6 +5,10 @@ description: Research resource for brain imaging at Dartmouth College
 # set baseurl to "/repo". For an organization site at dbic.github.io, leave it empty.
 baseurl: ""
 
+# Banner image shown at the top of every page. Download the file first (see README),
+# then uncomment. Without it, the site title is shown as text.
+# header_image: /assets/dbic/images/header_full.jpg
+
 plugins:
   - jekyll-relative-links
 

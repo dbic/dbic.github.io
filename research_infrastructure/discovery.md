@@ -1,7 +1,7 @@
 ---
 title: "Using Discovery"
 source_url: https://www.dartmouth.edu/dbic/research_infrastructure/discovery.html
-retrieved: 2026-11-03
+retrieved: 2026-11-04
 ---
 
 [Research Infrastructure](index.md) >

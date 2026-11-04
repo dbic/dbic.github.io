@@ -137,6 +137,10 @@ class Crawler:
         self.page_paths = {}   # local path -> url (dedupe)
         self.assets = {}       # url -> first referring page
         self.rows = []         # manifest rows
+        self.stylesheets = set()
+        self.css_rows = []     # (stylesheet, image url)
+        self.css_mode = args.css_images
+        self.extra_assets = [normalize(u) for u in (args.extra_asset or [])]
 
     # ---------- setup helpers ----------
     def _load_robots(self):
@@ -215,6 +219,11 @@ class Crawler:
                     self.enqueue(url)
                 elif kind == "asset":
                     self.assets.setdefault(url, page_url)
+        for link in soup.find_all("link", href=True):
+            if "stylesheet" in (link.get("rel") or []):
+                css = normalize(urljoin(page_url, link["href"]))
+                if urlparse(css).netloc in self.asset_hosts:
+                    self.stylesheets.add(css)
 
     def enqueue(self, url):
         lp = self.page_path(url)
@@ -495,6 +504,41 @@ class Crawler:
             self.row("page", final, local, "ok")
         print(f"\nPages converted: {done}. Assets found: {len(self.assets)}")
 
+    def scan_css(self):
+        """Find images referenced from the site's stylesheets (backgrounds, banners)."""
+        todo, seen = sorted(self.stylesheets), set()
+        while todo:
+            css = todo.pop()
+            if css in seen:
+                continue
+            seen.add(css)
+            try:
+                r = self.get(css)
+            except requests.RequestException as e:
+                print(f"[css error] {css}: {e}")
+                continue
+            if r.status_code != 200:
+                print(f"[css {r.status_code}] {css}")
+                continue
+            text = re.sub(r"/\*.*?\*/", "", r.text, flags=re.S)   # drop comments
+            for m in re.finditer(r"@import\s+(?:url\()?['\"]?([^'\")\s;]+)", text):
+                imp = normalize(urljoin(css, m.group(1)))
+                if urlparse(imp).netloc in self.asset_hosts:
+                    todo.append(imp)
+            for m in re.finditer(r"url\(\s*['\"]?([^'\")]+?)['\"]?\s*\)", text):
+                ref = m.group(1).strip()
+                if ref.lower().startswith(("data:", "#")):
+                    continue
+                img = normalize(urljoin(css, ref))
+                ext = os.path.splitext(unquote(urlparse(img).path))[1].lower()
+                if urlparse(img).netloc in self.asset_hosts and ext in ASSET_EXTS:
+                    if (css, img) not in self.css_rows:
+                        self.css_rows.append((css, img))
+                    if self.css_mode == "download":
+                        self.assets.setdefault(img, css)
+        print(f"Stylesheets scanned: {len(seen)}. Images referenced: "
+              f"{len({i for _, i in self.css_rows})}")
+
     def download_assets(self):
         for i, (url, ref) in enumerate(sorted(self.assets.items()), 1):
             dest = self.asset_path(url)
@@ -533,6 +577,12 @@ class Crawler:
                 w = csv.DictWriter(f, fieldnames=fields)
                 w.writeheader()
                 w.writerows(rows)
+        if self.css_rows:
+            with open(self.out / "css_images.csv", "w", newline="", encoding="utf-8") as f:
+                w = csv.writer(f)
+                w.writerow(["stylesheet", "image_url", "local_path_if_downloaded"])
+                for css, img in self.css_rows:
+                    w.writerow([css, img, Path(self.asset_path(img)).as_posix()])
         bad = sum(1 for r in self.rows if not r["status"].startswith("ok"))
         print(f"Wrote manifest.csv and broken_links.csv ({bad} problem rows) in {self.out}")
 
@@ -553,6 +603,11 @@ def main():
     ap.add_argument("--tables", choices=["auto", "markdown", "html"], default="auto",
                     help="how to write tables: auto (default) keeps simple tables with a "
                          "header row as Markdown and layout/photo tables as clean HTML")
+    ap.add_argument("--css-images", choices=["list", "download"],
+                    help="scan linked stylesheets for url(...) images; 'list' only writes "
+                         "css_images.csv, 'download' also fetches them as assets")
+    ap.add_argument("--extra-asset", action="append",
+                    help="URL of an extra file to download into assets/ (repeatable)")
     ap.add_argument("--asset-host", action="append",
                     help="extra host to download assets from (repeatable)")
     args = ap.parse_args()
@@ -560,6 +615,10 @@ def main():
     c = Crawler(args)
     try:
         c.crawl_pages()
+        if c.css_mode:
+            c.scan_css()
+        for u in c.extra_assets:
+            c.assets.setdefault(u, "(--extra-asset)")
         c.download_assets()
     except KeyboardInterrupt:
         print("\nInterrupted; writing reports for what was completed.")

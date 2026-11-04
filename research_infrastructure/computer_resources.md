@@ -1,7 +1,7 @@
 ---
 title: "Computer Resources"
 source_url: https://www.dartmouth.edu/dbic/research_infrastructure/computer_resources.html
-retrieved: 2026-11-03
+retrieved: 2026-11-04
 ---
 
 [Research Infrastructure](index.md) >
@@ -48,7 +48,7 @@ Siemens Console, which communicates with a dedicated virtual machine running a D
 
 ## Storage of BIDS
 
-In addition to storage of the original DICOM images, DBIC has adopted the standard file-naming conventions specified in the Brain Imaging Data Structure (BIDS) protocol ([bids.neurimaging.io](bids.neurimaging.io/index.md "BIDS")) for many recently acquired studies. The BIDS format provides a convenient common framework for organizing and storing data that has been adopted widely in the neuroimaging community. The universal adoption of BIDS will enhance efforts for data sharing, reproduction of results, and promoting Open Science ([http://centerforopenneuroscience.org](http://centerforopenneuroscience.org/ "Center for Open Neuroscience")); which are all principles that DBIC aims to promote. All investigators at DBIC have the option of transforming their data from DICOM to BIDS. For instructions, please contact [Yaroslav Halchenko](mailto:yaroslav.halchenko@dartmouth.edu?subject=BIDS).
+In addition to storage of the original DICOM images, DBIC has adopted the standard file-naming conventions specified in the Brain Imaging Data Structure (BIDS) protocol ([bids.neuroimaging.io](https://bids.neuroimaging.io/ "BIDS")) for many recently acquired studies. The BIDS format provides a convenient common framework for organizing and storing data that has been adopted widely in the neuroimaging community. The universal adoption of BIDS will enhance efforts for data sharing, reproduction of results, and promoting Open Science ([http://centerforopenneuroscience.org](http://centerforopenneuroscience.org/ "Center for Open Neuroscience")); which are all principles that DBIC aims to promote. All investigators at DBIC have the option of transforming their data from DICOM to BIDS. For instructions, please contact [Yaroslav Halchenko](mailto:yaroslav.halchenko@dartmouth.edu?subject=BIDS).
 
 All BIDS formatted data are converted to the NIfTI Data Format ([https://nifti.nimh.nih.gov](https://nifti.nimh.nih.gov "NIFTI")) directly from the DICOM data and are stored on the same server. However, because multiple sessions (each with unique accession numbers and which may be acquired on different days) must be organized together according to Study Protocol under the BIDS specification, the organization for a particular study on the file server follows the convention: <server>:/inbox/BIDS/<PI>/<LeadInvestigator>/<StudyName>/{sid-000, ... sid-N}. Where <PI> is the name of the Principal Investigator, <LeadInvestigator> is the person responsible for the execution of the study (typically a graduate student), <StudyName> is a unique number and mnemonic shorthand for the study, and sid-XXX are unique directories for each subject in the study. For example, all data for the study number 1021 which investigated brain activity for viewing actions, run by Dr. Sam Nastase, a former graduate student of Prof. Jim Haxby is located at <server>:/inbox/BIDS/Haxby/Sam/1021\_actions.
 
@@ -64,4 +64,4 @@ Suggested resource: [DBIC BIDS Handbook](https://dbic-handbook.readthedocs.io)
 
 ## DBIC Internal
 
-- [Reports](https://rcweb.dartmouth.edu/DBIC/reports/) (Restricted acces / NetID authentication required)
+- [Reports](https://rcweb.dartmouth.edu/DBIC/reports/) (Restricted access / NetID authentication required)

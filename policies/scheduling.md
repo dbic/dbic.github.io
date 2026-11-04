@@ -1,7 +1,7 @@
 ---
 title: "DBIC Scheduling"
 source_url: https://www.dartmouth.edu/dbic/policies/scheduling.html
-retrieved: 2026-11-03
+retrieved: 2026-11-04
 ---
 
 [Policies](index.md) >

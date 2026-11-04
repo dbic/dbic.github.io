@@ -1,7 +1,7 @@
 ---
 title: "Events"
 source_url: https://www.dartmouth.edu/dbic/events/
-retrieved: 2026-11-03
+retrieved: 2026-11-04
 ---
 
 [Home](../index.md "Home") >
