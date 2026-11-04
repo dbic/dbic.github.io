@@ -1,55 +1,103 @@
+{%- assign preset = site.data.styles[site.style] | default: site.data.styles.default -%}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-sidebar="{{ preset.options.sidebar | default: 'left' }}" data-banner="{{ preset.options.banner | default: 'on' }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title and page.url != '/' %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-  <style>
-    :root { --green: #00693e; --ink: #222; --muted: #666; --line: #ddd; --bg: #fff; --side: #f5f7f6; }
-    @media (prefers-color-scheme: dark) {
-      :root { --green: #5fbf8f; --ink: #e8e8e8; --muted: #aaa; --line: #3a3a3a; --bg: #181a19; --side: #202322; }
+
+  {%- comment -%} Colors, fonts and sizes come from the preset named by "style" in _config.yml (see _data/styles.yml). {%- endcomment %}
+  <style id="style-vars">
+    :root {
+    {%- for kv in preset.vars %} --{{ kv[0] }}: {{ kv[1] }};{% endfor %}
+    {%- for kv in preset.light %} --{{ kv[0] }}: {{ kv[1] }};{% endfor %}
     }
+    :root[data-theme="dark"] {
+    {%- for kv in preset.dark %} --{{ kv[0] }}: {{ kv[1] }};{% endfor %}
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+      {%- for kv in preset.dark %} --{{ kv[0] }}: {{ kv[1] }};{% endfor %}
+      }
+    }
+  </style>
+
+  {%- if site.style_switcher %}
+  {% include style-switcher.html %}
+  {%- endif %}
+
+  <style>
+    :root { --page-width: calc(var(--sidebar-width, 17rem) + var(--content-width, 56rem)); }
     * { box-sizing: border-box; }
-    body { margin: 0; font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: var(--bg); }
-    a { color: var(--green); }
-    .site-header { background: #00693e; padding: .9rem 1.25rem; }
-    .site-header a { color: #fff; font-size: 1.25rem; font-weight: 600; text-decoration: none; }
+    body { margin: 0; font: var(--font-size, 16px)/1.6 var(--font, system-ui, sans-serif); color: var(--ink, #222); background: var(--bg, #fff); }
+    h1, h2, h3, h4, h5, h6 { font-family: var(--heading-font, var(--font, system-ui, sans-serif)); }
+    a { color: var(--link, #00693e); }
+
+    /* Header: banner image, or the site title as text */
+    .site-header { background: var(--header-bg, #00693e); color: var(--header-ink, #fff); padding: .9rem 1.25rem; }
+    .site-header a { color: var(--header-ink, #fff); font: 600 1.25rem/1.3 var(--heading-font, var(--font, sans-serif)); text-decoration: none; }
     .site-header.has-banner { padding: 0; text-align: center; }
-    .site-header .banner { display: block; width: 100%; max-width: 74rem; height: auto; margin: 0 auto; }
-    .wrap { display: flex; align-items: flex-start; max-width: 74rem; margin: 0 auto; }
-    .sidebar { flex: 0 0 17rem; background: var(--side); border-right: 1px solid var(--line);
+    .site-header .banner { display: block; width: 100%; max-width: var(--page-width, 74rem); height: auto; margin: 0 auto; }
+    .site-header .title-text { display: none; }
+    .site-header.no-banner .title-text, html[data-banner="off"] .site-header .title-text { display: inline; }
+    html[data-banner="off"] .site-header .banner { display: none; }
+    html[data-banner="off"] .site-header.has-banner { padding: .9rem 1.25rem; text-align: left; }
+
+    /* Page frame and sidebar (position set by html[data-sidebar]) */
+    .wrap { display: flex; align-items: flex-start; max-width: var(--page-width, 74rem); margin: 0 auto; }
+    .sidebar { flex: 0 0 var(--sidebar-width, 17rem); background: var(--side, #f5f7f6); border-right: 1px solid var(--line, #ddd);
                padding: 1rem 1.25rem; position: sticky; top: 0; max-height: 100vh; overflow-y: auto; }
     .sidebar ul { list-style: none; margin: 0; padding: 0; }
     .sidebar > ul > li { margin: .35rem 0; }
-    .sidebar ul ul { margin: .15rem 0 .5rem .9rem; border-left: 2px solid var(--line); padding-left: .6rem; }
+    .sidebar ul ul { margin: .15rem 0 .5rem .9rem; border-left: 2px solid var(--line, #ddd); padding-left: .6rem; }
     .sidebar .group { font-weight: 600; }
     .sidebar a { text-decoration: none; }
     .sidebar a:hover { text-decoration: underline; }
-    .sidebar li.current > a { font-weight: 700; color: var(--ink); }
-    .content { flex: 1 1 auto; min-width: 0; padding: 1rem 2rem 3rem; }
-    .content img { max-width: none; height: auto; }
+    .sidebar li.current > a { font-weight: 700; color: var(--ink, #222); }
+    html[data-sidebar="right"] .wrap { flex-direction: row-reverse; }
+    html[data-sidebar="right"] .sidebar { border-right: 0; border-left: 1px solid var(--line, #ddd); }
+    html[data-sidebar="top"] .wrap { display: block; max-width: var(--content-width, 56rem); }
+    html[data-sidebar="top"] .sidebar { position: static; max-height: none; border-right: 0; border-bottom: 1px solid var(--line, #ddd); }
+    html[data-sidebar="top"] .sidebar > ul { column-width: 13rem; column-gap: 1.5rem; }
+    html[data-sidebar="top"] .sidebar > ul > li { break-inside: avoid; }
+
+    /* Content */
+    .content { flex: 1 1 auto; min-width: 0; max-width: var(--content-width, 56rem); padding: 1rem 2rem 3rem; }
+    .content img { max-width: 100%; height: auto; }
+    /* In table cells a percentage max-width collapses the column, so images in
+       tables keep their own size (tables scroll sideways if they get too wide). */
+    .content table img { max-width: none; }
     .content table { display: block; overflow-x: auto; border-collapse: collapse; }
-    .content th, .content td { border: 1px solid var(--line); padding: .35rem .6rem; vertical-align: top; }
-    .content iframe { max-width: 100%; border: 0; }
-    footer { border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; padding: 1rem 1.25rem; text-align: center; }
-    @media (max-width: 52rem) {
-      .wrap { display: block; }
-      .sidebar { position: static; max-height: none; border-right: 0; border-bottom: 1px solid var(--line); }
-      .content { padding: 1rem 1.25rem 2rem; }
-    }
+    .content th, .content td { border: 1px solid var(--line, #ddd); padding: .35rem .6rem; vertical-align: top; }
+    .content iframe { max-width: 100%; border: 0; border-radius: var(--radius, 4px); }
+
+    /* People cards (see _includes/people.html) */
     .people { display: grid; grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); gap: 1.25rem; }
+    .people.list { grid-template-columns: 1fr; gap: 1.75rem; }
     .person { display: flex; gap: .9rem; align-items: flex-start; }
-    .person img { width: 110px; height: auto; flex: none; border-radius: 4px; }
+    .person img, .person .noimg { width: 110px; flex: none; }
+    .person img { height: auto; border-radius: var(--radius, 4px); }
+    .people.list .person img, .people.list .person .noimg { width: 150px; }
+    .person p { margin: .5rem 0 0; }
+
+    footer { border-top: 1px solid var(--line, #ddd); color: var(--muted, #666); font-size: .85rem; padding: 1rem 1.25rem; text-align: center; }
+
+    /* Small screens: sidebar stacks above the content whatever its setting */
+    @media (max-width: 52rem) {
+      html[data-sidebar] .wrap { display: block; max-width: none; }
+      html[data-sidebar] .sidebar { position: static; max-height: none; border-right: 0; border-left: 0; border-bottom: 1px solid var(--line, #ddd); }
+      html[data-sidebar] .sidebar > ul { column-width: auto; }
+      .content { max-width: none; padding: 1rem 1.25rem 2rem; }
+      .content table img { max-width: 160px; }
+    }
+    @media (max-width: 30rem) { .people.list .person img, .people.list .person .noimg { width: 100px; } }
   </style>
 </head>
 <body>
-  <header class="site-header{% if site.header_image %} has-banner{% endif %}">
+  <header class="site-header{% if site.header_image %} has-banner{% else %} no-banner{% endif %}">
     <a href="{{ '/' | relative_url }}">
-      {% if site.header_image %}
-        <img class="banner" src="{{ site.header_image | relative_url }}" alt="{{ site.title }}">
-      {% else %}
-        {{ site.title }}
-      {% endif %}
+      {%- if site.header_image %}<img class="banner" src="{{ site.header_image | relative_url }}" alt="{{ site.title }}">{% endif -%}
+      <span class="title-text">{{ site.title }}</span>
     </a>
   </header>
 

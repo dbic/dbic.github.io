@@ -9,6 +9,13 @@ baseurl: ""
 # then uncomment. Without it, the site title is shown as text.
 # header_image: /assets/dbic/images/header_full.jpg
 
+# Look and feel. "style" names a preset in _data/styles.yml.
+style: default
+# Floating "Style" panel for trying looks (appears only with ?dev in the address, or
+# on localhost). Set to false once the look is decided, so the published site
+# carries none of this code.
+style_switcher: true
+
 plugins:
   - jekyll-relative-links
 
@@ -30,4 +37,7 @@ exclude:
   - environment.yml
   - manifest.csv
   - broken_links.csv
+  - css_images.csv
+  - check_links.py
+  - link_report.csv
   - .gitignore

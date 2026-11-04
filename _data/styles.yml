@@ -1,0 +1,132 @@
+# Style presets. _config.yml picks the live one with:  style: <name>
+# The style switcher panel (see _includes/style-switcher.html) lets you try each
+# of these, tweak them, and export your tweaks as a new entry for this file.
+#
+# Every preset has:
+#   label    name shown in the switcher
+#   options  sidebar: left | right | top      banner: "on" | "off"
+#   vars     settings shared by light and dark mode (fonts, sizes, widths)
+#   light    colors in light mode
+#   dark     colors in dark mode (anything not listed falls back to the light value)
+
+default:
+  label: "DBIC green (current look)"
+  options: { sidebar: "left", banner: "on" }
+  vars:
+    font: 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
+    heading-font: 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
+    font-size: "16px"
+    content-width: "56rem"
+    sidebar-width: "17rem"
+    radius: "4px"
+  light:
+    accent: "#00693e"
+    link: "#00693e"
+    ink: "#222222"
+    muted: "#666666"
+    line: "#dddddd"
+    bg: "#ffffff"
+    side: "#f5f7f6"
+    header-bg: "#00693e"
+    header-ink: "#ffffff"
+  dark:
+    accent: "#5fbf8f"
+    link: "#5fbf8f"
+    ink: "#e8e8e8"
+    muted: "#aaaaaa"
+    line: "#3a3a3a"
+    bg: "#181a19"
+    side: "#202322"
+
+# APPROXIMATION of the PBS_resources look. Built only from what its README says
+# ("refined neural" theme: Dartmouth green #00693e with emerald accents), NOT from its
+# stylesheet. To match it exactly, copy the values from the :root block and the font
+# stack in PBS_resources/css/style.css into the entries below.
+pbs_resources:
+  label: "PBS_resources style (approximate)"
+  options: { sidebar: "left", banner: "off" }
+  vars:
+    font: '"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
+    heading-font: '"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
+    font-size: "17px"
+    content-width: "52rem"
+    sidebar-width: "16rem"
+    radius: "10px"
+  light:
+    accent: "#00693e"
+    link: "#047857"
+    ink: "#1b2420"
+    muted: "#5b6b63"
+    line: "#dfe8e3"
+    bg: "#fbfdfc"
+    side: "#f0f6f3"
+    header-bg: "linear-gradient(135deg, #003d24 0%, #00693e 60%, #059669 100%)"
+    header-ink: "#ffffff"
+  dark:
+    accent: "#34d399"
+    link: "#34d399"
+    ink: "#e6f1ea"
+    muted: "#9db3a7"
+    line: "#1f3329"
+    bg: "#0b1410"
+    side: "#101c16"
+    header-bg: "linear-gradient(135deg, #02130c 0%, #00693e 100%)"
+
+high_contrast:
+  label: "High contrast (accessibility check)"
+  options: { sidebar: "left", banner: "on" }
+  vars:
+    font: 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
+    heading-font: 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
+    font-size: "18px"
+    content-width: "52rem"
+    sidebar-width: "17rem"
+    radius: "2px"
+  light:
+    accent: "#004d2c"
+    link: "#00457a"
+    ink: "#000000"
+    muted: "#333333"
+    line: "#777777"
+    bg: "#ffffff"
+    side: "#f2f2f2"
+    header-bg: "#004d2c"
+    header-ink: "#ffffff"
+  dark:
+    accent: "#7fe0b0"
+    link: "#8fc7ff"
+    ink: "#ffffff"
+    muted: "#dddddd"
+    line: "#999999"
+    bg: "#000000"
+    side: "#111111"
+    header-bg: "#004d2c"
+
+editorial:
+  label: "Editorial serif"
+  options: { sidebar: "left", banner: "on" }
+  vars:
+    font: 'Georgia, "Iowan Old Style", "Palatino Linotype", serif'
+    heading-font: 'Georgia, "Iowan Old Style", "Palatino Linotype", serif'
+    font-size: "18px"
+    content-width: "46rem"
+    sidebar-width: "16rem"
+    radius: "2px"
+  light:
+    accent: "#00693e"
+    link: "#00693e"
+    ink: "#2a2a2a"
+    muted: "#6b6b6b"
+    line: "#e4e0d8"
+    bg: "#fffdf8"
+    side: "#f6f3ec"
+    header-bg: "#00693e"
+    header-ink: "#ffffff"
+  dark:
+    accent: "#7fcfa5"
+    link: "#7fcfa5"
+    ink: "#ece8df"
+    muted: "#b0aa9c"
+    line: "#3b382f"
+    bg: "#1a1915"
+    side: "#22211c"
