@@ -9,6 +9,4 @@ retrieved: 2026-11-04
 
 # Director and Staff
 
-<div class="people">
 {% include people.html people=site.data.directors_staff layout="list" %}
-</div>
