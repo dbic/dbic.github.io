@@ -1,0 +1,97 @@
+{%- comment -%}
+  Sidebar navigation, built from _data/navigation.yml.
+  - A group (an entry with "children") becomes a button that expands/collapses its links.
+  - The group containing the current page starts open.
+  - Without JavaScript every group simply shows expanded.
+  - Behavior is set by html[data-nav]: expanded | collapsible | accordion
+    (preset option "nav" in _data/styles.yml; also in the style switcher panel).
+{%- endcomment -%}
+<nav class="sidebar" aria-label="Site navigation">
+  <button type="button" class="nav-menu-toggle" aria-expanded="false" aria-controls="nav-list"><span class="nav-burger" aria-hidden="true"></span>Menu</button>
+  <ul id="nav-list" class="nav-list">
+  {%- for item in site.data.navigation %}
+    {%- if item.children %}
+      {%- assign has_current = false %}
+      {%- for child in item.children %}{% if page.url == child.url %}{% assign has_current = true %}{% endif %}{% endfor %}
+    <li class="nav-group{% if has_current %} has-current open{% endif %}" data-group="{{ item.title | slugify }}">
+      <button type="button" class="nav-toggle" aria-expanded="{{ has_current }}" aria-controls="nav-sub-{{ forloop.index }}"><span>{{ item.title }}</span><span class="nav-chevron" aria-hidden="true"></span></button>
+      <div class="nav-sub-wrap" id="nav-sub-{{ forloop.index }}">
+        <ul class="nav-sub">
+        {%- for child in item.children %}
+          <li class="nav-item"><a href="{% if child.url contains '://' %}{{ child.url }}{% else %}{{ child.url | relative_url }}{% endif %}"{% if page.url == child.url %} aria-current="page"{% endif %}>{{ child.title }}</a></li>
+        {%- endfor %}
+        </ul>
+      </div>
+    </li>
+    {%- else %}
+    <li class="nav-item"><a href="{% if item.url contains '://' %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}"{% if item.url and page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+    {%- endif %}
+  {%- endfor %}
+  </ul>
+</nav>
+<script>
+(function () {
+  var root = document.documentElement;
+  var nav = document.querySelector(".sidebar");
+  if (!nav) return;
+  var groups = Array.prototype.slice.call(nav.querySelectorAll(".nav-group"));
+  var small = window.matchMedia("(max-width: 52rem)");
+  var KEY = "dbic-nav-open";
+
+  function id(g) { return g.getAttribute("data-group"); }
+  function isOpen(g) { return g.classList.contains("open"); }
+  function toggleOf(g) { return g.querySelector(".nav-toggle"); }
+  function setOpen(g, open) {
+    g.classList.toggle("open", open);
+    toggleOf(g).setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  function readSaved() { try { return JSON.parse(sessionStorage.getItem(KEY) || "[]"); } catch (e) { return []; } }
+  function save() {
+    try { sessionStorage.setItem(KEY, JSON.stringify(groups.filter(isOpen).map(id))); } catch (e) {}
+  }
+
+  /* The mode actually in force: with the sidebar "across the top" on a wide screen,
+     groups are always shown open because they sit in columns. */
+  function mode() {
+    var m = root.getAttribute("data-nav") || "collapsible";
+    if (root.getAttribute("data-sidebar") === "top" && !small.matches) return "expanded";
+    return m;
+  }
+
+  function applyMode() {
+    var m = mode();
+    root.setAttribute("data-nav-mode", m);
+    groups.forEach(function (g) { toggleOf(g).disabled = (m === "expanded"); });
+    if (m === "expanded") { groups.forEach(function (g) { setOpen(g, true); }); return; }
+    var saved = m === "collapsible" ? readSaved() : [];
+    groups.forEach(function (g) {
+      setOpen(g, g.classList.contains("has-current") || saved.indexOf(id(g)) > -1);
+    });
+  }
+
+  nav.addEventListener("click", function (e) {
+    var btn = e.target.closest ? e.target.closest(".nav-toggle") : null;
+    if (!btn || btn.disabled) return;
+    var g = btn.parentNode, open = !isOpen(g);
+    if (open && mode() === "accordion") groups.forEach(function (o) { if (o !== g) setOpen(o, false); });
+    setOpen(g, open);
+    if (mode() === "collapsible") save();
+  });
+
+  /* Phone-width "Menu" button: the whole list is hidden until asked for. */
+  var menuBtn = nav.querySelector(".nav-menu-toggle");
+  menuBtn.addEventListener("click", function () {
+    var open = nav.classList.toggle("menu-open");
+    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  applyMode();
+  /* Re-apply when the style switcher (or anything else) changes the settings. */
+  if (window.MutationObserver) {
+    new MutationObserver(applyMode).observe(root, { attributes: true, attributeFilter: ["data-nav", "data-sidebar"] });
+  }
+  if (small.addEventListener) small.addEventListener("change", applyMode);
+  /* Switch animations on only after the first layout, so groups don't animate on page load. */
+  requestAnimationFrame(function () { requestAnimationFrame(function () { nav.classList.add("nav-ready"); }); });
+})();
+</script>

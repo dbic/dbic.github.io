@@ -5,13 +5,14 @@
 # Every preset has:
 #   label    name shown in the switcher
 #   options  sidebar: left | right | top      banner: "on" | "off"
+#            nav: expanded | collapsible | accordion   (how the menu groups open and close)
 #   vars     settings shared by light and dark mode (fonts, sizes, widths)
 #   light    colors in light mode
 #   dark     colors in dark mode (anything not listed falls back to the light value)
 
 default:
   label: "DBIC green (current look)"
-  options: { sidebar: "left", banner: "on" }
+  options: { sidebar: "left", banner: "on", nav: "collapsible" }
   vars:
     font: 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
     heading-font: 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
@@ -44,7 +45,7 @@ default:
 # stack in PBS_resources/css/style.css into the entries below.
 pbs_resources:
   label: "PBS_resources style (approximate)"
-  options: { sidebar: "left", banner: "off" }
+  options: { sidebar: "left", banner: "off", nav: "collapsible" }
   vars:
     font: '"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
     heading-font: '"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
@@ -74,7 +75,7 @@ pbs_resources:
 
 high_contrast:
   label: "High contrast (accessibility check)"
-  options: { sidebar: "left", banner: "on" }
+  options: { sidebar: "left", banner: "on", nav: "collapsible" }
   vars:
     font: 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
     heading-font: 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
@@ -104,7 +105,7 @@ high_contrast:
 
 editorial:
   label: "Editorial serif"
-  options: { sidebar: "left", banner: "on" }
+  options: { sidebar: "left", banner: "on", nav: "collapsible" }
   vars:
     font: 'Georgia, "Iowan Old Style", "Palatino Linotype", serif'
     heading-font: 'Georgia, "Iowan Old Style", "Palatino Linotype", serif'

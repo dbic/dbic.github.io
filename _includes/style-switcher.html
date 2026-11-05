@@ -58,7 +58,7 @@
 
   function curOptions() {
     var o = PRESETS[state.preset].options || {};
-    return { sidebar: state.sidebar || o.sidebar || "left", banner: state.banner || o.banner || "on" };
+    return { sidebar: state.sidebar || o.sidebar || "left", banner: state.banner || o.banner || "on", nav: state.nav || o.nav || "collapsible" };
   }
 
   function apply() {
@@ -75,6 +75,7 @@
     var o = curOptions();
     root.setAttribute("data-sidebar", o.sidebar);
     root.setAttribute("data-banner", o.banner);
+    root.setAttribute("data-nav", o.nav);
   }
   apply();
   if (mq && mq.addEventListener) mq.addEventListener("change", function () { if (state.mode === "auto") { apply(); sync(); } });
@@ -99,6 +100,7 @@
     $("sp-width").value = width; $("sp-width-v").textContent = width + "rem";
     var o = curOptions();
     $("sp-sidebar").value = o.sidebar;
+    $("sp-nav").value = o.nav;
     var hasBanner = !!document.querySelector(".site-header .banner");
     $("sp-banner").checked = o.banner === "on" && hasBanner;
     $("sp-banner").disabled = !hasBanner;
@@ -174,6 +176,7 @@
       '<label for="sp-size">Text size <span id="sp-size-v"></span></label><input type="range" id="sp-size" min="14" max="22" step="1">' +
       '<label for="sp-width">Content width <span id="sp-width-v"></span></label><input type="range" id="sp-width" min="36" max="90" step="2">' +
       '<label for="sp-sidebar">Navigation</label><select id="sp-sidebar"><option value="left">Sidebar left</option><option value="right">Sidebar right</option><option value="top">Across the top</option></select>' +
+      '<label for="sp-nav">Menu groups</label><select id="sp-nav"><option value="expanded">All expanded</option><option value="collapsible">Collapsible</option><option value="accordion">Accordion (one open)</option></select>' +
       '<div class="row" style="margin-top:.55rem"><input type="checkbox" id="sp-banner"><label for="sp-banner">Banner image (instead of title text)</label></div>' +
       '<div><button type="button" id="sp-reset">Reset</button><button type="button" id="sp-link">Copy link</button><button type="button" id="sp-yaml">Copy as preset</button></div>' +
       '<div id="sp-note"></div><textarea id="sp-out" readonly></textarea>';
@@ -196,6 +199,7 @@
     $("sp-size").addEventListener("input", function (e) { change("size", +e.target.value); });
     $("sp-width").addEventListener("input", function (e) { change("width", +e.target.value); });
     $("sp-sidebar").addEventListener("change", function (e) { change("sidebar", e.target.value); });
+    $("sp-nav").addEventListener("change", function (e) { change("nav", e.target.value); });
     $("sp-banner").addEventListener("change", function (e) { change("banner", e.target.checked ? "on" : "off"); });
     $("sp-reset").addEventListener("click", function () {
       state = { preset: DEFAULT, mode: "auto" }; persist(); apply(); sync();
