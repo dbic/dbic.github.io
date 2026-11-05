@@ -2,6 +2,7 @@
 # url: paths start with "/" and match the published page (.md -> .html);
 #      folder index pages end in "/". Full http(s) URLs are treated as external.
 # An item with "children" and no url is a heading for a group of links.
+# Optional  short:  gives a shorter label for the top-bar layout, where space is tight.
 
 - title: Home
   url: /
@@ -16,6 +17,7 @@
       url: /events/fbb.html
 
 - title: Research Infrastructure
+  short: Infrastructure
   children:
     - title: Computer resources
       url: /research_infrastructure/computer_resources.html
@@ -35,6 +37,7 @@
       url: /research_infrastructure/discovery.html
 
 - title: Policies & Procedures
+  short: Policies
   children:
     - title: Cancellations
       url: /policies/cancellations.html
@@ -64,9 +67,11 @@
       url: /policies/operator_training.html
 
 - title: PBS & DBIC Shared Resources
+  short: Shared Resources
   url: https://dbic.github.io/PBS_resources/index.html
 
 - title: Associated Programs
+  short: Programs
   children:
     - title: Consortium for Interacting Minds
       url: https://www.interactingminds.com/

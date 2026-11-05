@@ -101,6 +101,9 @@
     var o = curOptions();
     $("sp-sidebar").value = o.sidebar;
     $("sp-nav").value = o.nav;
+    var topBar = o.sidebar === "top" && window.matchMedia("(min-width: 52.01rem)").matches;
+    $("sp-nav").disabled = topBar;
+    $("sp-nav").title = topBar ? "In the top layout the groups are always dropdowns" : "";
     var hasBanner = !!document.querySelector(".site-header .banner");
     $("sp-banner").checked = o.banner === "on" && hasBanner;
     $("sp-banner").disabled = !hasBanner;
