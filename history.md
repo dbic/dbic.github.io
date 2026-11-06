@@ -4,7 +4,7 @@ source_url: https://www.dartmouth.edu/dbic/history.html
 retrieved: 2026-11-04
 ---
 
-[Home](index.md "Home") >
+[Home](/ "Home") >
 
 # History of the Dartmouth Brain Imaging Center (DBIC)
 

@@ -4,7 +4,7 @@ source_url: https://www.dartmouth.edu/dbic/research_infrastructure/
 retrieved: 2026-11-04
 ---
 
-[Home](../index.md "Home") >
+[Home](/ "Home") >
 
 # Research Infrastructure
 

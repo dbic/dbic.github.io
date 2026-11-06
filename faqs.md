@@ -4,7 +4,7 @@ source_url: https://www.dartmouth.edu/dbic/faqs.html
 retrieved: 2026-11-04
 ---
 
-[Home](index.md "Home") >
+[Home](/ "Home") >
 
 # FAQs
 

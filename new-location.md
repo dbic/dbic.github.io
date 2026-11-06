@@ -4,7 +4,7 @@ source_url: http://www.dartmouth.edu/dbic/new-location.html
 retrieved: 2026-11-04
 ---
 
-[Home](index.md "Home") >
+[Home](/ "Home") >
 
 # This Page Has Moved
 
@@ -13,4 +13,4 @@ The page you requested has been moved to a new location. This may be a result of
 - If you followed a link from another site, that link may be out of date. Please inform the maintainer of the referring page.
 - If you are looking for more information about one of the topics shown at right, please click on a link to learn more.
 
-Otherwise, please visit the [home page](index.md) for more information.
+Otherwise, please visit the [home page](/) for more information.

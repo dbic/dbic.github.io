@@ -4,7 +4,7 @@ source_url: https://www.dartmouth.edu/dbic/people/
 retrieved: 2026-11-04
 ---
 
-[Home](../index.md "Home") >
+[Home](/ "Home") >
 
 # People
 
