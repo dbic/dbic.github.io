@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dartmouth Brain Imaging Center · redesign prototype</title>
+<meta name="description" content="A shared MRI research facility for brain researchers across Dartmouth.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap">
+<script>
+document.documentElement.classList.add('js');
+try { var th = localStorage.getItem('dbic-theme'); if (th === 'light' || th === 'dark') document.documentElement.setAttribute('data-theme', th); } catch (e) {}
+</script>
+<style>
+:root {
+  --bg: #f5f9f6; --surface: #ffffff; --surface-2: #ecf4ef; --ink: #12201a; --muted: #51655a; --line: #d7e3db;
+  --accent: #00693e; --on-accent: #ffffff; --link: #00693e; --header-bg: #ffffff;
+  --hero-1: #00281a; --hero-2: #00693e; --hero-3: #0c8a73;
+  --shadow: 0 12px 32px rgba(6,38,24,.10); --shadow-lg: 0 22px 50px rgba(6,38,24,.18);
+  --c1: #0b7a4b; --c2: #0e7490; --c3: #4f46e5; --c4: #b45309; --c5: #be123c; --c6: #7c3aed;
+  --radius: 18px; --wrap: 72rem;
+  --font: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --display: Fraunces, Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+  color-scheme: light;
+  box-sizing: border-box; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#08110d;--surface:#0f1c15;--surface-2:#152a1f;--ink:#e7f1eb;--muted:#9bb0a4;--line:#21362a;--accent:#4fd39a;--on-accent:#04281a;--link:#58d9a4;--header-bg:#0c1711;--hero-1:#010d08;--hero-2:#004a2c;--hero-3:#0a6b5b;--shadow:0 12px 32px rgba(0,0,0,.45);--shadow-lg:0 22px 50px rgba(0,0,0,.6);--c1:#4fd39a;--c2:#4cc3de;--c3:#a5a0ff;--c4:#f5b25c;--c5:#ff8aa6;--c6:#c4a4ff;color-scheme:dark; } }
+:root[data-theme="dark"] { --bg:#08110d;--surface:#0f1c15;--surface-2:#152a1f;--ink:#e7f1eb;--muted:#9bb0a4;--line:#21362a;--accent:#4fd39a;--on-accent:#04281a;--link:#58d9a4;--header-bg:#0c1711;--hero-1:#010d08;--hero-2:#004a2c;--hero-3:#0a6b5b;--shadow:0 12px 32px rgba(0,0,0,.45);--shadow-lg:0 22px 50px rgba(0,0,0,.6);--c1:#4fd39a;--c2:#4cc3de;--c3:#a5a0ff;--c4:#f5b25c;--c5:#ff8aa6;--c6:#c4a4ff;color-scheme:dark; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 4.75rem); }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.65 var(--font); -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--header-bg); z-index: 70; }
+img, svg { max-width: 100%; }
+a { color: var(--link); text-underline-offset: .18em; }
+:focus-visible { outline: 3px solid #3d9bff; outline-offset: 2px; border-radius: 6px; }
+.wrap { width: min(var(--wrap), 100% - 2.5rem); margin-inline: auto; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: absolute; left: .75rem; top: -4rem; background: #fff; color: #000; padding: .6rem 1rem; border-radius: 8px; z-index: 100; }
+.skip:focus { top: calc(env(safe-area-inset-top, 0px) + .5rem); }
+h1, h2, h3 { font-family: var(--display); line-height: 1.12; margin: 0; letter-spacing: -.01em; }
+h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); }
+h3 { font-size: 1.25rem; }
+p { margin: 0 0 1rem; }
+.eyebrow { font: 600 .8rem/1 var(--font); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: .8rem; }
+.lead-in { color: var(--muted); max-width: 44rem; margin-top: .9rem; font-size: 1.1rem; }
+.section { padding: clamp(3.2rem, 7vw, 5.5rem) 0; }
+.section.alt { background: var(--surface-2); }
+.sec-head { margin-bottom: 2rem; }
+
+/* ---------- buttons ---------- */
+.btn { display: inline-flex; align-items: center; gap: .5rem; padding: .8rem 1.3rem; border-radius: 999px; font: 600 1rem/1.2 var(--font); text-decoration: none; border: 2px solid transparent; cursor: pointer; transition: transform .15s, background .15s, box-shadow .15s; }
+.btn:hover { transform: translateY(-2px); }
+.btn-sm { padding: .5rem 1rem; font-size: .92rem; white-space: nowrap; }
+.btn-solid { background: var(--accent); color: var(--on-accent); }
+.btn-outline { border-color: var(--accent); color: var(--accent); background: transparent; }
+.btn-light { background: #fff; color: #00492a; box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+.btn-ghost { border-color: rgba(255,255,255,.65); color: #fff; }
+.btn-ghost:hover { background: rgba(255,255,255,.12); }
+.icon-btn { display: inline-flex; align-items: center; gap: .4rem; min-width: 2.5rem; height: 2.5rem; justify-content: center; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: inherit; cursor: pointer; padding: 0 .6rem; }
+.icon-btn:hover { background: var(--surface-2); }
+.icon-btn svg { flex: none; width: 1.15rem; height: 1.15rem; }
+kbd { font: 600 .75rem/1 var(--font); border: 1px solid var(--line); border-radius: 5px; padding: .15rem .35rem; color: var(--muted); background: var(--bg); }
+
+/* ---------- header ---------- */
+.hdr { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 60; background: var(--header-bg); border-bottom: 1px solid var(--line); }
+.hdr .wrap { width: min(84rem, 100% - 2.5rem); }
+.hdr-in { display: flex; align-items: center; gap: 1rem; min-height: 4.25rem; }
+.brand { display: flex; align-items: center; gap: .7rem; color: var(--accent); text-decoration: none; }
+.mark { width: 2.2rem; height: 2.2rem; flex: none; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; color: var(--ink); }
+.brand-text strong { font: 700 1.15rem/1 var(--display); letter-spacing: .04em; }
+.brand-text span { font-size: .72rem; color: var(--muted); letter-spacing: .02em; white-space: nowrap; }
+.nav { display: flex; gap: .1rem; margin-left: auto; }
+.menu { position: relative; }
+.menu-btn { white-space: nowrap; display: inline-flex; align-items: center; gap: .35rem; border: 0; background: none; color: var(--ink); font: 600 .95rem/1 var(--font); padding: .7rem .75rem; border-radius: 10px; cursor: pointer; }
+.menu-btn:hover, .menu.open .menu-btn { background: var(--surface-2); }
+.chev { flex: none; width: .8rem; height: .8rem; transition: transform .2s; }
+.menu.open .chev { transform: rotate(180deg); }
+.menu-panel { display: none; position: absolute; top: calc(100% + .35rem); left: 0; min-width: 16.5rem; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow-lg); padding: .4rem; }
+.menu.open .menu-panel { display: block; }
+.menu:nth-last-child(-n+2) .menu-panel { left: auto; right: 0; }
+.menu-panel a { display: block; padding: .55rem .75rem; border-radius: 9px; color: var(--ink); text-decoration: none; font-size: .96rem; }
+.menu-panel a:hover { background: var(--surface-2); color: var(--accent); }
+.hdr-actions { display: flex; align-items: center; gap: .5rem; }
+.burger { display: none; }
+
+/* ---------- hero ---------- */
+.hero { position: relative; color: #fff; background: linear-gradient(155deg, var(--hero-1) 0%, var(--hero-2) 58%, var(--hero-3) 100%); overflow: hidden; isolation: isolate; }
+.hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; }
+.hero::after { content: ""; position: absolute; left: 0; right: 0; top: -140px; height: 140px; background: linear-gradient(to bottom, transparent, rgba(255,255,255,.08), transparent); z-index: -1; animation: scan 10s linear infinite; pointer-events: none; }
+@keyframes scan { to { top: 100%; } }
+.hero-in { padding: clamp(3.5rem, 9vw, 6.5rem) 0 clamp(6.5rem, 12vw, 9rem); max-width: 100%; }
+.eyebrow-w { font: 600 .82rem/1 var(--font); letter-spacing: .14em; text-transform: uppercase; color: #9be8c4; margin-bottom: 1.1rem; }
+.hero h1 { font-size: clamp(2.7rem, 7.5vw, 5.2rem); font-weight: 700; line-height: 1.02; max-width: 14ch; }
+.hero .lead { font: 500 clamp(1.2rem, 2.6vw, 1.7rem)/1.35 var(--display); margin: 1.3rem 0 .8rem; max-width: 36rem; }
+.rot { display: inline-block; color: #8ff0c3; transition: opacity .28s, transform .28s; }
+.rot.swap { opacity: 0; transform: translateY(8px); }
+.hero .sub { max-width: 38rem; color: #d9efe4; font-size: 1.08rem; }
+.cta-row { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.6rem; align-items: center; }
+.link-w { color: #fff; font-weight: 600; margin-left: .4rem; }
+
+/* ---------- live status strip ---------- */
+.status { position: relative; z-index: 2; margin-top: -3.4rem; }
+.status-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.chip-card { display: flex; gap: .9rem; align-items: flex-start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.05rem 1.2rem; box-shadow: var(--shadow); color: var(--ink); text-decoration: none; transition: transform .2s, box-shadow .2s; }
+a.chip-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.chip-card .dot { width: .7rem; height: .7rem; border-radius: 50%; background: var(--c1); margin-top: .55rem; flex: none; box-shadow: 0 0 0 0 rgba(11,122,75,.5); animation: pulse 2.4s infinite; }
+@keyframes pulse { 70% { box-shadow: 0 0 0 .6rem rgba(11,122,75,0); } 100% { box-shadow: 0 0 0 0 rgba(11,122,75,0); } }
+.chip-card small { display: block; font: 600 .72rem/1 var(--font); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: .35rem; }
+.chip-card b { display: block; font-weight: 600; line-height: 1.35; }
+.chip-card span.s { display: block; color: var(--muted); font-size: .9rem; margin-top: .15rem; }
+
+/* ---------- "what would you like to do" tiles ---------- */
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); gap: 1.1rem; }
+.tile { --c: var(--c1); display: flex; flex-direction: column; gap: .7rem; padding: 1.5rem; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); color: var(--ink); text-decoration: none; transition: transform .2s, box-shadow .2s, border-color .2s; position: relative; overflow: hidden; }
+.tile::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: var(--c); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+.tile:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--c); }
+.tile:hover::before { transform: scaleX(1); }
+.ico-tile { width: 3rem; height: 3rem; border-radius: 14px; display: grid; place-items: center; color: var(--c); background: rgba(0,0,0,.05); background: color-mix(in srgb, var(--c) 14%, transparent); }
+.ico-tile svg { width: 1.6rem; height: 1.6rem; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.tile h3 { font-size: 1.3rem; }
+.tile p { color: var(--muted); margin: 0; font-size: 1rem; }
+.tile .go { margin-top: auto; padding-top: .3rem; font-weight: 600; color: var(--c); }
+.tile .go::after { content: " →"; transition: margin .2s; }
+.tile:hover .go::after { margin-left: .3rem; }
+
+/* ---------- how a study works ---------- */
+.stepper { display: grid; grid-template-columns: minmax(15rem, 21rem) 1fr; gap: 2rem; align-items: start; }
+.steps { display: flex; flex-direction: column; gap: .5rem; position: relative; }
+.step-tab { display: flex; align-items: center; gap: .9rem; width: 100%; text-align: left; padding: .8rem .9rem; border-radius: 14px; border: 1px solid transparent; background: none; color: var(--ink); font: 600 1rem/1.25 var(--font); cursor: pointer; transition: background .2s, border-color .2s; }
+.step-tab .n { flex: none; width: 2.2rem; height: 2.2rem; border-radius: 50%; display: grid; place-items: center; background: var(--surface); border: 2px solid var(--line); font-weight: 700; color: var(--muted); transition: all .2s; }
+.step-tab:hover { background: var(--surface); }
+.step-tab[aria-selected="true"] { background: var(--surface); border-color: var(--line); box-shadow: var(--shadow); }
+.step-tab[aria-selected="true"] .n { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.step-tab small { display: block; font-weight: 400; color: var(--muted); font-size: .85rem; }
+.step-panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(1.4rem, 3vw, 2.2rem); box-shadow: var(--shadow); min-height: 18rem; }
+.step-panel[hidden] { display: none; }
+.step-panel h3 { font-size: 1.6rem; margin-bottom: .8rem; }
+.step-panel ul { margin: 0 0 1.2rem; padding-left: 1.2rem; }
+.step-panel li { margin-bottom: .45rem; }
+.panel-links { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
+.contact-note { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px dashed var(--line); color: var(--muted); font-size: .95rem; }
+
+/* ---------- facility ---------- */
+.stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.3rem 1.1rem; text-align: center; }
+.stat .big { font: 700 clamp(2rem, 4.2vw, 3rem)/1 var(--display); color: var(--accent); }
+.stat .big sup { font-size: .5em; vertical-align: top; margin-left: .1em; }
+.stat p { margin: .5rem 0 0; color: var(--muted); font-size: .92rem; line-height: 1.35; }
+.specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr)); gap: 1rem; }
+.spec { --c: var(--c2); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.3rem; display: flex; flex-direction: column; gap: .5rem; }
+.spec h3 { font-size: 1.15rem; display: flex; align-items: center; gap: .6rem; }
+.spec h3 i { width: .7rem; height: .7rem; border-radius: 3px; background: var(--c); display: inline-block; }
+.spec p { margin: 0; color: var(--muted); font-size: .98rem; }
+.spec a { margin-top: auto; font-weight: 600; font-size: .95rem; }
+.timeline { list-style: none; margin: 2.2rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; position: relative; }
+.timeline::before { content: ""; position: absolute; left: 0; right: 0; top: .55rem; height: 3px; background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3)); border-radius: 3px; opacity: .55; }
+.timeline li { position: relative; padding-top: 1.7rem; }
+.timeline li::before { content: ""; position: absolute; left: 0; top: 0; width: 1.1rem; height: 1.1rem; border-radius: 50%; background: var(--bg); border: 4px solid var(--accent); transition: transform .2s; }
+.timeline li:hover::before { transform: scale(1.3); }
+.timeline b { display: block; font: 700 1.2rem/1.1 var(--display); color: var(--accent); }
+.timeline span { display: block; font-size: .92rem; color: var(--muted); margin-top: .3rem; line-height: 1.4; }
+
+/* ---------- research slideshow ---------- */
+.show-bar { display: flex; align-items: end; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.show-ctl { display: flex; gap: .5rem; align-items: center; }
+.track { position: relative; display: flex; gap: 1.1rem; overflow-x: auto; scroll-snap-type: x mandatory; padding: .3rem .1rem 1.1rem; scrollbar-width: thin; }
+.slide { --c: var(--c1); flex: 0 0 min(27rem, 86%); scroll-snap-align: start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
+.slide-art { height: 9.5rem; position: relative; background: linear-gradient(135deg, var(--c), color-mix(in srgb, var(--c) 45%, #000)); overflow: hidden; }
+.slide-art svg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .5; }
+.slide-art b { position: absolute; left: 1.2rem; bottom: .9rem; color: #fff; font: 700 2.1rem/1 var(--display); text-shadow: 0 2px 10px rgba(0,0,0,.35); }
+.slide-body { padding: 1.3rem 1.4rem 1.5rem; display: flex; flex-direction: column; gap: .5rem; flex: 1; }
+.slide-body h3 { font-size: 1.25rem; }
+.slide-body p { margin: 0; color: var(--muted); font-size: .98rem; }
+.slide-body a { margin-top: auto; padding-top: .4rem; font-weight: 600; }
+.dots { display: flex; gap: .4rem; justify-content: center; margin-top: .3rem; }
+.dots button { width: .7rem; height: .7rem; border-radius: 50%; border: 0; background: var(--line); cursor: pointer; padding: 0; transition: all .2s; }
+.dots button[aria-current="true"] { background: var(--accent); width: 1.8rem; border-radius: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.4rem; }
+.chip { display: inline-block; padding: .4rem .85rem; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); font: 500 .92rem/1.2 var(--font); color: var(--ink); cursor: default; }
+button.chip { cursor: pointer; }
+button.chip[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+
+/* ---------- safety & compliance ---------- */
+.safety { background: linear-gradient(160deg, #00281a, #003d24 60%, #04563a); color: #fff; }
+.safety .eyebrow { color: #9be8c4; }
+.safety .lead-in { color: #cfe8db; }
+.safe-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 2.2rem; align-items: start; }
+.rules { display: grid; gap: 1rem; }
+.rule { display: flex; gap: 1rem; padding: 1.1rem 1.2rem; border-radius: 16px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); }
+.rule .ri { flex: none; width: 2.6rem; height: 2.6rem; border-radius: 12px; display: grid; place-items: center; background: rgba(255,255,255,.14); color: #9be8c4; }
+.rule .ri svg { width: 1.45rem; height: 1.45rem; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.rule b { display: block; font-size: 1.05rem; margin-bottom: .15rem; }
+.rule span { color: #d3eadd; font-size: .97rem; line-height: 1.5; }
+.docs { background: var(--surface); color: var(--ink); border-radius: var(--radius); padding: 1.5rem; box-shadow: 0 18px 44px rgba(0,0,0,.3); }
+.docs h3 { margin-bottom: .3rem; }
+.docs p { color: var(--muted); font-size: .95rem; }
+.docs ul { list-style: none; margin: .5rem 0 1rem; padding: 0; }
+.docs li { border-top: 1px solid var(--line); }
+.docs li a { display: flex; justify-content: space-between; gap: .8rem; padding: .7rem .2rem; text-decoration: none; font-weight: 500; color: var(--ink); }
+.docs li a::after { content: "↗"; color: var(--accent); }
+.docs li a:hover { color: var(--accent); }
+
+/* ---------- data ---------- */
+.ds-tools { display: flex; flex-wrap: wrap; gap: .8rem; align-items: center; margin-bottom: 1.2rem; }
+.search { flex: 1 1 16rem; max-width: 24rem; padding: .7rem 1rem; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); color: var(--ink); font: inherit; }
+.ds-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: .9rem; }
+.ds { display: flex; flex-direction: column; gap: .35rem; padding: 1.1rem 1.2rem; border-radius: 14px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); text-decoration: none; transition: transform .2s, box-shadow .2s; }
+.ds[hidden] { display: none; }
+.ds:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.ds strong { font-size: 1.02rem; }
+.ds span { color: var(--muted); font-size: .92rem; line-height: 1.4; }
+.tag { font: 600 .72rem/1 var(--font); font-style: normal; padding: .3rem .55rem; border-radius: 999px; align-self: flex-start; margin-top: .3rem; }
+.tag-open { background: color-mix(in srgb, var(--c1) 16%, transparent); color: var(--c1); }
+.tag-terms { background: color-mix(in srgb, var(--c4) 16%, transparent); color: var(--c4); }
+.ds-meta { color: var(--muted); font-size: .92rem; margin-left: auto; }
+.empty { padding: 1.2rem; color: var(--muted); }
+
+/* ---------- community ---------- */
+.comm { display: grid; grid-template-columns: 1.05fr .95fr; gap: 1.5rem; align-items: start; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
+.tabs { display: flex; gap: .4rem; flex-wrap: wrap; margin: .8rem 0 1rem; }
+.tab { border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 999px; padding: .4rem .9rem; font: 600 .9rem/1.2 var(--font); cursor: pointer; }
+.tab[aria-selected="true"] { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.up { list-style: none; margin: 0; padding: 0; }
+.up li { display: flex; gap: 1rem; padding: .8rem 0; border-top: 1px solid var(--line); align-items: baseline; }
+.up time { flex: 0 0 7.6rem; font-weight: 700; color: var(--accent); }
+.up small { display: block; color: var(--muted); font-size: .9rem; }
+.up-more { margin-top: .8rem; font-weight: 600; }
+.learn { display: grid; gap: .9rem; }
+.learn div { display: flex; gap: .9rem; }
+.learn .ri { --c: var(--c3); flex: none; width: 2.6rem; height: 2.6rem; border-radius: 12px; display: grid; place-items: center; color: var(--c); background: rgba(0,0,0,.05); background: color-mix(in srgb, var(--c) 14%, transparent); }
+.learn .ri svg { width: 1.4rem; height: 1.4rem; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.learn b { display: block; }
+.learn span { color: var(--muted); font-size: .97rem; }
+
+/* ---------- team & contact ---------- */
+.team { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1rem; }
+.person { display: flex; flex-direction: column; gap: .25rem; align-items: flex-start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.3rem; text-decoration: none; color: var(--ink); transition: transform .2s, box-shadow .2s; }
+.person:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.avatar { width: 3.6rem; height: 3.6rem; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--accent), var(--c2)); color: var(--on-accent); font: 700 1.15rem/1 var(--display); margin-bottom: .6rem; }
+.person strong { font-size: 1.08rem; }
+.role { color: var(--accent); font-weight: 600; font-size: .92rem; }
+.ask { color: var(--muted); font-size: .9rem; margin-top: .25rem; }
+.contact { margin-top: 1.6rem; display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.2rem; }
+.contact .card h3 { margin-bottom: .5rem; }
+.contact address { font-style: normal; color: var(--muted); }
+
+/* ---------- footer ---------- */
+.foot { background: var(--header-bg); border-top: 1px solid var(--line); padding: 3rem 0 2rem; font-size: .95rem; }
+.foot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 1.6rem; }
+.foot h3 { font: 700 .8rem/1 var(--font); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: .8rem; }
+.foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; }
+.foot a { color: var(--ink); text-decoration: none; }
+.foot a:hover { color: var(--accent); text-decoration: underline; }
+.fine { margin-top: 2rem; padding-top: 1.2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .88rem; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between; }
+
+/* ---------- quick find ---------- */
+dialog#qf { border: 0; padding: 0; background: transparent; width: min(40rem, 94vw); max-width: none; margin: 8vh auto auto; color: var(--ink); }
+dialog#qf::backdrop { background: rgba(3, 18, 11, .6); backdrop-filter: blur(3px); }
+.qf-box { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow-lg); overflow: hidden; }
+.qf-head { display: flex; gap: .5rem; padding: .8rem; border-bottom: 1px solid var(--line); }
+.qf-head input { flex: 1; font: 500 1.1rem/1.3 var(--font); padding: .7rem .9rem; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); color: var(--ink); }
+#qf-list { list-style: none; margin: 0; padding: .4rem; max-height: 55vh; overflow: auto; }
+#qf-list a { display: flex; justify-content: space-between; gap: 1rem; padding: .7rem .9rem; border-radius: 10px; text-decoration: none; color: var(--ink); }
+#qf-list a small { color: var(--muted); }
+#qf-list a:hover, #qf-list a.on { background: var(--surface-2); color: var(--accent); }
+.qf-foot { margin: 0; padding: .6rem 1rem; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); }
+
+/* ---------- motion ---------- */
+@media print { .js .reveal { opacity: 1 !important; transform: none !important; } .hero::after { display: none; } .hdr { position: static; } }
+.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.js .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .hero::after, .chip-card .dot { animation: none; }
+  .btn, .tile, .person, .ds, a.chip-card { transition: none; }
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 88rem) { .hdr-actions .btn { display: none; } }
+@media (max-width: 78rem) { .menu-btn { padding: .7rem .6rem; } .brand-text span { display: none; } }
+@media (max-width: 66rem) {
+  .burger { display: inline-flex; }
+  .nav { display: none; position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; background: var(--header-bg); border-bottom: 1px solid var(--line); padding: .6rem 1.25rem 1rem; max-height: calc(100vh - 4.5rem); overflow: auto; margin: 0; box-shadow: var(--shadow-lg); }
+  .nav.open { display: flex; }
+  .menu-btn { width: 100%; justify-content: space-between; }
+  .menu-panel, .menu:nth-last-child(-n+2) .menu-panel { position: static; box-shadow: none; border: 0; background: var(--surface-2); margin: .2rem 0 .5rem; min-width: 0; right: auto; }
+  .hdr-actions .btn { display: none; }
+}
+@media (max-width: 60rem) {
+  .stepper, .safe-grid, .comm, .contact { grid-template-columns: 1fr; }
+  .steps { flex-direction: row; overflow-x: auto; padding-bottom: .5rem; }
+  .step-tab { flex: 0 0 auto; width: auto; }
+  .step-tab small { display: none; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .timeline { grid-template-columns: 1fr; padding-left: .4rem; }
+  .timeline::before { left: .5rem; right: auto; top: 0; bottom: 0; width: 3px; height: auto; }
+  .timeline li { padding: 0 0 .6rem 1.9rem; }
+  .status-grid { grid-template-columns: 1fr; }
+  .status { margin-top: -2.4rem; }
+}
+@media (max-width: 34rem) {
+  .brand-text span { display: none; }
+  .hdr-actions kbd { display: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr" id="top">
+  <div class="wrap hdr-in">
+    <a class="brand" href="#top" aria-label="Dartmouth Brain Imaging Center, home">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="20" cy="20" r="8.5" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="20" cy="20" r="2.4" fill="currentColor"/></svg>
+      <span class="brand-text"><strong>DBIC</strong><span>Dartmouth Brain Imaging Center</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main"><div class="menu"><button type="button" class="menu-btn" aria-expanded="false" aria-controls="m1">Research with us<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="menu-panel" id="m1"><a href="#how">How a study works</a><a href="https://dbic.github.io/policies/dbic_protocol.html" target=_blank rel=noopener>Submit a protocol</a><a href="https://dbic.github.io/policies/scheduling.html" target=_blank rel=noopener>Schedule scan time</a><a href="https://dbic.github.io/policies/dbic_billing.html" target=_blank rel=noopener>Scanning rates</a><a href="https://dbic.github.io/policies/cancellations.html" target=_blank rel=noopener>Cancellations</a><a href="https://dbic.github.io/policies/forms_templates.html" target=_blank rel=noopener>Forms &amp; templates</a><a href="https://dbic.github.io/policies/dbic_parking.html" target=_blank rel=noopener>Parking &amp; visiting</a></div></div><div class="menu"><button type="button" class="menu-btn" aria-expanded="false" aria-controls="m2">Training &amp; safety<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="menu-panel" id="m2"><a href="https://dbic.github.io/policies/safetytraining.html" target=_blank rel=noopener>MRI safety training</a><a href="https://dbic.github.io/policies/operator_training.html" target=_blank rel=noopener>Scan operator training</a><a href="#safety">Safety &amp; compliance policies</a><a href="https://dbic.github.io/policies/codeofconduct.html" target=_blank rel=noopener>Code of conduct</a><a href="https://dbic.github.io/policies/housekeeping.html" target=_blank rel=noopener>Housekeeping</a></div></div><div class="menu"><button type="button" class="menu-btn" aria-expanded="false" aria-controls="m3">Facility &amp; data<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="menu-panel" id="m3"><a href="https://dbic.github.io/research_infrastructure/fmri_scanner.html" target=_blank rel=noopener>fMRI scanner</a><a href="https://dbic.github.io/research_infrastructure/coils.html" target=_blank rel=noopener>Head coils</a><a href="https://dbic.github.io/research_infrastructure/sequences.html" target=_blank rel=noopener>Sequences</a><a href="https://dbic.github.io/research_infrastructure/peripherals.html" target=_blank rel=noopener>Peripherals</a><a href="https://dbic.github.io/research_infrastructure/qualityassurance.html" target=_blank rel=noopener>Quality assurance</a><a href="https://dbic.github.io/research_infrastructure/computer_resources.html" target=_blank rel=noopener>Computer resources</a><a href="https://dbic.github.io/research_infrastructure/discovery.html" target=_blank rel=noopener>Using Discovery</a><a href="https://dbic.github.io/research_infrastructure/datasets.html" target=_blank rel=noopener>Hosted datasets</a></div></div><div class="menu"><button type="button" class="menu-btn" aria-expanded="false" aria-controls="m4">Community<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="menu-panel" id="m4"><a href="https://dbic.github.io/events/fbb.html" target=_blank rel=noopener>Brown-bag talks</a><a href="https://dbic.github.io/highlights/" target=_blank rel=noopener>Research highlights</a><a href="https://dbic.github.io/videos/study_demo.html" target=_blank rel=noopener>Study demonstration video</a><a href="https://dbic.github.io/PBS_resources/index.html" target=_blank rel=noopener>PBS &amp; DBIC shared resources</a></div></div><div class="menu"><button type="button" class="menu-btn" aria-expanded="false" aria-controls="m5">About<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="menu-panel" id="m5"><a href="https://dbic.github.io/people/directorsstaff.html" target=_blank rel=noopener>Our team</a><a href="https://dbic.github.io/people/advisorycommittee.html" target=_blank rel=noopener>Advisory committee</a><a href="https://dbic.github.io/people/affiliated.html" target=_blank rel=noopener>Affiliated faculty</a><a href="https://dbic.github.io/history.html" target=_blank rel=noopener>History</a><a href="https://dbic.github.io/faqs.html" target=_blank rel=noopener>FAQ</a><a href="#contact">Contact</a></div></div></nav>
+    <div class="hdr-actions">
+      <button type="button" class="icon-btn" id="qf-open" aria-label="Search the site" aria-haspopup="dialog">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><kbd>/</kbd>
+      </button>
+      <button type="button" class="icon-btn" id="theme" aria-pressed="false" aria-label="Switch color mode"><span class="ico" aria-hidden="true">☾</span></button>
+      <a class="btn btn-solid btn-sm" href="#how">Start a study</a>
+      <button type="button" class="icon-btn burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero" aria-labelledby="h1">
+  <canvas id="neural" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <p class="eyebrow-w">Dartmouth College · Moore Hall</p>
+    <h1 id="h1">See the brain at work.</h1>
+    <p class="lead">A shared MRI research facility for <span class="rot" id="rot" aria-hidden="true">cognitive neuroscience</span><span class="sr">brain research across disciplines</span>.</p>
+    <p class="sub">The Dartmouth Brain Imaging Center is a research resource for brain scientists across Dartmouth: a state-of-the-art 3 tesla MRI scanner, expert staff, and a community that helps ideas become studies.</p>
+    <div class="cta-row">
+      <a class="btn btn-light" href="#how">Start a study</a>
+      <a class="btn btn-ghost" href="#facility">Explore the facility</a>
+      <a class="link-w" href="#safety">Safety &amp; compliance →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LIVE STATUS ================= -->
+<div class="status">
+  <div class="wrap status-grid" id="status" aria-label="What is coming up">
+    <a class="chip-card" id="st-train" href="https://dbic.github.io/policies/safetytraining.html" target="_blank" rel="noopener"><i class="dot"></i><div><small>Next safety training</small><b>Loading…</b></div></a>
+    <a class="chip-card" id="st-sched" href="https://dbic.github.io/policies/scheduling.html" target="_blank" rel="noopener"><i class="dot"></i><div><small>Scan-time requests</small><b>Loading…</b></div></a>
+    <a class="chip-card" href="mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20inquiry"><i class="dot"></i><div><small>Questions?</small><b>Courtney Rogers</b><span class="s">Scheduling, protocols and training</span></div></a>
+  </div>
+</div>
+
+<!-- ================= WHAT DO YOU NEED ================= -->
+<section class="section" id="start" aria-labelledby="h-start">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Start here</p>
+      <h2 id="h-start">What would you like to do?</h2>
+      <p class="lead-in">Whether you are planning a first study, certifying as a scan operator, reviewing our safety practices, or just curious, here are the quickest ways in.</p>
+    </div>
+    <div class="tiles">
+      <a class="tile reveal" style="--c:var(--c1)" href="#how"><span class="ico-tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4h6v3H9z"/><path d="M7 5H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1"/><path d="m9 14 2 2 4-4"/></svg></span><h3>Start a study</h3><p>From ethics approval to your first scan: five steps, in order.</p><span class="go">See how it works</span></a>
+      <a class="tile reveal" style="--c:var(--c3)" href="https://dbic.github.io/policies/safetytraining.html" target="_blank" rel="noopener"><span class="ico-tile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M8.5 13.5 7 21l5-3 5 3-1.5-7.5"/></svg></span><h3>Get trained</h3><p>MRI safety training for everyone, and certification to run the scanner yourself.</p><span class="go">Training options</span></a>
+      <a class="tile reveal" style="--c:var(--c5)" href="#safety"><span class="ico-tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 8 7 10 4-2 7-5.5 7-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span><h3>Safety &amp; compliance</h3><p>Screening, emergency, incident-reporting and housekeeping policies in one place.</p><span class="go">Review our practices</span></a>
+      <a class="tile reveal" style="--c:var(--c2)" href="#facility"><span class="ico-tile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/><path d="M4 12h2M18 12h2"/></svg></span><h3>Facility &amp; equipment</h3><p>A 3T Siemens Prisma, three head coils, and a full toolkit for delivering tasks.</p><span class="go">Explore the specs</span></a>
+      <a class="tile reveal" style="--c:var(--c4)" href="#data"><span class="ico-tile"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg></span><h3>Data &amp; computing</h3><p>Storage, the Discovery cluster, and 14 hosted datasets ready to analyze.</p><span class="go">Browse datasets</span></a>
+      <a class="tile reveal" style="--c:var(--c6)" href="#community"><span class="ico-tile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.9.3 5 2.6 5 5.8"/></svg></span><h3>Learn &amp; connect</h3><p>Brown-bag talks, workshops, and support for student research.</p><span class="go">Join the community</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW A STUDY WORKS ================= -->
+<section class="section alt" id="how" aria-labelledby="h-how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Research with us</p>
+      <h2 id="h-how">How a study works</h2>
+      <p class="lead-in">From first idea to first scan, in order. Each step links to the full details.</p>
+    </div>
+    <div class="stepper reveal">
+      <div class="steps" role="tablist" aria-label="Steps to run a study" aria-orientation="vertical" id="steps">
+        <button class="step-tab" role="tab" id="t1" aria-controls="p1" aria-selected="true"><span class="n">1</span><span>Get ethics approval<small>CPHS &amp; IRB education</small></span></button>
+        <button class="step-tab" role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1"><span class="n">2</span><span>Apply to the DBIC<small>Protocol review</small></span></button>
+        <button class="step-tab" role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1"><span class="n">3</span><span>Get trained<small>Safety &amp; operator training</small></span></button>
+        <button class="step-tab" role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1"><span class="n">4</span><span>Request scan time<small>Tiers, hours &amp; rates</small></span></button>
+        <button class="step-tab" role="tab" id="t5" aria-controls="p5" aria-selected="false" tabindex="-1"><span class="n">5</span><span>Scan &amp; analyze<small>Billing, data &amp; compute</small></span></button>
+      </div>
+      <div id="steps-panels">
+        <div class="step-panel" role="tabpanel" id="p1" aria-labelledby="t1">
+          <h3>1. Get ethics approval</h3>
+          <ul>
+            <li>All research conducted in the DBIC must have approval from Dartmouth’s Committee for the Protection of Human Subjects (CPHS).</li>
+            <li>Everyone working on the study completes IRB education (the CITI Group 2 Social/Behavioral Basic course) and is listed on the CPHS protocol.</li>
+          </ul>
+          <div class="panel-links"><a class="btn btn-solid btn-sm" href="https://www.dartmouth.edu/cphs/tosubmit/education/index.html" target="_blank" rel="noopener">CPHS education requirements</a><button type="button" class="btn btn-outline btn-sm" data-next-step="1">Next: apply to the DBIC →</button></div>
+        </div>
+        <div class="step-panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+          <h3>2. Apply to the DBIC</h3>
+          <ul>
+            <li>Send the DBIC application with your CPHS protocol, the CPHS-stamped consent form, and a supplemental description of your study design.</li>
+            <li>New protocols are reviewed before they begin; incomplete submissions wait until they are complete.</li>
+            <li>Courtney Rogers is happy to talk it through by Zoom or in person.</li>
+          </ul>
+          <div class="panel-links"><a class="btn btn-solid btn-sm" href="https://dbic.github.io/policies/dbic_protocol.html" target="_blank" rel="noopener">Protocol instructions</a><button type="button" class="btn btn-outline btn-sm" data-next-step="2">Next: get trained →</button></div>
+        </div>
+        <div class="step-panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+          <h3>3. Get trained</h3>
+          <ul>
+            <li><b>Everyone</b> completes MRI safety training: an in-person session with the MRI technologist (up to four people per class) plus an online module.</li>
+            <li><b>To run the scanner yourself,</b> become an operator-in-training, complete at least 10 hours of hands-on training with a certified operator, and pass a final competency check with the MRI technologist present.</li>
+            <li>At least two people are in the control room at all times: a certified scan operator and a safety-trained assistant.</li>
+          </ul>
+          <div class="panel-links"><a class="btn btn-solid btn-sm" href="https://dbic.github.io/policies/safetytraining.html" target="_blank" rel="noopener">Safety training</a><a class="btn btn-outline btn-sm" href="https://dbic.github.io/policies/operator_training.html" target="_blank" rel="noopener">Operator training</a><button type="button" class="btn btn-outline btn-sm" data-next-step="3">Next: scan time →</button></div>
+        </div>
+        <div class="step-panel" role="tabpanel" id="p4" aria-labelledby="t4" hidden>
+          <h3>4. Request scan time</h3>
+          <ul>
+            <li>With an approved protocol, email your request to Courtney Rogers, who schedules all scanner activity.</li>
+            <li>Time is allocated in three tiers (grant-funded, department-funded, then everyone else), each with a monthly request window.</li>
+            <li>Peak hours are weekdays 8 a.m. to 4 p.m. Evenings and weekends need both a certified operator and a certified scan buddy.</li>
+          </ul>
+          <div class="panel-links"><a class="btn btn-solid btn-sm" href="https://dbic.github.io/policies/scheduling.html" target="_blank" rel="noopener">Scheduling details</a><a class="btn btn-outline btn-sm" href="https://dbic.github.io/policies/dbic_billing.html" target="_blank" rel="noopener">Scanning rates</a><button type="button" class="btn btn-outline btn-sm" data-next-step="4">Next: scan &amp; analyze →</button></div>
+        </div>
+        <div class="step-panel" role="tabpanel" id="p5" aria-labelledby="t5" hidden>
+          <h3>5. Scan and analyze</h3>
+          <ul>
+            <li>Scan time is logged and invoiced monthly for each protocol; the PI or designee reviews each invoice.</li>
+            <li>After each session, confirm that your data transferred to the DBIC server.</li>
+            <li>Analyze on the Discovery cluster, with 14 public datasets already hosted alongside.</li>
+          </ul>
+          <div class="panel-links"><a class="btn btn-solid btn-sm" href="https://dbic.github.io/research_infrastructure/computer_resources.html" target="_blank" rel="noopener">Computer resources</a><a class="btn btn-outline btn-sm" href="https://dbic.github.io/research_infrastructure/discovery.html" target="_blank" rel="noopener">Using Discovery</a></div>
+        </div>
+        <p class="contact-note">Stuck at any step? Email <a href="mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20study%20question">Courtney Rogers</a>, who manages protocols, scheduling and training.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FACILITY ================= -->
+<section class="section" id="facility" aria-labelledby="h-fac">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Facility</p>
+      <h2 id="h-fac">A research scanner, by design</h2>
+      <p class="lead-in">In November 1999 Dartmouth became the first liberal arts college in the country to own and operate an MRI machine strictly for research. That is still the point.</p>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><div class="big"><span data-count="3">3</span>T</div><p>Siemens MAGNETOM Prisma, in the basement of Moore Hall</p></div>
+      <div class="stat"><div class="big"><span data-count="64">64</span></div><p>channel head coil, plus 32- and 20-channel options</p></div>
+      <div class="stat"><div class="big"><span data-count="80">80</span><sup>mT/m</sup></div><p>peak gradient strength for fast structural and functional imaging</p></div>
+      <div class="stat"><div class="big"><span data-count="27" id="yrs">27</span></div><p>years of research MRI at Dartmouth, since 1999</p></div>
+      <div class="stat"><div class="big"><span data-count="14">14</span></div><p>public datasets hosted for DBIC users</p></div>
+    </div>
+    <div class="specs">
+      <div class="spec reveal" style="--c:var(--c1)"><h3><i></i>The scanner</h3><p>3T with a 60 cm bore, 0.25 ppm homogeneity over a 40 cm sphere, and simultaneous multislice. Vendor packages cover BOLD, diffusion and spectroscopy.</p><a href="https://dbic.github.io/research_infrastructure/fmri_scanner.html" target="_blank" rel="noopener">Full specifications →</a></div>
+      <div class="spec reveal" style="--c:var(--c2)"><h3><i></i>Head coils</h3><p>64-, 32- and 20-channel phased-array coils. The 64-channel coil delivers the highest SNR and parallel-imaging performance.</p><a href="https://dbic.github.io/research_infrastructure/coils.html" target="_blank" rel="noopener">Compare coils →</a></div>
+      <div class="spec reveal" style="--c:var(--c3)"><h3><i></i>Tasks &amp; recording</h3><p>Projection and audio delivery, response devices, eye tracking, and physiological recording for rich behavioral studies.</p><a href="https://dbic.github.io/research_infrastructure/peripherals.html" target="_blank" rel="noopener">See peripherals →</a></div>
+      <div class="spec reveal" style="--c:var(--c4)"><h3><i></i>Quality assurance</h3><p>Scanner QA data are archived in BIDS format and available to DBIC users, so performance is documented over time.</p><a href="https://dbic.github.io/research_infrastructure/qualityassurance.html" target="_blank" rel="noopener">QA program →</a></div>
+    </div>
+    <ol class="timeline reveal" aria-label="History of the center">
+      <li><b>1999</b><span>DBIC opens under Scott Grafton with a 1.5T GE scanner.</span></li>
+      <li><b>2004</b><span>Upgrade to a 3.0T Philips scanner.</span></li>
+      <li><b>2008</b><span>Jim Haxby joins Dartmouth and directs the center until 2021.</span></li>
+      <li><b>2016</b><span>The current Siemens 3T Prisma is installed.</span></li>
+      <li><b>2021</b><span>Tor Wager becomes director.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= RESEARCH ================= -->
+<section class="section alt" id="research" aria-labelledby="h-res">
+  <div class="wrap">
+    <div class="show-bar reveal">
+      <div>
+        <p class="eyebrow">Research</p>
+        <h2 id="h-res">Work that happens here</h2>
+      </div>
+      <div class="show-ctl">
+        <button type="button" class="icon-btn" id="prev" aria-label="Previous">←</button>
+        <button type="button" class="icon-btn" id="next" aria-label="Next">→</button>
+        <button type="button" class="icon-btn" id="slide-pause" aria-pressed="false" aria-label="Pause automatic scrolling">❚❚</button>
+      </div>
+    </div>
+    <div class="track" id="track" tabindex="0" role="region" aria-label="Research examples">
+      <article class="slide" style="--c:var(--c1)"><div class="slide-art"><svg viewBox="0 0 200 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width=".8"><circle cx="40" cy="30" r="3"/><circle cx="90" cy="55" r="3"/><circle cx="150" cy="25" r="3"/><circle cx="170" cy="75" r="3"/><circle cx="60" cy="80" r="3"/><path d="M40 30 90 55 150 25 170 75M90 55 60 80"/></g></svg><b>101 × 6 h</b></div><div class="slide-body"><h3>Spacetop: one dataset, many questions</h3><p>Collected here: 101 participants, six hours each, spanning six tasks, two hours of movie viewing, diffusion imaging and physiology. Published in <i>Scientific Data</i> (2025) and hosted for DBIC users.</p><a href="https://dbic.github.io/research_infrastructure/datasets.html#spacetop" target="_blank" rel="noopener">About the dataset →</a></div></article>
+      <article class="slide" style="--c:var(--c2)"><div class="slide-art"><svg viewBox="0 0 200 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width=".8"><path d="M0 70c30-40 60 40 90 0s60-40 110 10"/><path d="M0 50c30-40 60 40 90 0s60-40 110 10"/><path d="M0 30c30-40 60 40 90 0s60-40 110 10"/></g></svg><b>18 viewers</b></div><div class="slide-body"><h3>Watching nature, together</h3><p>Eighteen participants viewed segments of a nature documentary in the scanner. The data supported work on how the brain encodes meaning in a shared representational space (<i>Frontiers in Neuroscience</i>, 2018).</p><a href="https://dbic.github.io/research_infrastructure/datasets.html#life" target="_blank" rel="noopener">About the dataset →</a></div></article>
+      <article class="slide" style="--c:var(--c3)"><div class="slide-art"><svg viewBox="0 0 200 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width=".8"><circle cx="100" cy="50" r="12"/><circle cx="100" cy="50" r="26"/><circle cx="100" cy="50" r="40"/><circle cx="100" cy="50" r="54"/></g></svg><b>8 fields</b></div><div class="slide-body"><h3>Across disciplines</h3><p>DBIC-supported research spans cognitive and social neuroscience, education, engineering, philosophy, music, sociology and computer science, from four Arts &amp; Sciences departments to Geisel and VA collaborators.</p><a href="https://dbic.github.io/people/affiliated.html" target="_blank" rel="noopener">Meet affiliated faculty →</a></div></article>
+      <article class="slide" style="--c:var(--c4)"><div class="slide-art"><svg viewBox="0 0 200 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width=".8"><path d="M20 80V50M50 80V30M80 80V60M110 80V20M140 80V45M170 80V35"/></g></svg><b>Your study</b></div><div class="slide-body"><h3>Share your results</h3><p>Our research highlights page is waiting for stories. If your DBIC-supported work could be featured, we would love to hear about it.</p><a href="mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20research%20highlight">Tell us about it →</a></div></article>
+    </div>
+    <div class="dots" id="dots" aria-label="Choose example"></div>
+    <div class="chips reveal" aria-label="Fields of research"><span class="chip">Cognitive neuroscience</span><span class="chip">Social neuroscience</span><span class="chip">Education</span><span class="chip">Engineering</span><span class="chip">Philosophy</span><span class="chip">Music</span><span class="chip">Sociology</span><span class="chip">Computer science</span></div>
+  </div>
+</section>
+
+<!-- ================= SAFETY & COMPLIANCE ================= -->
+<section class="section safety" id="safety" aria-labelledby="h-safe">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Safety &amp; compliance</p>
+      <h2 id="h-safe">How we keep every scan safe</h2>
+      <p class="lead-in">Working next to a powerful magnet and with human participants comes with firm rules. These are the commitments behind every scan, with the documents behind them.</p>
+    </div>
+    <div class="safe-grid">
+      <div class="rules">
+        <div class="rule reveal"><span class="ri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4h6v3H9z"/><path d="M7 5H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1"/><path d="m9 14 2 2 4-4"/></svg></span><div><b>Human-subjects approval comes first</b><span>All research conducted in the DBIC must have CPHS approval, and all personnel complete IRB education.</span></div></div>
+        <div class="rule reveal"><span class="ri"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.9.3 5 2.6 5 5.8"/></svg></span><div><b>Two people in the control room, always</b><span>At least one certified scan operator and one safety-trained assistant are present at all times.</span></div></div>
+        <div class="rule reveal"><span class="ri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 8 7 10 4-2 7-5.5 7-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span><div><b>Everyone is screened</b><span>Participants and personnel are screened for MRI safety and metal, with metal detectors and a controlled airlock door to the MRI suite.</span></div></div>
+        <div class="rule reveal"><span class="ri"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M8.5 13.5 7 21l5-3 5 3-1.5-7.5"/></svg></span><div><b>Trained and certified operators</b><span>Safety training for all research personnel; operator certification requires at least 10 hours of hands-on training.</span></div></div>
+        <div class="rule reveal"><span class="ri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10"/><path d="M12 17.5v.5"/><circle cx="12" cy="12" r="9"/></svg></span><div><b>Emergencies and incidents have a procedure</b><span>Emergency practices, an incident-reporting policy, and cleaning and housekeeping standards are published and part of every training.</span></div></div>
+      </div>
+      <aside class="docs reveal" aria-labelledby="h-docs">
+        <h3 id="h-docs">Policy &amp; document library</h3>
+        <p>The documents referenced in our trainings and protocols.</p>
+        <ul><li><a href="https://dbic.github.io/assets/dbic/docs/forms/mrichecklist08012026.pdf" target=_blank rel=noopener>Pre-scan experimenter checklist</a></li><li><a href="https://dbic.github.io/assets/dbic/docs/policies/subjectscreen_2024.pdf" target=_blank rel=noopener>Subject screening policy</a></li><li><a href="https://dbic.github.io/assets/dbic/docs/forms/meatalscreen_04132026.pdf" target=_blank rel=noopener>MRI metal safety screening form</a></li><li><a href="https://dbic.github.io/assets/dbic/docs/forms/potential_hazards.pdf" target=_blank rel=noopener>Potential hazards</a></li><li><a href="https://dbic.github.io/assets/dbic/docs/policies/emergencyprocedures.pdf" target=_blank rel=noopener>Emergency practices &amp; procedures</a></li><li><a href="https://dbic.github.io/assets/dbic/docs/policies/incidentreporting_04162026.pdf" target=_blank rel=noopener>Incident reporting policy</a></li><li><a href="https://dbic.github.io/assets/dbic/docs/policies/housekeeping01282026.pdf" target=_blank rel=noopener>Housekeeping policy</a></li><li><a href="https://dbic.github.io/assets/dbic/docs/policies/cleaning_nov2024.pdf" target=_blank rel=noopener>Cleaning &amp; disinfecting</a></li><li><a href="https://dbic.github.io/assets/dbic/docs/policies/conductingresearch_10092026.pdf" target=_blank rel=noopener>Conducting research in the DBIC</a></li><li><a href="https://dbic.github.io/policies/codeofconduct.html" target=_blank rel=noopener>Code of conduct</a></li></ul>
+        <a class="btn btn-solid btn-sm" href="https://dbic.github.io/policies/forms_templates.html" target="_blank" rel="noopener">All forms &amp; templates</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DATA ================= -->
+<section class="section" id="data" aria-labelledby="h-data">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Data &amp; computing</p>
+      <h2 id="h-data">Datasets, ready to analyze</h2>
+      <p class="lead-in">Large public neuroimaging datasets are hosted on Dartmouth’s research computing file system, right beside the Discovery cluster, ready for DBIC users to analyze.</p>
+    </div>
+    <div class="ds-tools reveal">
+      <label class="sr" for="ds-q">Search datasets</label>
+      <input class="search" id="ds-q" type="search" placeholder="Search (try “language”)" autocomplete="off">
+      <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" class="chip" data-filter="open" aria-pressed="false">Open to DBIC users</button>
+      <button type="button" class="chip" data-filter="terms" aria-pressed="false">Agreement or terms apply</button>
+      <span class="ds-meta" id="ds-count" aria-live="polite"></span>
+    </div>
+    <div class="ds-grid" id="ds-grid"><a class="ds" data-access="open" data-kw="cognitive affective social somatic pain multi-task naturalistic movie" target="_blank" rel="noopener" href="https://dbic.github.io/research_infrastructure/datasets.html#spacetop"><strong>Spacetop</strong><span>Collected at DBIC · 101 participants, 6 hours each: six tasks, movie viewing, diffusion and physiology</span><em class="tag tag-open">Open to DBIC users</em></a><a class="ds" data-access="open" data-kw="naturalistic movie vision semantic documentary" target="_blank" rel="noopener" href="https://dbic.github.io/research_infrastructure/datasets.html#life"><strong>Life</strong><span>Collected at DBIC · 18 viewers of a nature documentary (~1 hour each)</span><em class="tag tag-open">Open to DBIC users</em></a><a class="ds" data-access="open" data-kw="language speech comprehension naturalistic stories" target="_blank" rel="noopener" href="https://dbic.github.io/research_infrastructure/datasets.html#Narratives"><strong>Narratives</strong><span>345 listeners, 28 spoken stories, 800+ sessions (Princeton)</span><em class="tag tag-open">Open to DBIC users</em></a><a class="ds" data-access="open" data-kw="language speech naturalistic encoding stories" target="_blank" rel="noopener" href="https://dbic.github.io/research_infrastructure/datasets.html#moth"><strong>The Moth</strong><span>Dense naturalistic story listening, 8 participants (UT Austin)</span><em class="tag tag-open">Open to DBIC users</em></a><a class="ds" data-access="open" data-kw="individual differences emotion working memory faces" target="_blank" rel="noopener" href="https://dbic.github.io/research_infrastructure/datasets.html#aomic"><strong>Amsterdam Open MRI Collection</strong><span>Three datasets, 1,300+ participants: fMRI, DWI, T1</span><em class="tag tag-open">Open to DBIC users</em></a><a class="ds" data-access="open" data-kw="self-regulation stroop stop-signal behavior surveys" target="_blank" rel="noopener" href="https://dbic.github.io/research_infrastructure/datasets.html#bsrd"><strong>Bissett Self-Regulation</strong><span>103 adults: anatomical, resting and task fMRI plus surveys</span><em class="tag tag-open">Open to DBIC users</em></a><a class="ds" data-access="open" data-kw="atlas individual variability language vision memory" target="_blank" rel="noopener" href="https://dbic.github.io/research_infrastructure/datasets.html#ibc"><strong>Individual Brain Charting</strong><span>12 participants, 50+ task conditions, high-resolution 3T</span><em class="tag tag-open">Open to DBIC users</em></a><a class="ds" data-access="open" data-kw="deep phenotyping cognition language motor" target="_blank" rel="noopener" href="https://dbic.github.io/research_infrastructure/datasets.html#tasks"><strong>103 Tasks</strong><span>6 participants, 18 scans, 77–83 tasks per scan</span><em class="tag tag-open">Open to DBIC users</em></a><a class="ds" data-access="open" data-kw="quality assurance phantom scanner" target="_blank" rel="noopener" href="https://dbic.github.io/research_infrastructure/datasets.html#dbicqa"><strong>DBIC QA</strong><span>Scanner quality-assurance data in BIDS format, via DataLad</span><em class="tag tag-open">Open to DBIC users</em></a><a class="ds" data-access="terms" data-kw="vision visual scenes images 7T" target="_blank" rel="noopener" href="https://dbic.github.io/research_infrastructure/datasets.html#NaturalScenes"><strong>Natural Scenes Dataset</strong><span>7T, 8 adults, 30–40 sessions each (Minnesota)</span><em class="tag tag-terms">Agreement or terms apply</em></a><a class="ds" data-access="terms" data-kw="connectome resting-state HCP" target="_blank" rel="noopener" href="https://dbic.github.io/research_infrastructure/datasets.html#HumanConnectomeProject"><strong>HCP Young Adult</strong><span>1,100+ healthy adults aged 22–35, resting-state fMRI</span><em class="tag tag-terms">Agreement or terms apply</em></a><a class="ds" data-access="terms" data-kw="aging development lifespan children older adults HCP" target="_blank" rel="noopener" href="https://dbic.github.io/research_infrastructure/datasets.html#lifespan"><strong>HCP Lifespan: Aging &amp; Development</strong><span>1,377 participants aged 5 to 100+</span><em class="tag tag-terms">Agreement or terms apply</em></a><a class="ds" data-access="terms" data-kw="development children adolescents youth movie" target="_blank" rel="noopener" href="https://dbic.github.io/research_infrastructure/datasets.html#hbn"><strong>Healthy Brain Network</strong><span>845 youths aged 5–21 (Child Mind Institute), CC BY-NC-SA</span><em class="tag tag-terms">Agreement or terms apply</em></a><a class="ds" data-access="terms" data-kw="vision deep neural networks AI images" target="_blank" rel="noopener" href="https://dbic.github.io/research_infrastructure/datasets.html#imagenet"><strong>ImageNet</strong><span>14M labeled images for neural-network comparison work</span><em class="tag tag-terms">Agreement or terms apply</em></a></div>
+    <p class="empty" id="ds-empty" hidden>No datasets match. Try a different word, or <a href="mailto:james.c.ford@dartmouth.edu?subject=DBIC%20dataset%20request">ask Jamie Ford</a> about adding one.</p>
+    <div class="cta-row reveal"><a class="btn btn-outline" href="https://dbic.github.io/research_infrastructure/datasets.html" target="_blank" rel="noopener">Access details for every dataset</a><a class="btn btn-outline" href="https://dbic.github.io/research_infrastructure/computer_resources.html" target="_blank" rel="noopener">Accounts &amp; storage</a></div>
+  </div>
+</section>
+
+<!-- ================= COMMUNITY ================= -->
+<section class="section alt" id="community" aria-labelledby="h-comm">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Learn &amp; connect</p>
+      <h2 id="h-comm">A community around the scanner</h2>
+      <p class="lead-in">The DBIC builds the neuroimaging community with talks, workshops and hands-on support, from honors theses to faculty projects.</p>
+    </div>
+    <div class="comm">
+      <div class="card reveal">
+        <h3>Coming up</h3>
+        <div class="tabs" role="tablist" aria-label="Upcoming items">
+          <button class="tab" role="tab" id="ct1" aria-controls="cp" aria-selected="true" data-tab="train">Safety training</button>
+          <button class="tab" role="tab" id="ct2" aria-controls="cp" aria-selected="false" tabindex="-1" data-tab="sched">Scan requests</button>
+          <button class="tab" role="tab" id="ct3" aria-controls="cp" aria-selected="false" tabindex="-1" data-tab="talks">Brown bags</button>
+        </div>
+        <div id="cp" role="tabpanel" aria-live="polite"></div>
+      </div>
+      <div class="card reveal">
+        <h3>For students &amp; trainees</h3>
+        <div class="learn" style="margin-top:1rem">
+          <div><span class="ri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9.5 12 5l9 4.5-9 4.5z"/><path d="M7 12v4c0 1.1 2.2 2.5 5 2.5s5-1.4 5-2.5v-4"/></svg></span><p style="margin:0"><b>Theses &amp; dissertations</b><span>Scanner access for undergraduate honors theses under faculty supervision, and for doctoral dissertation research.</span></p></div>
+          <div><span class="ri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h7a3 3 0 0 1 3 3v11a2 2 0 0 0-2-2H4z"/><path d="M20 5h-3"/><path d="M20 5v12h-6"/></svg></span><p style="margin:0"><b>Courses</b><span>The scanner supports the lab portion of undergraduate brain-imaging courses.</span></p></div>
+          <div><span class="ri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="4"/></svg></span><p style="margin:0"><b>Workshops &amp; methods</b><span>Meetings and workshops on imaging techniques, experimental design and analysis for investigators, postdocs, students and staff.</span></p></div>
+        </div>
+        <p class="contact-note">Interested in presenting at a brown bag, or nominating a speaker? <a href="mailto:courtney.rogers@dartmouth.edu?subject=fMRI%20brown%20bag">Get in touch</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEAM & CONTACT ================= -->
+<section class="section" id="contact" aria-labelledby="h-team">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">People</p>
+      <h2 id="h-team">The people who run the center</h2>
+    </div>
+    <div class="team"><a class="person reveal" href="https://pbs.dartmouth.edu/people/tor-wager" target=_blank rel=noopener><span class="avatar" aria-hidden="true">TW</span><strong>Tor Wager</strong><span class="role">Director</span><span class="ask">Overall direction of the center</span></a><a class="person reveal" href="mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20inquiry"><span class="avatar" aria-hidden="true">CR</span><strong>Courtney Rogers</strong><span class="role">Associate Director for Operations</span><span class="ask">Scheduling, protocols, training, communications</span></a><a class="person reveal" href="mailto:james.c.ford@dartmouth.edu?subject=DBIC%20data"><span class="avatar" aria-hidden="true">JF</span><strong>Jamie Ford</strong><span class="role">Research Scientist</span><span class="ask">Imaging data, hosted datasets, technical support</span></a><a class="person reveal" href="https://dbic.github.io/people/directorsstaff.html" target=_blank rel=noopener><span class="avatar" aria-hidden="true">MP</span><strong>Mike Pearl</strong><span class="role">MRI Technologist</span><span class="ask">MRI safety and operator training, imaging protocols</span></a></div>
+    <div class="contact">
+      <div class="card reveal">
+        <h3>Questions about scanning, protocols or training?</h3>
+        <p>Courtney Rogers manages scheduling, protocol review and training. Write to her first and she will point you to the right person.</p>
+        <a class="btn btn-solid" href="mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20inquiry">Email the DBIC</a>
+      </div>
+      <div class="card reveal">
+        <h3>Find us</h3>
+        <address>Dartmouth Brain Imaging Center<br>Moore Hall, HB 6207<br>Hanover, NH 03755</address>
+        <p style="margin-top:.8rem"><a href="https://dbic.github.io/policies/dbic_parking.html" target="_blank" rel="noopener">Parking &amp; visiting →</a> · <a href="https://dbic.github.io/people/advisorycommittee.html" target="_blank" rel="noopener">Advisory committee →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid"><div><h3>Research with us</h3><ul><li><a href="#how">How a study works</a></li><li><a href="https://dbic.github.io/policies/dbic_protocol.html" target=_blank rel=noopener>Submit a protocol</a></li><li><a href="https://dbic.github.io/policies/scheduling.html" target=_blank rel=noopener>Schedule scan time</a></li><li><a href="https://dbic.github.io/policies/dbic_billing.html" target=_blank rel=noopener>Scanning rates</a></li><li><a href="https://dbic.github.io/policies/cancellations.html" target=_blank rel=noopener>Cancellations</a></li><li><a href="https://dbic.github.io/policies/forms_templates.html" target=_blank rel=noopener>Forms &amp; templates</a></li><li><a href="https://dbic.github.io/policies/dbic_parking.html" target=_blank rel=noopener>Parking &amp; visiting</a></li></ul></div><div><h3>Training &amp; safety</h3><ul><li><a href="https://dbic.github.io/policies/safetytraining.html" target=_blank rel=noopener>MRI safety training</a></li><li><a href="https://dbic.github.io/policies/operator_training.html" target=_blank rel=noopener>Scan operator training</a></li><li><a href="#safety">Safety &amp; compliance policies</a></li><li><a href="https://dbic.github.io/policies/codeofconduct.html" target=_blank rel=noopener>Code of conduct</a></li><li><a href="https://dbic.github.io/policies/housekeeping.html" target=_blank rel=noopener>Housekeeping</a></li></ul></div><div><h3>Facility &amp; data</h3><ul><li><a href="https://dbic.github.io/research_infrastructure/fmri_scanner.html" target=_blank rel=noopener>fMRI scanner</a></li><li><a href="https://dbic.github.io/research_infrastructure/coils.html" target=_blank rel=noopener>Head coils</a></li><li><a href="https://dbic.github.io/research_infrastructure/sequences.html" target=_blank rel=noopener>Sequences</a></li><li><a href="https://dbic.github.io/research_infrastructure/peripherals.html" target=_blank rel=noopener>Peripherals</a></li><li><a href="https://dbic.github.io/research_infrastructure/qualityassurance.html" target=_blank rel=noopener>Quality assurance</a></li><li><a href="https://dbic.github.io/research_infrastructure/computer_resources.html" target=_blank rel=noopener>Computer resources</a></li><li><a href="https://dbic.github.io/research_infrastructure/discovery.html" target=_blank rel=noopener>Using Discovery</a></li><li><a href="https://dbic.github.io/research_infrastructure/datasets.html" target=_blank rel=noopener>Hosted datasets</a></li></ul></div><div><h3>Community</h3><ul><li><a href="https://dbic.github.io/events/fbb.html" target=_blank rel=noopener>Brown-bag talks</a></li><li><a href="https://dbic.github.io/highlights/" target=_blank rel=noopener>Research highlights</a></li><li><a href="https://dbic.github.io/videos/study_demo.html" target=_blank rel=noopener>Study demonstration video</a></li><li><a href="https://dbic.github.io/PBS_resources/index.html" target=_blank rel=noopener>PBS &amp; DBIC shared resources</a></li></ul></div><div><h3>About</h3><ul><li><a href="https://dbic.github.io/people/directorsstaff.html" target=_blank rel=noopener>Our team</a></li><li><a href="https://dbic.github.io/people/advisorycommittee.html" target=_blank rel=noopener>Advisory committee</a></li><li><a href="https://dbic.github.io/people/affiliated.html" target=_blank rel=noopener>Affiliated faculty</a></li><li><a href="https://dbic.github.io/history.html" target=_blank rel=noopener>History</a></li><li><a href="https://dbic.github.io/faqs.html" target=_blank rel=noopener>FAQ</a></li><li><a href="#contact">Contact</a></li></ul></div><div><h3>Associated programs</h3><ul><li><a href="https://www.interactingminds.com/" target=_blank rel=noopener>Consortium for Interacting Minds</a></li><li><a href="http://cognitive-science.dartmouth.edu/" target=_blank rel=noopener>Cognitive Science Program</a></li><li><a href="http://www.dartmouth.edu/~ccn/" target=_blank rel=noopener>Center for Cognitive Neuroscience</a></li><li><a href="https://web.cs.dartmouth.edu" target=_blank rel=noopener>Computer Science</a></li><li><a href="https://music.dartmouth.edu" target=_blank rel=noopener>Music</a></li><li><a href="http://pbs.dartmouth.edu/" target=_blank rel=noopener>Psychological and Brain Sciences</a></li><li><a href="https://geiselmed.dartmouth.edu/mhbld/" target=_blank rel=noopener>Media and Health Behaviors</a></li></ul></div></div>
+    <div class="fine"><span>Dartmouth Brain Imaging Center · Moore Hall, HB 6207, Hanover, NH 03755</span><span>Redesign prototype · content drawn from the current DBIC site</span></div>
+  </div>
+</footer>
+
+<!-- ================= QUICK FIND ================= -->
+<dialog id="qf" aria-label="Quick find">
+  <div class="qf-box">
+    <div class="qf-head">
+      <input id="qf-input" type="search" placeholder="Find a page or answer… try “rates” or “safety”" aria-label="Search the site" autocomplete="off">
+      <button type="button" class="icon-btn" id="qf-close" aria-label="Close search">✕</button>
+    </div>
+    <ul id="qf-list" role="list"></ul>
+    <p class="qf-foot">↑ ↓ to move · Enter to open · Esc to close</p>
+  </div>
+</dialog>
+
+<script type="application/json" id="qf-data">[{"t": "How a study works", "u": "#how", "g": "Research with us", "k": "protocol approval application ethics steps getting started", "p": 0}, {"t": "Submit a protocol", "u": "https://dbic.github.io/policies/dbic_protocol.html", "g": "Research with us", "k": "CPHS IRB application approval new study", "p": 1}, {"t": "Schedule scan time", "u": "https://dbic.github.io/policies/scheduling.html", "g": "Research with us", "k": "calendar book request tier peak off-peak hours deadlines", "p": 1}, {"t": "Scanning rates", "u": "https://dbic.github.io/policies/dbic_billing.html", "g": "Research with us", "k": "cost price fees billing invoice rates", "p": 1}, {"t": "Cancellations", "u": "https://dbic.github.io/policies/cancellations.html", "g": "Research with us", "k": "cancel policy", "p": 0}, {"t": "Forms & templates", "u": "https://dbic.github.io/policies/forms_templates.html", "g": "Research with us", "k": "consent screening reminder email templates", "p": 0}, {"t": "Parking & visiting", "u": "https://dbic.github.io/policies/dbic_parking.html", "g": "Research with us", "k": "visit visitor parking directions", "p": 0}, {"t": "MRI safety training", "u": "https://dbic.github.io/policies/safetytraining.html", "g": "Training & safety", "k": "sign up class screening CITI", "p": 1}, {"t": "Scan operator training", "u": "https://dbic.github.io/policies/operator_training.html", "g": "Training & safety", "k": "certification certified operator buddy", "p": 1}, {"t": "Safety & compliance policies", "u": "#safety", "g": "Training & safety", "k": "documents emergency incident reporting screening checklist", "p": 0}, {"t": "Code of conduct", "u": "https://dbic.github.io/policies/codeofconduct.html", "g": "Training & safety", "k": "behavior conduct", "p": 0}, {"t": "Housekeeping", "u": "https://dbic.github.io/policies/housekeeping.html", "g": "Training & safety", "k": "cleaning disinfecting", "p": 0}, {"t": "fMRI scanner", "u": "https://dbic.github.io/research_infrastructure/fmri_scanner.html", "g": "Facility & data", "k": "Siemens Prisma 3T magnet gradient specs", "p": 1}, {"t": "Head coils", "u": "https://dbic.github.io/research_infrastructure/coils.html", "g": "Facility & data", "k": "64 32 20 channel", "p": 0}, {"t": "Sequences", "u": "https://dbic.github.io/research_infrastructure/sequences.html", "g": "Facility & data", "k": "protocols multiband diffusion", "p": 0}, {"t": "Peripherals", "u": "https://dbic.github.io/research_infrastructure/peripherals.html", "g": "Facility & data", "k": "eye tracking response devices projector audio physiology", "p": 0}, {"t": "Quality assurance", "u": "https://dbic.github.io/research_infrastructure/qualityassurance.html", "g": "Facility & data", "k": "QA reports phantom", "p": 0}, {"t": "Computer resources", "u": "https://dbic.github.io/research_infrastructure/computer_resources.html", "g": "Facility & data", "k": "account DartFS storage DICOM scans find", "p": 0}, {"t": "Using Discovery", "u": "https://dbic.github.io/research_infrastructure/discovery.html", "g": "Facility & data", "k": "cluster HPC compute", "p": 0}, {"t": "Hosted datasets", "u": "https://dbic.github.io/research_infrastructure/datasets.html", "g": "Facility & data", "k": "public data HCP Narratives Spacetop", "p": 1}, {"t": "Brown-bag talks", "u": "https://dbic.github.io/events/fbb.html", "g": "Community", "k": "events seminars speakers fMRI brown bag", "p": 0}, {"t": "Research highlights", "u": "https://dbic.github.io/highlights/", "g": "Community", "k": "research impact studies", "p": 0}, {"t": "Study demonstration video", "u": "https://dbic.github.io/videos/study_demo.html", "g": "Community", "k": "video participant what to expect", "p": 0}, {"t": "PBS & DBIC shared resources", "u": "https://dbic.github.io/PBS_resources/index.html", "g": "Community", "k": "shared resources", "p": 0}, {"t": "Our team", "u": "https://dbic.github.io/people/directorsstaff.html", "g": "About", "k": "director staff people", "p": 0}, {"t": "Advisory committee", "u": "https://dbic.github.io/people/advisorycommittee.html", "g": "About", "k": "committee governance", "p": 0}, {"t": "Affiliated faculty", "u": "https://dbic.github.io/people/affiliated.html", "g": "About", "k": "faculty investigators users", "p": 0}, {"t": "History", "u": "https://dbic.github.io/history.html", "g": "About", "k": "1999 timeline director", "p": 0}, {"t": "FAQ", "u": "https://dbic.github.io/faqs.html", "g": "About", "k": "questions help", "p": 0}, {"t": "Contact", "u": "#contact", "g": "About", "k": "email address phone reach", "p": 1}]</script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var mqReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function reduced() { return mqReduce.matches; }
+  var store = {
+    get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  };
+  function dt(iso, h, m) { var p = iso.split('-').map(Number); return new Date(p[0], p[1] - 1, p[2], h || 0, m || 0); }
+  function fmt(d, o) { return d.toLocaleDateString('en-US', o || { weekday: 'short', month: 'short', day: 'numeric' }); }
+  function todayStart() { var n = new Date(); return new Date(n.getFullYear(), n.getMonth(), n.getDate()); }
+
+  /* ---------- color mode ---------- */
+  var themeBtn = $('#theme');
+  function currentTheme() {
+    var t = document.documentElement.getAttribute('data-theme');
+    return t || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  }
+  function syncTheme() {
+    var dark = currentTheme() === 'dark';
+    themeBtn.setAttribute('aria-pressed', String(dark));
+    themeBtn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    $('.ico', themeBtn).textContent = dark ? '☀' : '☾';
+  }
+  themeBtn.addEventListener('click', function () {
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    store.set('dbic-theme', next);
+    syncTheme();
+  });
+  syncTheme();
+
+  /* ---------- header menus ---------- */
+  var nav = $('#nav'), burger = $('#burger'), menus = $$('.menu');
+  function closeMenus(except) {
+    menus.forEach(function (m) {
+      if (m !== except) { m.classList.remove('open'); $('.menu-btn', m).setAttribute('aria-expanded', 'false'); }
+    });
+  }
+  menus.forEach(function (m) {
+    var b = $('.menu-btn', m);
+    b.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = !m.classList.contains('open');
+      closeMenus(m);
+      m.classList.toggle('open', open);
+      b.setAttribute('aria-expanded', String(open));
+    });
+  });
+  document.addEventListener('click', function (e) { if (!e.target.closest('.menu')) closeMenus(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    var open = menus.filter(function (m) { return m.classList.contains('open'); })[0];
+    if (open) { $('.menu-btn', open).focus(); closeMenus(); }
+    else if (nav.classList.contains('open')) { nav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); burger.focus(); }
+  });
+  nav.addEventListener('focusout', function (e) { if (e.relatedTarget && !nav.contains(e.relatedTarget)) closeMenus(); });
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('.menu-panel a')) { closeMenus(); nav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); }
+  });
+  burger.addEventListener('click', function () {
+    var o = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', String(o));
+  });
+
+  /* ---------- quick find ---------- */
+  var qf = $('#qf'), qfIn = $('#qf-input'), qfList = $('#qf-list');
+  var QF = JSON.parse($('#qf-data').textContent), qfActive = 0;
+  function qfRender() {
+    var tokens = qfIn.value.toLowerCase().split(/\s+/).filter(Boolean), rows;
+    if (!tokens.length) {
+      rows = QF.filter(function (x) { return x.p; });
+    } else {
+      rows = QF.map(function (x, i) {
+        var t = x.t.toLowerCase(), k = x.k.toLowerCase(), g = x.g.toLowerCase(), s = 0;
+        for (var j = 0; j < tokens.length; j++) {
+          var w = tokens[j], hit = 0;
+          if (t.indexOf(w) === 0) hit = 5; else if (t.indexOf(w) > -1) hit = 3; else if (k.indexOf(w) > -1) hit = 2; else if (g.indexOf(w) > -1) hit = 1;
+          if (!hit) return null;
+          s += hit;
+        }
+        return { x: x, s: s, i: i };
+      }).filter(Boolean).sort(function (a, b) { return b.s - a.s || a.i - b.i; }).map(function (r) { return r.x; });
+    }
+    qfActive = 0;
+    qfList.innerHTML = rows.length ? rows.map(function (x, i) {
+      var ext = x.u.charAt(0) !== '#';
+      return '<li><a href="' + x.u + '"' + (ext ? ' target="_blank" rel="noopener"' : '') + (i === 0 ? ' class="on"' : '') + '><span>' + x.t + '</span><small>' + x.g + '</small></a></li>';
+    }).join('') : '<li><a href="mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20question"><span>No match. Ask the DBIC team</span><small>email</small></a></li>';
+  }
+  function qfMove(d) {
+    var items = $$('a', qfList);
+    if (!items.length) return;
+    items[qfActive].classList.remove('on');
+    qfActive = (qfActive + d + items.length) % items.length;
+    items[qfActive].classList.add('on');
+    items[qfActive].scrollIntoView({ block: 'nearest' });
+  }
+  function openQF() {
+    if (typeof qf.showModal === 'function') { if (!qf.open) qf.showModal(); } else { qf.setAttribute('open', ''); }
+    qfIn.value = ''; qfRender(); qfIn.focus();
+  }
+  $('#qf-open').addEventListener('click', openQF);
+  $('#qf-close').addEventListener('click', function () { qf.close ? qf.close() : qf.removeAttribute('open'); });
+  qfIn.addEventListener('input', qfRender);
+  qfIn.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { e.preventDefault(); if (qf.close) qf.close(); else qf.removeAttribute('open'); }
+    else if (e.key === 'ArrowDown') { e.preventDefault(); qfMove(1); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); qfMove(-1); }
+    else if (e.key === 'Enter') { var a = $$('a', qfList)[qfActive]; if (a) { e.preventDefault(); a.click(); } }
+  });
+  qfList.addEventListener('click', function (e) { if (e.target.closest('a')) { if (qf.close) qf.close(); } });
+  qf.addEventListener('click', function (e) { if (e.target === qf && qf.close) qf.close(); });
+  document.addEventListener('keydown', function (e) {
+    var typing = /^(input|textarea|select)$/i.test(e.target.tagName) || e.target.isContentEditable;
+    if ((e.key === '/' && !typing) || ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k')) { e.preventDefault(); openQF(); }
+  });
+
+  /* ---------- hero: rotating words ---------- */
+  var rot = $('#rot'), words = ['cognitive neuroscience', 'social neuroscience', 'education', 'engineering', 'philosophy', 'music', 'sociology', 'computer science'], wi = 0;
+  if (reduced()) { rot.textContent = 'brain research across disciplines'; }
+  else {
+    setInterval(function () {
+      if (document.hidden) return;
+      rot.classList.add('swap');
+      setTimeout(function () { wi = (wi + 1) % words.length; rot.textContent = words[wi]; rot.classList.remove('swap'); }, 280);
+    }, 2600);
+  }
+
+  /* ---------- hero: network animation ---------- */
+  (function () {
+    var cv = $('#neural'), ctx = cv.getContext('2d'), w = 0, h = 0, nodes = [], raf = 0, onscreen = true, mouse = { x: -999, y: -999 };
+    function size() {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2), r = cv.getBoundingClientRect();
+      w = r.width; h = r.height; cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var n = Math.round(Math.min(95, Math.max(26, w * h / 15000)));
+      nodes = [];
+      for (var i = 0; i < n; i++) nodes.push({ x: Math.random() * w, y: Math.random() * h, vx: (Math.random() - .5) * .28, vy: (Math.random() - .5) * .28, r: Math.random() * 1.6 + .8 });
+    }
+    function frame(move) {
+      ctx.clearRect(0, 0, w, h);
+      var L = Math.min(150, Math.max(90, w / 7)), i, j, a, b, dx, dy, d;
+      for (i = 0; i < nodes.length; i++) {
+        a = nodes[i];
+        if (move) {
+          dx = a.x - mouse.x; dy = a.y - mouse.y; d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 120 && d > 0) { a.x += dx / d * .9; a.y += dy / d * .9; }
+          a.x += a.vx; a.y += a.vy;
+          if (a.x < -10) a.x = w + 10; else if (a.x > w + 10) a.x = -10;
+          if (a.y < -10) a.y = h + 10; else if (a.y > h + 10) a.y = -10;
+        }
+      }
+      for (i = 0; i < nodes.length; i++) {
+        a = nodes[i];
+        for (j = i + 1; j < nodes.length; j++) {
+          b = nodes[j]; dx = a.x - b.x; dy = a.y - b.y; d = Math.sqrt(dx * dx + dy * dy);
+          if (d < L) { ctx.strokeStyle = 'rgba(190,255,225,' + (0.22 * (1 - d / L)).toFixed(3) + ')'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+        }
+      }
+      ctx.fillStyle = 'rgba(210,255,235,.75)';
+      for (i = 0; i < nodes.length; i++) { a = nodes[i]; ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, 6.2832); ctx.fill(); }
+    }
+    function loop() { frame(true); raf = onscreen && !document.hidden && !reduced() ? requestAnimationFrame(loop) : 0; }
+    function start() { if (!raf && !reduced()) loop(); }
+    size(); frame(false);
+    window.addEventListener('resize', function () { size(); frame(false); });
+    cv.parentNode.addEventListener('pointermove', function (e) { var r = cv.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; });
+    cv.parentNode.addEventListener('pointerleave', function () { mouse.x = mouse.y = -999; });
+    document.addEventListener('visibilitychange', start);
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { onscreen = en[0].isIntersecting; if (onscreen) start(); }).observe(cv.parentNode);
+    start();
+  })();
+
+  /* ---------- live status strip + "coming up" ---------- */
+  var TRAIN = JSON.parse('[["2026-12-10", "10:30am\u201312:00pm", "2026-12-03"], ["2027-01-08", "2:30\u20134:00pm", "2027-01-04"], ["2027-01-18", "10:30am\u201312:00pm", "2027-01-11"], ["2027-02-02", "1:00\u20132:30pm", "2027-01-26"], ["2027-02-17", "8:30\u201310:00am", "2027-02-10"], ["2027-03-04", "1:00\u20132:30pm", "2027-02-25"], ["2027-04-02", "9:00\u201310:30am", "2027-03-29"], ["2027-04-12", "2:30\u20134:00pm", "2027-04-05"], ["2027-04-27", "11:30am\u20131:00pm", "2027-04-20"], ["2027-05-12", "1:30\u20133:00pm", "2027-05-05"], ["2027-05-27", "10:00\u201311:30am", "2027-05-20"]]'), WIN = JSON.parse('[["December 2026", "2026-11-02", "2026-11-05", 1, "2026-11-09", "2026-11-12", 1, "2026-11-16"], ["January 2027", "2026-12-01", "2026-12-04", 1, "2026-12-08", "2026-12-11", 1, "2026-12-15"], ["February 2027", "2027-01-04", "2027-01-07", 1, "2027-01-11", "2027-01-14", 0, "2027-01-18"], ["March 2027", "2027-02-01", "2027-02-04", 1, "2027-02-08", "2027-02-11", 1, "2027-02-15"], ["April 2027", "2027-03-01", "2027-03-04", 1, "2027-03-08", "2027-03-11", 1, "2027-03-15"], ["May 2027", "2027-04-01", "2027-04-06", 1, "2027-04-08", "2027-04-13", 1, "2027-04-15"], ["June 2027", "2027-05-03", "2027-05-06", 1, "2027-05-10", "2027-05-13", 1, "2027-05-17"]]');
+  function trainings() { var t0 = todayStart(); return TRAIN.filter(function (r) { return dt(r[0]) >= t0; }); }
+  function windows() {
+    var out = [];
+    WIN.forEach(function (w) {
+      out.push({ at: dt(w[1]), txt: 'Tier 1 requests open for ' + w[0] });
+      out.push({ at: dt(w[2], w[3] ? 16 : 23, w[3] ? 0 : 59), txt: 'Tier 1 requests close for ' + w[0] + (w[3] ? ' at 4 p.m.' : ''), close: true });
+      out.push({ at: dt(w[4]), txt: 'Tier 2 requests open for ' + w[0] });
+      out.push({ at: dt(w[5], w[6] ? 16 : 23, w[6] ? 0 : 59), txt: 'Tier 2 requests close for ' + w[0] + (w[6] ? ' at 4 p.m.' : ''), close: true });
+      out.push({ at: dt(w[7]), txt: 'Tier 3 (rolling, first come first served) opens for ' + w[0] });
+    });
+    return out.sort(function (a, b) { return a.at - b.at; });
+  }
+  function openWindows(now) {
+    return WIN.reduce(function (acc, w) {
+      if (dt(w[1]) <= now && now < dt(w[2], w[3] ? 16 : 23, w[3] ? 0 : 59)) acc.push('Tier 1 for ' + w[0] + ' (until ' + fmt(dt(w[2])) + ')');
+      if (dt(w[4]) <= now && now < dt(w[5], w[6] ? 16 : 23, w[6] ? 0 : 59)) acc.push('Tier 2 for ' + w[0] + ' (until ' + fmt(dt(w[5])) + ')');
+      return acc;
+    }, []);
+  }
+  (function status() {
+    var tr = trainings(), st = $('#st-train div'), sc = $('#st-sched div');
+    st.innerHTML = tr.length
+      ? '<small>Next safety training</small><b>' + fmt(dt(tr[0][0])) + ', ' + tr[0][1] + '</b><span class="s">Register by ' + fmt(dt(tr[0][2])) + '</span>'
+      : '<small>Safety training</small><b>See the training schedule</b><span class="s">New dates are posted each term</span>';
+    var now = new Date(), open = openWindows(now), next = windows().filter(function (e) { return e.at > now && !e.close; })[0];
+    if (open.length) sc.innerHTML = '<small>Scan requests open now</small><b>' + open[0] + '</b>' + (open[1] ? '<span class="s">Also: ' + open[1] + '</span>' : '<span class="s">Email Courtney Rogers to request time</span>');
+    else if (next) sc.innerHTML = '<small>Next scan-request window</small><b>' + fmt(next.at) + '</b><span class="s">' + next.txt + '</span>';
+    else sc.innerHTML = '<small>Scan-time requests</small><b>See the scheduling page</b>';
+  })();
+
+  var BROWN = [['2026', 'Yu-Wei Wang', 'Yale University'], ['Nov 7, 2025', 'Stefano Moia', 'Maastricht University'], ['May 2, 2025', 'Erica Busch', 'Yale University'], ['Apr 25, 2025', 'Duke Shereen', 'CUNY Graduate Center'], ['Nov 8, 2024', 'Georg Oeltzschner', 'Johns Hopkins Medicine']];
+  var cp = $('#cp'), ctabs = $$('.tab');
+  function esc(s) { return String(s).replace(/[&<>]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]; }); }
+  function renderTab(which) {
+    var rows = '', more = '';
+    if (which === 'train') {
+      rows = trainings().slice(0, 4).map(function (r) { return '<li><time>' + fmt(dt(r[0])) + '</time><span>' + r[1] + '<small>Register by ' + fmt(dt(r[2])) + ' · up to 4 per class</small></span></li>'; }).join('');
+      more = '<a class="up-more" href="https://dbic.github.io/policies/safetytraining.html" target="_blank" rel="noopener">Full schedule and sign-up →</a>';
+    } else if (which === 'sched') {
+      var now = new Date();
+      rows = windows().filter(function (e) { return e.at > now; }).slice(0, 4).map(function (e) { return '<li><time>' + fmt(e.at) + '</time><span>' + esc(e.txt) + '</span></li>'; }).join('');
+      more = '<a class="up-more" href="https://dbic.github.io/policies/scheduling.html" target="_blank" rel="noopener">Tiers, hours and the full calendar →</a>';
+    } else {
+      rows = BROWN.slice(0, 4).map(function (r) { return '<li><time>' + r[0] + '</time><span>' + r[1] + '<small>' + r[2] + '</small></span></li>'; }).join('');
+      more = '<a class="up-more" href="https://dbic.github.io/events/fbb.html" target="_blank" rel="noopener">All brown-bag talks since 2019 →</a>';
+    }
+    cp.innerHTML = '<ul class="up">' + (rows || '<li><span>Nothing scheduled yet. Check back soon.</span></li>') + '</ul>' + more;
+  }
+  ctabs.forEach(function (t, i) {
+    t.addEventListener('click', function () {
+      ctabs.forEach(function (o) { o.setAttribute('aria-selected', String(o === t)); o.tabIndex = o === t ? 0 : -1; });
+      cp.setAttribute('aria-labelledby', t.id); renderTab(t.dataset.tab);
+    });
+    t.addEventListener('keydown', function (e) {
+      var n = null;
+      if (e.key === 'ArrowRight') n = (i + 1) % ctabs.length; else if (e.key === 'ArrowLeft') n = (i - 1 + ctabs.length) % ctabs.length;
+      if (n !== null) { e.preventDefault(); ctabs[n].focus(); ctabs[n].click(); }
+    });
+  });
+  cp.setAttribute('aria-labelledby', 'ct1'); renderTab('train');
+
+  /* ---------- stepper ---------- */
+  var tabs = $$('#steps [role=tab]'), panels = $$('#steps-panels [role=tabpanel]');
+  function selectStep(i, focus) {
+    tabs.forEach(function (t, j) { var on = i === j; t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1; panels[j].hidden = !on; });
+    if (focus) tabs[i].focus();
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { selectStep(i); });
+    t.addEventListener('keydown', function (e) {
+      var n = null, k = e.key;
+      if (k === 'ArrowDown' || k === 'ArrowRight') n = (i + 1) % tabs.length;
+      else if (k === 'ArrowUp' || k === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
+      else if (k === 'Home') n = 0; else if (k === 'End') n = tabs.length - 1;
+      if (n !== null) { e.preventDefault(); selectStep(n, true); }
+    });
+  });
+  $$('[data-next-step]').forEach(function (b) { b.addEventListener('click', function () { selectStep(+b.dataset.nextStep, true); }); });
+
+  /* ---------- research slideshow ---------- */
+  (function () {
+    var track = $('#track'), slides = $$('.slide', track), dots = $('#dots'), pauseBtn = $('#slide-pause'), timer = 0, paused = false, hover = false, visible = true;
+    slides.forEach(function (s, i) {
+      var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Go to example ' + (i + 1));
+      b.addEventListener('click', function () { go(i); }); dots.appendChild(b);
+    });
+    function idx() { var best = 0, d = 1e9; slides.forEach(function (s, i) { var x = Math.abs(s.offsetLeft - track.scrollLeft); if (x < d) { d = x; best = i; } }); return best; }
+    function go(i) { i = (i + slides.length) % slides.length; track.scrollTo({ left: slides[i].offsetLeft, behavior: reduced() ? 'auto' : 'smooth' }); }
+    function mark() { var c = idx(); $$('button', dots).forEach(function (b, i) { b.setAttribute('aria-current', String(i === c)); }); }
+    var ticking = false;
+    track.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(function () { mark(); ticking = false; }); } });
+    $('#prev').addEventListener('click', function () { go(idx() - 1); });
+    $('#next').addEventListener('click', function () { go(idx() + 1); });
+    track.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') { e.preventDefault(); go(idx() + 1); } else if (e.key === 'ArrowLeft') { e.preventDefault(); go(idx() - 1); } });
+    function play() { clearInterval(timer); timer = 0; if (!paused && !hover && visible && !reduced()) timer = setInterval(function () { go(idx() + 1); }, 7000); }
+    pauseBtn.addEventListener('click', function () { paused = !paused; pauseBtn.setAttribute('aria-pressed', String(paused)); pauseBtn.textContent = paused ? '▶' : '❚❚'; pauseBtn.setAttribute('aria-label', paused ? 'Resume automatic scrolling' : 'Pause automatic scrolling'); play(); });
+    ['mouseenter', 'focusin', 'touchstart'].forEach(function (ev) { track.addEventListener(ev, function () { hover = true; play(); }, { passive: true }); });
+    ['mouseleave', 'focusout'].forEach(function (ev) { track.addEventListener(ev, function () { hover = false; play(); }); });
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { visible = en[0].isIntersecting; play(); }, { threshold: .3 }).observe(track);
+    mark(); play();
+  })();
+
+  /* ---------- dataset filter ---------- */
+  (function () {
+    var cards = $$('.ds'), q = $('#ds-q'), chips = $$('button[data-filter]'), filter = 'all';
+    function apply() {
+      var term = q.value.trim().toLowerCase(), n = 0;
+      cards.forEach(function (c) {
+        var show = (filter === 'all' || c.dataset.access === filter) && (!term || (c.textContent + ' ' + (c.getAttribute('data-kw') || '')).toLowerCase().indexOf(term) > -1);
+        c.hidden = !show; if (show) n++;
+      });
+      $('#ds-count').textContent = n + ' of ' + cards.length + ' datasets';
+      $('#ds-empty').hidden = n !== 0;
+    }
+    q.addEventListener('input', apply);
+    chips.forEach(function (c) { c.addEventListener('click', function () { filter = c.dataset.filter; chips.forEach(function (o) { o.setAttribute('aria-pressed', String(o === c)); }); apply(); }); });
+    apply();
+  })();
+
+  /* ---------- count-up numbers & scroll reveal ---------- */
+  var yrs = Math.floor((Date.now() - new Date(1999, 10, 1).getTime()) / 31557600000);
+  var yEl = $('#yrs'); yEl.setAttribute('data-count', yrs); yEl.textContent = yrs;
+  function countUp(el) {
+    var to = +el.getAttribute('data-count');
+    if (reduced()) { el.textContent = to; return; }
+    var t0 = performance.now(), dur = 1100;
+    el.textContent = '0';
+    (function step(t) { var p = Math.min(1, (t - t0) / dur); el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(step); })(t0);
+  }
+  if ('IntersectionObserver' in window) {
+    var cio = new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting) { countUp(x.target); cio.unobserve(x.target); } }); }, { threshold: .5 });
+    $$('[data-count]').forEach(function (el) { cio.observe(el); });
+    var rio = new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('in'); rio.unobserve(x.target); } }); }, { threshold: .12, rootMargin: '0px 0px -6% 0px' });
+    $$('.reveal').forEach(function (el) { rio.observe(el); });
+  } else { $$('.reveal').forEach(function (el) { el.classList.add('in'); }); }
+})();
+</script>
+</body>
+</html>
