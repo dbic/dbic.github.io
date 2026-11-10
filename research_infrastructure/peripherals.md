@@ -8,7 +8,9 @@ retrieved: 2026-11-04
 
 # Peripheral equipment
 
-General questions, requests for training, or technical support for any equipment listed here should be directed to: Michael Pearl ([michael.a.pearl](mailto:michael.a.pearl@dartmouth.edu?subject=DBIC%20peripherals)[@dartmouth.edu](mailto:terry.j.sackett@dartmouth.edu?subject=DBIC%20peripherals)).
+General questions, requests for training, or technical support for any
+equipment listed here should be directed to: Michael Pearl
+([michael.a.pearl@dartmouth.edu](mailto:michael.a.pearl@dartmouth.edu?subject=DBIC%20peripherals)).
 
 ## Menu
 
