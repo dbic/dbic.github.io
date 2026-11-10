@@ -162,4 +162,4 @@ The DBIC uses a three-tier scheduling system. Requests within each tier are comp
 
 <a id="calendar"></a>
 
-### DBIC calendar
+{% include redesign/calendar.html %}
