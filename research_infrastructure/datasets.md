@@ -155,14 +155,20 @@ The Individual Brain Charting (IBC) dataset is a high-resolution 3T fMRI dataset
 
 ## The Moth
 
-The Moth dataset is a naturalistic 3T fMRI dataset conducted at University of Texas, Austin by the lab of Professor Alexander Huth. The dataset contains densely sampled fMRI data from 8 participants that listened to naturalistic narratives from The Moth Radio Hour. Functional localizers are also available for all participants. This dataset often serves as a benchmark for encoding model performance in predicting language-associated brain activity.
+The Moth dataset is a naturalistic 3T fMRI dataset conducted at
+University of Texas, Austin by the lab of Professor Alexander
+Huth. The dataset contains densely sampled fMRI data from 8
+participants that listened to naturalistic narratives from The Moth
+Radio Hour. Functional localizers are also available for all
+participants. This dataset often serves as a benchmark for encoding
+model performance in predicting language-associated brain activity.
 
 - **Path to the dataset on Discovery:** /dartfs/rc/lab/D/DBIC/DBIC/archive/ds003020
 - **Access:** Open (no restrictions to rc-DBIC users)
 
 ### Online resources
 
-- Lebel, A., Jain, S., Pennington, J. et al. The Moth narratives: a naturalistic fMRI dataset. Sci Data 10, 421 (2023). [https://doi.org/10.1038/s41597-023-02437-w](https://www.nature.com/articles/s41597-023-02437-z)
+- Lebel, A., Jain, S., Pennington, J. et al. The Moth narratives: a naturalistic fMRI dataset. Sci Data 10, 421 (2023). [https://www.nature.com/articles/s41597-023-02437-z](https://www.nature.com/articles/s41597-023-02437-z)
 
 <a id="tasks"></a>
 
