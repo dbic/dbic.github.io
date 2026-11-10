@@ -12,6 +12,6 @@ The Dartmouth Brain Imaging Center (DBIC) is dedicated to providing a welcoming,
 
 Researchers using the DBIC are expected to conduct themselves in a safe and professional manner at all times and to follow all policies and procedures as laid out by the DBIC and Dartmouth College.
 
-- The use of drugs and alcohol are never permitted or tolerated in the DBIC, nor is working in the DBIC under the influence of drugs or alcohol. (see also: [Dartmouth's drug-free campus and workplace policies](../assets/~hrs/pdfs/drug_free_workplace.pdf "Drug and alcohol policy"))
-- The possession and use of weapons are explicitly prohibited in the DBIC (see also: [Weapons policy](../assets/~hrs/pdfs/weapons_policy.pdf "Weapons policy"))
+- The use of drugs and alcohol are never permitted or tolerated in the DBIC, nor is working in the DBIC under the influence of drugs or alcohol. (see also: [Dartmouth's drug-free campus and workplace policies](https://policies.dartmouth.edu/policy/drug-free-campus-and-workplace)).
+- The possession and use of weapons are explicitly prohibited in the DBIC (see also: [Weapons policy](https://policies.dartmouth.edu/policy/weapons-firearms-fireworks-and-projectiles-policy)).
 - Maintain compliance with the [Dartmouth College Sexual and Gender-Based Misconduct Policy](https://sexual-respect.dartmouth.edu/policy/dartmouth-college-sexual-and-gender-based-misconduct-policy "sexual respect").
