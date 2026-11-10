@@ -35,7 +35,7 @@ The projector has HDMI, DVI-D, 5-BNC, and VGA inputs, which allows for different
 
 The projector attaches to stimulus computer via video adapter. The image is mirrored on a monitor in the control room.
 
-- [Panasonic website](https_/business.panasonic.co.uk/visual-system/pt-dw750/index.md)
+- [Panasonic website](https://business.panasonic.co.uk/visual-system/pt-dw750/index.md)
 - [DBIC user guide - projector](../assets/dbic/docs/userguides/sop_projector_09132023.pdf)
 
 #### Standing (out of bore) projection information
