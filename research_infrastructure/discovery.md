@@ -22,14 +22,26 @@ DBIC owns a share of 15 Nodes on the Research Computing (RC) Discovery cluster, 
 
 ### Interactive nodes
 
-Access to the Discovery cluster requires logging on to an interactive node using SSH and your DartID credentials. The primary interactive head node ([discovery7.hpcc.dartmouth.edu](discovery7.hpcc.dartmouth.edu/index.md)) may be used for normal file manipulation and for submitting jobs to the cluster via SLURM. The head node must not be used for interactive jobs that require large amounts of memory or multiple processors.
+Access to the Discovery cluster requires logging on to an interactive
+node using SSH and your DartID credentials. The primary interactive
+head node (discovery7.hpcc.dartmouth.edu) may be used for normal file
+manipulation and for submitting jobs to the cluster via SLURM. The
+head node must not be used for interactive jobs that require large
+amounts of memory or multiple processors.
 
-**Ndoli:** For testing code or running interactive jobs, there is a DBIC-dedicated interactive node called Ndoli ([ndoli.dartmouth.edu](ndoli.dartmouth.edu/index.md)) available to all DBIC users with Discovery access. DBIC users are encouraged to use this resource for testing code before submitting large jobs to the cluster.
+**Ndoli:** For testing code or running interactive jobs, there is a
+  DBIC-dedicated interactive node called Ndoli (ndoli.dartmouth.edu)
+  available to all DBIC users with Discovery access. DBIC users are
+  encouraged to use this resource for testing code before submitting
+  large jobs to the cluster.
 
-**Andes and Polaris**: Similar to Ndoli, but not limited to only DBIC users, interactive nodes Andes ([andes.dartmouth.edu](andes.dartmouth.edu/index.md)) and Polaris ([polaris.dartmouth.edu](polaris.dartmouth.edu/index.md)) are also available for interactive jobs that require large amounts of memory. For more information see the High Performance Computing section of the Dartmouth Services Portal."
+**Andes and Polaris**: Similar to Ndoli, but not limited to only DBIC
+  users, interactive nodes Andes (andes.dartmouth.edu) and Polaris
+  (polaris.dartmouth.edu) are also available for interactive jobs that
+  require large amounts of memory. For more information see the High
+  Performance Computing section of the Dartmouth Services Portal.
 
-The link above is :  
-<https://services.dartmouth.edu/TDClient/1806/Portal/Requests/ServiceCatalog?CategoryID=11669>
+Reference link: [https://services.dartmouth.edu/TDClient/1806/Portal/Requests/ServiceCatalog?CategoryID=11669](https://services.dartmouth.edu/TDClient/1806/Portal/Requests/ServiceCatalog?CategoryID=11669)
 
 ## Using DBIC's Allocation
 
