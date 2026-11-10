@@ -1,0 +1,6 @@
+# The scanner calendar shown on the scheduling page (a published, read-only Outlook calendar).
+# If the calendar is ever re-published, only the address below needs to change.
+title: "DBIC Scanner Calendar"
+heading: "DBIC calendar"
+url: "https://outlook.office365.com/owa/calendar/5d779716bef1465d9be0331152ee6ce5@kiewit.dartmouth.edu/445d60c19a454cf88e73c1465beef29b8081143592631119487/calendar.html"
+height: 600        # height of the frame in pixels

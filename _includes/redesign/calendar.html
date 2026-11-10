@@ -1,0 +1,7 @@
+{%- comment -%}
+  The embedded DBIC scanner calendar (address and wording come from _data/calendar.yml).
+  Use it on a page by writing:  include redesign/calendar.html
+  It supplies its own heading with the anchor "calendar", so links to #calendar land here.
+{%- endcomment -%}
+{%- assign cal = site.data.calendar -%}
+<div class="calendar-embed"><h3 id="calendar">{{ cal.heading | default: 'DBIC calendar' | escape }}</h3><iframe id="dbic-calendar-embed" title="{{ cal.title | default: 'DBIC Calendar' | escape }}" src="{{ cal.url }}" loading="lazy" style="display:block;width:100%;max-width:60rem;height:{{ cal.height | default: 600 }}px;border:1px solid var(--line, #ccc);border-radius:8px"></iframe><p style="font-size:.92rem">If the calendar does not appear, <a href="{{ cal.url }}">open it in a new window</a>.</p></div>
