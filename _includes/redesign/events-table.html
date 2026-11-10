@@ -1,0 +1,31 @@
+{%- comment -%}
+  A table of upcoming events built from _data/events.csv, grouped by year.
+  Use it in any page by writing:  include redesign/events-table.html  with  category="Safety training"
+  Options:
+    columns="date,time,deadline"     any of: date, time, title, detail, deadline (in the order you want)
+    deadline_label="Registration deadline"
+    empty_text="No sessions are scheduled right now. Check back soon."
+  Rows whose date has passed are left out when the site is built, and hidden in the browser afterwards.
+{%- endcomment -%}
+{%- assign cols = include.columns | default: 'date,time,deadline' | split: ',' -%}
+{%- assign dl_label = include.deadline_label | default: 'Registration deadline' -%}
+{%- assign today = site.time | date: '%Y-%m-%d' -%}
+{%- assign rows = site.data.events | where: 'category', include.category | sort: 'date' -%}
+{%- assign shown = 0 -%}
+{%- assign current_year = '' -%}
+<div class="events-table" data-category="{{ include.category | escape }}">
+{%- for r in rows -%}
+{%- if r.date >= today -%}
+{%- assign yr = r.date | slice: 0, 4 -%}
+{%- if yr != current_year -%}
+{%- if current_year != '' %}</tbody></table></div>{% endif -%}
+<div class="et-year"><h3>{{ yr }}</h3><table><thead><tr>{% for c in cols %}<th scope="col">{% case c %}{% when 'date' %}Date{% when 'time' %}Time{% when 'title' %}Event{% when 'detail' %}Details{% when 'deadline' %}{{ dl_label | escape }}{% endcase %}</th>{% endfor %}</tr></thead><tbody>
+{%- assign current_year = yr -%}
+{%- endif -%}
+<tr data-date="{{ r.date }}">{% for c in cols %}<td>{% case c %}{% when 'date' %}{{ r.date | date: '%A, %B %-d' }}{% when 'time' %}{{ r.time | escape }}{% when 'title' %}{% if r.url %}<a href="{{ r.url | relative_url }}">{{ r.title | escape }}</a>{% else %}{{ r.title | escape }}{% endif %}{% when 'detail' %}{{ r.detail | escape }}{% when 'deadline' %}{{ r.deadline | date: '%A, %B %-d' }}{% endcase %}</td>{% endfor %}</tr>
+{%- assign shown = shown | plus: 1 -%}
+{%- endif -%}
+{%- endfor -%}
+{%- if current_year != '' %}</tbody></table></div>{% endif -%}
+<p class="et-empty"{% if shown > 0 %} hidden{% endif %}>{{ include.empty_text | default: 'No sessions are scheduled right now. Check back soon.' | escape }}</p>
+</div>

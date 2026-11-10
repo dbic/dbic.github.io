@@ -289,6 +289,18 @@
     }
   });
 
+  /* ---------- tables built from events.csv: hide rows whose date has passed (works between site rebuilds) ---------- */
+  $$('.events-table').forEach(function (box) {
+    var now = new Date();
+    $$('tr[data-date]', box).forEach(function (tr) { var d = parseISO(tr.getAttribute('data-date')); if (d && endOfDay(d) < now) tr.hidden = true; });
+    var anyYear = false;
+    $$('.et-year', box).forEach(function (sec) {
+      var any = $$('tr[data-date]', sec).some(function (tr) { return !tr.hidden; });
+      sec.hidden = !any; if (any) anyYear = true;
+    });
+    var empty = $('.et-empty', box); if (empty) empty.hidden = anyYear;
+  });
+
   /* ---------- "how a study works" steps ---------- */
   var steps = $$('#steps [role=tab]'), panels = $$('#steps-panels [role=tabpanel]');
   function selectStep(i, focus) {

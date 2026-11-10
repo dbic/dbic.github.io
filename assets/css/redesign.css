@@ -326,3 +326,54 @@ dialog#qf::backdrop { background: rgba(3, 18, 11, .6); backdrop-filter: blur(3px
 }
 .hero-mark { position: absolute; right: max(2rem, 7vw); top: 50%; transform: translateY(-50%); height: min(86%, 30rem); width: auto; max-width: 48%; object-fit: contain; opacity: .1; filter: brightness(0) invert(1); pointer-events: none; z-index: -1; }
 @media (max-width: 52rem) { .hero-mark { right: -12%; height: 70%; opacity: .07; } }
+
+
+/* ---------- ordinary content pages (the converted Markdown pages) ---------- */
+.prose-wrap { padding: clamp(1.8rem, 4vw, 3rem) 0 clamp(3rem, 6vw, 5rem); }
+.prose { font-size: 1.0625rem; }
+.prose > p, .prose > ul, .prose > ol, .prose > dl, .prose > blockquote, .prose > pre, .prose > h1, .prose > h2, .prose > h3, .prose > h4, .prose > h5 { max-width: 52rem; }
+.prose h1, .prose h2, .prose h3, .prose h4 { font-family: var(--display); line-height: 1.15; letter-spacing: -.01em; }
+.prose h1 { font-size: clamp(2rem, 4.6vw, 3rem); font-weight: 700; margin: .3rem 0 1rem; }
+.prose h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 2.2rem 0 .8rem; }
+.prose h3 { font-size: 1.35rem; margin: 1.8rem 0 .6rem; }
+.prose h4 { font-size: 1.12rem; margin: 1.4rem 0 .5rem; }
+.prose h5, .prose h6 { font-size: 1rem; margin: 1.2rem 0 .4rem; }
+.prose > h1:first-child, .prose > :first-child { margin-top: 0; }
+.prose ul, .prose ol { padding-left: 1.4rem; }
+.prose li { margin-bottom: .35rem; }
+.prose hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
+.prose blockquote { border-left: 4px solid var(--accent); margin: 1.2rem 0; padding: .2rem 1.1rem; color: var(--muted); }
+.prose code { background: var(--surface-2); padding: .1rem .35rem; border-radius: 6px; font-size: .92em; }
+.prose pre { background: var(--surface-2); border: 1px solid var(--line); border-radius: 12px; padding: 1rem; overflow: auto; }
+.prose pre code { background: none; padding: 0; }
+.prose img { max-width: 100%; height: auto; }
+.prose table img { max-width: none; }
+.prose table { display: block; overflow-x: auto; border-collapse: collapse; margin: 1rem 0; max-width: 100%; }
+.prose th, .prose td { border: 1px solid var(--line); padding: .5rem .75rem; vertical-align: top; text-align: left; }
+.prose th { background: var(--surface-2); font-weight: 600; }
+.prose iframe { max-width: 100%; border: 0; border-radius: var(--radius); }
+.prose details { border: 1px solid var(--line); border-radius: 12px; padding: .6rem 1rem; margin: 1rem 0; background: var(--surface); }
+.prose summary { cursor: pointer; font-weight: 600; }
+.prose [id] { scroll-margin-top: 5.5rem; }
+.prose a { overflow-wrap: anywhere; }
+@media (max-width: 52rem) { .prose table img { max-width: 160px; } }
+
+/* people cards written with the older people.html include, inside a content page */
+.prose .people { display: grid; grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); gap: 1.25rem; }
+.prose .people.list { grid-template-columns: 1fr; gap: 1.75rem; }
+.prose .person { flex-direction: row; gap: .9rem; align-items: flex-start; background: none; border: 0; border-radius: 0; padding: 0; box-shadow: none; color: inherit; transform: none; }
+.prose .person:hover { transform: none; box-shadow: none; }
+.prose .person img, .prose .person .noimg { width: 110px; flex: none; }
+.prose .person img { height: auto; border-radius: var(--radius); }
+.prose .people.list .person img, .prose .people.list .person .noimg { width: 150px; }
+.prose .person p { margin: .5rem 0 0; }
+@media (max-width: 30rem) { .prose .people.list .person img, .prose .people.list .person .noimg { width: 100px; } }
+
+/* tables built from events.csv */
+.events-table h3 { margin: 1.6rem 0 .6rem; }
+.events-table table { display: table; width: 100%; max-width: 46rem; table-layout: fixed; }
+.events-table td, .events-table th { overflow-wrap: break-word; }
+@media (max-width: 34rem) { .events-table th, .events-table td { font-size: .88rem; padding: .45rem .5rem; } }
+@media (max-width: 26rem) { .events-table table { table-layout: auto; } .events-table th, .events-table td { font-size: .82rem; padding: .4rem .35rem; } }
+.events-table .et-year[hidden], .events-table .et-empty[hidden] { display: none; }
+.events-table .et-empty { color: var(--muted); }

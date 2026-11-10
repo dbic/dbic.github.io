@@ -3,7 +3,7 @@
     <div class="foot-grid">
       {%- for g in site.data.menu.groups %}
       <div><h3>{{ g.title | escape }}</h3><ul>
-        {%- for item in g.items %}{% capture href %}{% include redesign/href.html url=item.url %}{% endcapture %}<li><a href="{{ href | strip }}">{{ item.title | escape }}</a></li>{% endfor %}
+        {%- for item in g.items %}{% if item.search_only != true %}{% capture href %}{% include redesign/href.html url=item.url %}{% endcapture %}<li><a href="{{ href | strip }}">{{ item.title | escape }}</a></li>{% endif %}{% endfor %}
       </ul></div>
       {%- endfor %}
       <div><h3>Associated programs</h3><ul>
