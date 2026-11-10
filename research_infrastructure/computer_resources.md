@@ -48,17 +48,63 @@ Siemens Console, which communicates with a dedicated virtual machine running a D
 
 ## Storage of BIDS
 
-In addition to storage of the original DICOM images, DBIC has adopted the standard file-naming conventions specified in the Brain Imaging Data Structure (BIDS) protocol ([bids.neuroimaging.io](https://bids.neuroimaging.io/ "BIDS")) for many recently acquired studies. The BIDS format provides a convenient common framework for organizing and storing data that has been adopted widely in the neuroimaging community. The universal adoption of BIDS will enhance efforts for data sharing, reproduction of results, and promoting Open Science ([http://centerforopenneuroscience.org](http://centerforopenneuroscience.org/ "Center for Open Neuroscience")); which are all principles that DBIC aims to promote. All investigators at DBIC have the option of transforming their data from DICOM to BIDS. For instructions, please contact [Yaroslav Halchenko](mailto:yaroslav.halchenko@dartmouth.edu?subject=BIDS).
+In addition to storage of the original DICOM images, DBIC has adopted
+the standard file-naming conventions specified in the Brain Imaging
+Data Structure (BIDS) protocol
+([bids.neuroimaging.io](https://bids.neuroimaging.io/ "BIDS")) for
+many recently acquired studies. The BIDS format provides a convenient
+common framework for organizing and storing data that has been adopted
+widely in the neuroimaging community. The universal adoption of BIDS
+will enhance efforts for data sharing, reproduction of results, and
+promoting Open Science
+([http://centerforopenneuroscience.org](http://centerforopenneuroscience.org/
+"Center for Open Neuroscience")); which are all principles that DBIC
+aims to promote. All investigators at DBIC have the option of
+transforming their data from DICOM to BIDS. For instructions, please
+contact [Yaroslav
+Halchenko](mailto:yaroslav.halchenko@dartmouth.edu?subject=BIDS).
 
-All BIDS formatted data are converted to the NIfTI Data Format ([https://nifti.nimh.nih.gov](https://nifti.nimh.nih.gov "NIFTI")) directly from the DICOM data and are stored on the same server. However, because multiple sessions (each with unique accession numbers and which may be acquired on different days) must be organized together according to Study Protocol under the BIDS specification, the organization for a particular study on the file server follows the convention: <server>:/inbox/BIDS/<PI>/<LeadInvestigator>/<StudyName>/{sid-000, ... sid-N}. Where <PI> is the name of the Principal Investigator, <LeadInvestigator> is the person responsible for the execution of the study (typically a graduate student), <StudyName> is a unique number and mnemonic shorthand for the study, and sid-XXX are unique directories for each subject in the study. For example, all data for the study number 1021 which investigated brain activity for viewing actions, run by Dr. Sam Nastase, a former graduate student of Prof. Jim Haxby is located at <server>:/inbox/BIDS/Haxby/Sam/1021\_actions.
+All BIDS formatted data are converted to the NIfTI Data Format
+([https://nifti.nimh.nih.gov](https://nifti.nimh.nih.gov "NIFTI"))
+directly from the DICOM data and are stored on the same
+server. However, because multiple sessions (each with unique accession
+numbers and which may be acquired on different days) must be organized
+together according to Study Protocol under the BIDS specification, the
+organization for a particular study on the file server follows the
+convention:
+```
+<server>:/inbox/BIDS/<PI>/<LeadInvestigator>/<StudyName>/{sid-000, ... sid-N}.
+```
+Where `<PI>` is the name of the Principal Investigator,
+`<LeadInvestigator>` is the person responsible for the execution of the
+study (typically a graduate student), `<StudyName>` is a unique number
+and mnemonic shorthand for the study, and `sid-XXX` are unique
+directories for each subject in the study. For example, all data for
+the study number 1021 which investigated brain activity for viewing
+actions, run by Dr. Sam Nastase, a former graduate student of
+Prof. Jim Haxby, is located at `<server>:/inbox/BIDS/Haxby/Sam/1021\_actions`.
 
 <a id="accessingbids"></a>
 
 ## Accessing BIDS data using Datalad
 
-To further promote data accesibility, sharing, and reproducibility, all BIDS formatted data on the DBIC server can be accessed using the DataLad file-sharing and data-versioning utility (datalad.org). DataLad makes it possible to access your data using the same version control systems developed for git and git-annex, which allows for downloading file hierarchies and meta-data, without checking file contents (such as large volumes of time-series fMRI data) into git, which would be costly in terms of storage space. Instructions on how to use DataLad can be found at [https://www.datalad.org](https://www.datalad.org "DataLad").
+To further promote data accesibility, sharing, and reproducibility,
+all BIDS formatted data on the DBIC server can be accessed using the
+DataLad file-sharing and data-versioning utility
+(datalad.org). DataLad makes it possible to access your data using the
+same version control systems developed for git and git-annex, which
+allows for downloading file hierarchies and meta-data, without
+checking file contents (such as large volumes of time-series fMRI
+data) into git, which would be costly in terms of storage
+space. Instructions on how to use DataLad can be found at
+[https://www.datalad.org](https://www.datalad.org "DataLad").
 
-All MRI data at DBIC is collected following [ReproIn](http://reproin.repronim.org "ReproIn") (NIH 1P41EB019936-01A1) convention and provided to researchers as [BIDS](https://bids-specification.readthedocs.io "BIDS") datasets under [DataLad version control system](http://datalad.org "Datalad") (NSF CRCNS 1429999).
+All MRI data at DBIC is collected following
+[ReproIn](http://reproin.repronim.org "ReproIn") (NIH
+1P41EB019936-01A1) convention and provided to researchers as
+[BIDS](https://bids-specification.readthedocs.io "BIDS") datasets
+under [DataLad version control system](http://datalad.org "Datalad")
+(NSF CRCNS 1429999).
 
 Suggested resource: [DBIC BIDS Handbook](https://dbic-handbook.readthedocs.io)
 
