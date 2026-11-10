@@ -1,0 +1,23 @@
+# Logo and branding for the site header (and an optional faint watermark on the home page).
+
+# The logo shown at the left of the header on every page. A path on this site (starts with /).
+# Leave blank ("") to use the plain ring symbol instead.
+logo: /assets/dbic/images/DBIC_2025_logo_green.png
+logo_width: 1146        # the image's real size in pixels (helps the page lay out without jumping)
+logo_height: 854
+alt: "Dartmouth Brain Imaging Center"
+
+# Show the words "DBIC / Dartmouth Brain Imaging Center" next to the logo?
+# Set to false if the logo already contains the name.
+show_text: true
+
+# Optional: a version of the logo for DARK mode (for example a white or light one).
+# Without one, the logo is shown on a small white tile in dark mode so it stays readable.
+logo_dark: ""
+
+# true = a faint white copy of the logo behind the home page hero.
+# Works best when the logo has a transparent background. Try it and see.
+hero_watermark: false
+
+# Optional: small square image for the browser tab (favicon). Leave blank to skip.
+favicon: ""

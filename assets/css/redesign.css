@@ -311,3 +311,18 @@ dialog#qf::backdrop { background: rgba(3, 18, 11, .6); backdrop-filter: blur(3px
 /* ---------- accent colour classes (the "color" field in the data files) ---------- */
 .c-green { --c: var(--c1); } .c-teal { --c: var(--c2); } .c-indigo { --c: var(--c3); }
 .c-amber { --c: var(--c4); } .c-rose { --c: var(--c5); } .c-violet { --c: var(--c6); }
+
+
+/* ---------- logo in the header; optional watermark in the hero ---------- */
+.brand-logo, .brand-logo-dark { height: 3rem; width: auto; display: block; flex: none; }
+.brand-logo-dark { display: none; }
+:root[data-theme="dark"] .brand-logo.has-dark { display: none; }
+:root[data-theme="dark"] .brand-logo-dark { display: block; }
+:root[data-theme="dark"] .brand-logo:not(.has-dark) { background: #fff; border-radius: 10px; padding: .2rem .35rem; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .brand-logo.has-dark { display: none; }
+  :root:not([data-theme="light"]) .brand-logo-dark { display: block; }
+  :root:not([data-theme="light"]) .brand-logo:not(.has-dark) { background: #fff; border-radius: 10px; padding: .2rem .35rem; }
+}
+.hero-mark { position: absolute; right: max(2rem, 7vw); top: 50%; transform: translateY(-50%); height: min(86%, 30rem); width: auto; max-width: 48%; object-fit: contain; opacity: .1; filter: brightness(0) invert(1); pointer-events: none; z-index: -1; }
+@media (max-width: 52rem) { .hero-mark { right: -12%; height: 70%; opacity: .07; } }

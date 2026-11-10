@@ -1,6 +1,9 @@
 {%- assign h = site.data.home.hero -%}
 <section class="hero" aria-labelledby="h1">
   <canvas id="neural" aria-hidden="true"></canvas>
+  {%- if site.data.brand.hero_watermark and site.data.brand.logo != '' %}
+  <img class="hero-mark" src="{{ site.data.brand.logo | relative_url }}" alt="" aria-hidden="true">
+  {%- endif %}
   <div class="wrap hero-in">
     <p class="eyebrow-w">{{ h.eyebrow | escape }}</p>
     <h1 id="h1">{{ h.title | escape }}</h1>
