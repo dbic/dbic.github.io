@@ -51,7 +51,8 @@ To become a certified **scan operator,** reseachers will need to demonstrate com
 
 Scan operators will be expected to know and follow all DBIC safety policies and procedures at all times, and are also responsible for following all DBIC [housekeeping policies](housekeeping.md) to maintain the health and safety of our participants and equipment.
 
-For more information on becoming a certified scan operator, please contact [Courtney.Rogers@dartmouth.edu.](mailto:Courtney.Rogers@dartmouth.edu.)
+For more information on becoming a certified scan operator, please contact
+[Courtney.Rogers@dartmouth.edu](mailto:Courtney.Rogers@dartmouth.edu).
 
 Trainings can be scheduled on an as-needed basis. Training hours are Monday-Friday, starting at 8:00am, ending by 4:00pm.
 
