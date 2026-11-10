@@ -1,0 +1,24 @@
+{%- assign r = site.data.home.research -%}
+<section class="section" id="research" aria-labelledby="h-res">
+  <div class="wrap">
+    <div class="show-bar reveal">
+      <div><p class="eyebrow">{{ r.eyebrow | escape }}</p><h2 id="h-res">{{ r.title | escape }}</h2></div>
+      <div class="show-ctl">
+        <button type="button" class="icon-btn" id="prev" aria-label="Previous">←</button>
+        <button type="button" class="icon-btn" id="next" aria-label="Next">→</button>
+        <button type="button" class="icon-btn" id="slide-pause" aria-pressed="false" aria-label="Pause automatic scrolling">❚❚</button>
+      </div>
+    </div>
+    <div class="track" id="track" tabindex="0" role="region" aria-label="Research examples">
+      {%- for item in site.data.research_highlights %}
+      {%- if item.show != false %}{% capture href %}{% include redesign/href.html url=item.link %}{% endcapture %}
+      <article class="slide c-{{ item.color }}"><div class="slide-art">{% include redesign/art.html name=item.art %}<b>{{ item.big | escape }}</b></div><div class="slide-body"><h3>{{ item.title | escape }}</h3>{{ item.text | markdownify }}<a href="{{ href | strip }}">{{ item.link_text | escape }} →</a></div></article>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+    <div class="dots" id="dots" aria-label="Choose example"></div>
+    <div class="chips reveal" aria-label="Fields of research">
+      {%- for f in r.fields %}<span class="chip">{{ f | escape }}</span>{% endfor %}
+    </div>
+  </div>
+</section>

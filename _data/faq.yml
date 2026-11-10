@@ -1,0 +1,18 @@
+# Common questions, grouped. A page picks a group with  faq_group: scanning  in its front matter.
+scanning:
+  title: "Scanning in the DBIC"
+  items:
+    - { q: "How do I submit a new DBIC protocol?", url: "/policies/dbic_protocol.html" }
+    - { q: "How can I sign up for DBIC safety training?", url: "/policies/safetytraining.html" }
+    - { q: "How can I sign up for DBIC operator training?", url: "/policies/operator_training.html" }
+    - { q: "How much does it cost to scan at the DBIC?", url: "/policies/dbic_billing.html" }
+    - { q: "How do I schedule time at the DBIC?", url: "/policies/scheduling.html" }
+    - { q: "What is the DBIC’s cancellation policy?", url: "/policies/cancellations.html" }
+computing:
+  title: "Accessing computing resources and data"
+  items:
+    - { q: "How do I obtain a new user account?", url: "/research_infrastructure/computer_resources.html" }
+    - { q: "How can I access Discovery?", url: "/research_infrastructure/discovery.html" }
+    - { q: "Where is DBIC on DartFS?", url: "/research_infrastructure/computer_resources.html#datastorage" }
+    - { q: "Where do I find my scans?", url: "/research_infrastructure/computer_resources.html#dicomstorage" }
+    - { q: "What datasets does the DBIC host?", url: "/research_infrastructure/datasets.html" }

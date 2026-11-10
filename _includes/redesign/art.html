@@ -1,0 +1,6 @@
+<svg viewBox="0 0 200 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true">{%- case include.name -%}
+{%- when 'waves' -%}<g fill="none" stroke="#fff" stroke-width=".8"><path d="M0 70c30-40 60 40 90 0s60-40 110 10"/><path d="M0 50c30-40 60 40 90 0s60-40 110 10"/><path d="M0 30c30-40 60 40 90 0s60-40 110 10"/></g>
+{%- when 'rings' -%}<g fill="none" stroke="#fff" stroke-width=".8"><circle cx="100" cy="50" r="12"/><circle cx="100" cy="50" r="26"/><circle cx="100" cy="50" r="40"/><circle cx="100" cy="50" r="54"/></g>
+{%- when 'bars' -%}<g fill="none" stroke="#fff" stroke-width=".8"><path d="M20 80V50M50 80V30M80 80V60M110 80V20M140 80V45M170 80V35"/></g>
+{%- else -%}<g fill="none" stroke="#fff" stroke-width=".8"><circle cx="40" cy="30" r="3"/><circle cx="90" cy="55" r="3"/><circle cx="150" cy="25" r="3"/><circle cx="170" cy="75" r="3"/><circle cx="60" cy="80" r="3"/><path d="M40 30 90 55 150 25 170 75M90 55 60 80"/></g>
+{%- endcase -%}</svg>

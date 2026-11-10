@@ -1,0 +1,48 @@
+# Research highlights: the cards in "Work that happens here" on the home page.
+#
+# HOW TO EDIT
+#   * Order: the cards appear in the same order as this list. Move a block up or down to reorder.
+#   * Add one: copy a whole block (from "- title:" to its last line), paste it where you want it, edit it.
+#   * Hide one without deleting it: add the line   show: false
+#   * Text may use Markdown: *italic*, **bold**, [link text](https://example.org)
+#
+# FIELDS
+#   title      card heading
+#   big        large label on the coloured banner (keep it short: "101 × 6 h", "18 viewers")
+#   color      green | teal | indigo | amber | rose | violet
+#   art        network | waves | rings | bars       (the line drawing behind the label)
+#   text       a few sentences
+#   link       where the link goes: a page on this site (starts with /) or a full web address
+#   link_text  words for the link (an arrow is added automatically)
+
+- title: "Spacetop: one dataset, many questions"
+  big: "101 × 6 h"
+  color: green
+  art: network
+  text: "Collected here: 101 participants, six hours each, spanning six tasks, two hours of movie viewing, diffusion imaging and physiology. Published in *Scientific Data* (2025) and hosted for DBIC users."
+  link: "/research_infrastructure/datasets.html#spacetop"
+  link_text: "About the dataset"
+
+- title: "Watching nature, together"
+  big: "18 viewers"
+  color: teal
+  art: waves
+  text: "Eighteen participants viewed segments of a nature documentary in the scanner. The data supported work on how the brain encodes meaning in a shared representational space (*Frontiers in Neuroscience*, 2018)."
+  link: "/research_infrastructure/datasets.html#life"
+  link_text: "About the dataset"
+
+- title: "Across disciplines"
+  big: "8 fields"
+  color: indigo
+  art: rings
+  text: "DBIC-supported research spans cognitive and social neuroscience, education, engineering, philosophy, music, sociology and computer science, from four Arts & Sciences departments to Geisel and VA collaborators."
+  link: "/people/affiliated.html"
+  link_text: "Meet affiliated faculty"
+
+- title: "Share your results"
+  big: "Your study"
+  color: amber
+  art: bars
+  text: "Our research highlights page is waiting for stories. If your DBIC-supported work could be featured, we would love to hear about it."
+  link: "mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20research%20highlight"
+  link_text: "Tell us about it"

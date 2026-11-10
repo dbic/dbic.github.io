@@ -1,0 +1,7 @@
+<div class="status">
+  <div class="wrap status-grid" id="status" aria-label="What is coming up">
+    {%- for s in site.data.home.status %}{% capture href %}{% include redesign/href.html url=s.url %}{% endcapture %}
+    <a class="chip-card" data-kind="{{ s.kind }}" data-category="{{ s.category | escape }}" data-label="{{ s.label | escape }}" href="{{ href | strip }}"><i class="dot"></i><div><small>{{ s.label | escape }}</small><b>{% if s.kind == 'contact' %}{{ s.title | escape }}{% else %}See the schedule{% endif %}</b>{% if s.text %}<span class="s">{{ s.text | escape }}</span>{% endif %}</div></a>
+    {%- endfor %}
+  </div>
+</div>

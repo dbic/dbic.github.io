@@ -1,0 +1,47 @@
+---
+layout: redesign
+title: How a study works
+eyebrow: Research with us
+lead: "From first idea to first scan, in order. Each step links to the full details."
+description: "The five steps from ethics approval to scanning at the Dartmouth Brain Imaging Center."
+faq_group: scanning
+related:
+  - { title: "Safety & compliance", url: "/safety-compliance.html" }
+  - { title: "Data & computing", url: "/data-computing.html" }
+  - { title: "Forms & templates", url: "/policies/forms_templates.html" }
+---
+{% include redesign/page-head.html %}
+{%- assign n = site.data.datasets | size %}
+<section class="section">
+  <div class="wrap">
+    <div class="stepper reveal">
+      <div class="steps" role="tablist" aria-label="Steps to run a study" aria-orientation="vertical" id="steps">
+        {%- for st in site.data.study_steps.steps %}
+        <button class="step-tab" role="tab" id="t{{ forloop.index }}" aria-controls="p{{ forloop.index }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"{% if forloop.first == false %} tabindex="-1"{% endif %}><span class="n">{{ forloop.index }}</span><span>{{ st.tab | escape }}<small>{{ st.sub | escape }}</small></span></button>
+        {%- endfor %}
+      </div>
+      <div id="steps-panels">
+        {%- for st in site.data.study_steps.steps %}
+        <div class="step-panel" role="tabpanel" id="p{{ forloop.index }}" aria-labelledby="t{{ forloop.index }}"{% if forloop.first == false %} hidden{% endif %}>
+          <h3>{{ st.heading | escape }}</h3>
+          <ul>
+            {%- for b in st.bullets %}
+            <li>{{ b | replace: '@datasets@', n | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+            {%- endfor %}
+          </ul>
+          <div class="panel-links">
+            {%- for l in st.links %}{% capture href %}{% include redesign/href.html url=l.url %}{% endcapture %}
+            <a class="btn btn-{{ l.style }} btn-sm" href="{{ href | strip }}">{{ l.text | escape }}</a>
+            {%- endfor %}
+            {%- if st.next_label %}
+            <button type="button" class="btn btn-outline btn-sm" data-next-step="{{ forloop.index }}">{{ st.next_label | escape }}</button>
+            {%- endif %}
+          </div>
+        </div>
+        {%- endfor %}
+        <p class="contact-note">{{ site.data.study_steps.note | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% include redesign/page-foot.html %}

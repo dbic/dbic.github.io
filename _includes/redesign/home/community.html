@@ -1,0 +1,34 @@
+{%- assign c = site.data.home.community -%}
+{%- assign ev = site.data.home.events -%}
+<section class="section" id="community" aria-labelledby="h-comm">
+  <div class="wrap">
+    <div class="sec-head reveal"><p class="eyebrow">{{ c.eyebrow | escape }}</p><h2 id="h-comm">{{ c.title | escape }}</h2><p class="lead-in">{{ c.lead | escape }}</p></div>
+    <div class="comm">
+      <div class="card reveal">
+        <h3>{{ ev.heading | escape }}</h3>
+        <div class="tabs" role="tablist" aria-label="Upcoming items" id="ev-tabs">
+          {%- for t in ev.tabs %}
+          <button class="tab" role="tab" id="ct{{ forloop.index }}" aria-controls="cp" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"{% if forloop.first == false %} tabindex="-1"{% endif %} data-category="{{ t.category | escape }}" data-more-text="{{ t.more_text | escape }}" data-more-url="{{ t.more_url }}">{{ t.label | escape }}</button>
+          {%- endfor %}
+        </div>
+        <div id="cp" role="tabpanel" aria-live="polite">
+          <noscript>
+            {%- for t in ev.tabs %}{% capture href %}{% include redesign/href.html url=t.more_url %}{% endcapture %}
+            <p><a href="{{ href | strip }}">{{ t.more_text | escape }}</a></p>
+            {%- endfor %}
+          </noscript>
+        </div>
+      </div>
+      <div class="card reveal">
+        <h3>{{ c.learn_title | escape }}</h3>
+        <div class="learn" style="margin-top:1rem">
+          {%- for l in c.learn %}
+          <div><span class="ri">{% include redesign/icon.html name=l.icon %}</span><p style="margin:0"><b>{{ l.title | escape }}</b><span>{{ l.text | escape }}</span></p></div>
+          {%- endfor %}
+        </div>
+        {%- capture href %}{% include redesign/href.html url=c.note_link.url %}{% endcapture %}
+        <p class="contact-note">{{ c.note | escape }} <a href="{{ href | strip }}">{{ c.note_link.text | escape }}</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>

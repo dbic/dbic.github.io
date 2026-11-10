@@ -1,0 +1,24 @@
+{%- assign f = site.data.facility -%}
+<section class="section" id="facility" aria-labelledby="h-fac">
+  <div class="wrap">
+    <div class="sec-head reveal"><p class="eyebrow">{{ f.eyebrow | escape }}</p><h2 id="h-fac">{{ f.title | escape }}</h2><p class="lead-in">{{ f.lead | escape }}</p></div>
+    <div class="stats reveal">
+      {%- for s in f.stats %}
+        {%- if s.count_of == 'datasets' %}{% assign num = site.data.datasets | size %}
+        {%- elsif s.since %}{% assign num = site.time | date: '%Y' | minus: s.since %}
+        {%- else %}{% assign num = s.value %}{% endif %}
+      <div class="stat"><div class="big"><span data-count="{{ num }}"{% if s.since %} data-since="{{ s.since }}" data-since-month="{{ s.since_month | default: 1 }}"{% endif %}>{{ num }}</span>{{ s.suffix }}{% if s.unit %}<sup>{{ s.unit | escape }}</sup>{% endif %}</div><p>{{ s.label | escape }}</p></div>
+      {%- endfor %}
+    </div>
+    <div class="specs">
+      {%- for sp in f.specs %}{% capture href %}{% include redesign/href.html url=sp.link %}{% endcapture %}
+      <div class="spec c-{{ sp.color }} reveal"><h3><i></i>{{ sp.title | escape }}</h3><p>{{ sp.text | escape }}</p><a href="{{ href | strip }}">{{ sp.link_text | escape }} →</a></div>
+      {%- endfor %}
+    </div>
+    <ol class="timeline reveal" aria-label="History of the center">
+      {%- for t in f.timeline %}
+      <li><b>{{ t.year | escape }}</b><span>{{ t.text | escape }}</span></li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>

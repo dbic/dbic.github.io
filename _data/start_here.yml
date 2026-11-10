@@ -1,0 +1,10 @@
+# The tiles in the "Where to next?" section (bottom of the home page).
+# color: green | teal | indigo | amber | rose | violet
+# icon:  clipboard | award | shield | scanner | database | users
+# In a text, @datasets@ is replaced by the number of datasets in datasets.csv.
+- { title: "Start a study", color: green, icon: clipboard, text: "From ethics approval to your first scan: five steps, in order.", link: "/research-with-us.html", link_text: "See how it works" }
+- { title: "Get trained", color: indigo, icon: award, text: "MRI safety training for everyone, and certification to run the scanner yourself.", link: "/policies/safetytraining.html", link_text: "Training options" }
+- { title: "Safety & compliance", color: rose, icon: shield, text: "Screening, emergency, incident-reporting and housekeeping policies in one place.", link: "/safety-compliance.html", link_text: "Review our practices" }
+- { title: "Facility & equipment", color: teal, icon: scanner, text: "A 3T Siemens Prisma, three head coils, and a full toolkit for delivering tasks.", link: "/#facility", link_text: "Explore the specs" }
+- { title: "Data & computing", color: amber, icon: database, text: "Storage, the Discovery cluster, and @datasets@ hosted datasets ready to analyze.", link: "/data-computing.html", link_text: "Browse datasets" }
+- { title: "Learn & connect", color: violet, icon: users, text: "Brown-bag talks, workshops, and support for student research.", link: "/#community", link_text: "Join the community" }

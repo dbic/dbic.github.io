@@ -1,0 +1,35 @@
+---
+layout: redesign
+title: Data and computing
+eyebrow: Data & computing
+lead: "Large public neuroimaging datasets are hosted on Dartmouth’s research computing file system, right beside the Discovery cluster, ready for DBIC users to analyze."
+description: "Datasets hosted by the Dartmouth Brain Imaging Center and how to use the computing resources."
+faq_group: computing
+related:
+  - { title: "How a study works", url: "/research-with-us.html" }
+  - { title: "Facility & equipment", url: "/#facility" }
+---
+{% include redesign/page-head.html %}
+<section class="section">
+  <div class="wrap">
+    <div class="ds-tools reveal">
+      <label class="sr" for="ds-q">Search datasets</label>
+      <input class="search" id="ds-q" type="search" placeholder="Search (try “language”)" autocomplete="off">
+      <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" class="chip" data-filter="open" aria-pressed="false">Open to DBIC users</button>
+      <button type="button" class="chip" data-filter="terms" aria-pressed="false">Agreement or terms apply</button>
+      <span class="ds-meta" id="ds-count" aria-live="polite"></span>
+    </div>
+    <div class="ds-grid" id="ds-grid">
+      {%- for d in site.data.datasets %}
+      <a class="ds" data-access="{{ d.access }}" data-kw="{{ d.keywords | escape }}" href="{{ '/research_infrastructure/datasets.html' | relative_url }}#{{ d.anchor }}"><strong>{{ d.name | escape }}</strong><span>{{ d.description | escape }}</span><em class="tag tag-{{ d.access }}">{% if d.access == 'open' %}Open to DBIC users{% else %}Agreement or terms apply{% endif %}</em></a>
+      {%- endfor %}
+    </div>
+    <p class="empty" id="ds-empty" hidden>No datasets match. Try a different word, or <a href="mailto:james.c.ford@dartmouth.edu?subject=DBIC%20dataset%20request">ask Jamie Ford</a> about adding one.</p>
+    <div class="cta-row reveal">
+      <a class="btn btn-outline" href="{{ '/research_infrastructure/datasets.html' | relative_url }}">Access details for every dataset</a>
+      <a class="btn btn-outline" href="{{ '/research_infrastructure/computer_resources.html' | relative_url }}">Accounts &amp; storage</a>
+    </div>
+  </div>
+</section>
+{% include redesign/page-foot.html %}

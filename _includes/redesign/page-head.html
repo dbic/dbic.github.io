@@ -1,0 +1,12 @@
+<section class="page-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a> <span aria-hidden="true">›</span> <span>{{ page.eyebrow | default: page.title | escape }}</span></nav>
+    {%- if page.eyebrow %}
+    <p class="eyebrow-w">{{ page.eyebrow | escape }}</p>
+    {%- endif %}
+    <h1>{{ page.title | escape }}</h1>
+    {%- if page.lead %}
+    <p class="lead">{{ page.lead | escape }}</p>
+    {%- endif %}
+  </div>
+</section>

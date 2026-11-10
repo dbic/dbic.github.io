@@ -1,0 +1,29 @@
+{%- assign p = site.data.home.people -%}
+<section class="section" id="people" aria-labelledby="h-team">
+  <div class="wrap">
+    <div class="sec-head reveal"><p class="eyebrow">{{ p.eyebrow | escape }}</p><h2 id="h-team">{{ p.title | escape }}</h2></div>
+    <div class="team">
+      {%- for person in site.data.directors_staff %}
+        {%- assign role = person.Bio | split: ' | ' | first %}
+        {%- if person['Profile Link'] and person['Profile Link'] != '' %}{% assign dest = person['Profile Link'] %}{% else %}{% assign dest = '/people/directorsstaff.html' %}{% endif %}
+        {%- capture href %}{% include redesign/href.html url=dest %}{% endcapture %}
+      <a class="person reveal" href="{{ href | strip }}"><span class="avatar" aria-hidden="true">{% if person['Local Image'] and person['Local Image'] != '' %}<img src="{{ '/' | append: person['Local Image'] | relative_url }}" alt="" loading="lazy">{% else %}{% include redesign/icon.html name='user' %}{% endif %}</span><strong>{{ person.Name | escape }}</strong><span class="role">{{ role | escape }}</span>{% if person.Ask %}<span class="ask">{{ person.Ask | escape }}</span>{% endif %}</a>
+      {%- endfor %}
+    </div>
+    <div class="contact">
+      <div class="card reveal">
+        <h3>{{ p.contact_title | escape }}</h3>
+        <p>{{ p.contact_text | escape }}</p>
+        {%- capture href %}{% include redesign/href.html url=p.contact_button.url %}{% endcapture %}
+        <a class="btn btn-solid" href="{{ href | strip }}">{{ p.contact_button.text | escape }}</a>
+      </div>
+      <div class="card reveal">
+        <h3>{{ p.find_title | escape }}</h3>
+        <address>{% for line in p.address %}{{ line | escape }}{% if forloop.last == false %}<br>{% endif %}{% endfor %}</address>
+        <p style="margin-top:.8rem">
+          {%- for l in p.find_links %}{% capture href %}{% include redesign/href.html url=l.url %}{% endcapture %}<a href="{{ href | strip }}">{{ l.text | escape }}</a>{% if forloop.last == false %} · {% endif %}{% endfor %}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

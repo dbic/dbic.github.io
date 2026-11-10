@@ -1,0 +1,47 @@
+# Site menu. ONE file feeds the header menus, the footer columns and the quick-find search.
+# Edit titles, add or remove entries, or move an entry to another group here.
+#   url: starts with /  for a page on this site (e.g. /policies/scheduling.html), or a full web address
+#   keywords: extra words that make the quick-find search find the entry (optional)
+#   popular: true  lists the entry before anyone has typed in the quick-find box
+cta: { title: "Start a study", url: "/research-with-us.html" }   # the button at the right of the header
+groups:
+  - title: "Research with us"
+    items:
+      - { title: "How a study works", url: "/research-with-us.html", keywords: "protocol approval application ethics steps getting started", popular: true }
+      - { title: "Submit a protocol", url: "/policies/dbic_protocol.html", keywords: "CPHS IRB application approval new study", popular: true }
+      - { title: "Schedule scan time", url: "/policies/scheduling.html", keywords: "calendar book request tier peak off-peak hours deadlines", popular: true }
+      - { title: "Scanning rates", url: "/policies/dbic_billing.html", keywords: "cost price fees billing invoice rates", popular: true }
+      - { title: "Cancellations", url: "/policies/cancellations.html", keywords: "cancel policy" }
+      - { title: "Forms & templates", url: "/policies/forms_templates.html", keywords: "consent screening reminder email templates" }
+      - { title: "Parking & visiting", url: "/policies/dbic_parking.html", keywords: "visit visitor parking directions" }
+  - title: "Training & safety"
+    items:
+      - { title: "MRI safety training", url: "/policies/safetytraining.html", keywords: "sign up class screening CITI", popular: true }
+      - { title: "Scan operator training", url: "/policies/operator_training.html", keywords: "certification certified operator buddy", popular: true }
+      - { title: "Safety & compliance", url: "/safety-compliance.html", keywords: "documents emergency incident reporting screening checklist policies" }
+      - { title: "Code of conduct", url: "/policies/codeofconduct.html", keywords: "behavior conduct" }
+      - { title: "Housekeeping", url: "/policies/housekeeping.html", keywords: "cleaning disinfecting" }
+  - title: "Facility & data"
+    items:
+      - { title: "fMRI scanner", url: "/research_infrastructure/fmri_scanner.html", keywords: "Siemens Prisma 3T magnet gradient specs", popular: true }
+      - { title: "Head coils", url: "/research_infrastructure/coils.html", keywords: "64 32 20 channel" }
+      - { title: "Sequences", url: "/research_infrastructure/sequences.html", keywords: "protocols multiband diffusion" }
+      - { title: "Peripherals", url: "/research_infrastructure/peripherals.html", keywords: "eye tracking response devices projector audio physiology" }
+      - { title: "Quality assurance", url: "/research_infrastructure/qualityassurance.html", keywords: "QA reports phantom" }
+      - { title: "Data & computing", url: "/data-computing.html", keywords: "datasets public data HCP Narratives Spacetop storage compute", popular: true }
+      - { title: "Computer resources", url: "/research_infrastructure/computer_resources.html", keywords: "account DartFS storage DICOM scans find" }
+      - { title: "Using Discovery", url: "/research_infrastructure/discovery.html", keywords: "cluster HPC compute" }
+  - title: "Community"
+    items:
+      - { title: "Brown-bag talks", url: "/events/fbb.html", keywords: "events seminars speakers fMRI brown bag" }
+      - { title: "Research highlights", url: "/highlights/", keywords: "research impact studies" }
+      - { title: "Study demonstration video", url: "/videos/study_demo.html", keywords: "video participant what to expect" }
+      - { title: "PBS & DBIC shared resources", url: "/PBS_resources/index.html", keywords: "shared resources" }
+  - title: "About"
+    items:
+      - { title: "Our team", url: "/people/directorsstaff.html", keywords: "director staff people" }
+      - { title: "Advisory committee", url: "/people/advisorycommittee.html", keywords: "committee governance" }
+      - { title: "Affiliated faculty", url: "/people/affiliated.html", keywords: "faculty investigators users" }
+      - { title: "History", url: "/history.html", keywords: "1999 timeline director" }
+      - { title: "FAQ", url: "/faqs.html", keywords: "questions help" }
+      - { title: "Contact", url: "/#people", keywords: "email address phone reach", popular: true }

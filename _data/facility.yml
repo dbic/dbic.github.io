@@ -1,0 +1,28 @@
+# The "Facility" section of the home page.
+eyebrow: "Facility"
+title: "A research scanner, by design"
+lead: "In November 1999 Dartmouth became the first liberal arts college in the country to own and operate an MRI machine strictly for research. That is still the point."
+
+# The number tiles. A tile needs a label and ONE of:
+#   value: 3          a fixed number (optional suffix: "T", or unit: "mT/m")
+#   since: 1999       years elapsed since that year (optional since_month: 11); updates itself
+#   count_of: datasets  the number of rows in datasets.csv
+stats:
+  - { value: 3, suffix: "T", label: "Siemens MAGNETOM Prisma, in the basement of Moore Hall" }
+  - { value: 64, label: "channel head coil, plus 32- and 20-channel options" }
+  - { value: 80, unit: "mT/m", label: "peak gradient strength for fast structural and functional imaging" }
+  - { since: 1999, since_month: 11, label: "years of research MRI at Dartmouth, since 1999" }
+  - { count_of: datasets, label: "public datasets hosted for DBIC users" }
+
+specs:
+  - { title: "The scanner", color: green, text: "3T with a 60 cm bore, 0.25 ppm homogeneity over a 40 cm sphere, and simultaneous multislice. Vendor packages cover BOLD, diffusion and spectroscopy.", link: "/research_infrastructure/fmri_scanner.html", link_text: "Full specifications" }
+  - { title: "Head coils", color: teal, text: "64-, 32- and 20-channel phased-array coils. The 64-channel coil delivers the highest SNR and parallel-imaging performance.", link: "/research_infrastructure/coils.html", link_text: "Compare coils" }
+  - { title: "Tasks & recording", color: indigo, text: "Projection and audio delivery, response devices, eye tracking, and physiological recording for rich behavioral studies.", link: "/research_infrastructure/peripherals.html", link_text: "See peripherals" }
+  - { title: "Quality assurance", color: amber, text: "Scanner QA data are archived in BIDS format and available to DBIC users, so performance is documented over time.", link: "/research_infrastructure/qualityassurance.html", link_text: "QA program" }
+
+timeline:
+  - { year: "1999", text: "DBIC opens under Scott Grafton with a 1.5T GE scanner." }
+  - { year: "2004", text: "Upgrade to a 3.0T Philips scanner." }
+  - { year: "2008", text: "Jim Haxby joins Dartmouth and directs the center until 2021." }
+  - { year: "2016", text: "The current Siemens 3T Prisma is installed." }
+  - { year: "2021", text: "Tor Wager becomes director." }

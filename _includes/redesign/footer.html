@@ -1,0 +1,15 @@
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      {%- for g in site.data.menu.groups %}
+      <div><h3>{{ g.title | escape }}</h3><ul>
+        {%- for item in g.items %}{% capture href %}{% include redesign/href.html url=item.url %}{% endcapture %}<li><a href="{{ href | strip }}">{{ item.title | escape }}</a></li>{% endfor %}
+      </ul></div>
+      {%- endfor %}
+      <div><h3>Associated programs</h3><ul>
+        {%- for p in site.data.programs %}<li><a href="{{ p.url }}">{{ p.title | escape }}</a></li>{% endfor %}
+      </ul></div>
+    </div>
+    <div class="fine"><span>{{ site.data.home.footer_line | escape }}</span></div>
+  </div>
+</footer>

@@ -1,0 +1,17 @@
+{%- assign h = site.data.home.hero -%}
+<section class="hero" aria-labelledby="h1">
+  <canvas id="neural" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <p class="eyebrow-w">{{ h.eyebrow | escape }}</p>
+    <h1 id="h1">{{ h.title | escape }}</h1>
+    <p class="lead">{{ h.lead_prefix | escape }} <span class="rot" id="rot" aria-hidden="true" data-words="{{ h.words | jsonify | escape }}" data-static="{{ h.static_words | escape }}">{{ h.words | first | escape }}</span><span class="sr"> {{ h.static_words | escape }}</span>.</p>
+    <p class="sub">{{ h.text | escape }}</p>
+    <div class="cta-row">
+      {%- for b in h.buttons %}{% capture href %}{% include redesign/href.html url=b.url %}{% endcapture %}
+      <a class="btn btn-{{ b.style }}" href="{{ href | strip }}">{{ b.text | escape }}</a>
+      {%- endfor %}
+      {%- capture href %}{% include redesign/href.html url=h.link.url %}{% endcapture %}
+      <a class="link-w" href="{{ href | strip }}">{{ h.link.text | escape }}</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,99 @@
+# Settings and wording for the home page.
+
+# ORDER OF SECTIONS on the home page, top to bottom.
+# Reorder the lines to reorder the page. Delete a line to hide that section.
+# Available: facility, research, community, people, start
+sections:
+  - facility
+  - research
+  - community
+  - people
+  - start
+
+hero:
+  eyebrow: "Dartmouth College · Moore Hall"
+  title: "See the brain at work."
+  lead_prefix: "A shared MRI research facility for"
+  words:                       # the changing words after the sentence above
+    - cognitive neuroscience
+    - social neuroscience
+    - education
+    - engineering
+    - philosophy
+    - music
+    - sociology
+    - computer science
+  static_words: "brain research across disciplines"   # shown when motion is switched off
+  text: "The Dartmouth Brain Imaging Center is a research resource for brain scientists across Dartmouth: a state-of-the-art 3 tesla MRI scanner, expert staff, and a community that helps ideas become studies."
+  buttons:
+    - { text: "Start a study", url: "/research-with-us.html", style: light }
+    - { text: "Explore the facility", url: "#facility", style: ghost }
+  link: { text: "Safety & compliance →", url: "/safety-compliance.html" }
+
+# The three cards under the hero.
+#   next_event    next upcoming date in one category of events.csv
+#   scan_windows  the scan-request windows from scan_windows.csv
+#   contact       a fixed contact card
+status:
+  - { kind: next_event, category: "Safety training", label: "Next safety training", url: "/policies/safetytraining.html" }
+  - { kind: scan_windows, label: "Scan-time requests", url: "/policies/scheduling.html" }
+  - { kind: contact, label: "Questions?", title: "Courtney Rogers", text: "Scheduling, protocols and training", url: "mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20inquiry" }
+
+# "Coming up" panel. Its content comes from events.csv and scan_windows.csv.
+#   tabs: one tab per category; "category" must match the Category column of events.csv
+#   show: how many rows each tab lists
+events:
+  heading: "Coming up"
+  show: 4
+  tabs:
+    - { category: "Safety training", label: "Safety training", more_text: "Full schedule and sign-up →", more_url: "/policies/safetytraining.html" }
+    - { category: "Scan requests", label: "Scan requests", more_text: "Tiers, hours and the full calendar →", more_url: "/policies/scheduling.html" }
+    - { category: "Brown bag", label: "Brown bags", more_text: "All brown-bag talks since 2019 →", more_url: "/events/fbb.html" }
+
+research:
+  eyebrow: "Research"
+  title: "Work that happens here"
+  fields:                      # the small labels under the cards
+    - Cognitive neuroscience
+    - Social neuroscience
+    - Education
+    - Engineering
+    - Philosophy
+    - Music
+    - Sociology
+    - Computer science
+
+community:
+  eyebrow: "Learn & connect"
+  title: "A community around the scanner"
+  lead: "The DBIC builds the neuroimaging community with talks, workshops and hands-on support, from honors theses to faculty projects."
+  learn_title: "For students & trainees"
+  learn:
+    - { icon: cap, title: "Theses & dissertations", text: "Scanner access for undergraduate honors theses under faculty supervision, and for doctoral dissertation research." }
+    - { icon: book, title: "Courses", text: "The scanner supports the lab portion of undergraduate brain-imaging courses." }
+    - { icon: spark, title: "Workshops & methods", text: "Meetings and workshops on imaging techniques, experimental design and analysis for investigators, postdocs, students and staff." }
+  note: "Interested in presenting at a brown bag, or nominating a speaker?"
+  note_link: { text: "Get in touch", url: "mailto:courtney.rogers@dartmouth.edu?subject=fMRI%20brown%20bag" }
+
+people:
+  eyebrow: "People"
+  title: "The people who run the center"
+  contact_title: "Questions about scanning, protocols or training?"
+  contact_text: "Courtney Rogers manages scheduling, protocol review and training. Write to her first and she will point you to the right person."
+  contact_button: { text: "Email the DBIC", url: "mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20inquiry" }
+  find_title: "Find us"
+  address:
+    - "Dartmouth Brain Imaging Center"
+    - "Moore Hall, HB 6207"
+    - "Hanover, NH 03755"
+  find_links:
+    - { text: "Parking & visiting →", url: "/policies/dbic_parking.html" }
+    - { text: "Advisory committee →", url: "/people/advisorycommittee.html" }
+
+# Last section on the home page (moved from the top; renamed).
+start:
+  eyebrow: "Next steps"
+  title: "Where to next?"
+  lead: "Whether you are planning a first study, certifying as a scan operator, reviewing our safety practices, or just curious, here are the quickest ways in."
+
+footer_line: "Dartmouth Brain Imaging Center · Moore Hall, HB 6207, Hanover, NH 03755"

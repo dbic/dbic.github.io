@@ -1,0 +1,25 @@
+{%- if page.faq_group %}
+{%- assign grp = site.data.faq[page.faq_group] %}
+<section class="section alt" aria-labelledby="h-faq">
+  <div class="wrap">
+    <div class="sec-head reveal"><p class="eyebrow">Common questions</p><h2 id="h-faq">{{ grp.title | escape }}</h2></div>
+    <ul class="faq-list reveal">
+      {%- for it in grp.items %}{% capture href %}{% include redesign/href.html url=it.url %}{% endcapture %}
+      <li><a href="{{ href | strip }}">{{ it.q | escape }}</a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{%- endif %}
+{%- if page.related %}
+<section class="section" aria-label="Related pages">
+  <div class="wrap">
+    <p class="eyebrow">Keep exploring</p>
+    <div class="related">
+      {%- for r in page.related %}{% capture href %}{% include redesign/href.html url=r.url %}{% endcapture %}
+      <a class="btn btn-outline" href="{{ href | strip }}">{{ r.title | escape }}</a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}

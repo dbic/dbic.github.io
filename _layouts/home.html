@@ -1,0 +1,18 @@
+---
+layout: redesign
+---
+{% include redesign/home/hero.html %}
+{% include redesign/home/status.html %}
+<div class="home-sections">
+{%- for section in site.data.home.sections %}
+  {%- if section == 'facility' %}{% include redesign/home/facility.html %}
+  {%- elsif section == 'research' %}{% include redesign/home/research.html %}
+  {%- elsif section == 'community' %}{% include redesign/home/community.html %}
+  {%- elsif section == 'people' %}{% include redesign/home/people.html %}
+  {%- elsif section == 'start' %}{% include redesign/home/start.html %}
+  {%- endif %}
+{%- endfor %}
+</div>
+<script type="application/json" id="events-data">{{ site.data.events | jsonify }}</script>
+<script type="application/json" id="windows-data">{{ site.data.scan_windows | jsonify }}</script>
+<script type="application/json" id="home-data">{{ site.data.home | jsonify }}</script>

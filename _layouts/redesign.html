@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.url != '/' and page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
+<meta name="description" content="{{ page.description | default: site.description | escape }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap">
+<script>
+document.documentElement.classList.add('js');
+try { var th = localStorage.getItem('dbic-theme'); if (th === 'light' || th === 'dark') document.documentElement.setAttribute('data-theme', th); } catch (e) {}
+</script>
+<link rel="stylesheet" href="{{ '/assets/css/redesign.css' | relative_url }}">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+{% include redesign/header.html %}
+<main id="main">
+{{ content }}
+</main>
+{% include redesign/footer.html %}
+{% include redesign/quickfind.html %}
+<script type="application/json" id="menu-data">{{ site.data.menu.groups | jsonify }}</script>
+<script>window.DBIC = { base: {{ site.baseurl | jsonify }}, newTabPaths: {{ site.new_tab_paths | jsonify }} };</script>
+<script src="{{ '/assets/js/redesign.js' | relative_url }}"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+---
+layout: redesign
+title: Safety and compliance
+eyebrow: Safety & compliance
+lead: "Working next to a powerful magnet and with human participants comes with firm rules. These are the commitments behind every scan, with the documents behind them."
+description: "How the Dartmouth Brain Imaging Center keeps every scan safe: commitments, policies and forms."
+related:
+  - { title: "MRI safety training", url: "/policies/safetytraining.html" }
+  - { title: "Scan operator training", url: "/policies/operator_training.html" }
+  - { title: "How a study works", url: "/research-with-us.html" }
+---
+{% include redesign/page-head.html %}
+{%- assign d = site.data.safety.docs %}
+<section class="section">
+  <div class="wrap">
+    <div class="safe-grid">
+      <div class="rules">
+        {%- for r in site.data.safety.rules %}
+        <div class="rule reveal"><span class="ri">{% include redesign/icon.html name=r.icon %}</span><div><b>{{ r.title | escape }}</b><span>{{ r.text | escape }}</span></div></div>
+        {%- endfor %}
+      </div>
+      <aside class="docs reveal" aria-labelledby="h-docs">
+        <h2 id="h-docs">{{ d.title | escape }}</h2>
+        <p>{{ d.text | escape }}</p>
+        <ul>
+          {%- for doc in site.data.policy_documents %}{% capture href %}{% include redesign/href.html url=doc.url %}{% endcapture %}
+          <li><a href="{{ href | strip }}">{{ doc.title | escape }}</a></li>
+          {%- endfor %}
+        </ul>
+        {%- capture href %}{% include redesign/href.html url=d.button.url %}{% endcapture %}
+        <a class="btn btn-solid btn-sm" href="{{ href | strip }}">{{ d.button.text | escape }}</a>
+      </aside>
+    </div>
+  </div>
+</section>
+{% include redesign/page-foot.html %}

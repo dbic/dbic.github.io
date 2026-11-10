@@ -1,0 +1,55 @@
+# The steps on the "How a study works" page.
+# Text fields allow Markdown (**bold**, [links](...)). Each "links" entry: style solid | outline.
+note: "Stuck at any step? Email [Courtney Rogers](mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20study%20question), who manages protocols, scheduling and training."
+steps:
+  - tab: "Get ethics approval"
+    sub: "CPHS & IRB education"
+    heading: "1. Get ethics approval"
+    bullets:
+      - "All research conducted in the DBIC must have approval from Dartmouth’s Committee for the Protection of Human Subjects (CPHS)."
+      - "Everyone working on the study completes IRB education (the CITI Group 2 Social/Behavioral Basic course) and is listed on the CPHS protocol."
+    links:
+      - { text: "CPHS education requirements", url: "https://www.dartmouth.edu/cphs/tosubmit/education/index.html", style: solid }
+    next_label: "Next: apply to the DBIC →"
+  - tab: "Apply to the DBIC"
+    sub: "Protocol review"
+    heading: "2. Apply to the DBIC"
+    bullets:
+      - "Send the DBIC application with your CPHS protocol, the CPHS-stamped consent form, and a supplemental description of your study design."
+      - "New protocols are reviewed before they begin; incomplete submissions wait until they are complete."
+      - "Courtney Rogers is happy to talk it through by Zoom or in person."
+    links:
+      - { text: "Protocol instructions", url: "/policies/dbic_protocol.html", style: solid }
+    next_label: "Next: get trained →"
+  - tab: "Get trained"
+    sub: "Safety & operator training"
+    heading: "3. Get trained"
+    bullets:
+      - "**Everyone** completes MRI safety training: an in-person session with the MRI technologist (up to four people per class) plus an online module."
+      - "**To run the scanner yourself,** become an operator-in-training, complete at least 10 hours of hands-on training with a certified operator, and pass a final competency check with the MRI technologist present."
+      - "At least two people are in the control room at all times: a certified scan operator and a safety-trained assistant."
+    links:
+      - { text: "Safety training", url: "/policies/safetytraining.html", style: solid }
+      - { text: "Operator training", url: "/policies/operator_training.html", style: outline }
+    next_label: "Next: scan time →"
+  - tab: "Request scan time"
+    sub: "Tiers, hours & rates"
+    heading: "4. Request scan time"
+    bullets:
+      - "With an approved protocol, email your request to Courtney Rogers, who schedules all scanner activity."
+      - "Time is allocated in three tiers (grant-funded, department-funded, then everyone else), each with a monthly request window."
+      - "Peak hours are weekdays 8 a.m. to 4 p.m. Evenings and weekends need both a certified operator and a certified scan buddy."
+    links:
+      - { text: "Scheduling details", url: "/policies/scheduling.html", style: solid }
+      - { text: "Scanning rates", url: "/policies/dbic_billing.html", style: outline }
+    next_label: "Next: scan & analyze →"
+  - tab: "Scan & analyze"
+    sub: "Billing, data & compute"
+    heading: "5. Scan and analyze"
+    bullets:
+      - "Scan time is logged and invoiced monthly for each protocol; the PI or designee reviews each invoice."
+      - "After each session, confirm that your data transferred to the DBIC server."
+      - "Analyze on the Discovery cluster, with @datasets@ public datasets already hosted alongside."
+    links:
+      - { text: "Computer resources", url: "/research_infrastructure/computer_resources.html", style: solid }
+      - { text: "Using Discovery", url: "/research_infrastructure/discovery.html", style: outline }
