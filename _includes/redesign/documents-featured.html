@@ -1,0 +1,8 @@
+{%- comment -%}
+  The priority documents (featured = yes in _data/documents.csv), as list items, in the order they appear in the file.
+  Used inside the document library box on the Safety and compliance page.
+{%- endcomment -%}
+{%- assign featured = site.data.documents | where: 'featured', 'yes' -%}
+{%- for doc in featured %}{% capture href %}{% include redesign/href.html url=doc.file %}{% endcapture %}
+<li><a href="{{ href | strip }}">{{ doc.title | escape }}</a></li>
+{%- endfor %}

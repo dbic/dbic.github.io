@@ -1,0 +1,15 @@
+<section class="page-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a>
+      {%- if include.crumb_label %} <span aria-hidden="true">›</span> {% if include.crumb_url %}<a href="{{ include.crumb_url | relative_url }}">{{ include.crumb_label | escape }}</a>{% else %}<span>{{ include.crumb_label | escape }}</span>{% endif %}{% endif %}</nav>
+    {%- if include.eyebrow %}
+    <p class="eyebrow-w">{{ include.eyebrow | escape }}</p>
+    {%- endif %}
+    {%- if include.heading != '' %}
+    <h1>{{ include.heading }}</h1>
+    {%- endif %}
+    {%- if include.lead %}
+    <p class="lead">{{ include.lead | escape }}</p>
+    {%- endif %}
+  </div>
+</section>

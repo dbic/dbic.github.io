@@ -377,3 +377,29 @@ dialog#qf::backdrop { background: rgba(3, 18, 11, .6); backdrop-filter: blur(3px
 @media (max-width: 26rem) { .events-table table { table-layout: auto; } .events-table th, .events-table td { font-size: .82rem; padding: .4rem .35rem; } }
 .events-table .et-year[hidden], .events-table .et-empty[hidden] { display: none; }
 .events-table .et-empty { color: var(--muted); }
+
+/* tabs that are not current are hidden by the script; if all are, the card goes and the neighbor widens */
+.tab[hidden] { display: none; }
+.comm.solo { grid-template-columns: minmax(0, 46rem); }
+
+/* ordinary pages now sit under the header band, so they start a little closer to it */
+.page-head + .prose-wrap { padding-top: clamp(1.4rem, 3vw, 2.2rem); }
+
+
+/* ---------- document library (forms and templates page) ---------- */
+.doclib-tools { display: flex; flex-wrap: wrap; gap: .8rem; align-items: center; margin: 0 0 1rem; }
+.doclib .search { flex: 1 1 16rem; max-width: 26rem; padding: .7rem 1rem; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); color: var(--ink); font: inherit; }
+.doclib-jump { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.4rem; }
+.doclib-jump .chip { text-decoration: none; }
+.doclib-jump .chip[hidden] { display: none; }
+.doclib-jump .chip small { color: var(--muted); margin-left: .2rem; }
+.doclib-cat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.1rem 1.3rem .6rem; margin: 0 0 1.2rem; }
+.doclib-cat[hidden] { display: none; }
+.prose .doclib-cat h2, .doclib-cat h2 { font-size: 1.25rem; margin: 0 0 .4rem; }
+.prose .doclib-cat ul, .doclib-cat ul { list-style: none; margin: 0; padding: 0; }
+.doclib-cat li { display: flex; flex-wrap: wrap; align-items: baseline; gap: .15rem .9rem; padding: .65rem 0; border-top: 1px solid var(--line); margin: 0; }
+.doclib-cat li[hidden] { display: none; }
+.doclib-cat li > a { flex: 1 1 18rem; font-weight: 500; }
+.dl-meta { display: inline-flex; gap: .5rem; align-items: baseline; font-size: .82rem; color: var(--muted); }
+.dl-type { font-weight: 700; font-size: .72rem; letter-spacing: .04em; text-transform: uppercase; border: 1px solid var(--line); border-radius: 6px; padding: .02rem .4rem; }
+.dl-note { flex: 1 1 100%; color: var(--muted); font-size: .88rem; }

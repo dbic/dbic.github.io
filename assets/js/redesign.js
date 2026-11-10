@@ -256,19 +256,39 @@
     cp.setAttribute('aria-labelledby', tab.id);
     markExternal(cp);
   }
+  /* A tab is "current" if it has something upcoming, or its latest item is recent enough.
+     hide_after_days comes from home.yml (events: hide_after_days, or per tab); default 120. 0 = never hide. */
+  function tabIsCurrent(tab, i) {
+    var ev = HOME.events || {}, cfg = (ev.tabs && ev.tabs[i]) || {};
+    var days = cfg.hide_after_days != null ? +cfg.hide_after_days : (ev.hide_after_days != null ? +ev.hide_after_days : 120);
+    if (!(days > 0)) return true;
+    var now = new Date(), mine = allEvents().filter(function (e) { return e.category === tab.getAttribute('data-category'); });
+    if (!mine.length) return false;
+    if (mine.some(function (e) { return e.until >= now; })) return true;
+    var latest = Math.max.apply(null, mine.map(function (e) { return e.at.getTime(); }));
+    return now.getTime() - latest <= days * 86400000;
+  }
   if (cp && tabs.length) {
-    tabs.forEach(function (t, i) {
-      t.addEventListener('click', function () {
-        tabs.forEach(function (o) { o.setAttribute('aria-selected', String(o === t)); o.tabIndex = o === t ? 0 : -1; });
-        renderTab(t);
+    var shownTabs = tabs.filter(function (t, i) { var keep = tabIsCurrent(t, i); t.hidden = !keep; return keep; });
+    if (!shownTabs.length) {
+      var evCard = cp.closest('.card'), evRow = cp.closest('.comm');
+      if (evCard) evCard.hidden = true;
+      if (evRow) evRow.classList.add('solo');
+    } else {
+      shownTabs.forEach(function (t, i) {
+        t.setAttribute('aria-selected', String(i === 0)); t.tabIndex = i === 0 ? 0 : -1;
+        t.addEventListener('click', function () {
+          shownTabs.forEach(function (o) { o.setAttribute('aria-selected', String(o === t)); o.tabIndex = o === t ? 0 : -1; });
+          renderTab(t);
+        });
+        t.addEventListener('keydown', function (e) {
+          var n = null;
+          if (e.key === 'ArrowRight') n = (i + 1) % shownTabs.length; else if (e.key === 'ArrowLeft') n = (i - 1 + shownTabs.length) % shownTabs.length;
+          if (n !== null) { e.preventDefault(); shownTabs[n].focus(); shownTabs[n].click(); }
+        });
       });
-      t.addEventListener('keydown', function (e) {
-        var n = null;
-        if (e.key === 'ArrowRight') n = (i + 1) % tabs.length; else if (e.key === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
-        if (n !== null) { e.preventDefault(); tabs[n].focus(); tabs[n].click(); }
-      });
-    });
-    renderTab(tabs[0]);
+      renderTab(shownTabs[0]);
+    }
   }
 
   $$('#status .chip-card').forEach(function (card) {
@@ -359,6 +379,21 @@
     q.addEventListener('input', apply);
     chips.forEach(function (c) { c.addEventListener('click', function () { filter = c.getAttribute('data-filter'); chips.forEach(function (o) { o.setAttribute('aria-pressed', String(o === c)); }); apply(); }); });
     apply();
+  })();
+
+  /* ---------- document library: search box (documents come from documents.csv) ---------- */
+  (function () {
+    var q = $('#doc-q'); if (!q) return;
+    var items = $$('.doclib-cat li'), cats = $$('.doclib-cat'), total = items.length;
+    function apply() {
+      var term = q.value.trim().toLowerCase(), n = 0;
+      items.forEach(function (li) { var ok = !term || (li.getAttribute('data-text') || '').indexOf(term) > -1 || li.textContent.toLowerCase().indexOf(term) > -1; li.hidden = !ok; if (ok) n++; });
+      cats.forEach(function (c) { c.hidden = !$$('li:not([hidden])', c).length; });
+      $$('.doclib-jump .chip').forEach(function (chip, i) { chip.hidden = !!cats[i] && cats[i].hidden; });
+      $('#doc-count').textContent = term ? n + ' of ' + total + ' documents' : total + ' documents';
+      $('#doc-empty').hidden = n !== 0;
+    }
+    q.addEventListener('input', apply);
   })();
 
   /* ---------- count-up numbers and scroll reveal ---------- */

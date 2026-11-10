@@ -1,10 +1,47 @@
 ---
 layout: redesign
 ---
+{%- comment -%}
+  Ordinary content pages. The page's own first heading (and the hand-typed "Policies >" style breadcrumb line above it)
+  become the header band used by the newer pages, so every page has the same look. Nothing needs editing in the page itself.
+  If a page has content before its first heading, or no heading, the page is left as written (and given the page title).
+{%- endcomment -%}
+{%- assign body = content -%}
+{%- assign band_title = '' -%}
+{%- if content contains '</h1>' -%}
+  {%- assign parts = content | split: '</h1>' -%}
+  {%- assign head_parts = parts[0] | split: '<h1' -%}
+  {%- assign before = head_parts | first -%}
+  {%- assign before_len = before | strip_html | strip | size -%}
+  {%- if before_len < 160 -%}
+    {%- if before contains '<img' or before contains '<table' or before contains '<iframe' or before contains '<ul' or before contains '<ol' -%}
+    {%- else -%}
+      {%- assign h1_open = head_parts | slice: 1, 50 | join: '<h1' -%}
+      {%- assign h1_pieces = h1_open | split: '>' -%}
+      {%- assign band_title = h1_pieces | slice: 1, 100 | join: '>' -%}
+      {%- assign h1_last = h1_open | slice: -1, 1 -%}
+      {%- if h1_last == '>' -%}{%- assign band_title = band_title | append: '>' -%}{%- endif -%}
+      {%- assign body = parts | slice: 1, 10000 | join: '</h1>' | replace: '<h1', '<h2' | replace: '</h1>', '</h2>' -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- else -%}
+  {%- assign band_title = page.title | escape -%}
+{%- endif -%}
+{%- assign segs = page.url | split: '/' -%}
+{%- assign last_char = page.url | slice: -1, 1 -%}
+{%- assign seg = '' -%}
+{%- if last_char == '/' -%}{%- assign seg = segs[1] -%}{%- elsif segs.size > 2 -%}{%- assign seg = segs[1] -%}{%- endif -%}
+{%- assign section = site.data.sections[seg] -%}
+{%- assign section_index = false -%}
+{%- if section.url and last_char != '/' -%}
+  {%- assign section_index = site.pages | where: 'url', section.url | first -%}
+{%- endif -%}
+{%- if last_char == '/' -%}{%- assign crumb_label = false -%}{%- else -%}{%- assign crumb_label = section.label -%}{%- endif -%}
+{% include redesign/page-band.html heading=band_title eyebrow=section.label crumb_label=crumb_label crumb_url=section_index.url lead=page.lead %}
 <div class="prose-wrap">
   <div class="wrap">
     <article class="prose">
-{{ content }}
+{{ body }}
     </article>
   </div>
 </div>

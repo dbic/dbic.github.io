@@ -1,0 +1,50 @@
+id,title,category,file,featured,dated,dated_text,note,check
+pre-scan-checklist,Pre-scan experimenter checklist,Safety & screening,/assets/dbic/docs/forms/mrichecklist08012026.pdf,yes,2026-08-01,,,Date read from the file name.
+subject-screening,Subject screening policy,Safety & screening,/assets/dbic/docs/policies/subjectscreen_2024.pdf,yes,,2024,,Date read from the file name.
+metal-screening,MRI metal safety screening form,Safety & screening,/assets/dbic/docs/forms/meatalscreen_04132026.pdf,yes,2026-04-13,,Also called the 3T MRI safety screening sheet.,"Date read from the file name. The file name contains a typo (""meatal"")."
+metal-screener-participants,DBIC metal screener for participants,Safety & screening,/assets/dbic/docs/forms/mriscreener01222026.pdf,,2026-01-22,,Sent to participants well before their scan.,Linked from the cancellation policy. Confirm whether this is the same form as the screening sheet above; keep only one if so.
+potential-hazards,Potential hazards,Safety & screening,/assets/dbic/docs/forms/potential_hazards.pdf,yes,,,,
+emergency-procedures,Emergency practices & procedures,Safety & screening,/assets/dbic/docs/policies/emergencyprocedures.pdf,yes,,,,
+incident-reporting,Incident reporting policy,Safety & screening,/assets/dbic/docs/policies/incidentreporting_04162026.pdf,yes,2026-04-16,,,The safety training page also linked incidentpolicyjan2026.pdf. Decide which is current.
+metal-detector-handheld,Metal detector guide: handheld,Safety & screening,/assets/dbic/docs/policies/ceia06102026.pdf,,2026-06-10,,,Date read from the file name.
+metal-detector-pole,Metal detector guide: pole,Safety & screening,/assets/dbic/docs/policies/poledetector.pdf,,,,,
+metal-detector-instructions,Metal detector operating instructions,Safety & screening,/assets/dbic/docs/policies/ceia_instructions.pdf,,,,,Three metal-detector documents are linked from the operator training page. Confirm which apply.
+housekeeping-policy,Housekeeping policy,Policies & procedures,/assets/dbic/docs/policies/housekeeping01282026.pdf,yes,2026-01-28,,,Date read from the file name.
+cleaning-disinfecting,Cleaning & disinfecting,Policies & procedures,/assets/dbic/docs/policies/cleaning_nov2024.pdf,yes,,Nov 2024,,Date read from the file name.
+conducting-research,Conducting research in the DBIC,Policies & procedures,/assets/dbic/docs/policies/conductingresearch_10092026.pdf,yes,2026-10-09,,,Date read from the file name.
+code-of-conduct,Code of conduct,Policies & procedures,/policies/codeofconduct.html,yes,,,,
+cancellation-policy,Cancellation policy,Policies & procedures,/policies/cancellations.html,,,,,
+scanning-rates,Scanning rates,Policies & procedures,/policies/dbic_billing.html,,,,,
+scheduling-policy,Scheduling policy and request windows,Policies & procedures,/policies/scheduling.html,,,,,
+protocol-application,DBIC protocol application,Forms & applications,/assets/dbic/docs/forms/2026dbicappv2.docx,,,2026,,The Forms page previously linked 2026dbicapp.docx (no v2). Confirm which file is current. A year in the file name means a rename every year.
+protocol-instructions,How to submit a protocol,Forms & applications,/policies/dbic_protocol.html,,,,,
+consent-template,fMRI consent form template (CPHS),Forms & applications,/assets/dbic/docs/forms/fmri_consent_template_01212019.doc,,2019-01-21,,,Date read from the file name (2019). Check against the current CPHS template; legacy .doc format.
+participant-info-sheet,Participant information sheet,Participant materials,/assets/dbic/docs/forms/dbic_info_sheet.docx,,,,"Lists common things participants may not think of, such as non-removable piercings and some hair and skin products.",
+confirmation-email,Scan confirmation email template,Participant materials,/assets/dbic/docs/forms/fmri_confirmation_email.docx,,,,,
+week-before-email,Reminder email template: one week before,Participant materials,/assets/dbic/docs/forms/week_before_email.docx,,,,,
+day-before-email,Reminder email template: day before,Participant materials,/assets/dbic/docs/forms/daybefore_reminder_email.docx,,,,,
+study-demo-video,fMRI study demonstration video,Participant materials,/videos/study_demo.html,,,,,
+parking-email,Parking email template (Transportation Services),Parking & visiting,/assets/dbic/docs/forms/ts_email_template.docx,,,,"For Dartmouth-affiliated participants who park without a pass.",
+campus-parking-map,Campus parking map,Parking & visiting,/assets/transportation/parking/parking_maps/campusparkingmap1132023.pdf,,,,,A copy of a Dartmouth Campus Planning map (2022). Consider linking Dartmouth's current map. The forms page used a second copy under assets/dbic/docs/forms/.
+visitor-parking-map,Visitor parking map,Parking & visiting,/assets/transportation/parking/parking_maps/visitorparkingmap992022.pdf,,,,,A copy of a Dartmouth map. Consider linking Dartmouth's current map.
+parking-page,Parking at the DBIC,Parking & visiting,/policies/dbic_parking.html,,,,,
+safety-training-page,MRI safety training: sign-up and schedule,Training materials,/policies/safetytraining.html,,,,,
+operator-training-page,Scan operator training,Training materials,/policies/operator_training.html,,,,,
+mruser-manual,MRUSER training manual,Training materials,/assets/dbic/docs/policies/mrusermanual_06112026.pdf,,2026-06-11,,,Date read from the file name.
+redcap-guide,REDCap participant registration guide,Training materials,/assets/dbic/docs/policies/jedicap.pdf,,,,,File is named jedicap.pdf. Consider a clearer name.
+logbook-template,DBIC logbook template,Training materials,/assets/dbic/docs/policies/logbooktemplate.jpg,,,,,An image file; consider providing a PDF or text version.
+projector-guide,Projector user guide,Equipment user guides,/assets/dbic/docs/userguides/sop_projector_09132023.pdf,,2023-09-13,,,Date read from the file name.
+projector-guide-in-bore,Projector guide: in-bore (eye-tracker) screen,Equipment user guides,/assets/dbic/docs/userguides/sop_projector.pdf,,,,,Undated; the Peripherals page links it alongside the 2023 guide. Confirm whether both are needed.
+mrifocus-manufacturer,MRIFocus: manufacturer user manual,Equipment user guides,/assets/dbic/docs/userguides/mrifocus_manufacturer_userguide.pdf,,,,,
+mrifocus-dbic,MRIFocus kit: DBIC user guide,Equipment user guides,/assets/dbic/docs/userguides/userguide_mrifocus.pdf,,,,,
+sensimetrics-s14,Sensimetrics S14 audio: user guide,Equipment user guides,/assets/dbic/docs/userguides/sop_sensimetrics_9142023.pdf,,2023-09-14,,,Date read from the file name.
+current-designs-932,Current Designs 932 response interface: user guide,Equipment user guides,/assets/dbic/docs/userguides/sop_curdes_9132023.pdf,,2023-09-13,,,Date read from the file name.
+optoacoustics-fomri,Optoacoustics FOMRI III microphone: user guide,Equipment user guides,/assets/dbic/docs/userguides/sop_optoacoustics_09142023.pdf,,2023-09-14,,,Date read from the file name.
+eyelink-guide,EyeLink 1000 Plus: user guide,Equipment user guides,/assets/dbic/docs/userguides/sop_eyelink_09142023.pdf,,2023-09-14,,,Date read from the file name.
+eyelink-macos,EyeLink Developers Kit installation: macOS,Equipment user guides,/assets/dbic/docs/userguides/installationguide_eyelink_developerskit_macos.pdf,,,,,
+eyelink-windows,EyeLink Developers Kit installation: Windows,Equipment user guides,/assets/dbic/docs/userguides/installationguide_eyelink_developerskit_windows.pdf,,,,,
+biopac-guide,BIOPAC MP160: user guide,Equipment user guides,/assets/dbic/docs/userguides/biopac_userguide_091323.pdf,,2023-09-13,,,Date read from the file name.
+sequence-bold,BOLD acquisition settings,Sequence protocols,/assets/dbic/docs/sequences/bold_acquisition.pdf,,,,,
+sequence-diffusion,Diffusion acquisition settings,Sequence protocols,/assets/dbic/docs/sequences/dwi_acquisiton.pdf,,,,,The file name contains a typo (acquisiton). Rename it and update this row.
+sequence-multiecho,Multi-echo fMRI settings,Sequence protocols,/assets/dbic/docs/sequences/multiechofmri.pdf,,,,,
+hcp-manual,HCP1200 reference manual,Data & computing,/assets/dbic/docs/userguides/hcp_refmanual.pdf,,,,Directory structure and file names for the HCP1200 dataset.,

@@ -1,0 +1,20 @@
+{%- comment -%}
+  The complete library of forms, policies, templates and guides, grouped by category, with a search box.
+  Everything comes from _data/documents.csv. Categories appear in the order they first occur in the file.
+  Use it on a page by writing:  include redesign/document-library.html
+{%- endcomment -%}
+{%- assign groups = site.data.documents | group_by: 'category' -%}
+{%- assign total = site.data.documents | size -%}
+<div class="doclib">
+<div class="doclib-tools"><label class="sr" for="doc-q">Search documents</label><input class="search" id="doc-q" type="search" placeholder="Search forms, policies and guides…" autocomplete="off"><span class="ds-meta" id="doc-count" aria-live="polite">{{ total }} documents</span></div>
+<p class="doclib-jump">{% for g in groups %}<a class="chip" href="#doc-{{ g.name | slugify }}">{{ g.name | escape }} <small>{{ g.size }}</small></a>{% endfor %}</p>
+{%- for g in groups %}
+<section class="doclib-cat" id="doc-{{ g.name | slugify }}"><h2>{{ g.name | escape }}</h2><ul>
+{%- for d in g.items %}{% capture href %}{% include redesign/href.html url=d.file %}{% endcapture %}
+{%- assign ext = d.file | split: '.' | last | downcase %}
+<li data-text="{{ d.title | append: ' ' | append: d.note | downcase | escape }}"><a href="{{ href | strip }}">{{ d.title | escape }}</a><span class="dl-meta"><span class="dl-type">{% case ext %}{% when 'html' %}Page{% when 'pdf' %}PDF{% when 'doc' %}Word{% when 'docx' %}Word{% when 'jpg' %}Image{% when 'jpeg' %}Image{% when 'png' %}Image{% else %}{{ ext | upcase | escape }}{% endcase %}</span>{% if d.dated %}<span class="dl-date">Dated {{ d.dated | date: '%b %-d, %Y' }}</span>{% elsif d.dated_text %}<span class="dl-date">Dated {{ d.dated_text | escape }}</span>{% endif %}</span>{% if d.note %}<span class="dl-note">{{ d.note | escape }}</span>{% endif %}</li>
+{%- endfor %}
+</ul></section>
+{%- endfor %}
+<p class="empty" id="doc-empty" hidden>No documents match. Try a different word.</p>
+</div>

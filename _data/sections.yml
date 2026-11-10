@@ -1,0 +1,9 @@
+# Labels for the header band and breadcrumb of ordinary pages, by the folder the page lives in.
+# A page in /policies/ gets the label "Policies"; its breadcrumb links to /policies/ only if that page exists.
+# Pages in the top folder (history.html, faqs.html) get no section label.
+policies: { label: "Policies", url: "/policies/" }
+research_infrastructure: { label: "Research infrastructure", url: "/research_infrastructure/" }
+people: { label: "People", url: "/people/" }
+events: { label: "Events", url: "/events/" }
+videos: { label: "Videos", url: "/videos/" }
+highlights: { label: "Research highlights", url: "/highlights/" }
