@@ -1,0 +1,57 @@
+{%- comment -%}
+  A table of contents for the folder this page is in, built automatically from the pages that exist there.
+  Nothing has to be listed or maintained: add a page to the folder and it appears; remove it and it goes.
+  Use it on a folder's index page by writing:  include redesign/section-index.html
+  Options:
+    groups="..."       a curated set of cards (for example site.data.policy_groups). Pages in the folder that are not in any card
+                       appear automatically in one more card at the end.
+    hide_prefix="qa_"  leave out pages whose file name starts with this (comma-separated list allowed)
+    heading="..."      title of the "pages not placed in a card" card (default: More in this section)
+  Hints, all optional, in a page's own front matter:
+    summary:      one line shown under the title
+    index_title:  a different title for this list (default: the page title)
+    group:        a heading to list the page under
+    order:        a number; numbered pages come first, in that order; the rest follow alphabetically
+    listed: false keep this page out of the list
+{%- endcomment -%}
+{%- assign colors = 'green,teal,indigo,amber,rose,violet' | split: ',' -%}
+{%- assign prefixes = include.hide_prefix | default: '' | split: ',' -%}
+{%- capture curated -%}{%- for g in include.groups -%}{%- for l in g.links -%}|{{ l.url }}|{%- endfor -%}{%- endfor -%}{%- endcapture -%}
+{%- assign kids = site.pages | where: 'dir', page.dir | where_exp: 'p', 'p.url != page.url' | where_exp: 'p', 'p.title' | where_exp: 'p', 'p.listed != false' | where_exp: 'p', "p.ext == '.md' or p.ext == '.html'" -%}
+{%- assign ordered = kids | where_exp: 'p', 'p.order' | sort: 'order' -%}
+{%- assign rest = kids | where_exp: 'p', 'p.order == nil' | sort_natural: 'title' -%}
+{%- assign all = ordered | concat: rest -%}
+{%- capture keep -%}
+{%- for p in all -%}
+{%- assign skip = false -%}
+{%- assign marker = '|' | append: p.url | append: '|' -%}
+{%- if curated contains marker -%}{%- assign skip = true -%}{%- endif -%}
+{%- for pre in prefixes -%}{%- assign prefix = pre | strip -%}{%- if prefix != '' -%}{%- assign head = p.name | slice: 0, prefix.size -%}{%- if head == prefix -%}{%- assign skip = true -%}{%- endif -%}{%- endif -%}{%- endfor -%}
+{%- unless skip -%}|{{ p.url }}|{%- endunless -%}
+{%- endfor -%}
+{%- endcapture -%}
+{%- assign shown = all | where_exp: 'p', 'keep contains p.url' -%}
+{%- if include.groups -%}
+{%- capture leftover -%}{%- if shown.size > 0 -%}<section class="lgroup c-teal"><header><div><h2>{{ include.heading | default: 'More in this section' | escape }}</h2></div></header><ul>{%- for p in shown %}<li><a href="{{ p.url | relative_url }}"><b>{{ p.index_title | default: p.title | escape }}</b>{% if p.summary %}<span>{{ p.summary | escape }}</span>{% endif %}</a></li>{%- endfor %}</ul></section>{%- endif -%}{%- endcapture -%}
+{% include redesign/link-groups.html groups=include.groups extra=leftover %}
+{%- elsif shown.size > 0 -%}
+{%- assign has_groups = false -%}
+{%- for p in shown %}{% if p.group %}{% assign has_groups = true %}{% endif %}{% endfor -%}
+{%- assign gs = shown | group_by: 'group' -%}
+{%- assign html_a = '' -%}
+{%- assign html_b = '' -%}
+{%- for g in gs -%}
+{%- capture block -%}
+{%- if has_groups %}<h2 class="si-h">{{ g.name | default: 'Other pages' | escape }}</h2>{% endif -%}
+<div class="tiles">
+{%- for p in g.items %}{% assign ci = forloop.index0 | modulo: 6 %}
+<a class="tile c-{{ colors[ci] }}" href="{{ p.url | relative_url }}"><h3>{{ p.index_title | default: p.title | escape }}</h3>{% if p.summary %}<p>{{ p.summary | escape }}</p>{% endif %}</a>
+{%- endfor %}
+</div>
+{%- endcapture -%}
+{%- if g.name == '' -%}{%- capture html_b -%}{{ html_b }}{{ block }}{%- endcapture -%}{%- else -%}{%- capture html_a -%}{{ html_a }}{{ block }}{%- endcapture -%}{%- endif -%}
+{%- endfor -%}
+<div class="section-index">{{ html_a }}{{ html_b }}</div>
+{%- else -%}
+<p class="si-none">There are no pages in this section yet.</p>
+{%- endif -%}

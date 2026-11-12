@@ -1,11 +1,9 @@
 ---
-title: "Events"
-source_url: https://www.dartmouth.edu/dbic/events/
-retrieved: 2026-11-04
+title: Events
+lead: "Talks and gatherings at the center."
+landing: true
 ---
-
-[Home](/ "Home") >
 
 # Events
 
-The DBIC organizes events, [talk series](fbb.md), and workshops in pursuit of providing users of the DBIC with information about and hands-on experience in different brain imaging techniques, experimental design, and state-of-the-art methods of analysis.
+{% include redesign/section-index.html %}

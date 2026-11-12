@@ -1,11 +1,9 @@
 ---
-title: "Policies"
-source_url: https://www.dartmouth.edu/dbic/policies/
-retrieved: 2026-11-04
+title: Policies
+lead: "The rules and procedures for working at the DBIC, grouped by topic."
+landing: true
 ---
 
-[Home](/ "Home") >
+# Policies
 
-# Policies & Procedures
-
-The DBIC is a valuable shared resource used by multiple investigators at Dartmouth and beyond. The DBIC has implemented policies and procedures aimed at providing the most safe, professional, comfortable, and equitable research experience possible for the DBIC researchers and their research participants.
+{% include redesign/section-index.html groups=site.data.policy_groups %}

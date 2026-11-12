@@ -1,0 +1,15 @@
+{%- comment -%}
+  Grouped cards of links: one card per group, with an icon, a title, a line of text and then its links, each with a short description.
+  Use it on a page by writing:  include redesign/link-groups.html  with  groups=site.data.policy_groups
+  Each group has: title, text, icon, color, and links (each with title, url, text). See _data/policy_groups.yml.
+  extra: optional HTML for one more card at the end (used by section-index.html for pages not yet placed in a group).
+{%- endcomment -%}
+<div class="lgroups">
+{%- for g in include.groups %}
+<section class="lgroup c-{{ g.color | default: 'green' }}" aria-labelledby="lg-{{ g.title | slugify }}"><header><span class="ico-tile">{% include redesign/icon.html name=g.icon %}</span><div><h2 id="lg-{{ g.title | slugify }}">{{ g.title | escape }}</h2>{% if g.text %}<p>{{ g.text | escape }}</p>{% endif %}</div></header><ul>
+{%- for l in g.links %}{% capture href %}{% include redesign/href.html url=l.url %}{% endcapture %}
+<li><a href="{{ href | strip }}"><b>{{ l.title | escape }}</b>{% if l.text %}<span>{{ l.text | escape }}</span>{% endif %}</a></li>
+{%- endfor %}
+</ul></section>
+{%- endfor -%}{{ include.extra }}
+</div>
