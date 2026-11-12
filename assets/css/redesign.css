@@ -428,3 +428,31 @@ dialog#qf::backdrop { background: rgba(3, 18, 11, .6); backdrop-filter: blur(3px
 .prose .si-h { font-size: 1.3rem; margin: 2rem 0 .8rem; }
 .prose .si-h:first-child { margin-top: .4rem; }
 .si-none { color: var(--muted); }
+
+
+/* ---------- event history: brown bags (events-history.html) ---------- */
+.evh-box { max-width: none; }
+.evh-count { color: var(--muted); margin: 0 0 .8rem; }
+.evh-jump { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.2rem; }
+.evh-jump .chip { text-decoration: none; }
+.evh-year { margin: 0 0 1.4rem; }
+.prose .evh-year h2 { font-size: 1.5rem; margin: 1.6rem 0 .5rem; }
+.prose .evh { display: table; width: 100%; table-layout: fixed; border-collapse: collapse; margin: 0; }
+.prose .evh th, .prose .evh td { border: 0; border-bottom: 1px solid var(--line); padding: .65rem .75rem .65rem 0; vertical-align: top; }
+.prose .evh th { background: none; font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.prose .evh th:nth-child(1), .evh-date { width: 6.5rem; }
+.prose .evh th:nth-child(2), .evh-who { width: 32%; }
+.evh-date { font-variant-numeric: tabular-nums; color: var(--muted); white-space: nowrap; }
+.evh-who b { font-weight: 600; }
+.evh-who span { display: block; color: var(--muted); font-size: .9rem; margin-top: .1rem; }
+.evh-up { display: inline-block; background: var(--accent); color: var(--on-accent, #fff); border-radius: 999px; padding: .02rem .55rem; font-size: .72rem; font-weight: 700; margin-right: .5rem; vertical-align: .1em; }
+.evh-empty { color: var(--muted); }
+@media (max-width: 42rem) {
+  .prose .evh, .prose .evh tbody, .prose .evh tr, .prose .evh td { display: block; width: 100%; }
+  .prose .evh thead { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .prose .evh thead th, .prose .evh thead tr { display: block; width: 1px; height: 1px; padding: 0; border: 0; }
+  .prose .evh tr { padding: .75rem 0; border-bottom: 1px solid var(--line); }
+  .prose .evh td { border: 0; padding: .1rem 0; }
+  .prose .evh th:nth-child(1), .evh-date, .prose .evh th:nth-child(2), .evh-who { width: 100%; }
+  .evh-date { color: var(--accent); font-weight: 600; }
+}

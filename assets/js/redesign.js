@@ -209,7 +209,7 @@
     var out = [];
     EV.forEach(function (r) {
       var d = parseISO(r.date); if (!d) return;
-      out.push({ at: d, until: endOfDay(d), label: r.date_label || '', time: r.time || '', category: r.category || '', title: r.title || '', detail: r.detail || '', deadline: parseISO(r.deadline), url: r.url || '' });
+      out.push({ at: d, until: endOfDay(d), label: r.date_label || '', time: r.time || '', category: r.category || '', title: r.title || '', detail: r.detail || '', talk: r.talk || '', deadline: parseISO(r.deadline), url: r.url || '' });
     });
     WIN.forEach(function (w) {
       var o1 = parseISO(w.tier1_open), c1 = parseISO(w.tier1_close), o2 = parseISO(w.tier2_open), c2 = parseISO(w.tier2_close), o3 = parseISO(w.tier3_open);
@@ -246,7 +246,7 @@
     var year = now.getFullYear();
     var rows = list.map(function (e) {
       var date = e.label || fmt(e.at, e.at.getFullYear() !== year || e.until < now ? { month: 'short', day: 'numeric', year: 'numeric' } : undefined);
-      var meta = [e.time, e.detail, e.deadline ? 'Register by ' + fmt(e.deadline) : ''].filter(Boolean).join(' · ');
+      var meta = [e.time, e.detail, e.talk, e.deadline ? 'Register by ' + fmt(e.deadline) : ''].filter(Boolean).join(' · ');
       var title = e.url ? '<a href="' + esc(href(e.url)) + '">' + esc(e.title) + '</a>' : esc(e.title);
       return '<li><time>' + esc(date) + '</time><span>' + title + (meta ? '<small>' + esc(meta) + '</small>' : '') + '</span></li>';
     }).join('');
@@ -380,6 +380,13 @@
     chips.forEach(function (c) { c.addEventListener('click', function () { filter = c.getAttribute('data-filter'); chips.forEach(function (o) { o.setAttribute('aria-pressed', String(o === c)); }); apply(); }); });
     apply();
   })();
+
+  /* ---------- event history tables: tag rows whose date is still ahead (works between site rebuilds) ---------- */
+  $$('.evh tr[data-date]').forEach(function (tr) {
+    var cell = $('.evh-date', tr), d = parseISO(tr.getAttribute('data-date'));
+    if (!d || !cell || cell.getAttribute('data-undated') || endOfDay(d) < new Date()) return;
+    var who = $('.evh-who b', tr); if (who) who.insertAdjacentHTML('afterbegin', '<span class="evh-up">Upcoming</span>');
+  });
 
   /* ---------- document library: search box (documents come from documents.csv) ---------- */
   (function () {

@@ -1,0 +1,31 @@
+{%- comment -%}
+  The full history of an event series (for example the brown bags), newest first, grouped by year, built from _data/events.csv.
+  Use it on a page by writing:  include redesign/events-history.html  with  category="Brown bag"
+  Options:  person_label="Speaker"   heading of the middle column
+            empty_text="..."         what to show when there are no rows
+  Columns used from events.csv:  date, title (the speaker or session), detail (affiliation), talk (title of the talk),
+  date_label (shown instead of the date when only the year is known), url (turns the name into a link).
+  Rows whose date is still ahead get an "Upcoming" tag in the browser.
+{%- endcomment -%}
+{%- assign person = include.person_label | default: 'Speaker' -%}
+{%- assign rows = site.data.events | where: 'category', include.category | sort: 'date' | reverse -%}
+{%- if rows.size == 0 -%}
+<p class="evh-empty">{{ include.empty_text | default: 'Nothing has been listed yet.' | escape }}</p>
+{%- else -%}
+{%- assign oldest = rows | last -%}
+{%- assign first_year = oldest.date | slice: 0, 4 -%}
+{%- assign years = '' -%}
+{%- for r in rows -%}{%- assign y = r.date | slice: 0, 4 -%}{%- assign ymark = '|' | append: y | append: '|' -%}{%- unless years contains ymark -%}{%- assign years = years | append: ymark -%}{%- endunless -%}{%- endfor -%}
+{%- assign ylist = years | split: '|' -%}
+<div class="evh-box">
+<p class="evh-count">{{ rows.size }} sessions since {{ first_year }}, newest first.</p>
+<p class="evh-jump">{% for y in ylist %}{% if y != '' %}<a class="chip" href="#y{{ y }}">{{ y }}</a>{% endif %}{% endfor %}</p>
+{%- for y in ylist -%}{%- if y != '' %}
+<section class="evh-year" id="y{{ y }}"><h2>{{ y }}</h2><table class="evh"><thead><tr><th scope="col">Date</th><th scope="col">{{ person | escape }}</th><th scope="col">Talk</th></tr></thead><tbody>
+{%- for r in rows -%}{%- assign ry = r.date | slice: 0, 4 -%}{%- if ry == y %}
+<tr data-date="{{ r.date }}"><td class="evh-date"{% if r.date_label and r.date_label != '' %} data-undated="yes">{{ r.date_label | escape }}{% else %}><time datetime="{{ r.date }}">{{ r.date | date: '%b %-d' }}</time>{% endif %}</td><td class="evh-who"><b>{% if r.url and r.url != '' and r.url != page.url %}<a href="{{ r.url | relative_url }}">{{ r.title | escape }}</a>{% else %}{{ r.title | escape }}{% endif %}</b>{% if r.detail and r.detail != '' %}<span>{{ r.detail | escape }}</span>{% endif %}</td><td class="evh-talk">{% if r.talk and r.talk != '' %}{{ r.talk | escape }}{% endif %}</td></tr>
+{%- endif -%}{%- endfor %}
+</tbody></table></section>
+{%- endif -%}{%- endfor %}
+</div>
+{%- endif -%}
