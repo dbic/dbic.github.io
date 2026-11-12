@@ -23,7 +23,6 @@ participant-info-sheet,Participant information sheet,Participant materials,/asse
 confirmation-email,Scan confirmation email template,Participant materials,/assets/dbic/docs/forms/fmri_confirmation_email.docx,,,,,
 week-before-email,Reminder email template: one week before,Participant materials,/assets/dbic/docs/forms/week_before_email.docx,,,,,
 day-before-email,Reminder email template: day before,Participant materials,/assets/dbic/docs/forms/daybefore_reminder_email.docx,,,,,
-study-demo-video,fMRI study demonstration video,Participant materials,/videos/study_demo.html,,,,,
 parking-email,Parking email template (Transportation Services),Parking & visiting,/assets/dbic/docs/forms/ts_email_template.docx,,,,"For Dartmouth-affiliated participants who park without a pass.",
 campus-parking-map,Campus parking map,Parking & visiting,/assets/transportation/parking/parking_maps/campusparkingmap1132023.pdf,,,,,A copy of a Dartmouth Campus Planning map (2022). Consider linking Dartmouth's current map. The forms page used a second copy under assets/dbic/docs/forms/.
 visitor-parking-map,Visitor parking map,Parking & visiting,/assets/transportation/parking/parking_maps/visitorparkingmap992022.pdf,,,,,A copy of a Dartmouth map. Consider linking Dartmouth's current map.

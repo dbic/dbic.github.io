@@ -96,8 +96,3 @@
       url: /people/advisorycommittee.html
     - title: Affiliated Faculty
       url: /people/affiliated.html
-
-- title: Videos
-  children:
-    - title: fMRI study demonstration
-      url: /videos/study_demo.html
