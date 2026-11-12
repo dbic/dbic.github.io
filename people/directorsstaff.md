@@ -2,6 +2,7 @@
 title: "Directors and staff"
 source_url: https://www.dartmouth.edu/dbic/people/directorsstaff.html
 retrieved: 2026-11-04
+lead: "The people who run the DBIC."
 ---
 
 [Home](/ "Home") >

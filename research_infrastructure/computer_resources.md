@@ -2,6 +2,11 @@
 title: "Computer Resources"
 source_url: https://www.dartmouth.edu/dbic/research_infrastructure/computer_resources.html
 retrieved: 2026-11-04
+lead: "How DBIC scans are stored, how to get access, and how to work with the data in DICOM and BIDS formats."
+related:
+  - { title: "Using Discovery", url: "/research_infrastructure/discovery.html" }
+  - { title: "Datasets", url: "/research_infrastructure/datasets.html" }
+  - { title: "Data & computing", url: "/data-computing.html" }
 ---
 
 [Research Infrastructure](index.md) >

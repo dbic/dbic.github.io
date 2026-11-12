@@ -2,6 +2,19 @@
 title: "DBIC Scheduling"
 source_url: https://www.dartmouth.edu/dbic/policies/scheduling.html
 retrieved: 2026-11-04
+lead: "How scan time is requested and allocated: scan hours, the three scheduling tiers, the request deadlines and the calendar."
+glance:
+  - { kind: scan_windows, label: "Scan-time requests", url: "#ay26-27" }
+actions:
+  - { text: "Open the scanner calendar", url: "#calendar" }
+  - { text: "Scanning rates", url: "/policies/dbic_billing.html", style: "outline" }
+  - { text: "Submit a protocol", url: "/policies/dbic_protocol.html", style: "outline" }
+kit:
+  grid: ["Scan hours", "Scheduling tiers"]
+related:
+  - { title: "How a study works", url: "/research-with-us.html" }
+  - { title: "Cancellations", url: "/policies/cancellations.html" }
+  - { title: "Scanning rates", url: "/policies/dbic_billing.html" }
 ---
 
 [Policies](index.md) >
@@ -40,6 +53,8 @@ Courtney Rogers ([Courtney.Rogers@Dartmouth.EDU](mailto:courtney.rogers@dartmout
 
 2. A certified scan buddy
 
+### Before you request time
+
 Information on DBIC's scanning rates is available [here.](dbic_billing.md) An approved DBIC protocol is required before requesting scan time; instructions for submitting a new protocol can be found [here.](dbic_protocol.md)
 
 <a id="schedulingtiers"></a>
@@ -69,7 +84,7 @@ The DBIC uses a three-tier scheduling system. Requests within each tier are comp
 
 <a id="ay26-27"></a>
 
-### Academic year 2026-2027 request deadlines
+## Academic year 2026-2027 request deadlines
 
 <table>
 <tbody>

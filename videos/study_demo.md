@@ -2,6 +2,7 @@
 title: "fMRI study demonstration"
 source_url: https://www.dartmouth.edu/dbic/videos/study_demo.html
 retrieved: 2026-11-04
+lead: "Watch a demonstration of an fMRI study."
 ---
 
 # fMRI study demonstration

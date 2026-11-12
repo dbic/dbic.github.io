@@ -1,1 +1,2 @@
-{%- if include.url contains '://' or include.url contains 'mailto:' or include.url contains 'tel:' -%}{{ include.url }}{%- else -%}{{ include.url | relative_url }}{%- endif -%}
+{%- assign first_char = include.url | slice: 0, 1 -%}
+{%- if first_char == '#' or include.url contains '://' or include.url contains 'mailto:' or include.url contains 'tel:' -%}{{ include.url }}{%- else -%}{{ include.url | relative_url }}{%- endif -%}

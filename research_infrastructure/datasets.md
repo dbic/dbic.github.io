@@ -2,6 +2,11 @@
 title: "DBIC-hosted datasets"
 source_url: https://www.dartmouth.edu/dbic/research_infrastructure/datasets.html
 retrieved: 2026-11-04
+lead: "Public datasets hosted at the DBIC for DBIC users: where each one lives, how to reach it, and any access terms."
+related:
+  - { title: "Computer resources", url: "/research_infrastructure/computer_resources.html" }
+  - { title: "Using Discovery", url: "/research_infrastructure/discovery.html" }
+  - { title: "Data & computing", url: "/data-computing.html" }
 ---
 
 [Research Infrastructure](index.md) >

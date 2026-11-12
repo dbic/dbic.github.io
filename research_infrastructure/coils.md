@@ -2,6 +2,13 @@
 title: "Head coils"
 source_url: https://www.dartmouth.edu/dbic/research_infrastructure/coils.html
 retrieved: 2026-11-04
+lead: "Three phased-array head coils are available: 64, 32 and 20 channels."
+kit:
+  listcards: ["The three coils"]
+related:
+  - { title: "fMRI scanner", url: "/research_infrastructure/fmri_scanner.html" }
+  - { title: "Sequences", url: "/research_infrastructure/sequences.html" }
+  - { title: "Quality assurance", url: "/research_infrastructure/qualityassurance.html" }
 ---
 
 [Research Infrastructure](index.md) >
@@ -9,6 +16,8 @@ retrieved: 2026-11-04
 # Head coils
 
 The DBIC owns three phase array head coils (64, 32 and 20 coil elements).
+
+## The three coils
 
 - The 20-channel head coil is not recommended due to comparatively old technology (in particular, lack of small receiver coils that would improve compatibility with multiband), though it may be the only model able to scan certain subjects with significantly larger heads.
 - The 32-channel head coil is an iPAT compatible "no-tune" receiver coil which is capable of parallel imaging and simultaneous multislice acquisition.

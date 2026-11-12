@@ -5,17 +5,6 @@ description: Research resource for brain imaging at Dartmouth College
 # set baseurl to "/repo". For an organization site at dbic.github.io, leave it empty.
 baseurl: ""
 
-# Banner image shown at the top of every page. Download the file first (see README),
-# then uncomment. Without it, the site title is shown as text.
-# header_image: /assets/dbic/images/header_full.jpg
-
-# Look and feel. "style" names a preset in _data/styles.yml.
-style: default
-# Floating "Style" panel for trying looks (appears only with ?dev in the address, or
-# on localhost). Set to false once the look is decided, so the published site
-# carries none of this code.
-style_switcher: true
-
 plugins:
   - jekyll-relative-links
 
@@ -32,6 +21,7 @@ defaults:
 
 # Files that live in the repo but should not be published on the site.
 exclude:
+  - "*.py"          # the helper scripts (check_events.py, merge_events.py, ...) are not part of the site
   - README.md
   - crawl_to_markdown.py
   - environment.yml

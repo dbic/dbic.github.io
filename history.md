@@ -2,6 +2,7 @@
 title: "History of the Dartmouth Brain Imaging Center (DBIC)"
 source_url: https://www.dartmouth.edu/dbic/history.html
 retrieved: 2026-11-04
+lead: "Dartmouth has run a research-only MRI center since November 1999."
 ---
 
 [Home](/ "Home") >

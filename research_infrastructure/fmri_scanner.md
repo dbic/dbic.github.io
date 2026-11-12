@@ -2,6 +2,17 @@
 title: "fMRI Scanner"
 source_url: https://www.dartmouth.edu/dbic/research_infrastructure/fmri_scanner.html
 retrieved: 2026-11-04
+lead: "A 3.0 tesla Siemens MAGNETOM Prisma and the peripherals needed for functional neuroimaging."
+glance:
+  - { kind: text, label: "Magnet", title: "3.0 tesla", text: "Siemens MAGNETOM Prisma, 60 cm bore" }
+  - { kind: text, label: "Peak gradient strength", title: "80 mT/m", text: "200 T/m/s gradient rise time on all three axes" }
+  - { kind: text, label: "Magnetic homogeneity", title: "0.25 ppm", text: "measured within a 40 cm diameter sphere" }
+  - { kind: text, label: "Software platform", title: "Siemens XA60", text: "BOLD, diffusion and spectroscopy packages" }
+related:
+  - { title: "Head coils", url: "/research_infrastructure/coils.html" }
+  - { title: "Sequences", url: "/research_infrastructure/sequences.html" }
+  - { title: "Peripherals", url: "/research_infrastructure/peripherals.html" }
+  - { title: "Quality assurance", url: "/research_infrastructure/qualityassurance.html" }
 ---
 
 [Research Infrastructure](index.md) >

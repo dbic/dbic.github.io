@@ -2,6 +2,11 @@
 title: "Scan operator training"
 source_url: https://www.dartmouth.edu/dbic/policies/operator_training.html
 retrieved: 2026-11-04
+lead: "Becoming a certified scan operator takes two steps: first operator-in-training, then hands-on training and a competency demonstration."
+related:
+  - { title: "MRI safety training", url: "/policies/safetytraining.html" }
+  - { title: "Safety & compliance", url: "/safety-compliance.html" }
+  - { title: "Housekeeping", url: "/policies/housekeeping.html" }
 ---
 
 [Policies](index.md) >
@@ -11,6 +16,8 @@ retrieved: 2026-11-04
 [**Prerequisite: MRI safety training**](safetytraining.md)
 
 The DBIC trains research faculty, postdoctoral fellows, graduate students, and full-time research staff to operate the scanner without an MRI technologist being present. Scan operator training is a two-part process. The first step involves becoming an operator-in-training, and the second step is completion of the hands-on training required for operator certification.
+
+## Step 1: Operator-in-training
 
 To become an **operator-in-training**, you will need to coordinate a training appointment with [courtney.rogers@dartmouth.edu](mailto:courtney.rogers@dartmouth.edu?subject=Operator-in-training%20session). During this training session, users will learn how to administer and follow all MRI safety scanning procedures, as well as be introduced to the following:
 
@@ -28,6 +35,8 @@ To become an **operator-in-training**, you will need to coordinate a training ap
 - DBIC [housekeeping policies](../assets/dbic/docs/policies/housekeeping01282026.pdf)
 - Powering the scanner on/off
 - [MRUSER training manual](../assets/dbic/docs/policies/mrusermanual_06112026.pdf)
+
+## Step 2: Certified scan operator
 
 Following completion of the in-person introduction to scan operating session, operators-in-training will need to complete at least 10 hours of hands-on training with a certified scan operator before being allowed independent access to the MRI suite. The last competency demonstration for certification must be completed while the MRI Technologist is present.
 
@@ -49,10 +58,14 @@ To become a certified **scan operator,** reseachers will need to demonstrate com
 - knowledge of how to power the MRI system on and off
 - [MRUSER training manual](../assets/dbic/docs/policies/mrusermanual_06112026.pdf)
 
+## What is expected of operators
+
 Scan operators will be expected to know and follow all DBIC safety policies and procedures at all times, and are also responsible for following all DBIC [housekeeping policies](housekeeping.md) to maintain the health and safety of our participants and equipment.
 
 For more information on becoming a certified scan operator, please contact
 [Courtney.Rogers@dartmouth.edu](mailto:Courtney.Rogers@dartmouth.edu).
+
+## Scheduling and class size
 
 Trainings can be scheduled on an as-needed basis. Training hours are Monday-Friday, starting at 8:00am, ending by 4:00pm.
 

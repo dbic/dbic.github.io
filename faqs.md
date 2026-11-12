@@ -2,6 +2,12 @@
 title: "FAQs"
 source_url: https://www.dartmouth.edu/dbic/faqs.html
 retrieved: 2026-11-04
+lead: "Quick links to the answers for the most common questions about scanning, computing and datasets."
+kit:
+  listcards: "*"
+related:
+  - { title: "How a study works", url: "/research-with-us.html" }
+  - { title: "Data & computing", url: "/data-computing.html" }
 ---
 
 [Home](/ "Home") >

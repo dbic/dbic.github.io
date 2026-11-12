@@ -202,6 +202,181 @@
     start();
   })();
 
+  /* ---------- page kit: the card layout for ordinary content pages ----------
+     Wraps each section of the page (split at its own headings) in a card, turns the page's contents list into "On this page"
+     chips, and tidies tables, pictures and long lists. Existing content is only MOVED, never changed. Options come from the page's
+     front matter (kit:), passed in as the JSON block #page-kit. Any problem leaves the page as it was. */
+  (function pageKit() {
+    var art = $('article.prose'); if (!art || art.getAttribute('data-kit-done')) return;
+    var backup = art.innerHTML;
+    try {
+      var opt = J('page-kit') || {};
+      var kids = Array.prototype.slice.call(art.children);
+      if (opt.off || !kids.length) return;
+      if (kids.some(function (k) { return k.matches && k.matches('.section-index, .lgroups, .evh-box, .doclib, .people'); })) return;
+      var norm = function (s) { return String(s || '').replace(/\s+/g, ' ').trim().toLowerCase(); };
+      var has = function (t) { return kids.some(function (k) { return k.tagName === t; }); };
+      var level = opt.level || (has('H2') ? 2 : (has('H3') ? 3 : 0));
+      var HT = level ? 'H' + level : '-';
+      function anchorOf(el) {            // <a id="x"></a> on its own, or alone in a paragraph
+        if (el.tagName === 'A' && el.id && !el.textContent.trim()) return el;
+        if (el.tagName === 'P' && el.children.length === 1 && el.children[0].tagName === 'A' && el.children[0].id && !el.textContent.trim()) return el.children[0];
+        return null;
+      }
+      /* 1. split into blocks at the card-level headings */
+      var blocks = [], cur = { head: null, anchors: [], nodes: [] }, pending = [];
+      function close() { if (cur.head || cur.nodes.length) blocks.push(cur); }
+      kids.forEach(function (el) {
+        var a = anchorOf(el);
+        if (a) { pending.push({ el: el, a: a }); return; }
+        if (el.classList.contains('kit-card')) { close(); blocks.push({ standalone: el, anchors: pending.map(function (x) { return x.a; }) }); pending = []; cur = { head: null, anchors: [], nodes: [] }; return; }
+        if (el.tagName === HT) { close(); cur = { head: el, anchors: pending.map(function (x) { return x.a; }), nodes: [] }; pending.forEach(function (x) { if (x.el !== x.a && x.el.parentNode) x.el.parentNode.removeChild(x.el); }); pending = []; return; }
+        pending.forEach(function (x) { cur.nodes.push(x.el); }); pending = [];
+        cur.nodes.push(el);
+      });
+      pending.forEach(function (x) { cur.nodes.push(x.el); });
+      close();
+
+      /* 2. build the cards */
+      var colors = ['green', 'teal', 'indigo', 'amber', 'rose', 'violet'], ci = 0, box = document.createElement('div'), cards = [];
+      box.className = 'kit';
+      blocks.forEach(function (b) {
+        var card, title = '';
+        if (b.standalone) {
+          card = b.standalone; card.classList.add('pcard'); var h = card.querySelector('h2,h3'); title = h ? h.textContent : '';
+          b.anchors.forEach(function (a) { card.insertBefore(a, card.firstChild); });
+        } else {
+          card = document.createElement('section'); card.className = 'pcard' + (b.head ? '' : ' pcard-intro');
+          b.anchors.forEach(function (a) { card.appendChild(a); });
+          if (b.head) { card.appendChild(b.head); title = b.head.textContent; if (b.head.id) card.setAttribute('aria-labelledby', b.head.id); }
+          b.nodes.forEach(function (n) { card.appendChild(n); });
+        }
+        if (!card.classList.contains('pcard-intro')) {
+          var named = opt.colors && opt.colors[norm(title)];
+          card.classList.add('c-' + (named || colors[ci % colors.length])); ci++;
+        }
+        var step = /^\s*step\s+(\d+)/i.exec(title); if (step) { card.classList.add('kit-step'); card.setAttribute('data-step', step[1]); }
+        box.appendChild(card); cards.push({ el: card, title: title, head: b.head });
+      });
+
+      /* 3. tidy what is inside the cards */
+      var anchorList = function (ul) {
+        var li = Array.prototype.slice.call(ul.children); if (li.length < 2) return false;
+        return li.every(function (x) { var a = x.children.length === 1 ? x.children[0] : null; return a && a.tagName === 'A' && (a.getAttribute('href') || '').charAt(0) === '#' && norm(a.textContent) === norm(x.textContent); });
+      };
+      function makeNav(ul, label) {
+        var nav = document.createElement('nav'); nav.className = 'kit-nav'; nav.setAttribute('aria-label', label || 'On this page');
+        var l = document.createElement('span'); l.className = 'kit-nav-label'; l.textContent = label || 'On this page'; nav.appendChild(l);
+        Array.prototype.slice.call(ul.querySelectorAll('a')).forEach(function (a) { nav.appendChild(a); });
+        return nav;
+      }
+      var gotNav = false;
+      cards.slice().forEach(function (c) {
+        var el = c.el;
+        /* a contents list of in-page links becomes chips (the heading above it, if any, becomes the chips' label) */
+        Array.prototype.slice.call(el.querySelectorAll(':scope > ul')).forEach(function (ul) {
+          if (!anchorList(ul)) return;
+          var prev = ul.previousElementSibling, label = null;
+          if (prev && /^H[2-4]$/.test(prev.tagName)) { label = prev.textContent.trim(); prev.parentNode.removeChild(prev); }
+          else if (el === box.firstChild || el.classList.contains('pcard-intro')) label = 'On this page';
+          var nav = makeNav(ul, label); ul.parentNode.replaceChild(nav, ul); gotNav = true;
+        });
+        /* a card that is nothing but chips needs no frame */
+        var real = Array.prototype.slice.call(el.children).filter(function (x) { return x.tagName !== 'A' || x.textContent.trim(); });
+        var navs = real.filter(function (x) { return x.matches && x.matches('.kit-nav'); });
+        if (real.length && real.length === navs.length) {
+          var ids = Array.prototype.slice.call(el.querySelectorAll(':scope > a[id]'));
+          navs[0].classList.add('kit-nav-bare'); box.replaceChild(navs[0], el);
+          ids.forEach(function (a) { navs[0].parentNode.insertBefore(a, navs[0]); });
+          c.el = navs[0]; c.nav = true;
+        }
+      });
+      cards.forEach(function (c) {
+        if (c.nav) return;
+        var el = c.el;
+        /* headings that are only a link, one after another (for example year links) become a row of chips */
+        var nodes = Array.prototype.slice.call(el.children).filter(function (x) { return x !== c.head && !(x.tagName === 'A' && !x.textContent.trim()); });
+        if (nodes.length > 1 && nodes.every(function (x) { return /^H[3-5]$/.test(x.tagName) && x.children.length === 1 && x.children[0].tagName !== undefined && norm(x.textContent) === norm(x.children[0].textContent) && x.querySelector('a'); })) {
+          var yrs = document.createElement('div'); yrs.className = 'kit-years';
+          nodes.forEach(function (x) { yrs.appendChild(x.querySelector('a')); x.parentNode.removeChild(x); });
+          el.appendChild(yrs);
+        }
+        /* tables: scroll box, and a real header row when the first row is all bold */
+        Array.prototype.slice.call(el.querySelectorAll('table')).forEach(function (t) {
+          if (t.parentNode.classList.contains('table-wrap')) return;
+          var w = document.createElement('div'); w.className = 'table-wrap'; t.parentNode.insertBefore(w, t); w.appendChild(t);
+          if (!t.querySelector('th') && !t.querySelector('thead')) {
+            var rows = t.rows, r0 = rows[0];
+            if (r0 && r0.cells.length > 1 && rows.length > 1 && Array.prototype.every.call(r0.cells, function (cell) { return !cell.textContent.trim() || (cell.children.length === 1 && /^(STRONG|B)$/.test(cell.children[0].tagName) && norm(cell.textContent) === norm(cell.children[0].textContent)); })) {
+              var head = document.createElement('thead'); var tr = document.createElement('tr');
+              Array.prototype.slice.call(r0.cells).forEach(function (cell) { var th = document.createElement('th'); th.scope = 'col'; th.innerHTML = cell.innerHTML.replace(/<\/?(strong|b)>/gi, ''); tr.appendChild(th); });
+              head.appendChild(tr); t.insertBefore(head, t.firstChild); r0.parentNode.removeChild(r0);
+            }
+          }
+        });
+        /* pictures: two or more in a row sit in a grid; a lone picture at the top of a card floats beside the text */
+        var run = [];
+        function flush() {
+          if (run.length > 1) { var g = document.createElement('div'); g.className = 'kit-figs'; run[0].parentNode.insertBefore(g, run[0]); run.forEach(function (p) { g.appendChild(p); }); }
+          else if (run.length === 1) { var first = run[0].previousElementSibling === null || (run[0].previousElementSibling.tagName === 'A' && !run[0].previousElementSibling.textContent.trim() && !run[0].previousElementSibling.previousElementSibling); run[0].classList.add(first && run[0].nextElementSibling && run[0].nextElementSibling.tagName === 'P' ? 'kit-sidefig' : 'kit-fig'); }
+          run = [];
+        }
+        Array.prototype.slice.call(el.children).forEach(function (x) {
+          var onlyImg = x.tagName === 'P' && x.querySelector('img') && !x.textContent.trim() && x.querySelectorAll('img').length === 1;
+          if (onlyImg) run.push(x); else flush();
+        });
+        flush();
+        /* a heading that is only a link (for example the download of a form) becomes a button */
+        Array.prototype.slice.call(el.querySelectorAll(':scope > h4, :scope > h5')).forEach(function (h) {
+          var a = h.children.length === 1 && h.children[0].tagName === 'A' ? h.children[0] : null;
+          if (a && norm(h.textContent) === norm(a.textContent)) { a.classList.add('btn', 'btn-solid'); h.classList.add('kit-linkbtn'); }
+        });
+        /* long lists of short items run in columns */
+        Array.prototype.slice.call(el.querySelectorAll(':scope > ul')).forEach(function (ul) {
+          var li = ul.children; if (li.length < 14) return;
+          var avg = Array.prototype.reduce.call(li, function (s, x) { return s + x.textContent.length; }, 0) / li.length;
+          if (avg < 24) ul.classList.add('kit-cols');
+        });
+        /* embedded video */
+        Array.prototype.slice.call(el.querySelectorAll('iframe')).forEach(function (f) {
+          if (f.closest('.calendar-embed, .kit-embed')) return;
+          var w = document.createElement('div'); w.className = 'kit-embed'; f.parentNode.insertBefore(w, f); w.appendChild(f);
+        });
+        /* sections inside a card shown side by side, or a list shown as cards, when the page asks for it */
+        var key = norm(c.title), grid = opt.grid || [], lc = opt.listcards || [];
+        var isIn = function (arr) { return arr === '*' || (arr.indexOf && arr.some(function (t) { return norm(t) === key; })); };
+        if (c.head && isIn(lc)) { var u = el.querySelector(':scope > ul'); if (u) u.classList.add('kit-listcards'); }
+        if (c.head && isIn(grid)) {
+          var kidsNow = Array.prototype.slice.call(el.children), sub = null, wrap = document.createElement('div'); wrap.className = 'kit-subgrid';
+          kidsNow.forEach(function (x) {
+            if (x.tagName === 'H3') { sub = document.createElement('div'); sub.className = 'kit-sub'; wrap.appendChild(sub); sub.appendChild(x); }
+            else if (sub) sub.appendChild(x);
+          });
+          if (sub) el.appendChild(wrap);
+        }
+      });
+
+      /* 4. if the page had no contents list, make one from the card headings */
+      var heads = cards.filter(function (c) { return c.head && c.head.id && !c.nav; });
+      if (!gotNav && opt.toc !== false && heads.length >= 3) {
+        var nav = document.createElement('nav'); nav.className = 'kit-nav'; nav.setAttribute('aria-label', 'On this page');
+        nav.innerHTML = '<span class="kit-nav-label">On this page</span>' + heads.map(function (c) { return '<a href="#' + esc(c.head.id) + '">' + esc(c.title.replace(/\s+/g, ' ').trim()) + '</a>'; }).join('');
+        box.insertBefore(nav, box.firstChild);
+      }
+
+      /* 5. swap the built page in */
+      while (art.firstChild) art.removeChild(art.firstChild);
+      art.appendChild(box); art.setAttribute('data-kit-done', '1'); art.classList.add('kit-ready');
+      if (window.location.hash && window.location.hash.length > 1) {
+        var tgt = null; try { tgt = document.getElementById(decodeURIComponent(window.location.hash.slice(1))); } catch (e) {}
+        if (tgt) tgt.scrollIntoView();
+      }
+    } catch (err) {
+      art.innerHTML = backup; art.removeAttribute('data-kit-done'); art.classList.remove('kit-ready');   // put the page back exactly as it was
+      if (window.console) console.warn('page kit skipped:', err);
+    }
+  })();
+
   /* ---------- events: "Coming up" tabs and the status cards (data: events.csv, scan_windows.csv) ---------- */
   var EV = J('events-data') || [], WIN = J('windows-data') || [], HOME = J('home-data') || {};
   var SCAN = 'Scan requests';

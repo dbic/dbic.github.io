@@ -2,6 +2,10 @@
 title: "QA"
 source_url: https://www.dartmouth.edu/dbic/research_infrastructure/qualityassurance.html
 retrieved: 2026-11-04
+lead: "Weekly phantom measurements that monitor the stability of the scanner, with the reports for each year."
+related:
+  - { title: "fMRI scanner", url: "/research_infrastructure/fmri_scanner.html" }
+  - { title: "Head coils", url: "/research_infrastructure/coils.html" }
 ---
 
 [Research Infrastructure](index.md) >

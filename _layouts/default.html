@@ -40,8 +40,38 @@ layout: redesign
 {% include redesign/page-band.html heading=band_title eyebrow=section.label crumb_label=crumb_label crumb_url=section_index.url lead=page.lead %}
 <div class="prose-wrap">
   <div class="wrap">
+    {%- if page.glance or page.actions %}
+    <div class="kit-top">
+      {%- if page.glance %}
+      <div class="status-grid" id="status" aria-label="Key information">
+        {%- for g in page.glance %}
+        {%- if g.url %}{% capture href %}{% include redesign/href.html url=g.url %}{% endcapture %}
+        <a class="chip-card" data-kind="{{ g.kind }}" data-category="{{ g.category | escape }}" data-label="{{ g.label | escape }}" href="{{ href | strip }}">{% if g.kind != 'text' %}<i class="dot"></i>{% endif %}<div><small>{{ g.label | escape }}</small><b>{% if g.kind == 'text' %}{{ g.title | escape }}{% else %}See the schedule{% endif %}</b>{% if g.text %}<span class="s">{{ g.text | escape }}</span>{% endif %}</div></a>
+        {%- else %}
+        <div class="chip-card" data-kind="{{ g.kind }}" data-category="{{ g.category | escape }}" data-label="{{ g.label | escape }}">{% if g.kind != 'text' %}<i class="dot"></i>{% endif %}<div><small>{{ g.label | escape }}</small><b>{% if g.kind == 'text' %}{{ g.title | escape }}{% else %}See the schedule{% endif %}</b>{% if g.text %}<span class="s">{{ g.text | escape }}</span>{% endif %}</div></div>
+        {%- endif %}
+        {%- endfor %}
+      </div>
+      {%- endif %}
+      {%- if page.actions %}
+      <div class="kit-actions">
+        {%- for a in page.actions %}{% capture href %}{% include redesign/href.html url=a.url %}{% endcapture %}
+        <a class="btn btn-{{ a.style | default: 'solid' }} btn-sm" href="{{ href | strip }}">{{ a.text | escape }}</a>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+    </div>
+    {%- endif %}
     <article class="prose">
 {{ body }}
     </article>
   </div>
 </div>
+{% include redesign/page-foot.html %}
+{%- if page.kit %}
+<script type="application/json" id="page-kit">{{ page.kit | jsonify }}</script>
+{%- endif %}
+{%- if page.glance %}
+<script type="application/json" id="events-data">{{ site.data.events | jsonify }}</script>
+<script type="application/json" id="windows-data">{{ site.data.scan_windows | jsonify }}</script>
+{%- endif %}

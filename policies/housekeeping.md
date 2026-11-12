@@ -2,6 +2,10 @@
 title: "Housekeeping"
 source_url: https://www.dartmouth.edu/dbic/policies/housekeeping.html
 retrieved: 2026-11-04
+lead: "Everyone who scans keeps the suite clean, tidy and ready for the next group."
+related:
+  - { title: "Safety & compliance", url: "/safety-compliance.html" }
+  - { title: "Scan operator training", url: "/policies/operator_training.html" }
 ---
 
 [Policies](index.md) >
@@ -9,6 +13,8 @@ retrieved: 2026-11-04
 # Housekeeping
 
 The MRI scanner and suite is a valuable shared resource. In addition to making sure that all safety and operating policies and procedures are adhered to at all times, scanner operators will be expected to adhere to the full [housekeeping checklist,](../assets/dbic/docs/policies/housekeeping01282026.pdf) in addition to the items below.
+
+## Housekeeping items
 
 - assure the projector is placed in standby mode when not in use
 - leave all peripheral equipment, including the biopac, response devices, control box, video and sound delivery systems in a neat and untangled manner, which will minimize the danger of equipment damage

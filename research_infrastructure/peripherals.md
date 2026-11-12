@@ -2,6 +2,12 @@
 title: "Peripheral equipment"
 source_url: https://www.dartmouth.edu/dbic/research_infrastructure/peripherals.html
 retrieved: 2026-11-04
+lead: "Equipment for presenting stimuli, collecting responses, tracking the eyes and recording physiology in the scanner."
+kit:
+  grid: ["participant Response devices"]
+related:
+  - { title: "fMRI scanner", url: "/research_infrastructure/fmri_scanner.html" }
+  - { title: "Sequences", url: "/research_infrastructure/sequences.html" }
 ---
 
 [Research Infrastructure](index.md) >

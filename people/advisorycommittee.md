@@ -2,6 +2,7 @@
 title: "DBIC Advisory Committee"
 source_url: https://www.dartmouth.edu/dbic/people/advisorycommittee.html
 retrieved: 2026-11-04
+lead: "The members of the DBIC Advisory Committee."
 ---
 
 [Home](/ "Home") >

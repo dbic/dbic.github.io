@@ -456,3 +456,118 @@ dialog#qf::backdrop { background: rgba(3, 18, 11, .6); backdrop-filter: blur(3px
   .prose .evh th:nth-child(1), .evh-date, .prose .evh th:nth-child(2), .evh-who { width: 100%; }
   .evh-date { color: var(--accent); font-weight: 600; }
 }
+
+
+/* ======================================================================
+   Page kit: the card layout for ordinary content pages.
+   The script (redesign.js, "page kit") wraps each section of a page in a card; the rules below style it.
+   Pages without the script still read fine: every rule here is additive.
+   ====================================================================== */
+.kit { display: grid; gap: 1.25rem; }
+.pcard { --c: var(--c1); background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--c); border-radius: var(--radius); padding: clamp(1.2rem, 2.4vw, 1.75rem) clamp(1.2rem, 3vw, 2rem); box-shadow: var(--shadow); min-width: 0; }
+.pcard.pcard-intro { border-top-color: var(--line); }
+.pcard::after { content: ""; display: block; clear: both; }
+.pcard > :first-child, .pcard > a:first-child + * { margin-top: 0; }
+.pcard > :last-child { margin-bottom: 0; }
+.prose .pcard h2 { font-size: clamp(1.4rem, 2.4vw, 1.75rem); margin: 0 0 .9rem; display: flex; align-items: center; gap: .65rem; }
+.prose .pcard h2::before { content: ""; flex: none; width: .75rem; height: .75rem; border-radius: 4px; background: var(--c); }
+.prose .pcard h3 { font-size: 1.2rem; margin: 1.5rem 0 .5rem; }
+.prose .pcard > h3:first-child, .prose .pcard > a:first-child + h3 { margin-top: 0; }
+.prose .pcard h4 { font-size: 1.05rem; margin: 1.1rem 0 .4rem; }
+.pcard > p, .pcard > ul, .pcard > ol, .pcard > dl, .pcard > blockquote, .pcard > pre { max-width: 62rem; }
+.pcard img { border-radius: 10px; }
+.pcard li:last-child { margin-bottom: 0; }
+
+.pcard.c-green { --c: var(--c1); } .pcard.c-teal { --c: var(--c2); } .pcard.c-indigo { --c: var(--c3); }
+.pcard.c-amber { --c: var(--c4); } .pcard.c-rose { --c: var(--c5); } .pcard.c-violet { --c: var(--c6); }
+
+/* step badge: a card titled "Step 1 ..." gets its number in a circle */
+.prose .pcard.kit-step h2::before { content: attr(data-step); width: 1.9rem; height: 1.9rem; border-radius: 50%; display: grid; place-items: center; font: 700 .95rem/1 var(--font); color: var(--on-accent); }
+
+/* the "On this page" chips (built from the page's own contents list, or from its headings) */
+.kit-nav { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: 0; }
+.pcard .kit-nav, .kit > .kit-nav { margin-bottom: .2rem; }
+.kit-nav-label { font: 600 .74rem/1 var(--font); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-right: .3rem; }
+.kit-nav a { display: inline-block; padding: .42rem .9rem; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); text-decoration: none; font: 500 .92rem/1.25 var(--font); transition: border-color .2s, color .2s, transform .2s; }
+.kit-nav a:hover, .kit-nav a:focus-visible { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+/* summary cards and action buttons above the sections (from the page's front matter) */
+.kit-top { display: grid; gap: 1.1rem; margin: 0 0 1.25rem; }
+.kit-top .status-grid { grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+.kit-actions { display: flex; flex-wrap: wrap; gap: .7rem; }
+
+/* sections inside a card shown side by side (for example the three scheduling tiers) */
+.kit-subgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; margin-top: 1rem; }
+.kit-sub { background: var(--surface-2); border: 1px solid var(--line); border-radius: 14px; padding: 1.1rem 1.25rem; min-width: 0; }
+.prose .kit-sub h3 { margin: 0 0 .55rem; font-size: 1.12rem; }
+.kit-sub > :last-child { margin-bottom: 0; }
+.kit-sub ul { padding-left: 1.2rem; }
+
+/* a bulleted list shown as small cards (for example the three head coils) */
+.prose ul.kit-listcards { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; max-width: none; }
+.kit-listcards > li { background: var(--surface-2); border: 1px solid var(--line); border-radius: 14px; padding: 1rem 1.15rem; margin: 0; }
+
+/* pictures */
+.kit-figs { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem; margin: 1rem 0; max-width: none; }
+.kit-figs p { margin: 0; }
+.kit-figs img { width: 100%; height: auto; border: 1px solid var(--line); }
+.prose p.kit-fig { margin: 1rem 0; }
+.prose p.kit-fig img { display: block; max-width: min(100%, 34rem); height: auto; border: 1px solid var(--line); }
+.prose p.kit-sidefig { float: right; width: min(24rem, 40%); margin: 0 0 1rem 1.75rem; }
+.prose p.kit-sidefig img { width: 100%; height: auto; border: 1px solid var(--line); }
+@media (max-width: 44rem) { .prose p.kit-sidefig { float: none; width: 100%; margin: 0 0 1rem; } }
+
+/* long lists of short items run in columns; rows of year links become chips */
+.prose ul.kit-cols { columns: 3 11rem; column-gap: 2rem; list-style: none; padding-left: 0; max-width: none; }
+.kit-cols > li { break-inside: avoid; margin-bottom: .3rem; }
+.kit-years { display: flex; flex-wrap: wrap; gap: .5rem; }
+.kit-years a { display: inline-block; padding: .4rem .95rem; border-radius: 999px; border: 1px solid var(--line); background: var(--surface-2); color: var(--ink); text-decoration: none; font-weight: 600; }
+.kit-years a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* tables: full width inside the card, with a proper header row */
+.table-wrap { overflow-x: auto; margin: 1rem 0; border: 1px solid var(--line); border-radius: 12px; }
+.prose .table-wrap table { display: table; width: 100%; margin: 0; border: 0; }
+.prose .table-wrap th, .prose .table-wrap td { border: 0; border-bottom: 1px solid var(--line); padding: .6rem .8rem; }
+.prose .table-wrap tr:last-child td { border-bottom: 0; }
+.prose .table-wrap th { background: var(--surface-2); font-size: .82rem; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.prose .table-wrap td:first-child { font-weight: 600; }
+
+/* video and other embeds */
+.kit-embed { max-width: 52rem; }
+.kit-embed iframe { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border: 0; border-radius: 14px; }
+.calendar-embed.pcard iframe { max-width: none; }
+
+/* people pages: each person is a card */
+.prose .person { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.1rem 1.25rem; box-shadow: var(--shadow); }
+.prose .people.list { gap: 1.1rem; }
+.prose .people .person img, .prose .people .person .noimg { border-radius: 14px; }
+
+/* brown-bag history: each year is a card */
+.evh-year { background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--c1); border-radius: var(--radius); padding: .4rem 1.5rem 1rem; margin: 0 0 1.1rem; box-shadow: var(--shadow); }
+.evh-year:nth-of-type(6n+2) { border-top-color: var(--c2); } .evh-year:nth-of-type(6n+3) { border-top-color: var(--c3); }
+.evh-year:nth-of-type(6n+4) { border-top-color: var(--c4); } .evh-year:nth-of-type(6n+5) { border-top-color: var(--c5); } .evh-year:nth-of-type(6n+6) { border-top-color: var(--c6); }
+
+/* the "Keep exploring" row under a content page sits close to the last card */
+.prose-wrap + .section { padding: 0 0 clamp(2.5rem, 5vw, 4rem); }
+.prose-wrap:has(+ .section) { padding-bottom: 2rem; }
+
+/* the pages' intro blocks that are only lists of cards need no frame */
+.prose > .section-index, .prose > .lgroups { margin-top: 0; }
+@media print { .pcard { box-shadow: none; break-inside: avoid-page; } }
+
+.prose .pcard h4.kit-linkbtn { margin: 0; }
+.pcard h4.kit-linkbtn a.btn { text-decoration: none; }
+
+/* the schedule tables built from events.csv keep a readable width inside the card */
+.events-table .table-wrap { max-width: 46rem; }
+.prose .events-table .table-wrap table { max-width: none; }
+
+/* the document library's categories carry the same colored top bar as the other cards */
+.doclib-cat { border-top: 4px solid var(--c1); box-shadow: var(--shadow); }
+.doclib-cat:nth-of-type(6n+2) { border-top-color: var(--c2); } .doclib-cat:nth-of-type(6n+3) { border-top-color: var(--c3); }
+.doclib-cat:nth-of-type(6n+4) { border-top-color: var(--c4); } .doclib-cat:nth-of-type(6n+5) { border-top-color: var(--c5); } .doclib-cat:nth-of-type(6n+6) { border-top-color: var(--c6); }
+
+/* long file paths and addresses wrap inside a card instead of pushing the page sideways on a phone */
+.pcard { overflow-wrap: anywhere; }
+.prose .pcard pre { overflow-x: auto; max-width: 100%; }
+.pcard code { overflow-wrap: anywhere; }

@@ -2,6 +2,11 @@
 title: "Using Discovery"
 source_url: https://www.dartmouth.edu/dbic/research_infrastructure/discovery.html
 retrieved: 2026-11-04
+lead: "DBIC's share of the Discovery computing cluster: how to use it, the limits that apply, and good practice."
+related:
+  - { title: "Computer resources", url: "/research_infrastructure/computer_resources.html" }
+  - { title: "Datasets", url: "/research_infrastructure/datasets.html" }
+  - { title: "Data & computing", url: "/data-computing.html" }
 ---
 
 [Research Infrastructure](index.md) >
@@ -18,7 +23,7 @@ retrieved: 2026-11-04
 
 ## Overview
 
-DBIC owns a share of 15 Nodes on the Research Computing (RC) Discovery cluster, each node comprising 16 cores totaling 240 cores. RC's policy for sharing specifies that all share holders have access to five times the resources owned, giving DBIC account users access to 1200 cores in total at any given time. The SLURM scheduler enforces hard limits on resource allocation so that once the DBIC usage meets the limit, no more DBIC jobs can run until resources are freed. In order to ensure equitable service to all DBIC users and to preserve the peace in our community, we aim to adopt a DBIC-specific set of policies. These policies are explained below. The implementation and enforcement of policies will be carried out by the RC Systems Administrators.
+DBIC owns a share of 15 Nodes on the Research Computing (RC) Discovery cluster, each node comprising 16 cores totaling 240 cores. RC's policy for sharing specifies that all share holders have access to five times the resources owned, giving DBIC account users access to 1280 cores in total at any given time. The SLURM scheduler enforces hard limits on resource allocation so that once the DBIC usage meets the limit, no more DBIC jobs can run until resources are freed. In order to ensure equitable service to all DBIC users and to preserve the peace in our community, we aim to adopt a DBIC-specific set of policies. These policies are explained below. The implementation and enforcement of policies will be carried out by the RC Systems Administrators.
 
 ### Interactive nodes
 
