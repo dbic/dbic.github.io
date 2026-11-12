@@ -10,48 +10,78 @@
   Hints, all optional, in a page's own front matter:
     summary:      one line shown under the title
     index_title:  a different title for this list (default: the page title)
-    group:        a heading to list the page under
-    order:        a number; numbered pages come first, in that order; the rest follow alphabetically
+    group:        a heading to list the page under (groups are shown alphabetically; pages without one come last)
     listed: false keep this page out of the list
+  Pages are listed alphabetically by the title shown, ignoring capital letters.
+  Only plain Liquid is used (no where_exp, no page.ext), so it behaves the same in every Jekyll version.
 {%- endcomment -%}
 {%- assign colors = 'green,teal,indigo,amber,rose,violet' | split: ',' -%}
 {%- assign prefixes = include.hide_prefix | default: '' | split: ',' -%}
 {%- capture curated -%}{%- for g in include.groups -%}{%- for l in g.links -%}|{{ l.url }}|{%- endfor -%}{%- endfor -%}{%- endcapture -%}
-{%- assign kids = site.pages | where: 'dir', page.dir | where_exp: 'p', 'p.url != page.url' | where_exp: 'p', 'p.title' | where_exp: 'p', 'p.listed != false' | where_exp: 'p', "p.ext == '.md' or p.ext == '.html'" -%}
-{%- assign ordered = kids | where_exp: 'p', 'p.order' | sort: 'order' -%}
-{%- assign rest = kids | where_exp: 'p', 'p.order == nil' | sort_natural: 'title' -%}
-{%- assign all = ordered | concat: rest -%}
-{%- capture keep -%}
-{%- for p in all -%}
+{%- assign kids = site.pages | where: 'dir', page.dir | sort: 'name' -%}
+{%- comment -%} Step 1: which pages are listed (as a string of |url| markers), and the titles to sort by. {%- endcomment -%}
+{%- assign keep = '' -%}
+{%- assign tkeys = '' -%}
+{%- for p in kids -%}
 {%- assign skip = false -%}
+{%- if p.url == page.url -%}{%- assign skip = true -%}{%- endif -%}
+{%- if p.listed == false -%}{%- assign skip = true -%}{%- endif -%}
+{%- unless p.title -%}{%- assign skip = true -%}{%- endunless -%}
+{%- unless p.name contains '.md' or p.name contains '.html' -%}{%- assign skip = true -%}{%- endunless -%}
 {%- assign marker = '|' | append: p.url | append: '|' -%}
 {%- if curated contains marker -%}{%- assign skip = true -%}{%- endif -%}
 {%- for pre in prefixes -%}{%- assign prefix = pre | strip -%}{%- if prefix != '' -%}{%- assign head = p.name | slice: 0, prefix.size -%}{%- if head == prefix -%}{%- assign skip = true -%}{%- endif -%}{%- endif -%}{%- endfor -%}
-{%- unless skip -%}|{{ p.url }}|{%- endunless -%}
+{%- unless skip -%}
+{%- assign keep = keep | append: marker -%}
+{%- assign dt = p.index_title | default: p.title -%}
+{%- assign tmark = '|' | append: dt | append: '|' -%}
+{%- unless tkeys contains tmark -%}{%- assign tkeys = tkeys | append: tmark -%}{%- endunless -%}
+{%- endunless -%}
 {%- endfor -%}
-{%- endcapture -%}
-{%- assign shown = all | where_exp: 'p', 'keep contains p.url' -%}
+{%- comment -%} Step 2: the listed pages in order: alphabetical by displayed title, ignoring capitals. {%- endcomment -%}
+{%- assign tlist = tkeys | split: '|' | sort_natural -%}
+{%- assign ordered = '' | split: ',' -%}
+{%- for t in tlist -%}{%- if t != '' -%}
+{%- for p in kids -%}{%- assign marker = '|' | append: p.url | append: '|' -%}{%- if keep contains marker -%}
+{%- assign dt = p.index_title | default: p.title -%}
+{%- if dt == t -%}{%- assign one = kids | where: 'url', p.url -%}{%- assign ordered = ordered | concat: one -%}{%- endif -%}
+{%- endif -%}{%- endfor -%}
+{%- endif -%}{%- endfor -%}
+{%- comment -%} Step 3: draw them. {%- endcomment -%}
 {%- if include.groups -%}
-{%- capture leftover -%}{%- if shown.size > 0 -%}<section class="lgroup c-teal"><header><div><h2>{{ include.heading | default: 'More in this section' | escape }}</h2></div></header><ul>{%- for p in shown %}<li><a href="{{ p.url | relative_url }}"><b>{{ p.index_title | default: p.title | escape }}</b>{% if p.summary %}<span>{{ p.summary | escape }}</span>{% endif %}</a></li>{%- endfor %}</ul></section>{%- endif -%}{%- endcapture -%}
+{%- capture leftover -%}{%- if ordered.size > 0 -%}<section class="lgroup c-teal"><header><div><h2>{{ include.heading | default: 'More in this section' | escape }}</h2></div></header><ul>
+{%- for p in ordered %}<li><a href="{{ p.url | relative_url }}"><b>{{ p.index_title | default: p.title | escape }}</b>{% if p.summary %}<span>{{ p.summary | escape }}</span>{% endif %}</a></li>{%- endfor %}</ul></section>{%- endif -%}{%- endcapture -%}
 {% include redesign/link-groups.html groups=include.groups extra=leftover %}
-{%- elsif shown.size > 0 -%}
+{%- elsif ordered.size > 0 -%}
+{%- assign gnames = '' -%}
 {%- assign has_groups = false -%}
-{%- for p in shown %}{% if p.group %}{% assign has_groups = true %}{% endif %}{% endfor -%}
-{%- assign gs = shown | group_by: 'group' -%}
-{%- assign html_a = '' -%}
-{%- assign html_b = '' -%}
-{%- for g in gs -%}
-{%- capture block -%}
-{%- if has_groups %}<h2 class="si-h">{{ g.name | default: 'Other pages' | escape }}</h2>{% endif -%}
+{%- for p in ordered -%}{%- if p.group -%}
+{%- assign has_groups = true -%}
+{%- assign gmark = '|' | append: p.group | append: '|' -%}
+{%- unless gnames contains gmark -%}{%- assign gnames = gnames | append: gmark -%}{%- endunless -%}
+{%- endif -%}{%- endfor -%}
+{%- assign glist = gnames | split: '|' | sort_natural -%}
+{%- capture grouped_html -%}
+{%- for gn in glist -%}{%- if gn != '' -%}
+<h2 class="si-h">{{ gn | escape }}</h2>
 <div class="tiles">
-{%- for p in g.items %}{% assign ci = forloop.index0 | modulo: 6 %}
+{%- assign n = 0 -%}
+{%- for p in ordered -%}{%- if p.group == gn -%}{%- assign ci = n | modulo: 6 -%}{%- assign n = n | plus: 1 %}
 <a class="tile c-{{ colors[ci] }}" href="{{ p.url | relative_url }}"><h3>{{ p.index_title | default: p.title | escape }}</h3>{% if p.summary %}<p>{{ p.summary | escape }}</p>{% endif %}</a>
-{%- endfor %}
+{%- endif -%}{%- endfor %}
 </div>
+{%- endif -%}{%- endfor -%}
 {%- endcapture -%}
-{%- if g.name == '' -%}{%- capture html_b -%}{{ html_b }}{{ block }}{%- endcapture -%}{%- else -%}{%- capture html_a -%}{{ html_a }}{{ block }}{%- endcapture -%}{%- endif -%}
-{%- endfor -%}
-<div class="section-index">{{ html_a }}{{ html_b }}</div>
+{%- capture ungrouped_tiles -%}
+{%- assign n = 0 -%}
+{%- for p in ordered -%}{%- unless p.group -%}{%- assign ci = n | modulo: 6 -%}{%- assign n = n | plus: 1 %}
+<a class="tile c-{{ colors[ci] }}" href="{{ p.url | relative_url }}"><h3>{{ p.index_title | default: p.title | escape }}</h3>{% if p.summary %}<p>{{ p.summary | escape }}</p>{% endif %}</a>
+{%- endunless -%}{%- endfor -%}
+{%- endcapture -%}
+{%- assign ungrouped_len = ungrouped_tiles | strip | size -%}
+<div class="section-index">{{ grouped_html }}
+{%- if ungrouped_len > 0 -%}{%- if has_groups -%}<h2 class="si-h">Other pages</h2>{%- endif -%}<div class="tiles">{{ ungrouped_tiles }}
+</div>{%- endif -%}</div>
 {%- else -%}
 <p class="si-none">There are no pages in this section yet.</p>
 {%- endif -%}
