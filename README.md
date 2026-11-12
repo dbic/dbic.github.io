@@ -42,3 +42,20 @@ The current approach uses a kind of "plug-in" style switcher, which
 can be turned on by accessing any link with `?dev` added after it. A
 small clickable menu button then appears in the bottom right, and
 persists (`?dev=0` can disable if required).
+
+
+## Program notes
+
+The `check_events.py` program can be used to double check the format of the `events.csv`
+file, which unifies the safety training and brown bag listings. For example
+
+```
+$ python check_events.py 
+_data/events.csv: 9 columns (date, time, category, title, detail, deadline, url, date_label, talk), 63 rows
+
+rows per category:
+    51  Brown bag
+    12  Safety training
+
+No problems found.
+```
