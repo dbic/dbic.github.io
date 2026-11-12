@@ -53,14 +53,14 @@ The DBIC uses a three-tier scheduling system. Requests within each tier are comp
 - Booking opens on/around the first business day of the preceding month and remains open for four business days.
 - Labs may request peak and off-peak time for the entire month.
 - Up to **60%**of weekly peak (~24 hrs) and off-peak (~44 hrs) may be allocated across all Tier 1 labs; **40%**is reserved for Tier 2.
-- Priority is based on project, with a maximum of two independent grand-funded projects per lab eligible for Tier 1 scheduling.
+- Priority is based on project, with a maximum of two independent grant-funded projects per lab eligible for Tier 1 scheduling.
 
 ### **Tier 2 – DOF-funded**
 
 *Includes startup, dissertation, honors, and third-or more projects within a lab.*
 
 - Booking opens on/around the 8th of preceding month for four business days.
-- Priority is based on project, wiht up to two independent DOF-funded projects per lab eligible for Tier 2 scheduling.
+- Priority is based on project, with up to two independent DOF-funded projects per lab eligible for Tier 2 scheduling.
 
 ### **Tier 3 – All projects**
 
