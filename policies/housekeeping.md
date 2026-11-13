@@ -26,5 +26,5 @@ The MRI scanner and suite is a valuable shared resource. In addition to making s
 - make sure that all trash/recycling (including earplugs/earbuds, wrappers, used tape, etc.) have been disposed of in appropriate receptacles
 - wipe down all surfaces with frequent bodily contact (e.g. inside of the head coil, response pads, emergency squeeze ball) using the DBIC-provided Clorox wipes
 - return corrective lenses to their appropriate slots in the storage case, and wipe down frames with a Clorox wipe
-- log out of RedCap database when your lab is the last one scanning for the day
+- log out of REDCap database when your lab is the last one scanning for the day
 - shut down the system when your lab is the last one scanning for the day

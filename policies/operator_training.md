@@ -21,54 +21,46 @@ The DBIC trains research faculty, postdoctoral fellows, graduate students, and f
 
 ## Step 1: Operator-in-training
 
-To become an **operator-in-training**, you will need to coordinate a training appointment with [courtney.rogers@dartmouth.edu](mailto:courtney.rogers@dartmouth.edu?subject=Operator-in-training%20session). During this training session, users will learn how to administer and follow all MRI safety scanning procedures, as well as be introduced to the following:
-
-- [Conducting research in the DBIC](../assets/dbic/docs/policies/conductingresearch_10092026.pdf)
-- [Pre-scan experimenter checklist](../assets/dbic/docs/forms/mrichecklist08012026.pdf)
-- [MRI metal safety screening](../assets/dbic/docs/forms/meatalscreen_04132026.pdf)
-- Use and operation of the metal detectors ([handheld](../assets/dbic/docs/policies/ceia06102026.pdf) / [pole](../assets/dbic/docs/policies/poledetector.pdf))
-- Operation of the air-locked door to the MRI suite
-- Introduction to DBIC's [emergency procedures](../assets/dbic/docs/policies/emergencyprocedures.pdf)
-- Introduction to DBIC's [incident reporting policy](../assets/dbic/docs/policies/incidentreporting_04162026.pdf)
-- Positioning and placement of participants in the scanner bore
-- Proper use of hearing protection (ear plugs/ear buds)
-- Registration of participants into [RedCap database](../assets/dbic/docs/policies/jedicap.pdf)
-- Selection and execution of a scan protocol
-- DBIC [housekeeping policies](../assets/dbic/docs/policies/housekeeping01282026.pdf)
-- Powering the scanner on/off
-- [MRUSER training manual](../assets/dbic/docs/policies/mrusermanual_06112026.pdf)
+To become an **operator-in-training**, you will need to book a training session; see [How to book](#booking). During this training session, users will learn how to administer and follow all MRI safety scanning procedures, as well as be introduced to the skills listed under “Introduced in the first session” in [Skills at each step](#skills).
 
 ## Step 2: Certified scan operator
 
-Following completion of the in-person introduction to scan operating session, operators-in-training will need to complete at least 10 hours of hands-on training with a certified scan operator before being allowed independent access to the MRI suite. The last competency demonstration for certification must be completed while the MRI Technologist is present.
+After the in-person introductory session, operators-in-training must complete at least 10 hours of hands-on training before they may use the MRI suite independently. The hours are scheduled according to the [DBIC scheduling policies](scheduling.md) and must be completed under the supervision of a certified scan operator. They are recorded in an online training log, which you receive after the in-person operator training; the certified operator who supervises each session adds their initials to the log.
 
-To become a certified **scan operator,** reseachers will need to demonstrate competence in the following domains:
+The final competency demonstration involves independently running a scan study from start to finish, with a human participant, under the supervision of Mike Pearl, the MRI Technologist. The session can be booked according to the [DBIC scheduling policies](scheduling.md) and must be run during normal business hours.
 
-- ability to administer and follow all MRI safety and scanning procedures, including how to thoroughly [screen subjects for MRI safety;](../assets/dbic/docs/forms/meatalscreen_04132026.pdf) [complete the pre-scan experimenter form](../assets/dbic/docs/forms/mrichecklist08012026.pdf)
-- accurate use and operation of the [metal detector](../assets/dbic/docs/policies/ceia_instructions.pdf);
-- proper operation of the air-locked door to the MRI suite
-- thorough knowledge of the DBIC's [incident reporting policy](../assets/dbic/docs/policies/incidentreporting_04162026.pdf)
-- thorough knowledge of the DBIC's [emergency procedures](../assets/dbic/docs/policies/emergencyprocedures.pdf).
-- ability to correctly position and place a subject in the scanner bore
-- proper deployment of hearing protection (e.g. ear plugs/ear buds)
-- independent use  and set up of stimulus presentation and response devices
-- accurate registration of research participants into the Redcap database
-- thorough and accurate entry of data into the [DBIC logbook](../assets/dbic/docs/policies/logbooktemplate.jpg)
-- thorough and accurate entry of data into the scanner database
-- ability to select and execute a scan protocol, including how to verify completion of data transfer to the server post-scan
+To become a certified **scan operator,** researchers will need to demonstrate competence in the skills listed under “Demonstrated for certification” in [Skills at each step](#skills).
 
-- knowledge of how to power the MRI system on and off
-- [MRUSER training manual](../assets/dbic/docs/policies/mrusermanual_06112026.pdf)
+<a id="skills"></a>
+
+## Skills at each step
+
+Each skill is introduced in the first session (Step 1) and demonstrated for certification (Step 2).
+
+| Skill | Introduced in the first session | Demonstrated for certification |
+|---|---|---|
+| [MRI safety screening](../assets/dbic/docs/forms/meatalscreen_04132026.pdf) and the [pre-scan checklist](../assets/dbic/docs/forms/mrichecklist08012026.pdf) | yes | yes |
+| Metal detectors ([handheld](../assets/dbic/docs/policies/ceia06102026.pdf), [pole](../assets/dbic/docs/policies/poledetector.pdf)) and their [operating instructions](../assets/dbic/docs/policies/ceia_instructions.pdf) | yes | yes |
+| Airlock door to the MRI suite | yes | yes |
+| [Emergency procedures](../assets/dbic/docs/policies/emergencyprocedures.pdf) and [incident reporting](../assets/dbic/docs/policies/incidentreporting_04162026.pdf) | yes | yes (thorough knowledge) |
+| Positioning participants in the bore | yes | yes |
+| Hearing protection (ear plugs/ear buds) | yes | yes |
+| Registering participants in [REDCap](../assets/dbic/docs/policies/jedicap.pdf) | yes | yes |
+| Selecting and running a scan protocol | yes | yes, including checking the data transfer |
+| Powering the scanner on and off | yes | yes |
+| Stimulus and response devices | — | yes (independent set-up) |
+| [DBIC logbook](../assets/dbic/docs/policies/logbooktemplate.jpg) and scanner database entries | — | yes |
+| [Housekeeping policies](../assets/dbic/docs/policies/housekeeping01282026.pdf); [Conducting research in the DBIC](../assets/dbic/docs/policies/conductingresearch_10092026.pdf) | yes | — |
+| [MRUSER training manual](../assets/dbic/docs/policies/mrusermanual_06112026.pdf) | yes (study the manual) | yes (know its contents) |
 
 ## What is expected of operators
 
-Scan operators will be expected to know and follow all DBIC safety policies and procedures at all times, and are also responsible for following all DBIC [housekeeping policies](housekeeping.md) to maintain the health and safety of our participants and equipment.
+Scan operators must know and follow all DBIC safety policies and procedures at all times, and must follow the [housekeeping policies](housekeeping.md) that protect participants and equipment.
 
-For more information on becoming a certified scan operator, please contact
-[Courtney.Rogers@dartmouth.edu](mailto:Courtney.Rogers@dartmouth.edu).
+<a id="booking"></a>
 
 ## Scheduling and class size
 
-Trainings can be scheduled on an as-needed basis. Training hours are Monday-Friday, starting at 8:00am, ending by 4:00pm.
+Training is scheduled as needed, Monday–Friday between 8 a.m. and 4 p.m. Classes are limited to 3 participants.
 
-MRI operator trainings are limited to **3** participants per class.
+**How to book:** To book the introductory session, or for questions about certification, email [Courtney Rogers](mailto:courtney.rogers@dartmouth.edu?subject=Operator-in-training%20session).
