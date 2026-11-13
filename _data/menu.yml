@@ -19,7 +19,6 @@ groups:
       - { title: "MRI safety training", url: "/policies/safetytraining.html", keywords: "sign up class screening CITI", popular: true }
       - { title: "Scan operator training", url: "/policies/operator_training.html", keywords: "certification certified operator buddy", popular: true }
       - { title: "Safety & compliance", url: "/safety-compliance.html", keywords: "documents emergency incident reporting screening checklist policies" }
-      - { title: "Code of conduct", url: "/policies/codeofconduct.html", keywords: "behavior conduct" }
       - { title: "Housekeeping", url: "/policies/housekeeping.html", keywords: "cleaning disinfecting" }
   - title: "Facility & data"
     items:

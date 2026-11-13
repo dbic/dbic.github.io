@@ -1,0 +1,22 @@
+{
+ "lines": [
+  {
+   "file": "_data/menu.yml",
+   "line": "      - { title: \"Code of conduct\", url: \"/policies/codeofconduct.html\", keywords: \"behavior conduct\" }",
+   "prev": "      - { title: \"Safety & compliance\", url: \"/safety-compliance.html\", keywords: \"documents emergency incident reporting screening checklist policies\" }",
+   "next": "      - { title: \"Housekeeping\", url: \"/policies/housekeeping.html\", keywords: \"cleaning disinfecting\" }"
+  },
+  {
+   "file": "_data/policy_documents.csv",
+   "line": "Code of conduct,/policies/codeofconduct.html",
+   "prev": "Conducting research in the DBIC,/assets/dbic/docs/policies/conductingresearch_10092026.pdf",
+   "next": ""
+  },
+  {
+   "file": "_data/documents.csv",
+   "line": "code-of-conduct,Code of conduct,Policies & procedures,/policies/codeofconduct.html,yes,,,,",
+   "prev": "conducting-research,Conducting research in the DBIC,Policies & procedures,/assets/dbic/docs/policies/conductingresearch_10092026.pdf,yes,2026-10-09,,,Date read from the file name.",
+   "next": "cancellation-policy,Cancellation policy,Policies & procedures,/policies/cancellations.html,,,,,"
+  }
+ ]
+}
