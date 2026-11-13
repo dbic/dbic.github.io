@@ -19,6 +19,11 @@ defaults:
     values:
       layout: default
 
+# Links to other web addresses always open in a new tab. The paths listed here are separate sites that share
+# this address (the PBS_resources project site), so links to them also open in a new tab and the DBIC site stays open.
+new_tab_paths:
+  - /PBS_resources/
+
 # Files that live in the repo but should not be published on the site.
 exclude:
   - "*.py"          # the helper scripts (check_events.py, merge_events.py, ...) are not part of the site

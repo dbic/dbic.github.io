@@ -19,9 +19,9 @@ Sequences available for use in the DBIC are: [BOLD](../assets/dbic/docs/sequence
 
 ## Standard sequences
 
-The standard gradient and spin echo-based echo planer imaging sequences are available for BOLD (ep2d\_bold) and Diffusion (ep2d\_diff) imaging.
+The standard gradient and spin echo-based echo planer imaging sequences are available for BOLD (ep2d_bold) and Diffusion (ep2d_diff) imaging.
 
-The following sequences - csi\_se, csi\_slassar, csi\_se, and the custom-installed "mega press" - are available for Spectroscopy.
+The following sequences - csi_se, csi_slaser, and the custom-installed "mega press" - are available for Spectroscopy.
 
 Also available are the standard T1 weighted (mprage), q-space diffusion weighted (qDWI), and field-mapping sequences.
 
@@ -29,11 +29,11 @@ All of these sequences are customizable (e.g. adjusting T1/T2, slice thickness, 
 
 ## CMRR multiband sequences
 
-In addition to the above sequences, we have also installed modified versions of the native [BOLD](../assets/dbic/docs/sequences/bold_acquisition.pdf) and [Diffusion](../assets/dbic/docs/sequences/dwi_acquisiton.pdf) sequences by CMRR at the University of Minnesota. These modified versions provide extended flexibilities to customize the protocols. The cmrr\_mbep2d\_bold is used to acquire multi-echo images for **multi-echo fMRI**.
+In addition to the above sequences, we have also installed modified versions of the native [BOLD](../assets/dbic/docs/sequences/bold_acquisition.pdf) and [Diffusion](../assets/dbic/docs/sequences/dwi_acquisiton.pdf) sequences by CMRR at the University of Minnesota. These modified versions provide extended flexibilities to customize the protocols. The cmrr_mbep2d_bold is used to acquire multi-echo images for **multi-echo fMRI**.
 
-- cmrr\_mbep2d\_bold
-- cmrr\_mbep2d\_diff
-- cmrr\_mbep2d\_se
+- cmrr_mbep2d_bold
+- cmrr_mbep2d_diff
+- cmrr_mbep2d_se
 
 You can learn more about these sequences here: <https://www.cmrr.umn.edu/multiband/Multi-Band_C2P_Instructions_R016a.pdf>
 
