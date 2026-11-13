@@ -8,6 +8,7 @@ kit:
 related:
   - { title: "fMRI scanner", url: "/research_infrastructure/fmri_scanner.html" }
   - { title: "Sequences", url: "/research_infrastructure/sequences.html" }
+  - { title: "Who to contact", url: "/contact.html" }
 ---
 
 [Research Infrastructure](index.md) >

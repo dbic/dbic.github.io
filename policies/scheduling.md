@@ -15,6 +15,7 @@ related:
   - { title: "How a study works", url: "/research-with-us.html" }
   - { title: "Cancellations", url: "/policies/cancellations.html" }
   - { title: "Scanning rates", url: "/policies/dbic_billing.html" }
+  - { title: "Who to contact", url: "/contact.html" }
 ---
 
 [Policies](index.md) >

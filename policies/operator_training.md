@@ -7,6 +7,7 @@ related:
   - { title: "MRI safety training", url: "/policies/safetytraining.html" }
   - { title: "Safety & compliance", url: "/safety-compliance.html" }
   - { title: "Housekeeping", url: "/policies/housekeeping.html" }
+  - { title: "Who to contact", url: "/contact.html" }
 ---
 
 [Policies](index.md) >

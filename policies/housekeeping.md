@@ -6,6 +6,7 @@ lead: "Everyone who scans keeps the suite clean, tidy and ready for the next gro
 related:
   - { title: "Safety & compliance", url: "/safety-compliance.html" }
   - { title: "Scan operator training", url: "/policies/operator_training.html" }
+  - { title: "Who to contact", url: "/contact.html" }
 ---
 
 [Policies](index.md) >

@@ -6,6 +6,7 @@ lead: "Forms, templates, policies and guides used at the DBIC, in one searchable
 related:
   - { title: "Submit a protocol", url: "/policies/dbic_protocol.html" }
   - { title: "Safety & compliance", url: "/safety-compliance.html" }
+  - { title: "Who to contact", url: "/contact.html" }
 ---
 
 [Policies](index.md) >

@@ -8,6 +8,7 @@ kit:
 related:
   - { title: "Scheduling", url: "/policies/scheduling.html" }
   - { title: "Scanning rates", url: "/policies/dbic_billing.html" }
+  - { title: "Who to contact", url: "/contact.html" }
 ---
 
 [Policies](index.md) >

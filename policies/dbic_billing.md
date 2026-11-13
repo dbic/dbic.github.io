@@ -6,6 +6,7 @@ lead: "How scan time is billed, and the hourly rates for internally and external
 related:
   - { title: "Scheduling", url: "/policies/scheduling.html" }
   - { title: "Cancellations", url: "/policies/cancellations.html" }
+  - { title: "Who to contact", url: "/contact.html" }
 ---
 
 [Policies](index.md) >

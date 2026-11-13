@@ -6,6 +6,7 @@ lead: "Where research participants park at the DBIC, how to get the reserved spo
 related:
   - { title: "Forms & templates", url: "/policies/forms_templates.html" }
   - { title: "Scheduling", url: "/policies/scheduling.html" }
+  - { title: "Who to contact", url: "/contact.html" }
 ---
 
 [Policies](index.md) >

@@ -7,6 +7,7 @@ related:
   - { title: "Using Discovery", url: "/research_infrastructure/discovery.html" }
   - { title: "Datasets", url: "/research_infrastructure/datasets.html" }
   - { title: "Data & computing", url: "/data-computing.html" }
+  - { title: "Who to contact", url: "/contact.html" }
 ---
 
 [Research Infrastructure](index.md) >

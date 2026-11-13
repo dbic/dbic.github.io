@@ -571,3 +571,6 @@ dialog#qf::backdrop { background: rgba(3, 18, 11, .6); backdrop-filter: blur(3px
 .pcard { overflow-wrap: anywhere; }
 .prose .pcard pre { overflow-x: auto; max-width: 100%; }
 .pcard code { overflow-wrap: anywhere; }
+
+/* email addresses in tables stay in one piece (the table scrolls sideways on a phone instead of breaking an address) */
+.prose .table-wrap td a[href^="mailto:"] { overflow-wrap: normal; white-space: nowrap; }

@@ -13,6 +13,7 @@ related:
   - { title: "Scan operator training", url: "/policies/operator_training.html" }
   - { title: "Safety & compliance", url: "/safety-compliance.html" }
   - { title: "Forms & templates", url: "/policies/forms_templates.html" }
+  - { title: "Who to contact", url: "/contact.html" }
 ---
 
 [Policies](index.md) >

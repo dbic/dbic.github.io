@@ -34,6 +34,7 @@ groups:
   - title: "Community"
     items:
       - { title: "Brown-bag talks", url: "/events/fbb.html", keywords: "events seminars speakers fMRI brown bag" }
+      - { title: "Study demonstration video", url: "/videos/study_demo.html", keywords: "video participant what to expect" }
       - { title: "PBS & DBIC shared resources", url: "/PBS_resources/index.html", keywords: "shared resources" }
   - title: "About"
     items:
@@ -42,4 +43,4 @@ groups:
       - { title: "Affiliated faculty", url: "/people/affiliated.html", keywords: "faculty investigators users" }
       - { title: "History", url: "/history.html", keywords: "1999 timeline director" }
       - { title: "FAQ", url: "/faqs.html", keywords: "questions help" }
-      - { title: "Contact", url: "/#people", keywords: "email address phone reach", popular: true }
+      - { title: "Contact", url: "/contact.html", keywords: "email address phone reach who to ask contact", popular: true }
