@@ -33,13 +33,8 @@ Research Computing ([research.computing@dartmouth.edu](mailto:research.computing
 ## Data Storage and Access
 
 DBIC scans appear on DartFS immediately after they are acquired at the scanner (see /dartfs/rc/lab/D/DBIC/DBIC/dbic-inbox/DICOM/), and are organized by date and accession. Access permissions are set based on the registered group nightly. In the event scans are resent from the scanner for any reason, care should be exercised.  
-1. Resent scans will go to the same folder (based on date and accession), and  
-will overwrite prior versions if no changes in series have been made. (If  
-series need to change, it is suggested to coordinate with DBIC and/or  
-Research Computing to clear prior DICOM files before a resend.)  
-2. When scans are resent after the initial date of acquisition, they do not  
-trigger automated setting of access permissions (DBIC and/or Research  
-Computing can manually trigger an update).
+1. Resent scans will go to the same folder (based on date and accession), and will overwrite prior versions if no changes in series have been made. (If series need to change, it is suggested to coordinate with DBIC and/or Research Computing to clear prior DICOM files before a resend.)
+2. When scans are resent after the initial date of acquisition, they do not trigger automated setting of access permissions (DBIC and/or Research Computing can manually trigger an update).
 
 <a id="dicomstorage"></a>
 
