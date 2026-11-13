@@ -17,17 +17,21 @@ related:
 
 ## What to submit
 
-Prior to starting a new scanning study in the DBIC, please submit a DBIC application, along with the following required documents, to Courtney.Rogers@Dartmouth.EDU. New DBIC protocols require review prior to initiation. All research conducted in the DBIC must have CPHS approval.
+All research conducted in the DBIC must have CPHS approval. Before you start a new scanning study, email the DBIC application and the documents below to [Courtney Rogers](mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20protocol%20application). New DBIC protocols are reviewed before the study can begin.
 
-- CPHS Protocol
-- CPHS stamped-approved consent form
-- Supplemental design of your research study
+- CPHS protocol
+- CPHS-stamped, approved consent form
+- A supplemental description of your study design
 
 ## Important
 
-- Your protocol should list all research personnel who will be involved in any capacity on your scanning protocol.
-- All research personnel must have completed [IRB education](https://www.dartmouth.edu/cphs/tosubmit/education/index.html) and [safety training](safetytraining.md) (at a minimum),  and be included on the CPHS protocol.
-- Please note that protocol requests submitted with incomplete information will not be reviewed until complete.
+- Your DBIC protocol should list all research personnel who will be involved in any capacity in the scanning study.
+- All research personnel must have completed [IRB education](https://www.dartmouth.edu/cphs/tosubmit/education/index.html) and [MRI safety training](safetytraining.md) (at a minimum) and be listed on the CPHS protocol.
+- Incomplete submissions are not reviewed until they are complete.
+
+## After you submit
+
+Courtney Rogers reviews each application, usually within 1–2 business days. Once your protocol is approved, request scan time: see [Scheduling](scheduling.md).
 
 ## Questions
 
