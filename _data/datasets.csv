@@ -9,7 +9,7 @@ Individual Brain Charting,"12 participants, 50+ task conditions, high-resolution
 103 Tasks,"6 participants, 18 scans, 77–83 tasks per scan",open,tasks,deep phenotyping cognition language motor
 DBIC QA,"Scanner quality-assurance data in BIDS format, via DataLad",open,dbicqa,quality assurance phantom scanner
 Natural Scenes Dataset,"7T, 8 adults, 30–40 sessions each (Minnesota)",terms,NaturalScenes,vision visual scenes images 7T
-HCP Young Adult,"1,100+ healthy adults aged 22–35, resting-state fMRI",terms,HumanConnectomeProject,connectome resting-state HCP
+HCP Young Adult,"1,100+ healthy adults aged 22–35: structural, diffusion, resting-state and task MRI",terms,HumanConnectomeProject,connectome resting-state task diffusion structural HCP
 HCP Lifespan: Aging & Development,"1,377 participants aged 5 to 100+",terms,lifespan,aging development lifespan children older adults HCP
 Healthy Brain Network,"845 youths aged 5–21 (Child Mind Institute), CC BY-NC-SA",terms,hbn,development children adolescents youth movie
 ImageNet,14M labeled images for neural-network comparison work,terms,imagenet,vision deep neural networks AI images
