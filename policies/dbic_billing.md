@@ -1,5 +1,6 @@
 ---
 title: "Billing rates"
+reviewed: "July 1, 2026"
 source_url: https://www.dartmouth.edu/dbic/policies/dbic_billing.html
 retrieved: 2026-11-04
 lead: "How scan time is billed, and the hourly rates for internally and externally funded studies."
@@ -21,8 +22,6 @@ Scan time is recorded in the DBIC logbook and billed on a monthly basis. The DBI
 
 Rates for scanning effective July 1, 2021
 
-Last reviewed July 1, 2026.
-
 **Peak rate**
 
 <table>
@@ -34,7 +33,7 @@ Last reviewed July 1, 2026.
 </tr>
 <tr>
 <td>Monday-Friday</td>
-<td>8:00am-4:00pm</td>
+<td>peak hours (see <a href="/policies/scheduling.html#scanhours">scan hours</a>)</td>
 <td>$500.00</td>
 </tr>
 </tbody>
@@ -51,7 +50,7 @@ Last reviewed July 1, 2026.
 </tr>
 <tr>
 <td>Monday-Friday</td>
-<td>after 4:00pm</td>
+<td>off-peak hours (see <a href="/policies/scheduling.html#scanhours">scan hours</a>)</td>
 <td>$400.00</td>
 </tr>
 <tr>

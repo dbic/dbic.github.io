@@ -597,4 +597,18 @@
     var rio = new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('in'); rio.unobserve(x.target); } }); }, { threshold: .12, rootMargin: '0px 0px -6% 0px' });
     $$('.reveal').forEach(function (el) { rio.observe(el); });
   } else { $$('.reveal').forEach(function (el) { el.classList.add('in'); }); }
+  /* ---------- links to documents say what they are: (PDF), (Word), ... ----------
+     Skipped: the document library (it has its own labels), contents chips, menus, links that already say so, and
+     the dated QA report lists (their link text is a date). */
+  (function markFiles() {
+    var kinds = { pdf: 'PDF', doc: 'Word', docx: 'Word', xls: 'Excel', xlsx: 'Excel', ppt: 'PowerPoint', pptx: 'PowerPoint' };
+    $$('main a[href]').forEach(function (a) {
+      if (a.closest('.doclib, .kit-nav, .menu, .foot, .qf') || a.querySelector('.ft, img')) return;
+      var m = (a.pathname || '').match(/\.(pdf|docx?|xlsx?|pptx?)$/i); if (!m) return;
+      var txt = (a.textContent || '').trim();
+      if (!txt || /\b(pdf|word|docx?|excel|xlsx?|powerpoint|pptx?)\b/i.test(txt) || /^\d{1,2}[.\/-]\d{1,2}[.\/-]\d{2,4}$/.test(txt)) return;
+      var s = document.createElement('span'); s.className = 'ft'; s.textContent = '(' + kinds[m[1].toLowerCase()] + ')';
+      a.appendChild(document.createTextNode(' ')); a.appendChild(s);
+    });
+  })();
 })();

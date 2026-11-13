@@ -1,5 +1,6 @@
 ---
-title: "MRI Safety Training"
+title: "MRI safety training"
+reviewed: "July 1, 2026"
 source_url: https://www.dartmouth.edu/dbic/policies/safetytraining.html
 retrieved: 2026-11-04
 lead: "Everyone who works in the scanner room completes MRI safety training first. This page explains what the training covers, how to sign up and when the next sessions are."
@@ -18,7 +19,7 @@ related:
 
 [Policies](index.md) >
 
-# MRI Safety Training
+# MRI safety training
 
 - [Training info](#traininginfo)
 - [Training materials](#materials)
@@ -48,7 +49,7 @@ Trainees will be expected to know and follow all best practice safety procedures
 
 ## **To sign up for a safety training class:**
 
-- Research personnel must complete the Dartmouth Committee for the Protection of Human Subjects education requirement. The DBIC requires research personnel to complete the CITI Online Tutorial found [here](https://www.dartmouth.edu/~cphs/tosubmit/education/index.html "CITI Training"). Please complete the Group 2 Social/Behavioral Basic Course.
+- Research personnel must complete the Dartmouth Committee for the Protection of Human Subjects education requirement. The DBIC requires research personnel to complete the CITI Online Tutorial found on the [Dartmouth CPHS education requirements page](https://www.dartmouth.edu/~cphs/tosubmit/education/index.html "CITI Training"). Please complete the Group 2 Social/Behavioral Basic Course.
 - Once CITI training has been completed, please email your certificate of completion to Courtney Rogers ([courtney.rogers@dartmouth.edu](mailto:courtney.rogers@dartmouth.edu?subject=Safety%20training)), and sign up for a safety training course. You'll also need to provide the name of the faculty/lab with which you'll be working.
 
 MRI safety training classes will be limited to **4** participants per class.

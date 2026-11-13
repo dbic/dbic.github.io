@@ -574,3 +574,7 @@ dialog#qf::backdrop { background: rgba(3, 18, 11, .6); backdrop-filter: blur(3px
 
 /* email addresses in tables stay in one piece (the table scrolls sideways on a phone instead of breaking an address) */
 .prose .table-wrap td a[href^="mailto:"] { overflow-wrap: normal; white-space: nowrap; }
+
+/* "Last reviewed" under a policy page's title, and the small file-type label after links to documents */
+.page-head .reviewed { margin: .8rem 0 0; font-size: .92rem; color: #bfe5d0; letter-spacing: .01em; }
+.ft { display: inline-block; font-size: .8em; font-weight: 400; opacity: .78; white-space: nowrap; }

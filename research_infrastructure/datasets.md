@@ -41,7 +41,7 @@ For questions about existing datasets or requests to add new datasets, please co
 
 ## DBIC QA dataset
 
-The Dartmouth Brain Imaging Center's QA data, converted to BIDS standard, can be accessed using the DataLad file-sharing and data-versioning utility (see: <https://www.datalad.org/>).
+The Dartmouth Brain Imaging Center's QA data, converted to BIDS standard, can be accessed using the DataLad file-sharing and data-versioning utility (see the [DataLad website](https://www.datalad.org/)).
 
 - **Path to DBIC QA data on Discovery:** /dartfs/rc/lab/D/DBIC/DBIC/dbic-inbox/BIDS/dbic/QA
 - **Access:**Open (no restrictions to rc-DBIC users)
@@ -72,12 +72,12 @@ The [Natural Scenes Dataset (NSD)](https://naturalscenesdataset.org/) is a large
 
 - **Path to the NSD on Discovery:** /dartfs/rc/lab/D/DBIC/DBIC/archive/NSD.
 - **Access:** Data Use Agreement (DUA) and group limited access permission
-  - **Link to DUA:** <https://forms.gle/eT4jHxaWwYUDEf2i9>
+  - **Link to DUA:** [NSD data use agreement form](https://forms.gle/eT4jHxaWwYUDEf2i9)
   - **Group limited access permission**: Email [Jamie Ford](mailto:james.c.ford@dartmouth.edu?subject=NSD%20dataset%20access)
 
 ### Online resources
 
-- <http://naturalscenesdataset.org>
+- [Natural Scenes Dataset website](http://naturalscenesdataset.org)
 
 <a id="HumanConnectomeProject"></a>
 
@@ -89,7 +89,7 @@ The Human Connectome Project  (HCP) is a massive collaborative undertaking led 
   - /dartfs/rc/lab/D/DBIC/DBIC/archive/HCP/HCP1200
   - /vast/labs/DBIC/datasets/HCP-YA-2025
 - **Access**: Data Use Agreement (DUA) and group limited access permission
-  - **Link to DUA**: <https://balsa.wustl.edu/project?project=HCP_YA>
+  - **Link to DUA**: [HCP Young Adult data use agreement (BALSA)](https://balsa.wustl.edu/project?project=HCP_YA)
     - **note:** same agreement and access applies to both versions
   - **Group limited access permission:**Email [Jamie Ford](mailto:james.c.ford@dartmouth.edu?subject=Group%20limited%20access%20permission)
 
@@ -97,13 +97,13 @@ Information about the directory structure and file names: [HCP1200 guide (PDF)](
 
 ### Online resources
 
-- <https://www.humanconnectome.org/study/hcp-young-adult>
+- [HCP Young Adult website](https://www.humanconnectome.org/study/hcp-young-adult)
 
 <a id="hbn"></a>
 
 ## Healthy Brain Network (HBN)
 
-The [Healthy Brain Network](https://fcon_1000.projects.nitrc.org/indi/cmi_healthy_brain_network/) (HBN) is a large 3T fMRI dataset conducted by the Child Mind Institute for developing human brains (ages 5–21). The whole study includes eye tracking, EEG and rich demographic and behavioral data that can be found [here](https://fcon_1000.projects.nitrc.org/indi/cmi_healthy_brain_network/). The data hosted by DBIC only includes the fMRI data. It consists of subjects under resting-state, eye-tracking calibration and watching two short movie clips ("Despicable Me" and "The Present").   We used the version from "[Reproducible Brain Charts](https://reprobrainchart.github.io/) (RBC)" and the 845 subjects passing the quality check by the RBC team (up to "Release 9" by the HBN team). The paper on "Reproducible Brain Charts" can be found [here](https://www.sciencedirect.com/science/article/abs/pii/S0896627325006610). In addition to the downloaded raw BIDS data and FreeSurfer 6 outputs, custom processing derivatives made with [fMRIPrep](https://zenodo.org/records/17087258) and [nb\_prep](https://zenodo.org/records/17087243) are included.
+The [Healthy Brain Network](https://fcon_1000.projects.nitrc.org/indi/cmi_healthy_brain_network/) (HBN) is a large 3T fMRI dataset conducted by the Child Mind Institute for developing human brains (ages 5–21). The whole study includes eye tracking, EEG and rich demographic and behavioral data that can be found on the [HBN website](https://fcon_1000.projects.nitrc.org/indi/cmi_healthy_brain_network/). The data hosted by DBIC only includes the fMRI data. It consists of subjects under resting-state, eye-tracking calibration and watching two short movie clips ("Despicable Me" and "The Present").   We used the version from "[Reproducible Brain Charts](https://reprobrainchart.github.io/) (RBC)" and the 845 subjects passing the quality check by the RBC team (up to "Release 9" by the HBN team). The paper on "Reproducible Brain Charts" can be found on [ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S0896627325006610). In addition to the downloaded raw BIDS data and FreeSurfer 6 outputs, custom processing derivatives made with [fMRIPrep](https://zenodo.org/records/17087258) and [nb\_prep](https://zenodo.org/records/17087243) are included.
 
 - **Path to HBN dataset on Discovery**: /dartfs/rc/lab/D/DBIC/DBIC/archive/HBN
 - **Access:** Creative Commons (CC license) (open with restrictions)
@@ -114,8 +114,8 @@ The [Healthy Brain Network](https://fcon_1000.projects.nitrc.org/indi/cmi_health
 
 ### Online resources
 
-- <https://www.nature.com/articles/sdata2017181>
-- [https://www.sciencedirect.com/science/article/pii/S0896627325006610](https://www.sciencedirect.com/science/article/abs/pii/S0896627325006610)
+- [Healthy Brain Network data descriptor (Scientific Data, 2017)](https://www.nature.com/articles/sdata2017181)
+- [Reproducible Brain Charts paper (ScienceDirect)](https://www.sciencedirect.com/science/article/abs/pii/S0896627325006610)
 
 <a id="aomic"></a>
 
@@ -154,7 +154,7 @@ The Individual Brain Charting (IBC) dataset is a high-resolution 3T fMRI dataset
 
 ### Online resources
 
-- Dataset documentation: <https://individual-brain-charting.github.io/docs/index.html> (EBRAINS), <https://openneuro.org/datasets/ds002685/versions/2.0.0>(OpenNeuro)
+- Dataset documentation: [IBC documentation (EBRAINS version)](https://individual-brain-charting.github.io/docs/index.html), [OpenNeuro dataset ds002685](https://openneuro.org/datasets/ds002685/versions/2.0.0)
 - Pinho, A.L., Amadon, A., Ruest, T. et al. Individual Brain Charting, a high-resolution fMRI dataset for cognitive mapping. Sci Data 5, 180105 (2018). <https://doi.org/10.1038/sdata.2018.105>
 
 <a id="moth"></a>
@@ -197,7 +197,7 @@ The 103 Tasks dataset is a deep phenotyping dataset that includes 18 scans colle
 ImageNet is a large visual database (14M images) used to train visual object recognition and localization models. Images are categorized into 1,000 semantic sets ("synsets") which serve as object category labels. This dataset is used as part of the "ImageNet Large Scale Visual Recognition Challenge" (ILSVRC) and the 2012 version of the dataset has seen particular use in neuroAI applications for training feedforward neural network models for comparison with the ventral visual system and other brain networks. It is particularly well suited for training very deep neural networks like ResNets. This dataset includes a lot of small files and is stored as a tarball to avoid poor performance over NFS storage. Please copy the tarball to local scratch space (`/scratch`) and extract it there: this is orders of magnitude faster on HPC systems. A script that shows how to do this efficiently, `copy_imgnet_train_to_scratch.sh`, is provided in the top-level `ImageNet` folder.
 
 - **Path to dataset on Discovery:** /vast/labs/DBIC/datasets/ImageNet
-- **Access:** All users must read the ImageNet terms of access (<https://www.image-net.org/download.php>) and credit both the below citations.
+- **Access:** All users must read the [ImageNet terms of access](https://www.image-net.org/download.php) and credit both the below citations.
   - **Group limited access permission: Email Jamie Ford**
 
 ### Online resources
@@ -215,7 +215,7 @@ Spacetop is a large-scale, multi-task 3T fMRI dataset collected at the Dartmouth
 
 ### Online resources
 
-- Dataset documentation: <https://openneuro.org/datasets/ds007070/versions/1.0.3> (OpenNeuro)
+- Dataset documentation: [OpenNeuro dataset ds007070](https://openneuro.org/datasets/ds007070/versions/1.0.3)
 - Jung, H., Amini, M., Hunt, B.J. et al. Spacetop: A multimodal fMRI dataset unifying naturalistic processes with a rich array of experimental tasks. Sci Data **12**, 1465 (2025). <https://doi.org/10.1038/s41597-025-05154-x>
 
 <a id="life"></a>
@@ -230,7 +230,7 @@ The Life Dataset is a naturalistic 3T fMRI dataset collected at the Dartmouth Br
 ### Online resources
 
 - Van Uden, C. E., Nastase, S. A., Connolly, A. C., Feilong, M., Hansen, I., Gobbini, M. I., & Haxby, J. V. (2018). Modeling semantic encoding in a common neural representational space. Frontiers in Neuroscience, 12, 437. <https://doi.org/10.3389/fnins.2018.00437>
-- Datalad Repository: <https://datasets.datalad.org/?dir=/labs/haxby/life>
+- [DataLad repository for the Life dataset](https://datasets.datalad.org/?dir=/labs/haxby/life)
 
 <a id="lifespan"></a>
 

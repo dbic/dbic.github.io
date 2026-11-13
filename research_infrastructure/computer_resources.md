@@ -1,5 +1,5 @@
 ---
-title: "Computer Resources"
+title: "Computer resources"
 source_url: https://www.dartmouth.edu/dbic/research_infrastructure/computer_resources.html
 retrieved: 2026-11-04
 lead: "How DBIC scans are stored, how to get access, and how to work with the data in DICOM and BIDS formats."
@@ -12,7 +12,7 @@ related:
 
 [Research Infrastructure](index.md) >
 
-# Computer Resources
+# Computer resources
 
 ## Quick links
 
@@ -24,13 +24,13 @@ related:
 
 <a id="sysaccess"></a>
 
-## DBIC Systems Access
+## DBIC systems access
 
 Research Computing ([research.computing@dartmouth.edu](mailto:research.computing@dartmouth.edu?subject=DBIC)) is available for providing new user accounts, access to data, and help with existing user accounts across campus. For access to DBIC specific resources (e.g., shared datasets and our allocation of Discovery CPUs), users are welcome to contact DBIC directly ([James.C.Ford@dartmouth.edu](mailto:james.c.ford@dartmouth.edu?subject=DBIC%20systems%20access)), as Research Computing will typically either redirect these topics to DBIC, or contact DBIC on your behalf.
 
 <a id="datastorage"></a>
 
-## Data Storage and Access
+## Data storage and access
 
 DBIC scans appear on DartFS immediately after they are acquired at the scanner (see /dartfs/rc/lab/D/DBIC/DBIC/dbic-inbox/DICOM/), and are organized by date and accession. Access permissions are set based on the registered group nightly. In the event scans are resent from the scanner for any reason, care should be exercised.  
 1. Resent scans will go to the same folder (based on date and accession), and will overwrite prior versions if no changes in series have been made. (If series need to change, it is suggested to coordinate with DBIC and/or Research Computing to clear prior DICOM files before a resend.)
@@ -52,13 +52,13 @@ Siemens Console, which communicates with a dedicated virtual machine running a D
 In addition to storage of the original DICOM images, DBIC has adopted
 the standard file-naming conventions specified in the Brain Imaging
 Data Structure (BIDS) protocol
-([bids.neuroimaging.io](https://bids.neuroimaging.io/ "BIDS")) for
+([BIDS website](https://bids.neuroimaging.io/ "BIDS")) for
 many recently acquired studies. The BIDS format provides a convenient
 common framework for organizing and storing data that has been adopted
 widely in the neuroimaging community. The universal adoption of BIDS
 will enhance efforts for data sharing, reproduction of results, and
 promoting Open Science
-([http://centerforopenneuroscience.org](http://centerforopenneuroscience.org/
+([Center for Open Neuroscience](http://centerforopenneuroscience.org/
 "Center for Open Neuroscience")); which are all principles that DBIC
 aims to promote. All investigators at DBIC have the option of
 transforming their data from DICOM to BIDS. For instructions, please
@@ -66,7 +66,7 @@ contact [Yaroslav
 Halchenko](mailto:yaroslav.halchenko@dartmouth.edu?subject=BIDS).
 
 All BIDS formatted data are converted to the NIfTI Data Format
-([https://nifti.nimh.nih.gov](https://nifti.nimh.nih.gov "NIFTI"))
+([NIfTI website](https://nifti.nimh.nih.gov "NIFTI"))
 directly from the DICOM data and are stored on the same
 server. However, because multiple sessions (each with unique accession
 numbers and which may be acquired on different days) must be organized
@@ -87,7 +87,7 @@ Prof. Jim Haxby, is located at `<server>:/inbox/BIDS/Haxby/Sam/1021\_actions`.
 
 <a id="accessingbids"></a>
 
-## Accessing BIDS data using Datalad
+## Accessing BIDS data using DataLad
 
 To further promote data accesibility, sharing, and reproducibility,
 all BIDS formatted data on the DBIC server can be accessed using the
@@ -97,8 +97,7 @@ same version control systems developed for git and git-annex, which
 allows for downloading file hierarchies and meta-data, without
 checking file contents (such as large volumes of time-series fMRI
 data) into git, which would be costly in terms of storage
-space. Instructions on how to use DataLad can be found at
-[https://www.datalad.org](https://www.datalad.org "DataLad").
+space. Instructions on how to use DataLad can be found on the [DataLad website](https://www.datalad.org "DataLad").
 
 All MRI data at DBIC is collected following
 [ReproIn](http://reproin.repronim.org "ReproIn") (NIH
@@ -109,6 +108,6 @@ under [DataLad version control system](http://datalad.org "Datalad")
 
 Suggested resource: [DBIC BIDS Handbook](https://dbic-handbook.readthedocs.io)
 
-## DBIC Internal
+## DBIC internal
 
 - [Reports](https://rcweb.dartmouth.edu/DBIC/reports/) (Restricted access / NetID authentication required)

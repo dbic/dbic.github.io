@@ -11,5 +11,8 @@
     {%- if include.lead %}
     <p class="lead">{{ include.lead | escape }}</p>
     {%- endif %}
+    {%- if include.reviewed %}
+    <p class="reviewed">Last reviewed {{ include.reviewed | escape }}</p>
+    {%- endif %}
   </div>
 </section>

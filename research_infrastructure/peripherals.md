@@ -4,7 +4,7 @@ source_url: https://www.dartmouth.edu/dbic/research_infrastructure/peripherals.h
 retrieved: 2026-11-04
 lead: "Equipment for presenting stimuli, collecting responses, tracking the eyes and recording physiology in the scanner."
 kit:
-  grid: ["participant Response devices"]
+  grid: ["Participant response devices"]
 related:
   - { title: "fMRI scanner", url: "/research_infrastructure/fmri_scanner.html" }
   - { title: "Sequences", url: "/research_infrastructure/sequences.html" }
@@ -24,15 +24,15 @@ equipment listed here should be directed to: Michael Pearl
 - [Visual stimulation](#visstim)
 - [Auditory stimulation](#audiostim)
 - [Participant response devices](#responsedevices)
-- [Eyetracking](#eyetracking)
+- [Eye tracking](#eyetracking)
 - [Physiological monitoring](#physio)
-- [Reprostim](#reprostim)
+- [ReproStim](#reprostim)
 
 <a id="visstim"></a>
 
 ## Visual stimulation
 
-### Panasonic PT-DW750BU Projector
+### Panasonic PT-DW750BU projector
 
 ![projector](../assets/dbic/images/projector.png)
 
@@ -88,7 +88,7 @@ The DBIC uses Cambridge Research Systems [MRIFocus for Siemens](https://www.crsl
 
 ## Auditory stimulation
 
-### Audio Stimulus (Sensimetrics Model S14)
+### Audio stimulus (Sensimetrics Model S14)
 
 ![Sensimetrics](../assets/dbic/images/sensimetrics.png)
 
@@ -103,9 +103,9 @@ Audio stimulus is connected to stimulus computer via 2.5mm jack. External speake
 
 <a id="responsedevices"></a>
 
-## participant Response devices
+## Participant response devices
 
-### Current Designs 932 Interface
+### Current Designs 932 interface
 
 ![Current Designs](../assets/dbic/images/cd.png)
 
@@ -114,7 +114,7 @@ The opto-electronic interface receives optical signals from the handheld devices
 - [Current Designs website](https://www.curdes.com/mainforp/interfaces/fiu-932b.html)
 - [DBIC user guide - Current Designs 932](../assets/dbic/docs/userguides/sop_curdes_9132023.pdf)
 
-### 4-Button Bimanual
+### 4-button bimanual
 
 ![4-button](../assets/dbic/images/fourbutton.png)
 
@@ -143,9 +143,9 @@ For recording verbal responses from participants during fMRI scanning, the DBIC 
 
 <a id="eyetracking"></a>
 
-## EYETRaCKING
+## Eye tracking
 
-### SR RESEARCH EYELINK 1000 PLUS
+### SR Research EyeLink 1000 Plus
 
 ![Eyelink](../assets/dbic/images/sreyelink.png)
 
@@ -169,10 +169,10 @@ For collecting real-time physiological data during fMRI scanning, such as skin c
 
 <a id="reprostim"></a>
 
-## Reprostim
+## ReproStim
 
 ReproStim is a video capture and recording suite for neuroimaging and psychology experiments currently under development at the DBIC and developed by Yarick Halchenko and Andy Connolly. Its goal is to provide experimenters with a complete record of audio and visual stimulation for every data collection session by making it possible to easily collect high fidelity copies of the actual stimuli shown to each subject in the form of video files that can be stored alongside behavioral or neuroimaging data in public repositories.
 
 ReproStim provides for enhanced experimental reproducibility and a safeguard against data loss in cases of data-collection irregularites. Because ReproStim provides an exact record of the actual stimuli delivered during any given experimental session, it makes it possible to precisely reproduce experimental sessions, even if the original trial sets were randomized and precise trial details not recorded. In cases of experimental irregularities, such as aborted fMRI runs, unexpected glitches in trial timing, or programming errors that cause records of trial conditions to be lost, valuable data (which can be especially costly in cases of fMRI of ECog, for example) can be recoded and recovered using the audio-visual record provided by ReproStim.
 
-The developmental version of ReproStim is currently deployed at the DBIC and we are archiving videos of all scanning sessions. The computer called ReproIner runs the ReproStim software at the DBIC. For more information, contact [Yaroslav Halchenko](mailto:yaroslav.o.halchenko@dartmouth.edu?subject=ReproStim) or check out ReproStim on GitHub: <https://github.com/ReproNim/reprostim>
+The developmental version of ReproStim is currently deployed at the DBIC and we are archiving videos of all scanning sessions. The computer called ReproIner runs the ReproStim software at the DBIC. For more information, contact [Yaroslav Halchenko](mailto:yaroslav.o.halchenko@dartmouth.edu?subject=ReproStim) or check out [ReproStim on GitHub](https://github.com/ReproNim/reprostim)

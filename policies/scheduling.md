@@ -1,5 +1,6 @@
 ---
-title: "DBIC Scheduling"
+title: "DBIC scheduling"
+reviewed: "July 1, 2026"
 source_url: https://www.dartmouth.edu/dbic/policies/scheduling.html
 retrieved: 2026-11-04
 lead: "How scan time is requested and allocated: scan hours, the three scheduling tiers, the request deadlines and the calendar."
@@ -20,7 +21,7 @@ related:
 
 [Policies](index.md) >
 
-# DBIC Scheduling
+# DBIC scheduling
 
 - [General info](#general)
 - [Scheduling tier descriptions](#schedulingtiers)
@@ -34,8 +35,10 @@ related:
 Courtney Rogers ([Courtney.Rogers@Dartmouth.EDU](mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20scheduling)) manages scheduling for all scanner activities.
 
 - Researchers must request access to the Moore DBIC Scanner Outlook calendar through Courtney Rogers.
-- The DBIC Scanner calendar can also be viewed online [here](#calendar).
+- The DBIC Scanner calendar can also be viewed online [on this page](#calendar).
 - All scan time requests must be submitted to Courtney Rogers via email.
+
+<a id="scanhours"></a>
 
 ## **Scan hours**
 
@@ -56,7 +59,7 @@ Courtney Rogers ([Courtney.Rogers@Dartmouth.EDU](mailto:courtney.rogers@dartmout
 
 ### Before you request time
 
-Information on DBIC's scanning rates is available [here.](dbic_billing.md) An approved DBIC protocol is required before requesting scan time; instructions for submitting a new protocol can be found [here.](dbic_protocol.md)
+Information on DBIC's scanning rates is available on the [scanning rates page](dbic_billing.md). An approved DBIC protocol is required before requesting scan time; instructions for submitting a new protocol can be found on the [protocol page](dbic_protocol.md).
 
 <a id="schedulingtiers"></a>
 
@@ -64,7 +67,7 @@ Information on DBIC's scanning rates is available [here.](dbic_billing.md) An ap
 
 The DBIC uses a three-tier scheduling system. Requests within each tier are compiled and allocated by Courtney Rogers.
 
-### **Tier 1 – Grant-funded (External funding)**
+### **Tier 1 – Grant-funded (external funding)**
 
 - Booking opens on/around the first business day of the preceding month and remains open for four business days.
 - Labs may request peak and off-peak time for the entire month.

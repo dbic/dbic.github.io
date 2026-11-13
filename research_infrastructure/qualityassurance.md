@@ -26,8 +26,7 @@ Biomedical Informatics Research Network (fBIRN) are generated on
 [weekly basis](#weeklyQA) to monitor stability of the scanner. These
 scans run a standardized fMRI protocol executed on an [agar
 phantom](#phantom) using the DBIC's 32- and (since 2018) 64-channel
-[head coils](coils.md). Details of the FBIRN protocol can be found at
-<https://www.nitrc.org/projects/fbirn> and in the references
+[head coils](coils.md). Details of the FBIRN protocol can be found on the [NITRC fBIRN project page](https://www.nitrc.org/projects/fbirn) and in the references
 below. Longitudinal results of mean ghost percentage,
 signal-to-fluctuation noise ratio (SFNR), and signal-to-noise ratio
 (SNR) are updated here weekly. Abnormalities in any of the metrics may
@@ -56,7 +55,7 @@ The acceptable mean ghost percentage threshold is less than 3% percent (ref 2). 
 
 <a id="metrics"></a>
 
-## Weekly qa metrics
+## Weekly QA metrics
 
 Below are definitions of the metrics found on the DBIC's weekly QA report. Definitions have been adopted from the original authors.
 
@@ -83,7 +82,7 @@ References:
 
 2. Acceptance Testing and Quality Assurance Procedures for Magnetic Resonance Imaging Facilities, AAPM Report No. 100
 
-3. <https://www.nitrc.org/projects/bxh_xcede_tools>
+3. [BXH/XCEDE tools (NITRC project page)](https://www.nitrc.org/projects/bxh_xcede_tools)
 
 <a id="weeklyQA"></a>
 

@@ -1,5 +1,6 @@
 ---
 title: "Cancellation policy"
+reviewed: "July 1, 2026"
 source_url: https://www.dartmouth.edu/dbic/policies/cancellations.html
 retrieved: 2026-11-04
 lead: "Cancelling scan time close to the booking can carry a charge. This page sets out the policy and how to release time."
@@ -15,7 +16,7 @@ related:
 
 # Cancellation policy
 
-Due to the high demand for the scanner and the need to maximize efficiency, the DBIC will be implementing the following cancellation policy, effective September 1, 2021, for cancellations on/after October 1, 2021. You *may* be charged for time booked, however, if you cancel in a manner concordant with the DBIC’s cancellation policy, we will waive the fee.
+Due to the high demand for the scanner and the need to maximize efficiency, the DBIC has the following cancellation policy, effective September 1, 2021, for cancellations on or after October 1, 2021. You *may* be charged for time booked, however, if you cancel in a manner concordant with the DBIC’s cancellation policy, we will waive the fee.
 
 ## Cancellation policy
 

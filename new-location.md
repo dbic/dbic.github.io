@@ -1,5 +1,5 @@
 ---
-title: "This Page Has Moved"
+title: "This page has moved"
 source_url: http://www.dartmouth.edu/dbic/new-location.html
 retrieved: 2026-11-04
 # Candidate for removal: left over from the old site; nothing in this site links to it.
@@ -7,7 +7,7 @@ retrieved: 2026-11-04
 
 [Home](/ "Home") >
 
-# This Page Has Moved
+# This page has moved
 
 The page you requested has been moved to a new location. This may be a result of the reorganization of this Web site which improved the navigation and usability of the site. Although some pages were moved to new locations, no pages were deleted.
 

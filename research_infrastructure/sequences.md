@@ -4,7 +4,7 @@ source_url: https://www.dartmouth.edu/dbic/research_infrastructure/sequences.htm
 retrieved: 2026-11-04
 lead: "The sequences available on the scanner, and where to find their standard settings."
 kit:
-  listcards: ["Sequence Settings"]
+  listcards: ["Sequence settings"]
 related:
   - { title: "fMRI scanner", url: "/research_infrastructure/fmri_scanner.html" }
   - { title: "Head coils", url: "/research_infrastructure/coils.html" }
@@ -35,11 +35,11 @@ In addition to the above sequences, we have also installed modified versions of 
 - cmrr_mbep2d_diff
 - cmrr_mbep2d_se
 
-You can learn more about these sequences here: <https://www.cmrr.umn.edu/multiband/Multi-Band_C2P_Instructions_R016a.pdf>
+You can learn more about these sequences in the [CMRR multiband instructions](https://www.cmrr.umn.edu/multiband/Multi-Band_C2P_Instructions_R016a.pdf).
 
 \* Please note that both native (Siemens BOLD and Diffusion) sequences, as well as the cmrr versions, are capable of acquiring simultanous slices (SMS/MB).
 
-## Sequence Settings
+## Sequence settings
 
 - [BOLD](../assets/dbic/docs/sequences/bold_acquisition.pdf)
 - [Diffusion](../assets/dbic/docs/sequences/dwi_acquisiton.pdf)

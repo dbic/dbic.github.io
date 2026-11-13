@@ -1,5 +1,5 @@
 ---
-title: "fMRI Scanner"
+title: "fMRI scanner"
 source_url: https://www.dartmouth.edu/dbic/research_infrastructure/fmri_scanner.html
 retrieved: 2026-11-04
 lead: "A 3.0 tesla Siemens MAGNETOM Prisma and the peripherals needed for functional neuroimaging."
@@ -17,7 +17,7 @@ related:
 
 [Research Infrastructure](index.md) >
 
-# fMRI Scanner
+# fMRI scanner
 
 ![Siemens scanner](../assets/dbic/images/scanner.png)
 

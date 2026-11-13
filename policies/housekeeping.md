@@ -1,5 +1,6 @@
 ---
 title: "Housekeeping"
+reviewed: "July 1, 2026"
 source_url: https://www.dartmouth.edu/dbic/policies/housekeeping.html
 retrieved: 2026-11-04
 lead: "Everyone who scans keeps the suite clean, tidy and ready for the next group."
@@ -13,7 +14,7 @@ related:
 
 # Housekeeping
 
-The MRI scanner and suite is a valuable shared resource. In addition to making sure that all safety and operating policies and procedures are adhered to at all times, scanner operators will be expected to adhere to the full [housekeeping checklist,](../assets/dbic/docs/policies/housekeeping01282026.pdf) in addition to the items below.
+The MRI scanner and suite is a valuable shared resource. In addition to making sure that all safety and operating policies and procedures are adhered to at all times, scanner operators will be expected to adhere to the full [housekeeping checklist](../assets/dbic/docs/policies/housekeeping01282026.pdf), in addition to the items below.
 
 ## Housekeeping items
 

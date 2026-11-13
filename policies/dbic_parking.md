@@ -1,5 +1,6 @@
 ---
 title: "DBIC parking"
+reviewed: "July 1, 2026"
 source_url: https://www.dartmouth.edu/dbic/policies/dbic_parking.html
 retrieved: 2026-11-04
 lead: "Where research participants park at the DBIC, how to get the reserved spot approved, and what to do about unauthorized vehicles."

@@ -1,5 +1,6 @@
 ---
-title: "DBIC Protocol"
+title: "DBIC protocol"
+reviewed: "July 1, 2026"
 source_url: https://www.dartmouth.edu/dbic/policies/dbic_protocol.html
 retrieved: 2026-11-04
 lead: "Every new scanning study needs a DBIC protocol, reviewed before the study starts. Here is what to submit and what to include."
@@ -12,7 +13,7 @@ related:
 
 [Policies](index.md) >
 
-# DBIC Protocol
+# DBIC protocol
 
 ## What to submit
 

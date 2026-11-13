@@ -15,7 +15,7 @@ related:
 
 # FAQs
 
-## Scanning in the dbic
+## Scanning in the DBIC
 
 - [How do I submit a new DBIC protocol?](policies/dbic_protocol.md)
 - [How can I sign up for DBIC safety training?](policies/safetytraining.md)

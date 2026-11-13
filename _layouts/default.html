@@ -37,7 +37,7 @@ layout: redesign
   {%- assign section_index = site.pages | where: 'url', section.url | first -%}
 {%- endif -%}
 {%- if last_char == '/' -%}{%- assign crumb_label = false -%}{%- else -%}{%- assign crumb_label = section.label -%}{%- endif -%}
-{% include redesign/page-band.html heading=band_title eyebrow=section.label crumb_label=crumb_label crumb_url=section_index.url lead=page.lead %}
+{% include redesign/page-band.html heading=band_title eyebrow=section.label crumb_label=crumb_label crumb_url=section_index.url lead=page.lead reviewed=page.reviewed %}
 <div class="prose-wrap">
   <div class="wrap">
     {%- if page.glance or page.actions %}

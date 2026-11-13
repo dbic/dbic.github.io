@@ -8,6 +8,6 @@ lead: "The people who run the DBIC."
 [Home](/ "Home") >
  [People](index.md) >
 
-# Director and Staff
+# Director and staff
 
 {% include people.html people=site.data.directors_staff layout="list" %}

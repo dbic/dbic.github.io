@@ -12,7 +12,7 @@ related:
 
 [Research Infrastructure](index.md) >
 
-# DBIC Policy for Computing Resources on Discovery
+# DBIC policy for computing resources on Discovery
 
 - [Overview](#overview)
 - [Cluster usage](#clusterusage)
@@ -47,9 +47,9 @@ amounts of memory or multiple processors.
   require large amounts of memory. For more information see the High
   Performance Computing section of the Dartmouth Services Portal.
 
-Reference link: [https://services.dartmouth.edu/TDClient/1806/Portal/Requests/ServiceCatalog?CategoryID=11669](https://services.dartmouth.edu/TDClient/1806/Portal/Requests/ServiceCatalog?CategoryID=11669)
+[Dartmouth Services Portal: High Performance Computing](https://services.dartmouth.edu/TDClient/1806/Portal/Requests/ServiceCatalog?CategoryID=11669)
 
-## Using DBIC's Allocation
+## Using DBIC's allocation
 
 - [Cluster usage](#clusterusage)
 - [Best practices guidelines for SLURM Cluster usage](#bestpractices)
@@ -58,9 +58,9 @@ Reference link: [https://services.dartmouth.edu/TDClient/1806/Portal/Requests/Se
 
 <a id="clusterusage"></a>
 
-## Cluster Usage
+## Cluster usage
 
-### Individual User Limits on Trackable Resources and Quality of Service
+### Individual user limits on trackable resources and quality of service
 
 The SLURM job scheduler provides for specifying user limits for Trackable Resources (TRES) by using a mechanism called Quality of Service (QOS). A QOS defines a level of service for all users who are assigned to that particular QOS. All DBIC users are assigned to a DBIC-specific QOS with individual limits on TRES. This includes a hard limit of 240 cores that an individual can use at any time, or one fifth of the DBIC total share.
 
@@ -86,13 +86,13 @@ The most efficient way to get your jobs running is to chunk them into small chun
 
 **Access to the DBIC allocation can be requested from [Jamie Ford](mailto:james.c.ford@dartmouth.edu?subject=DBIC%20allocation). Requests can also be made for variations from the standard DBIC TRES limits.**
 
-### Queue Priority
+### Queue priority
 
 Fairshare scheduling is not currently active on Discovery, so balancing by historic usage is off, and all jobs are accepted and run on a “first come, first served” basis.
 
 <a id="bestpractices"></a>
 
-## Best Practices Guidelines for SLURM Cluster Usage
+## Best practices guidelines for SLURM cluster usage
 
 ### Take turns by avoiding excessively long jobs
 
@@ -110,7 +110,7 @@ It is also possible to run interactive jobs without using any cluster resources 
 
 <a id="discoverystorage"></a>
 
-## Storage space on Discovery Hard drives
+## Storage space on Discovery hard drives
 
 ### Your home directory
 
@@ -120,7 +120,7 @@ Individual User accounts have 50G standard quota. This should be used for all co
 
 All Dartmouth Faculty can request a storage of 1T for free to host data for their lab. This space should be shared among lab members, and managed among those members by respective labs. Faculty members can buy more Lab-dedicated space as needs and resources demand and allow.
 
-### Temporary Scratch Space
+### Temporary scratch space
 
 There is a shared scratch space available to all users located at
 `/dartfs-hpc/scratch` that can be used as a workspace for
