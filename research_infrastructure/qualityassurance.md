@@ -21,7 +21,20 @@ related:
 
 ## Overview
 
-The Functional Imaging Federated Informatics Research Environment (FBIRN) [QA metrics](#weeklyQA) are generated on [weekly basis](#weeklyQA) to monitor stability of the scanner. These scans run a standardized fMRI protocol executed on an [agar Phantom](#phantom) using the 32- and (since 2018) 64-channel [head coils](coils.md). Details of the protocol can be found at <https://www.nitrc.org/projects/fbirn> and in the references below. Longitudinal results of mean ghost percentage, signal-to-fluctuation noise ratio (SFNR), and signal-to-noise ratio (SNR) recorded and reported weekly. Abnormalities in any of the metrics may indicate instability of some hardware component, and such abnormalities are further investigated. In addition, Siemens customer QA tool is run to check coil elements of the head coil weekly and body coil monthly or whenever needed.
+[QA metrics](#weeklyQA) using the tools created by the Function
+Biomedical Informatics Research Network (fBIRN) are generated on
+[weekly basis](#weeklyQA) to monitor stability of the scanner. These
+scans run a standardized fMRI protocol executed on an [agar
+phantom](#phantom) using the DBIC's 32- and (since 2018) 64-channel
+[head coils](coils.md). Details of the FBIRN protocol can be found at
+<https://www.nitrc.org/projects/fbirn> and in the references
+below. Longitudinal results of mean ghost percentage,
+signal-to-fluctuation noise ratio (SFNR), and signal-to-noise ratio
+(SNR) are updated here weekly. Abnormalities in any of the metrics may
+indicate instability of some hardware component, and such
+abnormalities are investigated. In addition, the Siemens customer QA
+tool is run to check coil elements of the head coil (weekly) and body
+coil (monthly) and as needed.
 
 The acceptable mean ghost percentage threshold is less than 3% percent (ref 2). The first QA conducted on the [DBIC's Siemens Prisma MAGNETOM](fmri_scanner.md) was September 12, 2016.
 
