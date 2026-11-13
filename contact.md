@@ -23,8 +23,6 @@ related:
 | Data, datasets and DBIC's share of Discovery (the DBIC allocation) | James (Jamie) Ford, Research Scientist | [james.c.ford@dartmouth.edu](mailto:james.c.ford@dartmouth.edu?subject=DBIC%20data%20question) |
 | General computing help, such as access to Discovery | Research Computing | [research.computing@dartmouth.edu](mailto:research.computing@dartmouth.edu) |
 
-Not sure who to ask about computing or data? Ask Jamie Ford. He will direct you to Research Computing, or open a ticket on your behalf.
-
 ## Find us
 
 Dartmouth Brain Imaging Center  

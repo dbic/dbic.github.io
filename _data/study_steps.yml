@@ -38,7 +38,7 @@ steps:
     bullets:
       - "With an approved protocol, email your request to Courtney Rogers, who schedules all scanner activity."
       - "Time is allocated in three tiers (grant-funded, department-funded, then everyone else), each with a monthly request window."
-      - "Peak hours are weekdays 8 a.m. to 4 p.m. Evenings and weekends need both a certified operator and a certified [scan buddy](/policies/safetytraining.html#scanbuddy)."
+      - "Peak hours are weekdays 8 a.m. to 4 p.m. Evenings and weekends need both a certified operator and a [scan buddy](/policies/safetytraining.html#scanbuddy)."
     links:
       - { text: "Scheduling details", url: "/policies/scheduling.html", style: solid }
       - { text: "Scanning rates", url: "/policies/dbic_billing.html", style: outline }
