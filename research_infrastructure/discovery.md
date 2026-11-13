@@ -122,8 +122,13 @@ All Dartmouth Faculty can request a storage of 1T for free to host data for thei
 
 ### Temporary Scratch Space
 
-There is a shared scratch space available to all users located at  
-/dartfs-hpc/scratch. This should be used as a work-space for all analyses. Temporary files can sit there for long periods of time, and users are notified by RC-SysAdmins before anything gets deleted. So, when processing data, users should utilize this space as needed, and then a final results folder (without intermediate steps) should be copied to a permanent location, such as a user's home directory or a directory owned and managed by the user's Lab, and ultimately (in the near future) for finalized data to a procured derivative on the shared DBIC partition.
+There is a shared scratch space available to all users located at
+`/dartfs-hpc/scratch` that can be used as a workspace for
+analyses. Temporary files can sit there for long periods of time, and
+users will be notified by sysadmins before anything gets deleted. It
+is suggested that when processing data, users utilize this space as
+needed, and then copy a results folder (without intermediate products)
+to a permanent location, such as a home directory or lab directory.
 
 <a id="citizen"></a>
 
