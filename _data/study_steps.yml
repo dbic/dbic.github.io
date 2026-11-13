@@ -27,7 +27,7 @@ steps:
     bullets:
       - "**Everyone** completes MRI safety training: an in-person session with the MRI technologist (up to four people per class) plus an online module."
       - "**To run the scanner yourself,** become an operator-in-training, complete at least 10 hours of hands-on training with a certified operator, and pass a final competency check with the MRI technologist present."
-      - "At least two people are in the control room at all times: a certified scan operator and a safety-trained assistant."
+      - "At least two people are in the control room at all times: a certified scan operator and a [scan buddy](/policies/safetytraining.html#scanbuddy) (a safety-trained assistant)."
     links:
       - { text: "Safety training", url: "/policies/safetytraining.html", style: solid }
       - { text: "Operator training", url: "/policies/operator_training.html", style: outline }
@@ -38,7 +38,7 @@ steps:
     bullets:
       - "With an approved protocol, email your request to Courtney Rogers, who schedules all scanner activity."
       - "Time is allocated in three tiers (grant-funded, department-funded, then everyone else), each with a monthly request window."
-      - "Peak hours are weekdays 8 a.m. to 4 p.m. Evenings and weekends need both a certified operator and a certified scan buddy."
+      - "Peak hours are weekdays 8 a.m. to 4 p.m. Evenings and weekends need both a certified operator and a certified [scan buddy](/policies/safetytraining.html#scanbuddy)."
     links:
       - { text: "Scheduling details", url: "/policies/scheduling.html", style: solid }
       - { text: "Scanning rates", url: "/policies/dbic_billing.html", style: outline }

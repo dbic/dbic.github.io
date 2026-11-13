@@ -1,7 +1,7 @@
 # The commitments on the "Safety & compliance" page. icon: clipboard | users | shield | award | alert
 rules:
   - { icon: clipboard, title: "Human-subjects approval comes first", text: "All research conducted in the DBIC must have CPHS approval, and all personnel complete IRB education." }
-  - { icon: users, title: "Two people in the control room, always", text: "At least one certified scan operator and one safety-trained assistant are present at all times." }
+  - { icon: users, title: "Two people in the control room, always", text: "At least one certified scan operator and one scan buddy (a safety-trained assistant) are present at all times." }
   - { icon: shield, title: "Everyone is screened", text: "Participants and personnel are screened for MRI safety and metal, with metal detectors and a controlled airlock door to the MRI suite." }
   - { icon: award, title: "Trained and certified operators", text: "Safety training for all research personnel; operator certification requires at least 10 hours of hands-on training." }
   - { icon: alert, title: "Emergencies and incidents have a procedure", text: "Emergency practices, an incident-reporting policy, and cleaning and housekeeping standards are published and part of every training." }

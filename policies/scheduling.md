@@ -51,7 +51,7 @@ Courtney Rogers ([Courtney.Rogers@Dartmouth.EDU](mailto:courtney.rogers@dartmout
 
 1. A certified scan operator
 
-2. A certified scan buddy
+2. A [scan buddy](safetytraining.md#scanbuddy)
 
 ### Before you request time
 
