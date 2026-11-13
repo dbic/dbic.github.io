@@ -5,6 +5,7 @@ source_url: https://www.dartmouth.edu/dbic/policies/scheduling.html
 retrieved: 2026-11-04
 lead: "How scan time is requested and allocated: scan hours, the three scheduling tiers, the request deadlines and the calendar."
 glance:
+  - { kind: text, label: "Before you request scan time", title: "You need an approved DBIC protocol", text: "How to submit one", url: "/policies/dbic_protocol.html" }
   - { kind: scan_windows, label: "Scan-time requests", url: "#ay26-27" }
 actions:
   - { text: "Open the scanner calendar", url: "#calendar" }
@@ -25,18 +26,21 @@ related:
 
 - [General info](#general)
 - [Scheduling tier descriptions](#schedulingtiers)
-- [2026-2027 request deadlines](#ay26-27)
+- [Request windows, academic year 2026–2027](#ay26-27)
 - [DBIC calendar](#calendar)
 
 <a id="general"></a>
 
 ## Scheduling
 
-Courtney Rogers ([Courtney.Rogers@Dartmouth.EDU](mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20scheduling)) manages scheduling for all scanner activities.
+Courtney Rogers ([Courtney.Rogers@Dartmouth.EDU](mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20scheduling)) manages scheduling for all scanner activities. Email her to:
 
-- Researchers must request access to the Moore DBIC Scanner Outlook calendar through Courtney Rogers.
-- The DBIC Scanner calendar can also be viewed online [on this page](#calendar).
-- All scan time requests must be submitted to Courtney Rogers via email.
+- request access to the Moore DBIC Scanner Outlook calendar, and
+- submit your scan-time requests.
+
+The calendar can also be viewed online (see [DBIC calendar](#calendar) below).
+
+When you request scan time, include your DBIC protocol number and the dates and times you would like. You will usually hear back within 1–2 business days after the request window closes.
 
 <a id="scanhours"></a>
 
@@ -44,11 +48,11 @@ Courtney Rogers ([Courtney.Rogers@Dartmouth.EDU](mailto:courtney.rogers@dartmout
 
 ### Peak hours
 
-- Monday-Friday, 8:00 a.m. - 4:00 p.m.
+- Monday–Friday, 8 a.m.–4 p.m.
 
 ### Off-peak hours
 
-- Monday-Friday after 4:00 p.m.,
+- Monday–Friday after 4 p.m.
 - All day Saturday/Sunday
 
 **Off-peak sessions require both:**
@@ -59,7 +63,7 @@ Courtney Rogers ([Courtney.Rogers@Dartmouth.EDU](mailto:courtney.rogers@dartmout
 
 ### Before you request time
 
-Information on DBIC's scanning rates is available on the [scanning rates page](dbic_billing.md). An approved DBIC protocol is required before requesting scan time; instructions for submitting a new protocol can be found on the [protocol page](dbic_protocol.md).
+See the [scanning rates](dbic_billing.md). You need an approved DBIC protocol before you can request scan time; see [how to submit a protocol](dbic_protocol.md).
 
 <a id="schedulingtiers"></a>
 
@@ -67,28 +71,34 @@ Information on DBIC's scanning rates is available on the [scanning rates page](d
 
 The DBIC uses a three-tier scheduling system. Requests within each tier are compiled and allocated by Courtney Rogers.
 
+| | Tier 1 | Tier 2 | Tier 3 |
+|---|---|---|---|
+| Funding | Grant-funded (external) | DOF-funded | All projects |
+| Booking opens | on/around the first business day of the preceding month | on/around the 8th of the preceding month | on/around the 16th of the preceding month |
+| Stays open | four business days | four business days | rolling, first come first served |
+| Share of time | up to 60% | the remaining 40% | whatever is left |
+
 ### **Tier 1 – Grant-funded (external funding)**
 
-- Booking opens on/around the first business day of the preceding month and remains open for four business days.
 - Labs may request peak and off-peak time for the entire month.
-- Up to **60%**of weekly peak (~24 hrs) and off-peak (~44 hrs) may be allocated across all Tier 1 labs; **40%**is reserved for Tier 2.
+- Up to **60%** of weekly peak time (about 24 hours) and off-peak time (about 44 hours) may be allocated across all Tier 1 labs; the remaining **40%** is reserved for Tier 2.
 - Priority is based on project, with a maximum of two independent grant-funded projects per lab eligible for Tier 1 scheduling.
 
-### **Tier 2 – DOF-funded**
+### **Tier 2 – DOF-funded (Dean of the Faculty funding)**
 
-*Includes startup, dissertation, honors, and third-or more projects within a lab.*
+*Includes startup, dissertation and honors projects, and a lab's third and later projects.*
 
-- Booking opens on/around the 8th of preceding month for four business days.
 - Priority is based on project, with up to two independent DOF-funded projects per lab eligible for Tier 2 scheduling.
 
 ### **Tier 3 – All projects**
 
-- Booking window opens on/around the 16th of preceding month.
 - Requests are scheduled on a rolling, first-come, first-served basis.
 
 <a id="ay26-27"></a>
 
-## Academic year 2026-2027 request deadlines
+## Request windows, academic year 2026–2027
+
+Each row lists the booking windows for the month named in its first column. Windows close at 4 p.m. on the closing day, unless otherwise instructed.
 
 <table>
 <tbody>

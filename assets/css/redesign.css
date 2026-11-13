@@ -578,3 +578,6 @@ dialog#qf::backdrop { background: rgba(3, 18, 11, .6); backdrop-filter: blur(3px
 /* "Last reviewed" under a policy page's title, and the small file-type label after links to documents */
 .page-head .reviewed { margin: .8rem 0 0; font-size: .92rem; color: #bfe5d0; letter-spacing: .01em; }
 .ft { display: inline-block; font-size: .8em; font-weight: 400; opacity: .78; white-space: nowrap; }
+
+/* in tables a word breaks only where it cannot fit, so labels in the first column stay whole */
+.prose .table-wrap th, .prose .table-wrap td { overflow-wrap: break-word; }
