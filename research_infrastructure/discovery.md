@@ -24,7 +24,7 @@ related:
 
 ## Overview
 
-DBIC owns a share of 15 Nodes on the Research Computing (RC) Discovery cluster, each node comprising 16 cores totaling 240 cores. Under RC's sharing policy, Discovery users can, subject to availability, use additional nodes beyond their own, so the DBIC sets a limit of 240 nodes on each DBIC user. Note that the SLURM scheduler enforces hard limits on resource allocation, so that once DBIC usage reaches a cap, no more DBIC jobs can run until resources are freed. In order to ensure equitable service to all DBIC users and to preserve the peace in our community, we aim to adopt a DBIC-specific set of policies. These policies are explained below. The implementation and enforcement of policies is carried out with the Research Computing Systems Administrators.
+DBIC owns a share of 15 Nodes on the Research Computing (RC) Discovery cluster, each node comprising 16 cores totaling 240 cores. Under RC's sharing policy, Discovery users can, subject to availability, use additional nodes beyond their own, so the DBIC sets a limit of 240 cores on each DBIC user. Note that the SLURM scheduler enforces hard limits on resource allocation, so that once DBIC usage reaches a cap, no more DBIC jobs can run until resources are freed. In order to ensure equitable service to all DBIC users and to preserve the peace in our community, we aim to adopt a DBIC-specific set of policies. These policies are explained below. The implementation and enforcement of policies is carried out with the Research Computing Systems Administrators.
 
 ### Interactive nodes
 
