@@ -24,7 +24,7 @@ related:
 
 ## Overview
 
-DBIC owns a share of 15 Nodes on the Research Computing (RC) Discovery cluster, each node comprising 16 cores totaling 240 cores. RC's policy for sharing specifies that all share holders have access to five times the resources owned, giving DBIC account users access to 1280 cores in total at any given time. The SLURM scheduler enforces hard limits on resource allocation so that once the DBIC usage meets the limit, no more DBIC jobs can run until resources are freed. In order to ensure equitable service to all DBIC users and to preserve the peace in our community, we aim to adopt a DBIC-specific set of policies. These policies are explained below. The implementation and enforcement of policies will be carried out by the RC Systems Administrators.
+DBIC owns a share of 15 Nodes on the Research Computing (RC) Discovery cluster, each node comprising 16 cores totaling 240 cores. Under RC's sharing policy, Discovery users can, subject to availability, use additional nodes beyond their own, so the DBIC sets a limit of 240 nodes on each DBIC user. Note that the SLURM scheduler enforces hard limits on resource allocation, so that once DBIC usage reaches a cap, no more DBIC jobs can run until resources are freed. In order to ensure equitable service to all DBIC users and to preserve the peace in our community, we aim to adopt a DBIC-specific set of policies. These policies are explained below. The implementation and enforcement of policies is carried out with the Research Computing Systems Administrators.
 
 ### Interactive nodes
 
@@ -62,7 +62,7 @@ amounts of memory or multiple processors.
 
 ### Individual user limits on trackable resources and quality of service
 
-The SLURM job scheduler provides for specifying user limits for Trackable Resources (TRES) by using a mechanism called Quality of Service (QOS). A QOS defines a level of service for all users who are assigned to that particular QOS. All DBIC users are assigned to a DBIC-specific QOS with individual limits on TRES. This includes a hard limit of 240 cores that an individual can use at any time, or one fifth of the DBIC total share.
+The SLURM job scheduler provides for specifying user limits for Trackable Resources (TRES) by using a mechanism called Quality of Service (QOS). A QOS defines a level of service for all users who are assigned to that particular QOS. All DBIC users are assigned to a DBIC-specific QOS with individual limits on TRES. This includes a hard limit of 240 cores that an individual can use at any time.
 
 **The following limits are in effect for all DBIC Account users:**
 
