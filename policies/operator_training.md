@@ -39,7 +39,7 @@ Each skill is introduced in the first session (Step 1) and demonstrated for cert
 
 | Skill | Introduced in the first session | Demonstrated for certification |
 |---|---|---|
-| [MRI safety screening](../assets/dbic/docs/forms/meatalscreen_04132026.pdf) and the [pre-scan checklist](../assets/dbic/docs/forms/mrichecklist08012026.pdf) | yes | yes |
+| [MRI safety screening](../assets/dbic/docs/forms/metalscreen_04132026.pdf) and the [pre-scan checklist](../assets/dbic/docs/forms/mrichecklist08012026.pdf) | yes | yes |
 | Metal detectors ([handheld](../assets/dbic/docs/policies/ceia06102026.pdf), [pole](../assets/dbic/docs/policies/poledetector.pdf)) and their [operating instructions](../assets/dbic/docs/policies/ceia_instructions.pdf) | yes | yes |
 | Airlock door to the MRI suite | yes | yes |
 | [Emergency procedures](../assets/dbic/docs/policies/emergencyprocedures.pdf) and [incident reporting](../assets/dbic/docs/policies/incidentreporting_04162026.pdf) | yes | yes (thorough knowledge) |

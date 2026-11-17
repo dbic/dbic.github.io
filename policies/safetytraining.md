@@ -54,7 +54,7 @@ The class covers how to:
 |---|---|
 | Potential hazards | [Potential hazards](../assets/dbic/docs/forms/potential_hazards.pdf) |
 | Pre-scan experimenter checklist | [Pre-scan experimenter checklist](../assets/dbic/docs/forms/mrichecklist08012026.pdf) |
-| Screening participants for MRI safety and metal | [Subject screening policy](../assets/dbic/docs/policies/subjectscreen_2024.pdf); [MRI metal safety screening form](../assets/dbic/docs/forms/meatalscreen_04132026.pdf) |
+| Screening participants for MRI safety and metal | [Subject screening policy](../assets/dbic/docs/policies/subjectscreen_2024.pdf); [MRI metal safety screening form](../assets/dbic/docs/forms/metalscreen_04132026.pdf) |
 | Metal detectors (handheld and pole) | [Metal detector guide: handheld](../assets/dbic/docs/policies/ceia06102026.pdf); [Metal detector guide: pole](../assets/dbic/docs/policies/poledetector.pdf) |
 | Airlock door to the MRI suite | — |
 | Emergency practices and procedures | [Emergency practices & procedures](../assets/dbic/docs/policies/emergencyprocedures.pdf) |

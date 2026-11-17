@@ -28,7 +28,7 @@ Because demand for the scanner is high, the DBIC charges for scan time that is c
 
 To minimize cancellations, the DBIC asks researchers to:
 
-- give participants the [DBIC metal screener](../assets/dbic/docs/forms/mriscreener01222026.pdf) well before their scan;
+- give participants the [DBIC metal screener](../assets/dbic/docs/forms/metalscreen_04132026.pdf) well before their scan;
 - consider sending the [DBIC information sheet](../assets/dbic/docs/forms/dbic_info_sheet.docx), which lists things participants may not realize are an issue (for example non-removable piercings or certain hair and skin products);
 - send an [initial confirmation email](../assets/dbic/docs/forms/fmri_confirmation_email.docx), a [reminder](../assets/dbic/docs/forms/week_before_email.docx) the week before, and a [final reminder](../assets/dbic/docs/forms/daybefore_reminder_email.docx) the day before the scan.
 

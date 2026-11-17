@@ -1,8 +1,7 @@
 id,title,category,file,featured,dated,dated_text,note,check
 pre-scan-checklist,Pre-scan experimenter checklist,Safety & screening,/assets/dbic/docs/forms/mrichecklist08012026.pdf,yes,2026-08-01,,,Date read from the file name.
 subject-screening,Subject screening policy,Safety & screening,/assets/dbic/docs/policies/subjectscreen_2024.pdf,yes,,2024,,Date read from the file name.
-metal-screening,MRI metal safety screening form,Safety & screening,/assets/dbic/docs/forms/meatalscreen_04132026.pdf,yes,2026-04-13,,Also called the 3T MRI safety screening sheet.,"Date read from the file name. The file name contains a typo (""meatal"")."
-metal-screener-participants,DBIC metal screener for participants,Safety & screening,/assets/dbic/docs/forms/mriscreener01222026.pdf,,2026-01-22,,Sent to participants well before their scan.,Linked from the cancellation policy. Confirm whether this is the same form as the screening sheet above; keep only one if so.
+metal-screening,MRI metal safety screening form,Safety & screening,/assets/dbic/docs/forms/metalscreen_04132026.pdf,yes,2026-04-13,,Also called the 3T MRI safety screening sheet.,Date read from the file name.
 potential-hazards,Potential hazards,Safety & screening,/assets/dbic/docs/forms/potential_hazards.pdf,yes,,,,
 emergency-procedures,Emergency practices & procedures,Safety & screening,/assets/dbic/docs/policies/emergencyprocedures.pdf,yes,,,,
 incident-reporting,Incident reporting policy,Safety & screening,/assets/dbic/docs/policies/incidentreporting_04162026.pdf,yes,2026-04-16,,,Confirmed current (Nov 2026); the safety training page links this file.
