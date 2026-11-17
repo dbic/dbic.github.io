@@ -46,20 +46,18 @@ When you request scan time, include your DBIC protocol number and the dates and 
 
 ## **Scan hours**
 
+Every session, in peak or off-peak hours, needs a certified scan operator and a [scan buddy](safetytraining.md#scanbuddy).
+
 ### Peak hours
 
-- Monday–Friday, 8 a.m.–4 p.m.
+- Monday–Friday, 8 a.m.–4 p.m. (the MRI technologist’s working hours)
 
 ### Off-peak hours
 
 - Monday–Friday after 4 p.m.
 - All day Saturday/Sunday
 
-**Off-peak sessions require both:**
-
-1. A certified scan operator
-
-2. A [scan buddy](safetytraining.md#scanbuddy)
+The MRI technologist is not working during off-peak hours.
 
 ### Before you request time
 
