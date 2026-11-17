@@ -6,7 +6,7 @@ retrieved: 2026-11-04
 lead: "Every new scanning study needs a DBIC protocol, reviewed before the study starts. Here is what to submit and what to include."
 related:
   - { title: "How a study works", url: "/research-with-us.html" }
-  - { title: "Forms & templates", url: "/policies/forms_templates.html" }
+  - { title: "Documents & forms", url: "/policies/forms_templates.html" }
   - { title: "Scheduling", url: "/policies/scheduling.html" }
   - { title: "Who to contact", url: "/contact.html" }
 ---
