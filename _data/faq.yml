@@ -1,18 +1,52 @@
-# Common questions, grouped. A page picks a group with  faq_group: scanning  in its front matter.
+# One pool of questions and answers, used in two places:
+#   - the FAQs page shows every question, group by group;
+#   - the "Common questions" strip at the foot of a page shows one group, chosen by  faq_group: scanning  (or computing)  in the
+#     page's front matter.
+# Each question has:  q  the question;  a  a short answer, written in Markdown (optional);  url  the page with the full details.
+# Links inside an answer need their full path on this site, for example /policies/scheduling.html#calendar.
+# "order" is the order of the groups on the FAQs page.
+order: [scanning, computing]
 scanning:
   title: "Scanning in the DBIC"
   items:
-    - { q: "How do I submit a new DBIC protocol?", url: "/policies/dbic_protocol.html" }
-    - { q: "How can I sign up for DBIC safety training?", url: "/policies/safetytraining.html" }
-    - { q: "How can I sign up for DBIC operator training?", url: "/policies/operator_training.html" }
-    - { q: "How much does it cost to scan at the DBIC?", url: "/policies/dbic_billing.html" }
-    - { q: "How do I schedule time at the DBIC?", url: "/policies/scheduling.html" }
-    - { q: "What is the DBIC’s cancellation policy?", url: "/policies/cancellations.html" }
+    - q: "How do I submit a new DBIC protocol?"
+      a: "Email the DBIC application, your CPHS protocol, the CPHS-stamped consent form and a description of your study design to Courtney Rogers. New protocols are reviewed before the study begins."
+      url: "/policies/dbic_protocol.html"
+    - q: "How can I sign up for DBIC safety training?"
+      a: "Complete the CITI Group 2 Social/Behavioral Basic course, email the certificate to Courtney Rogers, and choose a class from the schedule."
+      url: "/policies/safetytraining.html"
+    - q: "How can I sign up for DBIC operator training?"
+      a: "After safety training, become an operator-in-training, complete the hands-on training hours with a certified operator, and pass a final competency check."
+      url: "/policies/operator_training.html"
+    - q: "How much does it cost to scan at the DBIC?"
+      a: "Rates depend on the funding source and time of day, and are billed monthly for each protocol."
+      url: "/policies/dbic_billing.html"
+    - q: "How do I schedule time at the DBIC?"
+      a: "With an approved protocol, email Courtney Rogers. Requests are made in monthly windows by funding tier."
+      url: "/policies/scheduling.html"
+    - q: "How can I access the DBIC calendar?"
+      a: "Ask Courtney Rogers for access to the Outlook calendar, or view it on the [Scheduling page](/policies/scheduling.html#calendar)."
+      url: "/policies/scheduling.html"
+    - q: "What is the DBIC’s cancellation policy?"
+      a: "Booked time that is cancelled is still charged, though this charge will be reduced or waived with sufficient notice."
+      url: "/policies/cancellations.html"
 computing:
   title: "Accessing computing resources and data"
   items:
-    - { q: "How do I get access to Discovery and other research computing resources?", url: "/research_infrastructure/computer_resources.html#sysaccess" }
-    - { q: "How can I use DBIC's allocation on Discovery?", url: "/research_infrastructure/discovery.html" }
-    - { q: "Where is DBIC on DartFS?", url: "/research_infrastructure/computer_resources.html#datastorage" }
-    - { q: "Where do I find my scans?", url: "/research_infrastructure/computer_resources.html#dicomstorage" }
-    - { q: "What datasets does the DBIC host?", url: "/research_infrastructure/datasets.html" }
+    - q: "How do I get access to Discovery and other research computing resources?"
+      a: "You can find information on the [Research Computing website](https://rc.dartmouth.edu/) and can contact Research Computing directly by emailing [research.computing@<wbr>dartmouth.edu](mailto:research.computing@dartmouth.edu) (opens a support ticket)."
+      url: "/research_infrastructure/computer_resources.html#sysaccess"
+    - q: "How can I use DBIC’s allocation on Discovery?"
+      a: "See the [Using Discovery](/research_infrastructure/discovery.html) section for background and contact [Jamie Ford](mailto:james.c.ford@dartmouth.edu?subject=DBIC%20allocation%20on%20Discovery) with any questions or a request for access."
+      url: "/research_infrastructure/discovery.html"
+    - q: "Where is DBIC on DartFS?"
+      a: "The main directory is `/dartfs/rc/lab/D/DBIC/DBIC`."
+      url: "/research_infrastructure/computer_resources.html#datastorage"
+    - q: "Where do I find my scans?"
+      a: "New scans arrive in `dbic-inbox/DICOM` under the main DBIC directory, organized by date and accession number."
+      url: "/research_infrastructure/computer_resources.html#dicomstorage"
+    - q: "How do I locate a scan I can see in the DBIC inbox?"
+      url: "/research_infrastructure/computer_resources.html#datastorage"
+    - q: "What datasets does the DBIC host?"
+      a: "Public datasets hosted for DBIC users: see the [datasets page](/research_infrastructure/datasets.html) for each dataset's access terms."
+      url: "/research_infrastructure/datasets.html"

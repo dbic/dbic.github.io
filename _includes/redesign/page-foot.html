@@ -4,10 +4,10 @@
   <div class="wrap">
     <div class="sec-head reveal"><p class="eyebrow">Common questions</p><h2 id="h-faq">{{ grp.title | escape }}</h2></div>
     <ul class="faq-list reveal">
-      {%- for it in grp.items %}{% capture href %}{% include redesign/href.html url=it.url %}{% endcapture %}
-      <li><a href="{{ href | strip }}">{{ it.q | escape }}</a></li>
-      {%- endfor %}
+      {%- include redesign/faq-items.html items=grp.items %}
     </ul>
+    {%- capture faqhref %}{% include redesign/href.html url='/faqs.html' %}{% endcapture %}
+    <p class="faq-more reveal"><a href="{{ faqhref | strip }}">All frequently asked questions →</a></p>
   </div>
 </section>
 {%- endif %}

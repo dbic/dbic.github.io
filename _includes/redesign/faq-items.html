@@ -1,0 +1,8 @@
+{%- comment -%}
+  The questions of one group, as list items: each question (a link to the page with the full details) and, if there is one, its
+  short answer. Used by the FAQs page and by the "Common questions" strip at the foot of a page, so both show the same pool
+  (_data/faq.yml). Use it with:  include redesign/faq-items.html items=grp.items
+{%- endcomment -%}
+{%- for it in include.items %}{% capture href %}{% include redesign/href.html url=it.url %}{% endcapture -%}
+<li><a href="{{ href | strip }}">{{ it.q | escape }}</a>{% if it.a %}{{ it.a | markdownify | strip }}{% endif %}</li>
+{% endfor -%}

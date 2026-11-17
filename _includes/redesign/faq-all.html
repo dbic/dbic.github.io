@@ -1,0 +1,9 @@
+{%- comment -%}
+  Every question in _data/faq.yml, group by group, for the FAQs page. Groups appear in the order given by "order" in that file.
+{%- endcomment -%}
+{%- for key in site.data.faq.order %}{% assign grp = site.data.faq[key] -%}
+<h2 id="faq-{{ key }}">{{ grp.title | escape }}</h2>
+<ul>
+{% include redesign/faq-items.html items=grp.items -%}
+</ul>
+{% endfor -%}

@@ -37,7 +37,7 @@ hero:
 status:
   - { kind: next_event, category: "Safety training", label: "Next safety training", url: "/policies/safetytraining.html" }
   - { kind: scan_windows, label: "Scan-time requests", url: "/policies/scheduling.html" }
-  - { kind: contact, label: "Questions?", title: "Courtney Rogers", text: "Scheduling, protocols and training", url: "mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20inquiry" }
+  - { kind: contact, label: "Questions about our Center?", title: "Contact Courtney Rogers", url: "mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20inquiry" }
 
 # "Coming up" panel. Its content comes from events.csv and scan_windows.csv.
 #   tabs: one tab per category; "category" must match the Category column of events.csv
@@ -78,8 +78,8 @@ community:
 people:
   eyebrow: "People"
   title: "The people who run the center"
-  contact_title: "Questions about scanning, protocols or training?"
-  contact_text: "Courtney Rogers manages scheduling, protocol review and training. Write to her first and she will point you to the right person."
+  contact_title: "Questions about our Center?"
+  contact_text: "Contact Courtney Rogers"
   contact_button: { text: "Email the DBIC", url: "mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20inquiry" }
   find_title: "Find us"
   address:
