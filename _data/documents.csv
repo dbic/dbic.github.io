@@ -1,4 +1,11 @@
 id,title,category,file,featured,dated,dated_text,note,check
+protocol-application,DBIC protocol application,Forms & applications,/assets/dbic/docs/forms/2026dbicappv2.docx,,,2026,,Confirmed current (Nov 2026); the protocol and forms pages both use this file. A year in the file name means a rename every year.
+protocol-instructions,How to submit a protocol,Forms & applications,/policies/dbic_protocol.html,,,,,
+consent-template,fMRI consent form template (CPHS),Forms & applications,/assets/dbic/docs/forms/fmri_consent_template_01212019.doc,,2019-01-21,,,Date read from the file name (2019). Check against the current CPHS template; legacy .doc format.
+participant-info-sheet,Participant information sheet,Participant materials,/assets/dbic/docs/forms/dbic_info_sheet.docx,,,,"Lists common things participants may not think of, such as non-removable piercings and some hair and skin products.",
+confirmation-email,Email template: scan confirmation,Participant materials,/assets/dbic/docs/forms/fmri_confirmation_email.docx,,,,,
+week-before-email,Email template: one-week reminder,Participant materials,/assets/dbic/docs/forms/week_before_email.docx,,,,,
+day-before-email,Email template: day-before reminder,Participant materials,/assets/dbic/docs/forms/daybefore_reminder_email.docx,,,,,
 pre-scan-checklist,Pre-scan experimenter checklist,Safety & screening,/assets/dbic/docs/forms/mrichecklist08012026.pdf,yes,2026-08-01,,,Date read from the file name.
 subject-screening,Subject screening policy,Safety & screening,/assets/dbic/docs/policies/subjectscreen_2024.pdf,yes,,2024,,Date read from the file name.
 metal-screening,MRI metal safety screening form,Safety & screening,/assets/dbic/docs/forms/metalscreen_04132026.pdf,yes,2026-04-13,,Also called the 3T MRI safety screening sheet.,Date read from the file name.
@@ -14,13 +21,6 @@ conducting-research,Conducting research in the DBIC,Policies & procedures,/asset
 cancellation-policy,Cancellation policy,Policies & procedures,/policies/cancellations.html,,,,,
 scanning-rates,Scanning rates,Policies & procedures,/policies/dbic_billing.html,,,,,
 scheduling-policy,Scheduling policy and request windows,Policies & procedures,/policies/scheduling.html,,,,,
-protocol-application,DBIC protocol application,Forms & applications,/assets/dbic/docs/forms/2026dbicappv2.docx,,,2026,,Confirmed current (Nov 2026); the protocol and forms pages both use this file. A year in the file name means a rename every year.
-protocol-instructions,How to submit a protocol,Forms & applications,/policies/dbic_protocol.html,,,,,
-consent-template,fMRI consent form template (CPHS),Forms & applications,/assets/dbic/docs/forms/fmri_consent_template_01212019.doc,,2019-01-21,,,Date read from the file name (2019). Check against the current CPHS template; legacy .doc format.
-participant-info-sheet,Participant information sheet,Participant materials,/assets/dbic/docs/forms/dbic_info_sheet.docx,,,,"Lists common things participants may not think of, such as non-removable piercings and some hair and skin products.",
-confirmation-email,Scan confirmation email template,Participant materials,/assets/dbic/docs/forms/fmri_confirmation_email.docx,,,,,
-week-before-email,Reminder email template: one week before,Participant materials,/assets/dbic/docs/forms/week_before_email.docx,,,,,
-day-before-email,Reminder email template: day before,Participant materials,/assets/dbic/docs/forms/daybefore_reminder_email.docx,,,,,
 parking-email,Parking email template (Transportation Services),Parking & visiting,/assets/dbic/docs/forms/ts_email_template.docx,,,,For Dartmouth-affiliated participants who park without a pass.,
 campus-parking-map,Campus parking map,Parking & visiting,/assets/transportation/parking/parking_maps/campusparkingmap1132023.pdf,,,,,A copy of a Dartmouth Campus Planning map (2022). Consider linking Dartmouth's current map. The forms page used a second copy under assets/dbic/docs/forms/.
 visitor-parking-map,Visitor parking map,Parking & visiting,/assets/transportation/parking/parking_maps/visitorparkingmap992022.pdf,,,,,A copy of a Dartmouth map. Consider linking Dartmouth's current map.

@@ -12,7 +12,7 @@ groups:
       - { title: "Schedule scan time", url: "/policies/scheduling.html", keywords: "calendar book request tier peak off-peak hours deadlines", popular: true }
       - { title: "Scanning rates", url: "/policies/dbic_billing.html", keywords: "cost price fees billing invoice rates", popular: true }
       - { title: "Cancellations", url: "/policies/cancellations.html", keywords: "cancel policy" }
-      - { title: "Forms & templates", url: "/policies/forms_templates.html", keywords: "consent screening reminder email templates" }
+      - { title: "Documents & forms", url: "/policies/forms_templates.html", keywords: "consent screening reminder email templates guides policies documents" }
       - { title: "Parking & visiting", url: "/policies/dbic_parking.html", keywords: "visit visitor parking directions" }
   - title: "Training & safety"
     items:

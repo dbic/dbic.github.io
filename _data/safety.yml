@@ -8,4 +8,4 @@ rules:
 docs:
   title: "Policy & document library"
   text: "The documents referenced in our trainings and protocols."
-  button: { text: "All forms & templates", url: "/policies/forms_templates.html" }
+  button: { text: "All documents & forms", url: "/policies/forms_templates.html" }

@@ -6,7 +6,7 @@ actions:
   - { text: "Parking & visiting", url: "/policies/dbic_parking.html", style: "outline" }
 related:
   - { title: "How a study works", url: "/research-with-us.html" }
-  - { title: "Forms & templates", url: "/policies/forms_templates.html" }
+  - { title: "Documents & forms", url: "/policies/forms_templates.html" }
   - { title: "FAQs", url: "/faqs.html" }
 ---
 
