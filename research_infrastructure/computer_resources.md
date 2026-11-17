@@ -26,7 +26,9 @@ related:
 
 ## DBIC systems access
 
-Research Computing ([research.computing@dartmouth.edu](mailto:research.computing@dartmouth.edu?subject=DBIC)) is available for providing new user accounts, access to data, and help with existing user accounts across campus. For access to DBIC specific resources (e.g., shared datasets and our allocation of Discovery CPUs), users are welcome to contact DBIC directly ([James.C.Ford@dartmouth.edu](mailto:james.c.ford@dartmouth.edu?subject=DBIC%20systems%20access)), as Research Computing will typically either redirect these topics to DBIC, or contact DBIC on your behalf.
+Research Computing ([research.computing@dartmouth.edu](mailto:research.computing@dartmouth.edu?subject=DBIC)) helps with user accounts across campus; emailing that address opens a support ticket. Everyone at Dartmouth already has an account through their NetID; Research Computing adds you to the groups that give access to particular resources.
+
+For access to DBIC-specific resources (such as the shared datasets and our Discovery allocation) and for troubleshooting, please contact DBIC directly ([James.C.Ford@dartmouth.edu](mailto:james.c.ford@dartmouth.edu?subject=DBIC%20systems%20access)). Research Computing will typically either redirect these topics to DBIC or contact DBIC on your behalf, so DBIC may be involved in access decisions whether or not you realize it.
 
 <a id="datastorage"></a>
 
