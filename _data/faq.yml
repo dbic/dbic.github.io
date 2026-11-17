@@ -11,8 +11,8 @@ scanning:
 computing:
   title: "Accessing computing resources and data"
   items:
-    - { q: "How do I obtain a new user account?", url: "/research_infrastructure/computer_resources.html" }
-    - { q: "How can I access Discovery?", url: "/research_infrastructure/discovery.html" }
+    - { q: "How do I get access to Discovery and other research computing resources?", url: "/research_infrastructure/computer_resources.html#sysaccess" }
+    - { q: "How can I use DBIC's allocation on Discovery?", url: "/research_infrastructure/discovery.html" }
     - { q: "Where is DBIC on DartFS?", url: "/research_infrastructure/computer_resources.html#datastorage" }
     - { q: "Where do I find my scans?", url: "/research_infrastructure/computer_resources.html#dicomstorage" }
     - { q: "What datasets does the DBIC host?", url: "/research_infrastructure/datasets.html" }
