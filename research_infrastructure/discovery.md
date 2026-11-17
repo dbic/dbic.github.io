@@ -1,5 +1,5 @@
 ---
-title: "Using Discovery"
+title: "Using DBIC's Discovery allocation"
 source_url: https://www.dartmouth.edu/dbic/research_infrastructure/discovery.html
 retrieved: 2026-11-04
 lead: "DBIC's share of the Discovery computing cluster: how to use it, the limits that apply, and good practice."
@@ -12,7 +12,7 @@ related:
 
 [Research Infrastructure](index.md) >
 
-# DBIC policy for computing resources on Discovery
+# Using DBIC's Discovery allocation
 
 - [Overview](#overview)
 - [Cluster usage](#clusterusage)
@@ -24,37 +24,22 @@ related:
 
 ## Overview
 
-DBIC owns a share of 15 Nodes on the Research Computing (RC) Discovery cluster, each node comprising 16 cores totaling 240 cores. Under RC's sharing policy, Discovery users can, subject to availability, use additional nodes beyond their own, so the DBIC sets a limit of 240 cores on each DBIC user. Note that the SLURM scheduler enforces hard limits on resource allocation, so that once DBIC usage reaches a cap, no more DBIC jobs can run until resources are freed. In order to ensure equitable service to all DBIC users and to preserve the peace in our community, we aim to adopt a DBIC-specific set of policies. These policies are explained below. The implementation and enforcement of policies is carried out with the Research Computing Systems Administrators.
+DBIC owns a share of 15 Nodes on the Research Computing (RC) Discovery cluster, each node comprising 16 cores totaling 240 cores. Under RC's sharing policy, Discovery users can, subject to availability, use additional nodes beyond their own, so the DBIC sets a limit of 240 cores on each DBIC user. Note that the SLURM scheduler enforces hard limits on resource allocation, so that once DBIC usage reaches a cap, no more DBIC jobs can run until resources are freed. To ensure fair service for all DBIC users, the DBIC applies the policies below. RC system administrators implement and enforce them.
 
 ### Interactive nodes
 
-Access to the Discovery cluster requires logging on to an interactive
-node using SSH and your DartID credentials. The primary interactive
-head node (discovery7.hpcc.dartmouth.edu) may be used for normal file
-manipulation and for submitting jobs to the cluster via SLURM. The
-head node must not be used for interactive jobs that require large
-amounts of memory or multiple processors.
+Access to the Discovery cluster requires logging on to an interactive node using SSH and your DartID credentials.
 
-**Ndoli:** For testing code or running interactive jobs, there is a
-  DBIC-dedicated interactive node called Ndoli (ndoli.dartmouth.edu)
-  available to all DBIC users with Discovery access. DBIC users are
-  encouraged to use this resource for testing code before submitting
-  large jobs to the cluster.
+| Node | Address | Who can use it | Use it for |
+|---|---|---|---|
+| Discovery head node | discovery7.hpcc.dartmouth.edu | all Discovery users | file handling and submitting jobs via SLURM; not for interactive jobs that need a lot of memory or multiple processors |
+| Ndoli | ndoli.dartmouth.edu | all DBIC users with Discovery access | High memory system for testing code and interactive jobs |
+| Andes, Polaris | andes.dartmouth.edu, polaris.dartmouth.edu | all Discovery users | High memory systems for testing code and interactive jobs |
 
-**Andes and Polaris**: Similar to Ndoli, but not limited to only DBIC
-  users, interactive nodes Andes (andes.dartmouth.edu) and Polaris
-  (polaris.dartmouth.edu) are also available for interactive jobs that
-  require large amounts of memory. For more information see the High
-  Performance Computing section of the Dartmouth Services Portal.
-
-[Dartmouth Services Portal: High Performance Computing](https://services.dartmouth.edu/TDClient/1806/Portal/Requests/ServiceCatalog?CategoryID=11669)
+DBIC users are encouraged to use Ndoli for testing code before submitting large jobs to the cluster. For more information, see the [Dartmouth Services Portal: High Performance Computing](https://services.dartmouth.edu/TDClient/1806/Portal/Requests/ServiceCatalog?CategoryID=11669).
 
 ## Using DBIC's allocation
 
-- [Cluster usage](#clusterusage)
-- [Best practices guidelines for SLURM Cluster usage](#bestpractices)
-- [Storage space on Discovery hard drives](#discoverystorage)
-- [Be a good citizen](#citizen)
 
 <a id="clusterusage"></a>
 
