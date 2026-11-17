@@ -51,12 +51,12 @@ The SLURM job scheduler provides for specifying user limits for Trackable Resour
 
 **The following limits are in effect for all DBIC Account users:**
 
-- GroupWallTime: 1680 days
-- IndividualWallTime: 163 days
-- GroupMaxCPUs: 1280
-- IndividualMaxCPUs: 240
+| Limit | Whole DBIC group | Per person |
+|---|---|---|
+| Wall time (core-days) | 1680 | 163 |
+| Maximum CPUs | 1280 | 240 |
 
-Note that the wall-time for a single job is the time the job is running multiplied by the number of cores that the job uses. So the individual wall time (163 days or 3912 hours) allows for any of the following scenarios:
+Wall time is the time a job runs multiplied by the number of cores it uses. So the individual wall time (163 days or 3912 hours) allows for any of the following scenarios:
 
 **A single user can simultaneously run:**
 
@@ -67,7 +67,7 @@ Note that the wall-time for a single job is the time the job is running multipli
 - 10 eight-core jobs that run for two days
 - 10 sixteen-core jobs that run for 1 day
 
-The most efficient way to get your jobs running is to chunk them into small chunks, and submit them in parallel to the cluster, so that each job chunk uses a small number of cpu's (ideally just one!), and that the complete in a short amount of time (a few hours is ideal). Long jobs that take up multiple cpus, while occasionally necessary, should be avoided.
+The most efficient way to get your jobs running is to split them into small chunks and submit them in parallel, so that each chunk uses few CPUs (ideally just one) and completes in a short time (a few hours is ideal). Long jobs that take up multiple cpus, while occasionally necessary, should be avoided.
 
 **Access to the DBIC allocation can be requested from [Jamie Ford](mailto:james.c.ford@dartmouth.edu?subject=DBIC%20allocation). Requests can also be made for variations from the standard DBIC TRES limits.**
 
