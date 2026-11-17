@@ -62,7 +62,7 @@ amounts of memory or multiple processors.
 
 ### Individual user limits on trackable resources and quality of service
 
-The SLURM job scheduler provides for specifying user limits for Trackable Resources (TRES) by using a mechanism called Quality of Service (QOS). A QOS defines a level of service for all users who are assigned to that particular QOS. All DBIC users are assigned to a DBIC-specific QOS with individual limits on TRES. This includes a hard limit of 240 cores that an individual can use at any time.
+The SLURM job scheduler provides for specifying user limits for Trackable Resources (TRES), and all DBIC users have individual limits on TRES. This includes a hard limit of 240 cores that an individual can use at any time.
 
 **The following limits are in effect for all DBIC Account users:**
 
@@ -140,4 +140,4 @@ Your Dartmouth ID and password are needed to log in to your Discovery account. A
 
 ### Never borrow someone else's resources
 
-If you are having trouble getting jobs done because you have maxed-out your TRES quota, you should email the SLURM coordinator to request a temporary increase in your limits. However, it might be tempting to ask another DBIC user, whose account is otherwise idle, to run your jobs for you, thereby doubling the resources available on the cluster for running your jobs. Please don't do this because it is unfair to other users. All users should only run jobs under their account if they are directly involved in the project as a collaborator. So if two users are working on the same project, it should be fine for two users to divvy up the jobs and run them on two accounts.
+If you are having trouble getting jobs done because you have maxed-out your TRES quota, it might be tempting to ask another DBIC user, whose account is otherwise idle, to run your jobs for you, thereby doubling the resources available on the cluster for running your jobs. Please don't do this because it is unfair to other users. All users should only run jobs under their account if they are directly involved in the project as a collaborator. So if two users are working on the same project, it should be fine for two users to divvy up the jobs and run them on two accounts.
