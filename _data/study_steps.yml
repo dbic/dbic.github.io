@@ -37,7 +37,7 @@ steps:
     heading: "4. Request scan time"
     bullets:
       - "With an approved protocol, email your request to Courtney Rogers, who schedules all scanner activity."
-      - "Time is allocated in three tiers (grant-funded, department-funded, then everyone else), each with a monthly request window."
+      - "Time is allocated in three tiers (grant-funded, DOF-funded, then all other projects), each with a monthly request window."
       - "Evenings and weekends need both a certified operator and a [scan buddy](/policies/safetytraining.html#scanbuddy); the [scan hours](/policies/scheduling.html#scanhours) are on the scheduling page."
     links:
       - { text: "Scheduling details", url: "/policies/scheduling.html", style: solid }
