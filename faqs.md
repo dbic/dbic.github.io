@@ -1,5 +1,5 @@
 ---
-title: "FAQs"
+title: "FAQ"
 source_url: https://www.dartmouth.edu/dbic/faqs.html
 retrieved: 2026-11-04
 lead: "The most common questions about scanning, computing and datasets, with short answers and links to the full details."
@@ -13,6 +13,6 @@ related:
 
 [Home](/ "Home") >
 
-# FAQs
+# FAQ
 
 {% include redesign/faq-all.html %}

@@ -37,7 +37,7 @@ Recently, the world-wide neuroscience community has experienced a rise in data s
 
 ### Contact
 
-For questions about existing datasets or requests to add new datasets, please contact Jamie Ford (James.C.Ford@dartmouth.edu)
+For questions about existing datasets or requests to add new datasets, please contact Jamie Ford (James.C.Ford@dartmouth.edu). Different datasets are administered by different people, so some entries give a different contact for access; for those, use the contact listed in the entry.
 
 <a id="dbicqa"></a>
 
@@ -56,7 +56,7 @@ The Dartmouth Brain Imaging Center's QA data, converted to BIDS standard, can be
 
 ## Narratives dataset
 
-The Narratives Dataset is a large collection of fMRI studies in natural language processing conducted at [Princeton Neuroscience Institute](https://pni.princeton.edu/) by the labs of Professors [Ken Norman](https://pni.princeton.edu/faculty/kenneth-norman) and [Uri Hasson](https://psychology.princeton.edu/people/uri-hasson) and procured by DBIC alumnus Dr. [Sam Nastase](https://snastase.github.io/). The dataset consists of normalized 3T fMRI data collected while subjects (345 individuals) listened to various spoken word narratives with 28 unique stories and over 800 scanning sessions. This dataset is a benchmark for testing models of language processing and language comprehension.
+The Narratives Dataset is a large collection of fMRI studies in natural language processing conducted at [Princeton Neuroscience Institute](https://pni.princeton.edu/) by the labs of Professors [Ken Norman](https://pni.princeton.edu/faculty/kenneth-norman) and [Uri Hasson](https://psychology.princeton.edu/people/uri-hasson). The dataset consists of normalized 3T fMRI data collected while subjects (345 individuals) listened to various spoken word narratives with 28 unique stories and over 800 scanning sessions. This dataset is a benchmark for testing models of language processing and language comprehension.
 
 - **Path to the Narratives dataset on Discovery:** `/dartfs/rc/lab/D/DBIC/DBIC/archive/narratives`
 - **Access:** Open (no restrictions to `rc-DBIC` users)

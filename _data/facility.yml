@@ -15,7 +15,7 @@ stats:
   - { count_of: datasets, label: "public datasets hosted for DBIC users" }
 
 specs:
-  - { title: "The scanner", color: green, text: "3T with a 60 cm bore, 0.25 ppm homogeneity over a 40 cm sphere, and simultaneous multislice. Vendor packages cover BOLD, diffusion and spectroscopy.", link: "/research_infrastructure/fmri_scanner.html", link_text: "Full specifications" }
+  - { title: "The scanner", color: green, text: "3 T with a 60 cm bore, 0.25 ppm homogeneity over a 40 cm sphere, and simultaneous multislice. Vendor packages cover BOLD, diffusion and spectroscopy.", link: "/research_infrastructure/fmri_scanner.html", link_text: "Full specifications" }
   - { title: "Head coils", color: teal, text: "64-, 32- and 20-channel phased-array coils. The 64-channel coil delivers the highest SNR and parallel-imaging performance.", link: "/research_infrastructure/coils.html", link_text: "Compare coils" }
   - { title: "Tasks & recording", color: indigo, text: "Projection and audio delivery, response devices, eye tracking, and physiological recording for rich behavioral studies.", link: "/research_infrastructure/peripherals.html", link_text: "See peripherals" }
   - { title: "Quality assurance", color: amber, text: "Scanner QA data are archived in BIDS format and available to DBIC users, so performance is documented over time.", link: "/research_infrastructure/qualityassurance.html", link_text: "QA program" }

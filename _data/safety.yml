@@ -4,7 +4,7 @@ rules:
   - { icon: users, title: "Two people in the control room, always", text: "At least one certified scan operator and one scan buddy (a safety-trained assistant) are present at all times." }
   - { icon: shield, title: "Everyone is screened", text: "Participants and personnel are screened for MRI safety and metal, with metal detectors and a controlled airlock door to the MRI suite." }
   - { icon: award, title: "Trained and certified operators", text: "Safety training for all research personnel; operator certification requires hands-on training with a certified operator." }
-  - { icon: alert, title: "Emergencies and incidents have a procedure", text: "Emergency practices, an incident-reporting policy, and cleaning and housekeeping standards are published and part of every training." }
+  - { icon: alert, title: "Emergencies and incidents follow a set procedure", text: "Emergency practices, an incident-reporting policy, and cleaning and housekeeping standards are published and covered in every training." }
 docs:
   title: "Policy & document library"
   text: "The documents referenced in our trainings and protocols."

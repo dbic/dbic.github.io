@@ -13,7 +13,7 @@ date,time,category,title,detail,deadline,url,date_label,talk
 2027-05-27,10:00–11:30am,Safety training,MRI safety training,,2027-05-20,/policies/safetytraining.html,
 2019-09-27,,Brown bag,DBIC Orientation,,,,,
 2019-11-01,,Brown bag,Yaroslav Halchenko,Dartmouth College,,,,ReproIn and DataLad
-2019-11-12,,Brown bag,Phil Kragel,UC-Boulder,,,,Understanding emotions as distributed brain representations
+2019-11-12,,Brown bag,Phil Kragel,University of Colorado Boulder,,,,Understanding emotions as distributed brain representations
 2020-01-10,,Brown bag,Chandana Nambukara,Dartmouth College,,,,Multi-echo sequences at DBIC
 2020-02-28,,Brown bag,Adam Steel,Dartmouth College,,,,Distinct neural substrates for scene perception and imagery
 2020-03-06,,Brown bag,Michael Peer,University of Pennsylvania,,,,"Cognitive maps across domains: Space, time, and social networks"
@@ -21,8 +21,8 @@ date,time,category,title,detail,deadline,url,date_label,talk
 2020-05-22,,Brown bag,Akram Bakkour,Columbia University,,,,The role of memory in bridging past experience with future decisions
 2020-07-02,,Brown bag,DBIC Phase 1A Reopening Discussion,,,,,
 2020-07-29,,Brown bag,DBIC Phase 1B Reopening Discussion,,,,,
-2020-08-14,,Brown bag,Anna Leshinskaya,UC-Davis,,,,How learned relations influence neural responses to objects and events
-2020-09-11,,Brown bag,Seongmin A. Park,UC-Davis,,,,How does the brain construct and navigate a cognitive map of abstract relationships to guide novel decision-making?
+2020-08-14,,Brown bag,Anna Leshinskaya,UC Davis,,,,How learned relations influence neural responses to objects and events
+2020-09-11,,Brown bag,Seongmin A. Park,UC Davis,,,,How does the brain construct and navigate a cognitive map of abstract relationships to guide novel decision-making?
 2020-09-18,,Brown bag,Piergiorgio (PG) Salvan,"University of Oxford, UK",,,,Causal evidence of network communication in whole-brain dynamics through a multiplexed neural code
 2020-10-16,,Brown bag,Clare Grall,Dartmouth College,,,,The nuance of naturalistic: A media approach to naturalistic neuroscience
 2020-11-06,,Brown bag,Heini Saarimaki,"Tampere University, Finland",,,,Examining the neural basis of emotional experiences with naturalistic paradigms
@@ -55,7 +55,7 @@ date,time,category,title,detail,deadline,url,date_label,talk
 2023-11-03,,Brown bag,Natalia Egorova-Brumley,Melbourne School of Psychological Sciences,,,,White matter changes post-stroke
 2023-12-08,,Brown bag,Francesca Setti,"IMT School for Advanced Studies Lucca, Italy",,,,Characterizing the functional properties of human (multi)sensory areas using naturalistic conditions
 2024-02-29,,Brown bag,Fan Cheng,Kyoto University,,,,Toward deciphering neural representations behind visual illusions using reconstruction methods
-2024-04-26,,Brown bag,Ray Lee,"University of Texas, Health Science Center at San Antonio",,,,"Quantitative brain-to-brain interactions in eye gaze between parents and children: their brain networks, communication modes, and information contents"
+2024-04-26,,Brown bag,Ray Lee,University of Texas Health Science Center at San Antonio,,,,"Quantitative brain-to-brain interactions in eye gaze between parents and children: their brain networks, communication modes, and information contents"
 2024-08-12,,Brown bag,Haiyan Wu,University of Macau,,,,"The intersections of emotion, decision-making, and memory in the human brain"
 2024-11-08,,Brown bag,Georg Oeltzschner,Johns Hopkins Medicine,,,,Towards open in-vivo MRS: Modern data analysis methods and infrastructure
 2025-04-25,,Brown bag,Duke Shereen,Advanced Science Research Center - CUNY Graduate Center,,,,In Vivo Human Brain Mapping and Quantification of Electrical Currents
