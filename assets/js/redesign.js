@@ -89,17 +89,31 @@
     });
   }
 
-  /* ---------- quick find (built from the same menu data as the header and footer) ---------- */
+  /* ---------- quick find: the menu topics first, then pages that mention the words (the index is assets/search-index.json) ---------- */
   (function () {
     var qf = $('#qf'); if (!qf) return;
-    var qfIn = $('#qf-input'), qfList = $('#qf-list'), active = 0, QF = [];
+    var qfIn = $('#qf-input'), qfList = $('#qf-list'), active = -1, QF = [], DOCS = null, state = 'idle';
     (J('menu-data') || []).forEach(function (g) {
       (g.items || []).forEach(function (it) { QF.push({ t: it.title, u: it.url, g: g.title, k: it.keywords || '', p: it.popular ? 1 : 0 }); });
     });
-    function render() {
-      var tokens = qfIn.value.toLowerCase().split(/\s+/).filter(Boolean), rows;
-      if (!tokens.length) rows = QF.filter(function (x) { return x.p; });
-      else rows = QF.map(function (x, i) {
+    var MAIL = 'mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20question';
+    var STOP = ' a an the i me my we our you your it its this that these those do does did how what where when who which why can could should would will is are am be was were have has had to of for in on at by as if from into about any and or with need get much many there '.split(' ');
+    /* entries that come from data (FAQ answers, datasets, documents, talks, people) can point at the same page as a topic and still be a different answer */
+    var DATA = { 'FAQ': 1, 'Datasets': 1, 'Documents & forms': 1, 'Brown bags': 1, 'People': 1 };
+    /* when two results score the same, ordinary pages come before FAQs and datasets, then documents, then people and talks */
+    var RANK = { 'FAQ': 1, 'Datasets': 1, 'Documents & forms': 2, 'People': 3, 'Brown bags': 4 };
+    var live = document.createElement('p'); live.className = 'sr'; live.setAttribute('aria-live', 'polite'); (qf.querySelector('.qf-box') || qf).appendChild(live);
+    function isOpen() { return qf.open || qf.hasAttribute('open'); }
+    function meaningful(tokens) { var k = tokens.filter(function (w) { return STOP.indexOf(w) < 0; }); return k.length ? k : tokens; }
+    function variants(w) { return (w.length > 3 && w.charAt(w.length - 1) === 's') ? [w, w.slice(0, -1)] : [w]; }
+    /* a word matches at the START of a word: "book" finds booking and booked, not logbook */
+    function wrx(w, f) { return new RegExp('(^|[^a-z0-9])(' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', f); }
+    function wfirst(low, w) { var m = wrx(w, '').exec(low); return m ? m.index + m[1].length : -1; }
+    function wcount(low, w) { var m = low.match(wrx(w, 'g')); return m ? m.length : 0; }
+    /* menu topics: the same matching as before */
+    function topics(tokens) {
+      if (!tokens.length) return QF.filter(function (x) { return x.p; });
+      return QF.map(function (x, i) {
         var t = x.t.toLowerCase(), k = String(x.k).toLowerCase(), g = x.g.toLowerCase(), s = 0;
         for (var j = 0; j < tokens.length; j++) {
           var w = tokens[j], hit = 0;
@@ -109,23 +123,84 @@
         }
         return { x: x, s: s, i: i };
       }).filter(Boolean).sort(function (a, b) { return b.s - a.s || a.i - b.i; }).map(function (r) { return r.x; });
-      active = 0;
-      qfList.innerHTML = rows.length ? rows.map(function (x, i) {
-        return '<li><a href="' + esc(href(x.u)) + '"' + (i === 0 ? ' class="on"' : '') + '><span>' + esc(x.t) + '</span><small>' + esc(x.g) + '</small></a></li>';
-      }).join('') : '<li><a href="mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20question"><span>No match. Ask the DBIC team</span><small>email</small></a></li>';
+    }
+    /* pages: every word must appear somewhere; the title counts most, then headings, the introduction, and the text */
+    function prepare(list) { list.forEach(function (d) { d._t = (d.t || '').toLowerCase(); d._h = (d.h || '').toLowerCase(); d._l = (d.l || '').toLowerCase(); d._b = (d.b || '').toLowerCase() + ' ' + (d.g || '').toLowerCase(); }); return list; }
+    function pages(tokens, skip) {
+      var out = [];
+      (DOCS || []).forEach(function (d) {
+        var total = 0, base = d.u.split('#')[0];
+        for (var j = 0; j < tokens.length; j++) {
+          var best = 0, vs = variants(tokens[j]);
+          for (var v = 0; v < vs.length; v++) {
+            var w = vs[v], sc = 0;
+            if (wfirst(d._t, w) > -1) sc = 8; else if (wfirst(d._h, w) > -1) sc = 4; else if (wfirst(d._l, w) > -1) sc = 3;
+            else { var n = wcount(d._b, w); if (n) sc = 1 + Math.min(2, n - 1); }
+            if (sc > best) best = sc;
+          }
+          if (!best) { total = 0; break; }
+          total += best;
+        }
+        if (total && (skip.indexOf(base) < 0 || DATA[d.g])) out.push({ d: d, s: total });
+      });
+      out.sort(function (a, b) { return b.s - a.s || (RANK[a.d.g] || 0) - (RANK[b.d.g] || 0); });
+      var per = {}, res = [];
+      out.forEach(function (r) { var k = r.d.u.split('#')[0]; per[k] = (per[k] || 0) + 1; if (per[k] <= 3 && res.length < 8) res.push(r); });
+      return res;
+    }
+    function snippet(d, tokens) {
+      var src = d.b || d.l || '', low = src.toLowerCase(), at = -1;
+      for (var j = 0; j < tokens.length && at < 0; j++) { var vs = variants(tokens[j]); for (var v = 0; v < vs.length && at < 0; v++) at = wfirst(low, vs[v]); }
+      if (at < 0) return d.l ? esc(d.l) : '';
+      var a = Math.max(0, at - 55), b = Math.min(src.length, at + 100), h = esc((a > 0 ? '… ' : '') + src.slice(a, b) + (b < src.length ? ' …' : ''));
+      tokens.forEach(function (tk) { variants(tk).forEach(function (w) { if (w.length > 1) h = h.replace(new RegExp('(^|[^a-zA-Z0-9])(' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig'), '$1<mark>$2</mark>'); }); });
+      return h;
+    }
+    /* the index is fetched the first time the box opens; if it cannot be loaded the box simply keeps working for the topics */
+    function loadIndex() {
+      if (state !== 'idle') return;
+      if (!window.fetch) { state = 'failed'; DOCS = []; return; }
+      state = 'loading';
+      fetch(href('/assets/search-index.json')).then(function (r) { if (!r.ok) throw new Error('no index'); return r.json(); })
+        .then(function (data) { DOCS = prepare((data && data.docs) || []); state = 'ready'; if (isOpen()) render(); })
+        .catch(function () { DOCS = []; state = 'failed'; if (isOpen()) render(); });
+    }
+    function render() {
+      var typed = qfIn.value.trim(), tokens = meaningful(qfIn.value.toLowerCase().split(/\s+/).filter(Boolean)), html = '';
+      var tp = topics(tokens), pg = tokens.length && DOCS ? pages(tokens, tp.map(function (x) { return x.u.split('#')[0]; })) : [];
+      if (tp.length) {
+        html += '<li class="qf-grp">' + (tokens.length ? 'Topics' : 'Popular topics') + '</li>';
+        (tokens.length ? tp.slice(0, 6) : tp).forEach(function (x) { html += '<li><a href="' + esc(href(x.u)) + '"><span class="qf-t">' + esc(x.t) + '</span><small>' + esc(x.g) + '</small></a></li>'; });
+      }
+      if (pg.length) {
+        html += '<li class="qf-grp">Pages that mention <span class="qf-q">“' + esc(typed) + '”</span></li>';
+        pg.forEach(function (r) { html += '<li><a href="' + esc(href(r.d.u)) + '"><span class="qf-t">' + esc(r.d.t) + '</span><small>' + esc(r.d.g) + '</small><span class="qf-sn">' + snippet(r.d, tokens) + '</span></a></li>'; });
+      }
+      var searching = tokens.length && state === 'loading' && !tp.length && !pg.length;
+      if (tokens.length && !tp.length && !pg.length) {
+        if (searching) html += '<li class="qf-empty">Searching…</li>';
+        else html += '<li class="qf-empty">Nothing found for “' + esc(typed) + '”. Try fewer or different words.</li><li class="qf-mail"><a href="' + MAIL + '"><span class="qf-t">Still stuck? Email the DBIC team</span><small>email</small></a></li>';
+      }
+      qfList.innerHTML = html;
+      /* the first result is selected, so Enter opens it; when only the email link is listed nothing is selected, so Enter never starts an email */
+      var as = $$('a', qfList); active = (as.length && !(as.length === 1 && as[0].parentNode.className === 'qf-mail')) ? 0 : -1;
+      mark();
+      live.textContent = !tokens.length ? '' : (tp.length || pg.length) ? (tp.length + (tp.length === 1 ? ' topic, ' : ' topics, ') + pg.length + (pg.length === 1 ? ' page' : ' pages')) : (searching ? 'Searching' : 'No matches');
       markExternal(qfList);
     }
+    function mark() {
+      var as = $$('a', qfList); as.forEach(function (a) { a.classList.remove('on'); });
+      if (active >= 0 && as[active]) { as[active].classList.add('on'); as[active].scrollIntoView({ block: 'nearest' }); }
+    }
     function move(d) {
-      var items = $$('a', qfList); if (!items.length) return;
-      items[active].classList.remove('on');
-      active = (active + d + items.length) % items.length;
-      items[active].classList.add('on');
-      items[active].scrollIntoView({ block: 'nearest' });
+      var as = $$('a', qfList); if (!as.length) return;
+      active = active < 0 ? (d > 0 ? 0 : as.length - 1) : (active + d + as.length) % as.length;
+      mark();
     }
     function close() { if (qf.close) qf.close(); else qf.removeAttribute('open'); }
     function open() {
       if (typeof qf.showModal === 'function') { if (!qf.open) qf.showModal(); } else qf.setAttribute('open', '');
-      qfIn.value = ''; render(); qfIn.focus();
+      qfIn.value = ''; render(); qfIn.focus(); loadIndex();
     }
     $('#qf-open').addEventListener('click', open);
     $('#qf-close').addEventListener('click', close);
@@ -134,7 +209,7 @@
       if (e.key === 'Escape') { e.preventDefault(); close(); }
       else if (e.key === 'ArrowDown') { e.preventDefault(); move(1); }
       else if (e.key === 'ArrowUp') { e.preventDefault(); move(-1); }
-      else if (e.key === 'Enter') { var a = $$('a', qfList)[active]; if (a) { e.preventDefault(); a.click(); } }
+      else if (e.key === 'Enter') { e.preventDefault(); var a = $$('a', qfList)[active]; if (a) a.click(); }
     });
     qfList.addEventListener('click', function (e) { if (e.target.closest('a')) close(); });
     qf.addEventListener('click', function (e) { if (e.target === qf) close(); });

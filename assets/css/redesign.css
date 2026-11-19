@@ -586,3 +586,12 @@ dialog#qf::backdrop { background: rgba(3, 18, 11, .6); backdrop-filter: blur(3px
 
 /* in tables a word breaks only where it cannot fit, so labels in the first column stay whole */
 .prose .table-wrap th, .prose .table-wrap td { overflow-wrap: break-word; }
+/* quick find: grouped results with a short snippet of the matching text */
+#qf-list a { flex-wrap: wrap; align-items: baseline; row-gap: .1rem; }
+#qf-list .qf-grp { padding: .6rem .9rem .15rem; font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+#qf-list .qf-q { text-transform: none; letter-spacing: 0; }
+#qf-list .qf-t { font-weight: 600; }
+#qf-list .qf-sn { flex-basis: 100%; color: var(--muted); font-size: .88rem; line-height: 1.4; }
+#qf-list mark { background: rgba(255, 205, 60, .45); color: inherit; border-radius: 3px; padding: 0 .1rem; }
+#qf-list .qf-empty { padding: .8rem .9rem; color: var(--muted); }
+#qf-list .qf-mail a { color: var(--muted); }
