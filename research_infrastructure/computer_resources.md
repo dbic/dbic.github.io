@@ -57,6 +57,8 @@ The DICOM files contain reconstructed MRI images obtained directly from the Siem
 
 ## Storage of BIDS
 
+See also: the [DBIC Handbook](https://dbic-handbook.readthedocs.io) (a user maintained resource that supplements this site).
+
 DBIC has adopted the [Brain Imaging Data Structure (BIDS)](https://bids.neuroimaging.io/ "BIDS") file-naming conventions for many recently acquired studies. BIDS is widely used in neuroimaging, and it supports data sharing, reproducible results and open science ([Center for Open Neuroscience](http://centerforopenneuroscience.org/ "Center for Open Neuroscience")), principles the DBIC promotes.
 
 All DBIC investigators are encouraged to convert their data from DICOM to BIDS.
@@ -97,8 +99,6 @@ All MRI data at DBIC is collected following
 [BIDS](https://bids-specification.readthedocs.io "BIDS") datasets
 under [DataLad version control system](http://datalad.org "Datalad")
 (NSF CRCNS 1429999).
-
-Suggested resource: [DBIC BIDS Handbook](https://dbic-handbook.readthedocs.io)
 
 ## DBIC internal
 
