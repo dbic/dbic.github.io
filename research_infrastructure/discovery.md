@@ -45,7 +45,7 @@ DBIC users are encouraged to use Ndoli for testing code before submitting large 
 
 ## Cluster usage
 
-### Individual user limits on trackable resources and quality of service
+### Individual user limits
 
 The SLURM job scheduler provides for specifying user limits for Trackable Resources (TRES), and all DBIC users have individual limits on TRES. This includes a hard limit of 240 cores that an individual can use at any time.
 
@@ -91,19 +91,21 @@ Jobs should only request as many resources as they actually need. So, if a job w
 
 Interactive sessions should be used to test and debug code before submitting large numbers of jobs that might crash or otherwise need to be run again. Interactive sessions can be run on the cluster to provide a shell for users to stop, start, and monitor the progress of the jobs they launch from the interactive command line. Interactive sessions can be run using multiple nodes and cores, with the limit of 240 cores per user. So, if a user runs an interactive session that uses 40 cores, they still have access to 200 cores while the interactive session is running.
 
-It is also possible to run interactive jobs without using any cluster resources by running jobs directly from the command line without submitting any jobs to the cluster. There are two nodes available on for this: x01 and ndoli. Just ssh to one of those nodes from Discovery, and have at it.
+It is also possible to run interactive jobs without using any cluster resources by running jobs directly from the command line without submitting any jobs to the cluster. DBIC maintains its own Discovery head node, Ndoli, which DBIC users can SSH to.
 
 <a id="discoverystorage"></a>
 
 ## Storage space on Discovery hard drives
 
+Both the standard home directory quota and the free lab space below are set out in the [Research Computing Bill of Rights](https://rc.dartmouth.edu/research-computing-bill-of-rights/).
+
 ### Your home directory
 
-Individual User accounts have 50G standard quota. This should be used for all code, writing, and anything that a user may need as they see fit. However, this space is not adequate for storing most datasets, and certainly not for multiple datasets. It is also insufficient for writing temporary files needed for complicated analyses and preprocessing.
+Individual user accounts have a standard quota of 50 GB. This should be used for all code, writing, and anything that a user may need as they see fit. However, this space is not adequate for storing most datasets, and certainly not for multiple datasets. It is also insufficient for writing temporary files needed for complicated analyses and preprocessing.
 
 ### Lab space owned by your PI
 
-All Dartmouth Faculty can request a storage of 1T for free to host data for their lab. This space should be shared among lab members, and managed among those members by respective labs. Faculty members can buy more Lab-dedicated space as needs and resources demand and allow.
+All Dartmouth faculty can request 1 TB of free storage for their lab's data. This space should be shared among lab members, and managed among those members by respective labs. Faculty members can buy more Lab-dedicated space as needs and resources demand and allow.
 
 ### Temporary scratch space
 
@@ -121,8 +123,8 @@ to a permanent location, such as a home directory or lab directory.
 
 ### Never share your login credentials
 
-Your Dartmouth ID and password are needed to log in to your Discovery account. As you should be aware, your Dartmouth ID is connected to all of your personal information concerning your relationship with Dartmouth College, including your academic and employment status, including financial information such as salary, stipend, financial aid, and tax information. Therefore, it is crucial for your own protection and for the protection of the of the computing resources that you **never** share your login credentials.
+Your Dartmouth ID and password are needed to log in to your Discovery account. Your Dartmouth ID gives access to personal information about you (your academic and employment status, pay, stipend, financial aid and tax records) and to the computing resources. Sharing your login credentials puts both at risk.
 
 ### Never borrow someone else's resources
 
-If you are having trouble getting jobs done because you have maxed-out your TRES quota, it might be tempting to ask another DBIC user, whose account is otherwise idle, to run your jobs for you, thereby doubling the resources available on the cluster for running your jobs. Please don't do this because it is unfair to other users. All users should only run jobs under their account if they are directly involved in the project as a collaborator. So if two users are working on the same project, it should be fine for two users to divvy up the jobs and run them on two accounts.
+If you are having trouble getting jobs done because you have maxed-out your TRES quota, do not ask another DBIC user to run your jobs on their idle account to get more resources: this is unfair to other users. All users should only run jobs under their account if they are directly involved in the project as a collaborator. So if two users are working on the same project, it should be fine for two users to divvy up the jobs and run them on two accounts.
