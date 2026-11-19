@@ -27,17 +27,15 @@ Biomedical Informatics Research Network (fBIRN) are generated on
 scans run a standardized fMRI protocol executed on an [agar
 phantom](#phantom) using the DBIC's 32- and (since 2018) 64-channel
 [head coils](coils.md). Details of the FBIRN protocol can be found on the [NITRC fBIRN project page](https://www.nitrc.org/projects/fbirn) and in the references
-below. Longitudinal results of mean ghost percentage,
-signal-to-fluctuation noise ratio (SFNR), and signal-to-noise ratio
-(SNR) are updated here weekly. Abnormalities in any of the metrics may
+below. Longitudinal results for mean ghost percentage, signal-to-fluctuation-noise ratio (SFNR) and signal-to-noise ratio (SNR) are updated here weekly. Abnormalities in any of the metrics may
 indicate instability of some hardware component, and such
 abnormalities are investigated. In addition, the Siemens customer QA
 tool is run to check coil elements of the head coil (weekly) and body
 coil (monthly) and as needed.
 
-The acceptable mean ghost percentage threshold is less than 3% percent (ref 2). The first QA conducted on the [DBIC's Siemens Prisma MAGNETOM](fmri_scanner.md) was September 12, 2016.
+The acceptable mean ghost percentage is less than 3% (ref. 2). The first QA on [DBIC's Siemens Prisma](fmri_scanner.md) was conducted on September 12, 2016.
 
-## 32-channel headcoil
+## 32-channel head coil
 
 ![ghost32ch 11.02.2026](../assets/dbic/images/ghost32ch_20261102.jpg)
 
@@ -45,7 +43,7 @@ The acceptable mean ghost percentage threshold is less than 3% percent (ref 2). 
 
 ![snr32ch 11.02.2026](../assets/dbic/images/snr32ch_20261102.jpg)
 
-## 64-channel headcoil
+## 64-channel head coil
 
 ![ghost 64ch 11.02.2026](../assets/dbic/images/ghost64ch_20261102.jpg)
 
