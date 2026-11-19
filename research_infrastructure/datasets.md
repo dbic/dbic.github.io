@@ -14,7 +14,7 @@ related:
 
 # Public datasets hosted by DBIC
 
-Recently, the world-wide neuroscience community has experienced a rise in data sharing efforts aimed at increasing transparency and reproducibility of experimental findings.  As a result, many collated and annotated functional imaging datasets have become publicly available. Access to such resources provides investigators and students a great opportunity to explore and test models of brain function and cognition. However, many datasets are very large and can be challenging for individuals to access. To facilitate easy access and promote the use of publicly available data resources at DBIC, we host several datasets on the Dartmouth Research Computing file system where they are readily available to DBIC users for analyzing on the Discovery cluster.
+Many public neuroimaging datasets are very large and hard to download one by one. To make them easier to use, the DBIC hosts selected datasets on the Dartmouth Research Computing file system, next to the Discovery cluster, where DBIC users can analyze them directly.
 
 **Access.** To navigate in the DBIC share on DartFS, you need to be in the `rc-DBIC` group (see [DBIC systems access](computer_resources.md#sysaccess)); most DBIC folders on DartFS cannot be reached without it. Each dataset’s “Access” line adds anything else that applies, such as dataset specific terms of use (where these exist, datasets require membership in an additional group, which is added once any requirements have been met).
 

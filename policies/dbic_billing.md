@@ -24,7 +24,7 @@ Rates for scanning effective July 1, 2021.
 |---|---|---|
 | Internal | Peak hours (see [scan hours](/policies/scheduling.html#scanhours)) | $500 |
 | Internal | Off-peak hours, including weekends (see [scan hours](/policies/scheduling.html#scanhours)) | $400 |
-| External | Peak hours (see [scan hours](/policies/scheduling.html#scanhours)) | $700 |
+| External | Peak hours only (see [scan hours](/policies/scheduling.html#scanhours)) | $700 |
 
 ## How billing works
 

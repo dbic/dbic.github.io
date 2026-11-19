@@ -9,9 +9,9 @@ glance:
 actions:
   - { text: "How to sign up", url: "#classsignup" }
   - { text: "Training materials", url: "#materials", style: "outline" }
-  - { text: "Scan operator training", url: "/policies/operator_training.html", style: "outline" }
+  - { text: "MRI operator training", url: "/policies/operator_training.html", style: "outline" }
 related:
-  - { title: "Scan operator training", url: "/policies/operator_training.html" }
+  - { title: "MRI operator training", url: "/policies/operator_training.html" }
   - { title: "Safety & compliance", url: "/safety-compliance.html" }
   - { title: "Documents & forms", url: "/policies/forms_templates.html" }
   - { title: "Who to contact", url: "/contact.html" }

@@ -1,5 +1,5 @@
 ---
-title: "Scan operator training"
+title: "MRI operator training"
 reviewed: "July 1, 2026"
 source_url: https://www.dartmouth.edu/dbic/policies/operator_training.html
 retrieved: 2026-11-04
@@ -13,11 +13,11 @@ related:
 
 [Policies](index.md) >
 
-# Scan operator training
+# MRI operator training
 
 [**Prerequisite: MRI safety training**](safetytraining.md)
 
-The DBIC trains research faculty, postdoctoral fellows, graduate students, and full-time research staff to operate the scanner without an MRI technologist being present. Scan operator training is a two-part process. The first step involves becoming an operator-in-training, and the second step is completion of the hands-on training required for operator certification.
+The DBIC trains research faculty, postdoctoral fellows, graduate students, and full-time research staff to operate the scanner without an MRI technologist being present. MRI operator training is a two-part process. The first step involves becoming an operator-in-training, and the second step is completion of the hands-on training required for operator certification.
 
 ## Step 1: Operator-in-training
 
