@@ -83,7 +83,7 @@ Prof. Jim Haxby, is located at `<server>:/inbox/BIDS/Haxby/Sam/1021\_actions`.
 
 ## Accessing BIDS data using DataLad
 
-To further promote data accesibility, sharing, and reproducibility,
+To further promote data accessibility, sharing, and reproducibility,
 all BIDS formatted data on the DBIC server can be accessed using the
 DataLad file-sharing and data-versioning utility
 (datalad.org). DataLad makes it possible to access your data using the
@@ -95,11 +95,4 @@ space. Instructions on how to use DataLad can be found on the [DataLad website](
 
 All MRI data at DBIC is collected following
 [ReproIn](http://reproin.repronim.org "ReproIn") (NIH
-1P41EB019936-01A1) convention and provided to researchers as
-[BIDS](https://bids-specification.readthedocs.io "BIDS") datasets
-under [DataLad version control system](http://datalad.org "Datalad")
-(NSF CRCNS 1429999).
-
-## DBIC internal
-
-- [Reports](https://rcweb.dartmouth.edu/DBIC/reports/) (Restricted access / NetID authentication required)
+1P41EB019936-01A1) convention.
