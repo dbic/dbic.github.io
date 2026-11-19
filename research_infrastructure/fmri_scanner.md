@@ -29,9 +29,9 @@ Our center is equipped with a state-of-the-art 3 T Siemens MAGNETOM Prisma whole
 
 The scanner operates on the  Siemens XA60 software platform. Vendor supplied packages are available for BOLD (Inline BOLD imaging, 3D PACE syngo and BOLD 3D Evaluation syngo), Diffusion (Diffusion Tensor Imaging, DTI Evaluation and DTI tractography syngo), and Spectroscopy sequences.
 
-## Hardware and coils
+## Hardware
 
-Advanced hardware integration in our system (e.g. homogeneous 3 T magnet,  XR 80/200 gradient system and transmission system) provide excellent B1 homogeneity, and enable novel capabilities such as simultaneous multislice (SMS) acquisition. Tim 4G (the Siemens integrated coil system) enables high image quality, faster acquisition and exam time, and higher SNR.
+Advanced hardware integration in our system (e.g. homogeneous 3 T magnet,  XR 80/200 gradient system and transmission system) provide excellent B1 homogeneity, and enable novel capabilities such as simultaneous multislice (SMS) acquisition.
 
 ## Gradients
 
