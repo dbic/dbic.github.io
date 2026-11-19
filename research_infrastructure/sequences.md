@@ -3,8 +3,6 @@ title: "Sequences"
 source_url: https://www.dartmouth.edu/dbic/research_infrastructure/sequences.html
 retrieved: 2026-11-04
 lead: "The sequences available on the scanner, and where to find their standard settings."
-kit:
-  listcards: ["Sequence settings"]
 related:
   - { title: "fMRI scanner", url: "/research_infrastructure/fmri_scanner.html" }
   - { title: "Head coils", url: "/research_infrastructure/coils.html" }
@@ -15,32 +13,27 @@ related:
 
 # Sequences
 
-Mainstream sequences, including [functional (BOLD)](../assets/dbic/docs/sequences/bold_acquisition.pdf), [diffusion](../assets/dbic/docs/sequences/dwi_acquisiton.pdf), spectroscopy, and anatomical (T1w, T2w, T2-FLAIR), are available for use.
+Mainstream sequences, including functional (BOLD), diffusion, spectroscopy, and anatomical (T1w, T2w, T2-FLAIR), are available for use.
 
-## Standard sequences
+## Available sequences
 
-Vendor supplied gradient and spin echo-based echo planer imaging sequences are available for BOLD (ep2d_bold) and Diffusion (ep2d_diff) imaging.
+Vendor supplied sequences come from Siemens; the others have been installed here.
 
-The following sequences - csi_se, csi_slaser, and the custom-installed MEGA-PRESS - are available for Spectroscopy.
-
-Also available are the standard T1 weighted (mprage), q-space diffusion weighted (qDWI), and field-mapping sequences.
+| Kind of scan | Vendor supplied | Installed (CMRR or custom) | Settings (PDF) |
+|---|---|---|---|
+| **Functional MRI (BOLD)**: brain activity, from blood-oxygenation changes | ep2d_bold | cmrr_mbep2d_bold (also used for multi-echo fMRI) | [BOLD](../assets/dbic/docs/sequences/bold_acquisition.pdf); [Multi-echo fMRI](../assets/dbic/docs/sequences/multiechofmri.pdf) |
+| **Diffusion**: the diffusion of water, used to map white-matter pathways | ep2d_diff; qDWI (q-space diffusion weighted) | cmrr_mbep2d_diff | [Diffusion](../assets/dbic/docs/sequences/dwi_acquisiton.pdf) |
+| **Spectroscopy**: the chemical content of a chosen region | csi_se; csi_slaser | MEGA-PRESS (custom-installed) | |
+| **Anatomical (T1w, T2w, T2-FLAIR)**: brain structure | mprage (T1w); T2w and T2-FLAIR sequences | | |
+| **Field mapping**: magnetic-field uniformity, used to correct image distortion | field-mapping sequences | | |
+| **Spin-echo EPI** | | cmrr_mbep2d_se | |
 
 All of these sequences can be customized (for example slice thickness, repetition and echo times, or turning filters on and off) to suit each researcher’s needs.
 
-## CMRR multiband sequences
+## Simultaneous multislice (SMS)
 
-In addition to the above sequences, we have also installed modified versions of the native [BOLD](../assets/dbic/docs/sequences/bold_acquisition.pdf) and [Diffusion](../assets/dbic/docs/sequences/dwi_acquisiton.pdf) sequences by CMRR at the University of Minnesota. These modified versions provide extended flexibilities to customize the protocols. The cmrr_mbep2d_bold is used to acquire multi-echo images for **multi-echo fMRI**.
+Simultaneous multislice (SMS, also called multiband or MB) acquires several slices at once, so data can be collected faster. It can be used with either the vendor supplied BOLD and diffusion sequences or the CMRR versions that are installed.
 
-- cmrr_mbep2d_bold
-- cmrr_mbep2d_diff
-- cmrr_mbep2d_se
+## CMRR sequences
 
-You can learn more about these sequences in the [CMRR multiband instructions](https://www.cmrr.umn.edu/multiband/Multi-Band_C2P_Instructions_R016a.pdf).
-
-\* Please note that both native (Siemens BOLD and Diffusion) sequences, as well as the cmrr versions, are capable of acquiring simultanous slices (SMS/MB).
-
-## Sequence settings
-
-- [BOLD](../assets/dbic/docs/sequences/bold_acquisition.pdf)
-- [Diffusion](../assets/dbic/docs/sequences/dwi_acquisiton.pdf)
-- [Multi-Echo fMRI](../assets/dbic/docs/sequences/multiechofmri.pdf)
+The CMRR sequences are modified versions of the vendor supplied BOLD and diffusion sequences, made by CMRR at the University of Minnesota. They give more flexibility to customize protocols. More about them: [CMRR multiband instructions (PDF)](https://www.cmrr.umn.edu/multiband/Multi-Band_C2P_Instructions_R016a.pdf).
