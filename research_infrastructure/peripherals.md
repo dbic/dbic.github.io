@@ -163,7 +163,7 @@ The DBIC uses the [SR Research Eyelink 1000 Plus](https://www.sr-research.com/fm
 
 ![Biopac MP160](../assets/dbic/images/biopac.png)
 
-For collecting real-time physiological data during fMRI scanning, such as skin conductance, pulse rate, and respiration rate, DBIC maintains a [BIOPAC MP160](https://www.biopac.com/product/mp150-data-acquisition-systems/) system. The system includes a dedicated MacBook laptop running AcqKnowledge software facilitating data recording. A USB interface allows the investigator to connect their laptop to the BIOPAC system for synchronizing experimental and physiological time-courses, or for sending event markers or arbitrary time-course data. The BIOPAC system is highly modular, modifiable, and flexible -- affording investigators a wide range of options for collecting auxiliary data and enhancing experimental protocols.
+For collecting real-time physiological data during fMRI scanning, such as skin conductance, pulse rate, and respiration rate, DBIC maintains a [BIOPAC](https://www.biopac.com/) MP160 system. The system includes a dedicated MacBook laptop running AcqKnowledge software facilitating data recording. A USB interface allows the investigator to connect their laptop to the BIOPAC system for synchronizing experimental and physiological time-courses, or for sending event markers or arbitrary time-course data.
 
 [BIOPAC user guide](../assets/dbic/docs/userguides/biopac_userguide_091323.pdf)
 
