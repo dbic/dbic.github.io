@@ -15,13 +15,13 @@ related:
 
 # Sequences
 
-Sequences available for use in the DBIC are: [BOLD](../assets/dbic/docs/sequences/bold_acquisition.pdf), [Diffusion](../assets/dbic/docs/sequences/dwi_acquisiton.pdf), Spectroscopy, and multiple anatomical sequences (T1, T2, T2-flair)
+Mainstream sequences, including [functional (BOLD)](../assets/dbic/docs/sequences/bold_acquisition.pdf), [diffusion](../assets/dbic/docs/sequences/dwi_acquisiton.pdf), spectroscopy, and anatomical (T1w, T2w, T2-FLAIR), are available for use.
 
 ## Standard sequences
 
-The standard gradient and spin echo-based echo planer imaging sequences are available for BOLD (ep2d_bold) and Diffusion (ep2d_diff) imaging.
+Vendor supplied gradient and spin echo-based echo planer imaging sequences are available for BOLD (ep2d_bold) and Diffusion (ep2d_diff) imaging.
 
-The following sequences - csi_se, csi_slaser, and the custom-installed "mega press" - are available for Spectroscopy.
+The following sequences - csi_se, csi_slaser, and the custom-installed MEGA-PRESS - are available for Spectroscopy.
 
 Also available are the standard T1 weighted (mprage), q-space diffusion weighted (qDWI), and field-mapping sequences.
 
