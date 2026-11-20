@@ -20,7 +20,7 @@ related:
 - [Data storage and access](#datastorage)
 - [DICOM storage](#dicomstorage)
 - [BIDS storage](#bidsstorage)
-- [Accessing BIDS data using DataLad](#accessingbids)
+- [Using DataLad](#accessingbids)
 
 <a id="sysaccess"></a>
 
@@ -81,12 +81,9 @@ Prof. Jim Haxby, is located at `<server>:/inbox/BIDS/Haxby/Sam/1021\_actions`.
 
 <a id="accessingbids"></a>
 
-## Accessing BIDS data using DataLad
+## Using DataLad
 
-To further promote data accessibility, sharing, and reproducibility,
-all BIDS formatted data on the DBIC server can be accessed using the
-DataLad file-sharing and data-versioning utility
-(datalad.org). DataLad makes it possible to access your data using the
+Researchers can use the DataLad file-sharing and data-versioning utility (datalad.org). DataLad makes it possible to access your data using the
 same version control systems developed for git and git-annex, which
 allows for downloading file hierarchies and meta-data, without
 checking file contents (such as large volumes of time-series fMRI

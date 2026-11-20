@@ -81,7 +81,7 @@ Fairshare scheduling is not currently active on Discovery, so balancing by histo
 
 ### Take turns by avoiding excessively long jobs
 
-Taking Turns is the essence of Fairshare on a cluster. One way to ensure fair turn-taking is to run jobs that take a short time to complete so that the job queue keeps moving. So when possible users should aim to submit multiple short jobs as opposed to one long job that takes a long time to complete.
+One way to ensure fair turn-taking is to run jobs that take a short time to complete so that the job queue keeps moving. So when possible users should aim to submit multiple short jobs as opposed to one long job that takes a long time to complete.
 
 ### Requesting resources
 
