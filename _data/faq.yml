@@ -34,10 +34,10 @@ computing:
   title: "Accessing computing resources and data"
   items:
     - q: "How do I get access to Discovery and other research computing resources?"
-      a: "You can find information on the [Research Computing website](https://rc.dartmouth.edu/) and can contact Research Computing directly by emailing [research.computing@<wbr>dartmouth.edu](mailto:research.computing@dartmouth.edu) (opens a support ticket)."
+      a: "Request an HPC account (also called a “Discovery account”) on the [HPC account request page](https://dashboard.dartmouth.edu/research/hpc_account), signing in with your NetID. Then contact DBIC for access to its resources: see [DBIC systems access](/research_infrastructure/computer_resources.html#sysaccess). General information is on the [Research Computing website](https://rc.dartmouth.edu/)."
       url: "/research_infrastructure/computer_resources.html#sysaccess"
     - q: "How can I use DBIC’s allocation on Discovery?"
-      a: "See the [Using Discovery](/research_infrastructure/discovery.html) section for background and contact [Jamie Ford](mailto:james.c.ford@dartmouth.edu?subject=DBIC%20allocation%20on%20Discovery) with any questions or a request for access."
+      a: "First request an HPC account: see [DBIC systems access](/research_infrastructure/computer_resources.html#sysaccess). Then contact [Courtney Rogers](mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20allocation%20on%20Discovery) or [Jamie Ford](mailto:james.c.ford@dartmouth.edu?subject=DBIC%20allocation%20on%20Discovery) with any questions or a request for access. See the [Using Discovery](/research_infrastructure/discovery.html) section for background."
       url: "/research_infrastructure/discovery.html"
     - q: "Where is DBIC on DartFS?"
       a: "The main directory is `/dartfs/rc/lab/D/DBIC/DBIC`."

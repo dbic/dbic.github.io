@@ -28,7 +28,7 @@ DBIC owns a share of 15 Nodes on the Research Computing (RC) Discovery cluster, 
 
 ### Interactive nodes
 
-Access to the Discovery cluster requires logging on to an interactive node using SSH and your DartID credentials.
+Access to the Discovery cluster requires an HPC account (see [DBIC systems access](/research_infrastructure/computer_resources.html#sysaccess)); you then log on to an interactive node using SSH and your DartID credentials.
 
 | Node | Address | Who can use it | Use it for |
 |---|---|---|---|
@@ -36,7 +36,7 @@ Access to the Discovery cluster requires logging on to an interactive node using
 | Ndoli | ndoli.dartmouth.edu | all DBIC users with Discovery access | High memory system for testing code and interactive jobs |
 | Andes, Polaris | andes.dartmouth.edu, polaris.dartmouth.edu | all Discovery users | High memory systems for testing code and interactive jobs |
 
-DBIC users are encouraged to use Ndoli for testing code before submitting large jobs to the cluster. For more information, see the [Dartmouth Services Portal: High Performance Computing](https://services.dartmouth.edu/TDClient/1806/Portal/Requests/ServiceCatalog?CategoryID=11669).
+DBIC users are encouraged to use Ndoli for testing code before submitting large jobs to the cluster.
 
 ## Using DBIC's allocation
 
@@ -69,7 +69,7 @@ Wall time is the time a job runs multiplied by the number of cores it uses. So t
 
 The most efficient way to get your jobs running is to split them into small chunks and submit them in parallel, so that each chunk uses few CPUs (ideally just one) and completes in a short time (a few hours is ideal). Long jobs that take up multiple cpus, while occasionally necessary, should be avoided.
 
-**Access to the DBIC allocation can be requested from [Jamie Ford](mailto:james.c.ford@dartmouth.edu?subject=DBIC%20allocation). Requests can also be made for variations from the standard DBIC TRES limits.**
+**Access to the DBIC allocation can be requested from [Courtney Rogers](mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20allocation) or [Jamie Ford](mailto:james.c.ford@dartmouth.edu?subject=DBIC%20allocation), once you have an HPC account (see [DBIC systems access](/research_infrastructure/computer_resources.html#sysaccess)). Requests can also be made for variations from the standard DBIC TRES limits.**
 
 ### Queue priority
 

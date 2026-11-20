@@ -26,9 +26,9 @@ related:
 
 ## DBIC systems access
 
-Research Computing ([research.computing@dartmouth.edu](mailto:research.computing@dartmouth.edu?subject=DBIC)) helps with user accounts across campus; emailing that address opens a support ticket. Everyone at Dartmouth already has an account through their NetID; Research Computing adds you to the groups that give access to particular resources.
+To use Discovery and other Research Computing systems, you need an HPC account (also known as a “Discovery account”). Everyone at Dartmouth has a NetID to provide authentication, but HPC access has to be set up before it will work: request it once, signing in with your NetID, at the [HPC account request page](https://dashboard.dartmouth.edu/research/hpc_account). Research Computing creates the account and emails you when it is ready; it includes a 50 GB home directory on DartFS.
 
-For access to DBIC-specific resources (such as the shared datasets and our Discovery allocation) and for troubleshooting, please contact DBIC directly ([James.C.Ford@dartmouth.edu](mailto:james.c.ford@dartmouth.edu?subject=DBIC%20systems%20access)). Research Computing will typically either redirect these topics to DBIC or contact DBIC on your behalf, so DBIC may be involved in access decisions whether or not you realize it.
+For access to DBIC-specific resources (such as the shared datasets and our Discovery allocation) and for troubleshooting, we encourage you to contact DBIC directly, so that DBIC is in the loop: [Courtney Rogers](mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20systems%20access) is the main contact point, and you can also write to [Jamie Ford](mailto:james.c.ford@dartmouth.edu?subject=DBIC%20systems%20access). Contacting Research Computing ([research.computing@dartmouth.edu](mailto:research.computing@dartmouth.edu?subject=DBIC); this opens a support ticket) works too: Research Computing will typically either redirect these topics to DBIC or contact DBIC on your behalf, so DBIC may be involved in access decisions whether or not you realize it.
 
 <a id="datastorage"></a>
 

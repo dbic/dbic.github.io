@@ -28,7 +28,7 @@ groups:
       - { title: "Peripherals", url: "/research_infrastructure/peripherals.html", keywords: "eye tracking response devices projector audio physiology" }
       - { title: "Quality assurance", url: "/research_infrastructure/qualityassurance.html", keywords: "QA reports phantom" }
       - { title: "Data & computing", url: "/data-computing.html", keywords: "datasets public data HCP Narratives Spacetop storage compute", popular: true }
-      - { title: "Computer resources", url: "/research_infrastructure/computer_resources.html", keywords: "account DartFS storage DICOM scans find" }
+      - { title: "Computer resources", url: "/research_infrastructure/computer_resources.html", keywords: "account HPC request DartFS storage DICOM scans find" }
       - { title: "Using Discovery", url: "/research_infrastructure/discovery.html", keywords: "cluster HPC compute" }
   - title: "Community"
     items:
