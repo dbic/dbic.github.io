@@ -74,9 +74,9 @@ Below are definitions of the metrics found on the DBIC's weekly QA report. Defin
 
 References:
 
-1. Friedman L, Glover, GH. Report on a multicenter fMRI quality assurance protocol. J Magn Reson Imaging. 2006a. 23(6): 827-839. [PubMed: 16649196]
+1. Friedman L, Glover GH. Report on a multicenter fMRI quality assurance protocol. J Magn Reson Imaging. 2006;23(6):827-839. [PubMed: 16649196](https://pubmed.ncbi.nlm.nih.gov/16649196/)
 
-2. Acceptance Testing and Quality Assurance Procedures for Magnetic Resonance Imaging Facilities, AAPM Report No. 100
+2. AAPM Report No. 100: Acceptance Testing and Quality Assurance Procedures for Magnetic Resonance Imaging Facilities. American Association of Physicists in Medicine, Dec 2010. [AAPM report page](https://www.aapm.org/pubs/reports/detail.asp?docid=101)
 
 3. [BXH/XCEDE tools (NITRC project page)](https://www.nitrc.org/projects/bxh_xcede_tools)
 
