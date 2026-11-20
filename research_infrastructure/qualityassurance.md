@@ -60,18 +60,16 @@ Below are definitions of the metrics found on the DBIC's weekly QA report. Defin
 - Signal image - the mean signal across time
 - Signal summary value - the mean across the ROI of the signal image
 - Standard Deviation Image (Temporal Fluctuation Noise Image) - voxel by voxel residuals of second-order polynomial fit across
-- SNR summary value - the signal summary value ('mean') divided by the standard deviation across the ROI of the static spatial noise image
-- SFNR summary value - the mean across the ROI of the signal image divided by the temporal fluctuation image
-- SNR Image
-- SFNR Image
-- Percent fluctuation - 100\*std/msi where 'std' is a summary value calculated as the standard deviation of the residuals of a second-0rder polynomial fit of the time series and 'msi' is mean signal intensity of the time-series.
+- SNR - the signal value (‘mean’) divided by the image standard deviation; provided as a summary value (using mean across the ROI of the static spatial noise image) and as an image
+- SFNR - calculated voxel-by-voxel across a 21×21 ROI in the center of a phantom after removing a second-order polynomial trend from each voxel's time course; the mean signal image is divided by the standard deviation of the detrended residual image (provided as a summary value using the average across the ROI and as an image)
+- Percent fluctuation - 100\*std/msi where 'std' is a summary value calculated as the standard deviation of the residuals of a second-order polynomial fit of the time series and 'msi' is mean signal intensity of the time-series.
 - Drift - 100\*(maxroi-minroi)/msi where 'maxroi' and 'minroi' are the maximum and minimum values of the mean raw signal over the ROI.
 - Driftfit - 100\*(maxfit-minfit)/msi where 'maxfit' and 'minfit' are the maximum and minimum values of the fit.
 - Fourier Analysis (Magnitude Spectrum) - the frequency spectrum resulting from a Fourier analysis of the residual data.
 - Radius of Decorrelation (RDC) - a measure of the size of ROI at which statistical independence of the voxels is lost.
 - Smoothness (Full-width Half-maximum) - calculated using the AFNI tool 3dFWHMx
 - Center of mass - a simple mean intensity of each volume, with each voxel's value weighted by its index in the X, Y, or Z direction.
-- Odd-Even Difference Static Noise Image
+- Odd-Even Difference Static Noise Image - created by subtracting the sum of even-numbered time-series frames from the sum of odd-numbered frames, and captures static noise (thermal/electronic)
 - Mean Ghost Percentage - 100\*meanGhost/meanSignal. The ghost metrics are calculated for each volume by taking a dilated mask ("original mask") of the data, and shifting it by N/2 voxels in the appropriate axis to create a "ghost mask". The mean intensities of those voxels in the original mask and not in the ghost mask ("meanSignal") and of voxels in the ghost mask and not in the original mask ("meanGhost") are calculated.
 
 References:
