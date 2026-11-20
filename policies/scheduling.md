@@ -50,14 +50,14 @@ Every session, in peak or off-peak hours, needs a certified scan operator and a 
 
 ### Peak hours
 
-- Monday–Friday, 8 a.m.–4 p.m. (the MRI technologist’s working hours)
+- Monday–Friday, 8 a.m.–4 p.m. (the MRI Technologist’s working hours)
 
 ### Off-peak hours
 
 - Monday–Friday after 4 p.m.
 - All day Saturday/Sunday
 
-The MRI technologist is not working during off-peak hours.
+The MRI Technologist is not working during off-peak hours.
 
 ### Before you request time
 

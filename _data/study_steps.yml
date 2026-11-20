@@ -25,8 +25,8 @@ steps:
     sub: "Safety & operator training"
     heading: "3. Get trained"
     bullets:
-      - "**Everyone** completes MRI safety training: an in-person session with the MRI technologist plus an online module."
-      - "**To run the scanner yourself,** become an operator-in-training, complete hands-on training with a certified operator, and pass a final competency check with the MRI technologist present."
+      - "**Everyone** completes MRI safety training: an in-person session with the MRI Technologist plus an online module."
+      - "**To run the scanner yourself,** become an operator-in-training, complete hands-on training with a certified operator, and pass a final competency check with the MRI Technologist present."
       - "At least two people are in the control room at all times: a certified scan operator and a [scan buddy](/policies/safetytraining.html#scanbuddy) (a safety-trained assistant)."
     links:
       - { text: "Safety training", url: "/policies/safetytraining.html", style: solid }
@@ -47,7 +47,7 @@ steps:
     sub: "Billing, data & compute"
     heading: "5. Scan and analyze"
     bullets:
-      - "Scan time is logged and invoiced monthly for each protocol; the PI or designee reviews each invoice."
+      - "Scan time is logged and invoiced monthly for each DBIC protocol; the PI or designee reviews each invoice."
       - "After each session, confirm that your data transferred to the DBIC server."
       - "Analyze on the Discovery cluster, with @datasets@ public datasets already hosted alongside."
     links:

@@ -31,11 +31,11 @@ All research conducted in the DBIC must have CPHS approval. Before you start a n
 
 ## After you submit
 
-Courtney Rogers reviews each application, usually within 1–2 business days. Once your protocol is approved, request scan time: see [Scheduling](scheduling.md).
+Courtney Rogers reviews each application, usually within 1–2 business days. Once your DBIC protocol is approved, request scan time: see [Scheduling](scheduling.md).
 
 ## Questions
 
-If you have questions about submitting a protocol application, [Courtney Rogers](mailto:courtney.rogers@dartmouth.edu?subject=Question%20about%20protocol) is happy to meet with you via Zoom or in person.
+If you have questions about submitting a DBIC protocol application, [Courtney Rogers](mailto:courtney.rogers@dartmouth.edu?subject=Question%20about%20protocol) is happy to meet with you via Zoom or in person.
 
 ## Application form
 

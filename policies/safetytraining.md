@@ -23,14 +23,14 @@ related:
 
 - [Training info](#traininginfo)
 - [Training materials](#materials)
-- [Sign up for a safety training](#classsignup)
+- [Sign up for MRI safety training](#classsignup)
 - [Training schedules](#trainingschedules)
 
 <a id="traininginfo"></a>
 
 ## Training information
 
-Before working in the fMRI environment, all research personnel must complete three things: a safety training class led by an MRI Technologist, an online safety training module, and CITI training (which is separate from the safety module). The steps, in order, are under [How to sign up](#classsignup).
+Before working in the fMRI environment, all research personnel must complete three things: an MRI safety training class led by an MRI Technologist, an online MRI safety training module, and CITI training (which is separate from the MRI safety training module). The steps, in order, are under [How to sign up](#classsignup).
 
 The training gives personnel rigorous information on how to conduct themselves safely in the scanning environment. At the end of the training session, research personnel may be in the control room with a certified scan operator.
 
@@ -63,11 +63,11 @@ The class covers how to:
 
 <a id="classsignup"></a>
 
-## **To sign up for a safety training class:**
+## **To sign up for an MRI safety training class:**
 
 1. Complete the Dartmouth CPHS education requirement: the CITI online tutorial, Group 2 Social/Behavioral Basic Course (see the [Dartmouth CPHS education requirements page](https://www.dartmouth.edu/~cphs/tosubmit/education/index.html "CITI Training")).
 2. Email your certificate of completion and the name of the faculty member or lab you will work with to Courtney Rogers ([courtney.rogers@dartmouth.edu](mailto:courtney.rogers@dartmouth.edu?subject=Safety%20training)), and ask for a place in a class from the [schedule below](#trainingschedules).
-3. Courtney sends you the link to the online safety training module.
+3. Courtney sends you the link to the online MRI safety training module.
 4. Complete the module and send Courtney the completion report.
 5. Attend the class.
 

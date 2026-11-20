@@ -14,7 +14,7 @@ related:
 
 # Housekeeping
 
-The MRI scanner and suite are a valuable shared resource. Beyond following all safety and operating procedures, scanner operators must complete the full [housekeeping checklist](../assets/dbic/docs/policies/housekeeping01282026.pdf). The full checklist is the authoritative list; the items below are the ones most often missed.
+The MRI scanner and suite are a valuable shared resource. Beyond following all safety and operating procedures, scan operators must complete the full [housekeeping checklist](../assets/dbic/docs/policies/housekeeping01282026.pdf). The full checklist is the authoritative list; the items below are the ones most often missed.
 
 ## Housekeeping items
 
