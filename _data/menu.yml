@@ -27,9 +27,8 @@ groups:
       - { title: "Sequences", url: "/research_infrastructure/sequences.html", keywords: "protocols multiband diffusion" }
       - { title: "Peripherals", url: "/research_infrastructure/peripherals.html", keywords: "eye tracking response devices projector audio physiology" }
       - { title: "Quality assurance", url: "/research_infrastructure/qualityassurance.html", keywords: "QA reports phantom" }
-      - { title: "Data & computing", url: "/data-computing.html", keywords: "datasets public data HCP Narratives Spacetop storage compute", popular: true }
-      - { title: "Computer resources", url: "/research_infrastructure/computer_resources.html", keywords: "account HPC request DartFS storage DICOM scans find" }
-      - { title: "Using Discovery", url: "/research_infrastructure/discovery.html", keywords: "cluster HPC compute" }
+      - { title: "Datasets", url: "/data-computing.html", keywords: "datasets public data HCP Narratives Spacetop", popular: true }
+      - { title: "Computing", url: "/research_infrastructure/computing.html", keywords: "account HPC request Discovery cluster compute storage DartFS DICOM scans find BIDS DataLad" }
   - title: "Community"
     items:
       - { title: "Brown-bag talks", url: "/events/fbb.html", keywords: "events seminars speakers fMRI brown bag" }

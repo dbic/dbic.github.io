@@ -5,7 +5,11 @@
     <div class="sec-head reveal"><p class="eyebrow">{{ s.eyebrow | escape }}</p><h2 id="h-start">{{ s.title | escape }}</h2><p class="lead-in">{{ s.lead | escape }}</p></div>
     <div class="tiles">
       {%- for t in site.data.start_here %}{% capture href %}{% include redesign/href.html url=t.link %}{% endcapture %}
+      {%- if t.links %}
+      <div class="tile tile-multi c-{{ t.color }} reveal"><span class="ico-tile">{% include redesign/icon.html name=t.icon %}</span><h3>{{ t.title | escape }}</h3><p>{{ t.text | replace: '@datasets@', n | escape }}</p><span class="go-row">{%- for l in t.links %}{% capture lhref %}{% include redesign/href.html url=l.url %}{% endcapture %}<a class="go" href="{{ lhref | strip }}">{{ l.text | escape }}</a>{%- endfor %}</span></div>
+      {%- else %}
       <a class="tile c-{{ t.color }} reveal" href="{{ href | strip }}"><span class="ico-tile">{% include redesign/icon.html name=t.icon %}</span><h3>{{ t.title | escape }}</h3><p>{{ t.text | replace: '@datasets@', n | escape }}</p><span class="go">{{ t.link_text | escape }}</span></a>
+      {%- endif %}
       {%- endfor %}
     </div>
   </div>

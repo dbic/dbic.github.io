@@ -51,5 +51,4 @@ steps:
       - "After each session, confirm that your data transferred to the DBIC server."
       - "Analyze on the Discovery cluster, with @datasets@ public datasets already hosted alongside."
     links:
-      - { text: "Computer resources", url: "/research_infrastructure/computer_resources.html", style: solid }
-      - { text: "Using Discovery", url: "/research_infrastructure/discovery.html", style: outline }
+      - { text: "Computing", url: "/research_infrastructure/computing.html", style: solid }

@@ -7,7 +7,8 @@ kit:
   listcards: "*"
 related:
   - { title: "How a study works", url: "/research-with-us.html" }
-  - { title: "Data & computing", url: "/data-computing.html" }
+  - { title: "Computing", url: "/research_infrastructure/computing.html" }
+  - { title: "Datasets", url: "/data-computing.html" }
   - { title: "Who to contact", url: "/contact.html" }
 ---
 

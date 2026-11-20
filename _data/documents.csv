@@ -44,4 +44,4 @@ biopac-guide,BIOPAC MP160: user guide,Equipment user guides,/assets/dbic/docs/us
 sequence-bold,BOLD acquisition settings,Sequence protocols,/assets/dbic/docs/sequences/bold_acquisition.pdf,,,,,
 sequence-diffusion,Diffusion acquisition settings,Sequence protocols,/assets/dbic/docs/sequences/dwi_acquisiton.pdf,,,,,The file name contains a typo (acquisiton). Rename it and update this row.
 sequence-multiecho,Multi-echo fMRI settings,Sequence protocols,/assets/dbic/docs/sequences/multiechofmri.pdf,,,,,
-hcp-manual,HCP1200 reference manual,Data & computing,/assets/dbic/docs/userguides/hcp_refmanual.pdf,,,,Directory structure and file names for the HCP1200 dataset.,
+hcp-manual,HCP1200 reference manual,Datasets,/assets/dbic/docs/userguides/hcp_refmanual.pdf,,,,Directory structure and file names for the HCP1200 dataset.,

@@ -4,9 +4,8 @@ source_url: https://www.dartmouth.edu/dbic/research_infrastructure/datasets.html
 retrieved: 2026-11-04
 lead: "Public datasets hosted at the DBIC for DBIC users: where each one lives, how to reach it, and any access terms."
 related:
-  - { title: "Computer resources", url: "/research_infrastructure/computer_resources.html" }
-  - { title: "Using Discovery", url: "/research_infrastructure/discovery.html" }
-  - { title: "Data & computing", url: "/data-computing.html" }
+  - { title: "Computing", url: "/research_infrastructure/computing.html" }
+  - { title: "Browse datasets", url: "/data-computing.html" }
   - { title: "Who to contact", url: "/contact.html" }
 ---
 
@@ -16,7 +15,9 @@ related:
 
 Many public neuroimaging datasets are very large and hard to download one by one. To make them easier to use, the DBIC hosts selected datasets on the Dartmouth Research Computing file system, next to the Discovery cluster, where DBIC users can analyze them directly.
 
-**Access.** To navigate in the DBIC share on DartFS, you need to be in the `rc-DBIC` group (see [DBIC systems access](computer_resources.md#sysaccess)); most DBIC folders on DartFS cannot be reached without it. Each dataset’s “Access” line adds anything else that applies, such as dataset specific terms of use (where these exist, datasets require membership in an additional group, which is added once any requirements have been met).
+**Access.** To navigate in the DBIC share on DartFS, you need to be in the `rc-DBIC` group (see [DBIC systems access](computing.md#sysaccess)); most DBIC folders on DartFS cannot be reached without it. Each dataset’s “Access” line adds anything else that applies, such as dataset specific terms of use (where these exist, datasets require membership in an additional group, which is added once any requirements have been met).
+
+Some datasets are stored on Vast, a storage system separate from DartFS (their paths begin with `/vast/`), and are reached in the same way.
 
 ### List of hosted datasets
 
