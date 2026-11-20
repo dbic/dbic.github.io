@@ -16,7 +16,7 @@
     get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
     set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
   };
-  function fmt(d, o) { return d.toLocaleDateString('en-US', o || { weekday: 'short', month: 'short', day: 'numeric' }); }
+  function fmt(d, o) { return d.toLocaleDateString('en-US', o || { weekday: 'long', month: 'short', day: 'numeric' }); }
   function parseISO(s) { var m = s ? String(s).match(/^(\d{4})-(\d{2})-(\d{2})/) : null; return m ? new Date(+m[1], +m[2] - 1, +m[3]) : null; }
   function endOfDay(d) { return new Date(d.getFullYear(), d.getMonth(), d.getDate(), 23, 59, 59); }
   function at(d, h) { return new Date(d.getFullYear(), d.getMonth(), d.getDate(), h, 0, 0); }

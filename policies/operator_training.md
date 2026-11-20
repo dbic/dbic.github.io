@@ -1,6 +1,6 @@
 ---
 title: "MRI operator training"
-reviewed: "July 1, 2026"
+reviewed: "Jul 1, 2026"
 source_url: https://www.dartmouth.edu/dbic/policies/operator_training.html
 retrieved: 2026-11-04
 lead: "Becoming a certified scan operator takes two steps: first operator-in-training, then hands-on training and a competency demonstration."

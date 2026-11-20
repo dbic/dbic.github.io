@@ -1,6 +1,6 @@
 ---
 title: "MRI safety training"
-reviewed: "July 1, 2026"
+reviewed: "Jul 1, 2026"
 source_url: https://www.dartmouth.edu/dbic/policies/safetytraining.html
 retrieved: 2026-11-04
 lead: "Everyone who works in the scanner room completes MRI safety training first. This page explains what the training covers, how to sign up and when the next sessions are."

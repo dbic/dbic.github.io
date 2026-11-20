@@ -1,6 +1,6 @@
 ---
 title: "DBIC scheduling"
-reviewed: "July 1, 2026"
+reviewed: "Jul 1, 2026"
 source_url: https://www.dartmouth.edu/dbic/policies/scheduling.html
 retrieved: 2026-11-04
 lead: "How scan time is requested and allocated: scan hours, the three scheduling tiers, the request deadlines and the calendar."
@@ -120,11 +120,11 @@ Each row lists the booking windows for the month named in its first column. Wind
 </tr>
 <tr>
 <td><strong>December</strong></td>
-<td>Monday, November 2</td>
-<td>Thursday, November 5 @ 4pm</td>
-<td>Monday, November 9</td>
-<td>Thursday, November 12 @ 4pm</td>
-<td>Monday, November 16</td>
+<td>Monday, Nov 2</td>
+<td>Thursday, Nov 5 @ 4 p.m.</td>
+<td>Monday, Nov 9</td>
+<td>Thursday, Nov 12 @ 4 p.m.</td>
+<td>Monday, Nov 16</td>
 </tr>
 <tr>
 <td><strong>2027</strong></td>
@@ -136,52 +136,52 @@ Each row lists the booking windows for the month named in its first column. Wind
 </tr>
 <tr>
 <td><strong>January</strong></td>
-<td>Tuesday, December 1</td>
-<td>Friday, December 4 @ 4pm</td>
-<td>Tuesday, December 8</td>
+<td>Tuesday, Dec 1</td>
+<td>Friday, Dec 4 @ 4 p.m.</td>
+<td>Tuesday, Dec 8</td>
 <td>
-<p>Friday, December 11 @ 4pm</p>
+<p>Friday, Dec 11 @ 4 p.m.</p>
 </td>
-<td>Tuesday, December 15</td>
+<td>Tuesday, Dec 15</td>
 </tr>
 <tr>
 <td><strong>February</strong></td>
-<td>Monday, January 4</td>
-<td>Thursday, January 7 @ 4pm</td>
-<td>Monday, January 11</td>
-<td>Thursday, January 14</td>
-<td>Monday, January 18</td>
+<td>Monday, Jan 4</td>
+<td>Thursday, Jan 7 @ 4 p.m.</td>
+<td>Monday, Jan 11</td>
+<td>Thursday, Jan 14</td>
+<td>Monday, Jan 18</td>
 </tr>
 <tr>
 <td><strong>March</strong></td>
-<td>Monday, February 1</td>
-<td>Thursday, February 4 @ 4pm</td>
-<td>Monday, February 8</td>
-<td>Thursday, February 11 @ 4pm</td>
-<td>Monday, February 15</td>
+<td>Monday, Feb 1</td>
+<td>Thursday, Feb 4 @ 4 p.m.</td>
+<td>Monday, Feb 8</td>
+<td>Thursday, Feb 11 @ 4 p.m.</td>
+<td>Monday, Feb 15</td>
 </tr>
 <tr>
 <td><strong>April</strong></td>
-<td>Monday, March 1</td>
-<td>Thursday, March 4 @ 4pm</td>
-<td>Monday, March 8</td>
-<td>Thursday, March 11 @ 4pm</td>
-<td>Monday, March 15</td>
+<td>Monday, Mar 1</td>
+<td>Thursday, Mar 4 @ 4 p.m.</td>
+<td>Monday, Mar 8</td>
+<td>Thursday, Mar 11 @ 4 p.m.</td>
+<td>Monday, Mar 15</td>
 </tr>
 <tr>
 <td><strong>May</strong></td>
-<td>Thursday, April 1</td>
-<td>Tuesday, April 6 @ 4pm</td>
-<td>Thursday, April 8</td>
-<td>Tuesday, April 13 @ 4pm</td>
-<td>Thursday, April 15</td>
+<td>Thursday, Apr 1</td>
+<td>Tuesday, Apr 6 @ 4 p.m.</td>
+<td>Thursday, Apr 8</td>
+<td>Tuesday, Apr 13 @ 4 p.m.</td>
+<td>Thursday, Apr 15</td>
 </tr>
 <tr>
 <td><strong>June</strong></td>
 <td>Monday, May 3</td>
-<td>Thursday, May 6 @ 4pm</td>
+<td>Thursday, May 6 @ 4 p.m.</td>
 <td>Monday, May 10</td>
-<td>Thursday, May 13 @ 4pm</td>
+<td>Thursday, May 13 @ 4 p.m.</td>
 <td>Monday, May 17</td>
 </tr>
 </tbody>

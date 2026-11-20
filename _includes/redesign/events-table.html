@@ -22,7 +22,7 @@
 <div class="et-year"><h3>{{ yr }}</h3><table><thead><tr>{% for c in cols %}<th scope="col">{% case c %}{% when 'date' %}Date{% when 'time' %}Time{% when 'title' %}Event{% when 'detail' %}Details{% when 'deadline' %}{{ dl_label | escape }}{% endcase %}</th>{% endfor %}</tr></thead><tbody>
 {%- assign current_year = yr -%}
 {%- endif -%}
-<tr data-date="{{ r.date }}">{% for c in cols %}<td>{% case c %}{% when 'date' %}{{ r.date | date: '%A, %B %-d' }}{% when 'time' %}{{ r.time | escape }}{% when 'title' %}{% if r.url %}<a href="{{ r.url | relative_url }}">{{ r.title | escape }}</a>{% else %}{{ r.title | escape }}{% endif %}{% when 'detail' %}{{ r.detail | escape }}{% when 'deadline' %}{{ r.deadline | date: '%A, %B %-d' }}{% endcase %}</td>{% endfor %}</tr>
+<tr data-date="{{ r.date }}">{% for c in cols %}<td>{% case c %}{% when 'date' %}{{ r.date | date: '%A, %b %-d' }}{% when 'time' %}{{ r.time | escape }}{% when 'title' %}{% if r.url %}<a href="{{ r.url | relative_url }}">{{ r.title | escape }}</a>{% else %}{{ r.title | escape }}{% endif %}{% when 'detail' %}{{ r.detail | escape }}{% when 'deadline' %}{{ r.deadline | date: '%A, %b %-d' }}{% endcase %}</td>{% endfor %}</tr>
 {%- assign shown = shown | plus: 1 -%}
 {%- endif -%}
 {%- endfor -%}

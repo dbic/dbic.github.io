@@ -1,6 +1,6 @@
 ---
 title: "Billing rates"
-reviewed: "July 1, 2026"
+reviewed: "Jul 1, 2026"
 source_url: https://www.dartmouth.edu/dbic/policies/dbic_billing.html
 retrieved: 2026-11-04
 lead: "The hourly rates for internally and externally funded studies, and how scan time is billed."
@@ -16,7 +16,7 @@ related:
 
 ## Rates
 
-Rates for scanning effective July 1, 2021.
+Rates for scanning effective Jul 1, 2021.
 
 **Internal** funding means studies paid from Dartmouth-administered funds (for example a GL/PTAEO chart string). **External** funding means a non-Dartmouth funding source.
 

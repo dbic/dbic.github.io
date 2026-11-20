@@ -33,23 +33,23 @@ abnormalities are investigated. In addition, the Siemens customer QA
 tool is run to check coil elements of the head coil (weekly) and body
 coil (monthly) and as needed.
 
-The acceptable mean ghost percentage is less than 3% (ref. 2). The first QA on [DBIC's Siemens Prisma](fmri_scanner.md) was conducted on September 12, 2016.
+The acceptable mean ghost percentage is less than 3% (ref. 2). The first QA on [DBIC's Siemens Prisma](fmri_scanner.md) was conducted on Sep 12, 2016.
 
 ## 32-channel head coil
 
-![ghost32ch 11.02.2026](../assets/dbic/images/ghost32ch_20261102.jpg)
+![ghost32ch Nov 2, 2026](../assets/dbic/images/ghost32ch_20261102.jpg)
 
-![sfnr32ch 11.02.2026](../assets/dbic/images/sfnr32ch_20261102.jpg)
+![sfnr32ch Nov 2, 2026](../assets/dbic/images/sfnr32ch_20261102.jpg)
 
-![snr32ch 11.02.2026](../assets/dbic/images/snr32ch_20261102.jpg)
+![snr32ch Nov 2, 2026](../assets/dbic/images/snr32ch_20261102.jpg)
 
 ## 64-channel head coil
 
-![ghost 64ch 11.02.2026](../assets/dbic/images/ghost64ch_20261102.jpg)
+![ghost 64ch Nov 2, 2026](../assets/dbic/images/ghost64ch_20261102.jpg)
 
-![snfr64ch 11.02.2026](../assets/dbic/images/sfnr64ch_20261102.jpg)
+![snfr64ch Nov 2, 2026](../assets/dbic/images/sfnr64ch_20261102.jpg)
 
-![sfnr64ch 11.02.2026](../assets/dbic/images/snr64ch_20261102.jpg)
+![sfnr64ch Nov 2, 2026](../assets/dbic/images/snr64ch_20261102.jpg)
 
 <a id="metrics"></a>
 

@@ -1,6 +1,6 @@
 ---
 title: "Housekeeping"
-reviewed: "July 1, 2026"
+reviewed: "Jul 1, 2026"
 source_url: https://www.dartmouth.edu/dbic/policies/housekeeping.html
 retrieved: 2026-11-04
 lead: "Everyone who scans keeps the suite clean, tidy and ready for the next group."

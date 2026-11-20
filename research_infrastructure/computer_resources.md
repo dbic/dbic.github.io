@@ -45,7 +45,7 @@ If scans are resent from the scanner, note that:
 
 ## Storage of DICOM images
 
-All MRI studies collected at DBIC are stored in the DICOM format, and organized according to acquisition date and an accession number that is intended to be unique. Thus a study recorded on July 4, 2019, with an accession number of A00001234 can be found on the server under the `DICOM/` directory above at `DICOM/2019/07/04/A00001234`.
+All MRI studies collected at DBIC are stored in the DICOM format, and organized according to acquisition date and an accession number that is intended to be unique. Thus a study recorded on Jul 4, 2019, with an accession number of A00001234 can be found on the server under the `DICOM/` directory above at `DICOM/2019/07/04/A00001234`.
 
 Always enter a unique accession value, even for test scans, because it determines where the scan is stored. A scan with no accession is stored as `/unknown`, and scans with a blank or generic accession (such as “test”) are at risk of colliding on DartFS if they are run on the same day.
 
