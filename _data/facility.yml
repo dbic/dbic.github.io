@@ -1,7 +1,7 @@
 # The "Facility" section of the home page.
 eyebrow: "Facility"
-title: "A research scanner, by design"
-lead: "In November 1999 Dartmouth became the first liberal arts college in the country to own and operate an MRI machine strictly for research. That is still the point."
+title: "A pioneering imaging center"
+lead: "In November 1999 Dartmouth became the first liberal arts college in the country to own and operate an MRI machine strictly for research."
 
 # The number tiles. A tile needs a label and ONE of:
 #   value: 3          a fixed number (optional suffix: "T", or unit: "mT/m")
