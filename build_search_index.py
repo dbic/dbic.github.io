@@ -30,6 +30,7 @@ def unquote(v):
     if len(v) >= 2 and v[0] == "'" and v[-1] == "'": return v[1:-1].replace("''", "'")
     return v
 def plain(t):
+    t = re.sub(r"(?m)^[ \t]*\{:[^}\n]*\}[ \t]*$", " ", t)                                     # kramdown attribute lines such as {: .note role="note" } are not text
     t = re.sub(r"(?s)<(script|style)\b.*?</\1>", " ", t); t = re.sub(r"\{%-?.*?-?%\}|\{\{.*?\}\}", " ", t, flags=re.S); t = re.sub(r"<!--.*?-->", " ", t, flags=re.S)
     t = re.sub(r"<br\s*/?>|<wbr\s*/?>", " ", t); t = re.sub(r"<[^>]+>", " ", t); t = re.sub(r"!\[[^\]]*\]\([^)]*\)", " ", t)
     t = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", t); t = re.sub(r"<(https?://[^>\s]+)>", " ", t); t = re.sub(r"https?://\S+|mailto:\S+", " ", t)

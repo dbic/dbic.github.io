@@ -599,3 +599,7 @@ dialog#qf::backdrop { background: rgba(3, 18, 11, .6); backdrop-filter: blur(3px
 .tile-multi .go-row { margin-top: auto; padding-top: .3rem; display: flex; flex-wrap: wrap; gap: .3rem 1.4rem; }
 .tile-multi .go { margin: 0; padding: 0; color: var(--c); font-weight: 600; text-decoration: none; }
 .tile-multi .go:hover, .tile-multi .go:focus-visible { text-decoration: underline; }
+/* important note: a highlighted box inside a page */
+.note { --n: var(--c4); margin: 1.2rem 0; padding: .85rem 1.1rem; border: 1px solid var(--line); border-left: 5px solid var(--n); border-radius: 12px; background: var(--surface-2); background: color-mix(in srgb, var(--n) 9%, var(--surface)); color: var(--ink); font-size: 1rem; line-height: 1.55; }
+.note > :first-child { margin-top: 0; }
+.note > :last-child { margin-bottom: 0; }

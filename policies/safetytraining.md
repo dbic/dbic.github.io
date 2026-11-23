@@ -32,6 +32,9 @@ related:
 
 Before working in the fMRI environment, all research personnel must complete three things: an MRI safety training class led by an MRI Technologist, an online MRI safety training module, and CITI training (which is separate from the MRI safety training module). The steps, in order, are under [How to sign up](#classsignup).
 
+> **Important:** All research personnel, including faculty, are required to remain current on all DBIC mandated and institutional certifications relevant to MR safety and human subjects research. Personnel who do not actively participate in scanning activities for one academic year must repeat the DBIC MRI safety training before resuming work in the scanning environment.
+{: .note role="note" }
+
 The training gives personnel rigorous information on how to conduct themselves safely in the scanning environment. At the end of the training session, research personnel may be in the control room with a certified scan operator.
 
 The DBIC requires two researchers in the control room at all times: at least one certified scan operator and one safety-trained assistant, also called a <a id="scanbuddy">“scan buddy”</a>.
