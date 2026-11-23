@@ -24,7 +24,7 @@ hero:
     - sociology
     - computer science
   static_words: "brain research across disciplines"   # shown when motion is switched off
-  text: "The Dartmouth Brain Imaging Center is a research resource for brain scientists across Dartmouth: a state-of-the-art 3 tesla MRI scanner, expert staff, and a community that helps ideas become studies."
+  text: "The Dartmouth Brain Imaging Center is a research resource for brain scientists across Dartmouth: a state-of-the-art 3 tesla whole-body MRI scanner, facilitating and supporting research across the Dartmouth community and beyond."
   buttons:
     - { text: "Start a study", url: "/research-with-us.html", style: light }
     - { text: "Explore the facility", url: "#facility", style: ghost }
