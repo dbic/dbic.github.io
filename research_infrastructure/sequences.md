@@ -13,7 +13,7 @@ related:
 
 # Sequences
 
-Mainstream sequences, including functional (BOLD), diffusion, spectroscopy, and anatomical (T1w, T2w, T2-FLAIR), are available for use.
+Mainstream sequences, including functional (BOLD), diffusion, anatomical (T1w, T2w, T2-FLAIR), spectroscopy, and angiography are available for use.
 
 ## Available sequences
 
@@ -24,6 +24,7 @@ Vendor supplied sequences come from Siemens; the others have been installed here
 | **Functional MRI (BOLD)**: brain activity, from blood-oxygenation changes | ep2d_bold | cmrr_mbep2d_bold (also used for multi-echo fMRI) | [BOLD](../assets/dbic/docs/sequences/bold_acquisition.pdf); [Multi-echo fMRI](../assets/dbic/docs/sequences/multiechofmri.pdf) |
 | **Diffusion**: the diffusion of water, used to map white-matter pathways | ep2d_diff; qDWI (q-space diffusion weighted) | cmrr_mbep2d_diff | [Diffusion](../assets/dbic/docs/sequences/dwi_acquisiton.pdf) |
 | **Spectroscopy**: the chemical content of a chosen region | csi_se; csi_slaser | MEGA-PRESS (custom-installed) | |
+| **Angiography**: blood vessel mapping | phase contrast (PC) and time of flight (TOF) | | |
 | **Anatomical (T1w, T2w, T2-FLAIR)**: brain structure | mprage (T1w); T2w and T2-FLAIR sequences | | |
 | **Field mapping**: magnetic-field uniformity, used to correct image distortion | field-mapping sequences | | |
 | **Spin-echo EPI** | | cmrr_mbep2d_se | |
