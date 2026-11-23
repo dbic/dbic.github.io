@@ -11,8 +11,8 @@ sections:
   - start
 
 hero:
-  eyebrow: "Dartmouth College · Moore Hall"
-  title: "See the brain at work."
+  eyebrow: ""
+  title: "Dartmouth Brain Imaging Center"
   lead_prefix: "A shared MRI research facility for"
   words:                       # the changing words after the sentence above
     - cognitive neuroscience
