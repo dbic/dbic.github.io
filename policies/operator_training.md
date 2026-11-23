@@ -61,6 +61,9 @@ Each skill is introduced in the first session (Step 1) and demonstrated for cert
 
 Scan operators must know and follow all DBIC safety policies and procedures at all times, and must follow the [housekeeping policies](housekeeping.md) that protect participants and equipment.
 
+> **Important:** Non-compliance may result in the loss of independent scan operator privileges.
+{: .note role="note" }
+
 <a id="booking"></a>
 
 ## Scheduling and class size
