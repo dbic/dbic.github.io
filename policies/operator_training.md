@@ -19,6 +19,10 @@ related:
 
 The DBIC trains research faculty, postdoctoral fellows, graduate students, and full-time research staff to operate the scanner without an MRI Technologist being present. MRI operator training is a two-part process. The first step involves becoming an operator-in-training, and the second step is completion of the hands-on training required for operator certification.
 
+
+> **Important:** All research personnel, including faculty, are required to remain current on all DBIC-mandated and institutional certifications relevant to MR safety and human subjects research. Personnel who do not actively participate in scanning activities for one academic year must repeat the DBIC MRI safety training before resuming work in the scanning environment.
+{: .note role="note" }
+
 ## Step 1: Operator-in-training
 
 To become an **operator-in-training**, you will need to book a training session; see [How to book](#booking). During this training session, users will learn how to administer and follow all MRI safety scanning procedures, as well as be introduced to the skills listed under “Introduced in the first session” in [Skills at each step](#skills).
