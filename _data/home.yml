@@ -77,7 +77,7 @@ community:
 
 people:
   eyebrow: "People"
-  title: "The people who run the center"
+  title: "Meet the DBIC team"
   contact_title: "Questions about our Center?"
   contact_text: "Contact Courtney Rogers"
   contact_button: { text: "Email the DBIC", url: "mailto:courtney.rogers@dartmouth.edu?subject=DBIC%20inquiry" }
