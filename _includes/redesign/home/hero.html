@@ -1,13 +1,41 @@
 {%- assign h = site.data.home.hero -%}
+{%- comment -%}
+  Slideshow beside the banner text. Every picture in the folder below is used, in file-name order, with no list to keep:
+  a file named 02__the-control-room.jpg comes second and "the control room" is its description (alt text).
+  With no pictures in the folder the banner is exactly as it is without a slideshow. Settings: the folder, the most pictures shown, the seconds per picture.
+{%- endcomment -%}
+{%- assign show_dir = 'assets/images_for_auto_display/homepage/' -%}
+{%- assign show_max = 6 -%}
+{%- assign show_secs = 8 -%}
+{%- assign pics = site.static_files | where_exp: "f", "f.path contains show_dir" | where_exp: "f", "f.extname == '.jpg' or f.extname == '.jpeg' or f.extname == '.png' or f.extname == '.webp'" | sort: "path" -%}
 <section class="hero" aria-labelledby="h1">
   <canvas id="neural" aria-hidden="true"></canvas>
   {%- if site.data.brand.hero_watermark and site.data.brand.logo != '' %}
   <img class="hero-mark" src="{{ site.data.brand.logo | relative_url }}" alt="" aria-hidden="true">
   {%- endif %}
-  <div class="wrap hero-in">
+  <div class="wrap hero-in{% if pics.size > 0 %} has-show{% endif %}">
+    <div class="hero-copy">
     <p class="eyebrow-w">{{ h.eyebrow | escape }}</p>
     <h1 id="h1">{{ h.title | escape }}</h1>
     <p class="lead">{{ h.lead_prefix | escape }} <span class="rot" id="rot" aria-hidden="true" data-words="{{ h.words | jsonify | escape }}" data-static="{{ h.static_words | escape }}">{{ h.words | first | escape }}</span><span class="sr"> {{ h.static_words | escape }}</span>.</p>
     <p class="sub">{{ h.text | escape }}</p>
+    </div>
+    {%- if pics.size > 0 %}
+    <figure class="hero-show" role="group" aria-roledescription="carousel" aria-label="Photographs of the center" data-interval="{{ show_secs | times: 1000 }}">
+      <div class="hs-frame">
+        {%- for p in pics limit: show_max %}
+        {%- assign parts = p.basename | split: '__' %}
+        {%- assign desc = parts | last | replace: '-', ' ' | replace: '_', ' ' %}
+        {%- assign pu = p.path | prepend: '/' | replace: '//', '/' %}
+        {%- if forloop.first %}
+        <img class="hs-img is-on" src="{{ pu | relative_url }}" alt="{{ desc | escape }}" decoding="async">
+        {%- else %}
+        <img class="hs-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{ pu | relative_url }}" alt="{{ desc | escape }}" aria-hidden="true" decoding="async">
+        {%- endif %}
+        {%- endfor %}
+      </div>
+    </figure>
+    <script src="{{ '/assets/js/slideshow.js' | relative_url }}" defer></script>
+    {%- endif %}
   </div>
 </section>
