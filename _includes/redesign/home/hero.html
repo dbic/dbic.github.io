@@ -7,7 +7,8 @@
 {%- assign show_dir = 'assets/images_for_auto_display/homepage/' -%}
 {%- assign show_max = 6 -%}
 {%- assign show_secs = 8 -%}
-{%- assign pics = site.static_files | where_exp: "f", "f.path contains show_dir" | where_exp: "f", "' .jpg .jpeg .png .webp ' contains f.extname and f.extname != ''" | sort: "path" -%}
+{%- assign show_exts = '.jpg,.jpeg,.png,.webp' | split: ',' -%}
+{%- assign pics = site.static_files | where_exp: "f", "f.path contains show_dir" | where_exp: "f", "show_exts contains f.extname" | sort: "path" -%}
 <section class="hero" aria-labelledby="h1">
   <canvas id="neural" aria-hidden="true"></canvas>
   {%- if site.data.brand.hero_watermark and site.data.brand.logo != '' %}
