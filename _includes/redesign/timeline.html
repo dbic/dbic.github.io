@@ -1,0 +1,24 @@
+{%- comment -%}
+  The timeline of the center, from _data/timeline.yml: one list, two places.
+  With mode="strip" it draws the short texts in a row (the home page; an event with home: false is left out).
+  With mode="list" it draws the full texts as a vertical list (the History page).
+{%- endcomment -%}
+{%- assign tl = site.data.timeline -%}
+{%- if tl.size > 0 -%}
+{%- if include.mode == "list" -%}
+<ol class="timeline timeline--list" aria-label="History of the center">
+  {%- for t in tl %}
+  {%- assign txt = t.long | default: t.short %}
+  <li><b>{{ t.year | escape }}</b><span>{{ txt | markdownify | remove: "<p>" | remove: "</p>" | strip }}</span></li>
+  {%- endfor %}
+</ol>
+{%- else -%}
+{%- assign n = 0 -%}
+{%- for t in tl %}{% unless t.home == false %}{% assign n = n | plus: 1 %}{% endunless %}{% endfor -%}
+<ol class="timeline reveal" style="--n: {{ n }}" aria-label="History of the center">
+  {%- for t in tl %}{% unless t.home == false %}
+  <li><b>{{ t.year | escape }}</b><span>{{ t.short | escape }}</span></li>
+  {%- endunless %}{% endfor %}
+</ol>
+{%- endif -%}
+{%- endif -%}

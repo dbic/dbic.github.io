@@ -15,10 +15,6 @@
       <div class="spec c-{{ sp.color }} reveal"><h3><i></i>{{ sp.title | escape }}</h3><p>{{ sp.text | escape }}</p><a href="{{ href | strip }}">{{ sp.link_text | escape }} →</a></div>
       {%- endfor %}
     </div>
-    <ol class="timeline reveal" aria-label="History of the center">
-      {%- for t in f.timeline %}
-      <li><b>{{ t.year | escape }}</b><span>{{ t.text | escape }}</span></li>
-      {%- endfor %}
-    </ol>
+    {% include redesign/timeline.html mode="strip" %}
   </div>
 </section>

@@ -45,6 +45,13 @@ docs = []
 def add(t, u, g, l="", h="", b=""):
     t, l, h, b = plain(t), plain(l), plain(h), plain(b)
     if t: docs.append({"t": t, "u": u, "g": g, "l": l, "h": h, "b": b[:BODY_MAX]})
+def timeline_text():
+    """The years and the long texts of _data/timeline.yml (for the page that shows the whole timeline)."""
+    t = ROOT / "_data" / "timeline.yml"
+    if not t.exists(): return ""
+    out = []
+    for m in re.finditer(r'(?m)^-[ \t]+year:[ \t]*"([^"]*)"[ \t]*\r?\n(?:[ \t]+short:[^\n]*\n)?[ \t]+long:[ \t]*"((?:[^"\\]|\\.)*)"', read(t)): out.append(m.group(1) + " " + m.group(2).replace('\\"', '"'))
+    return " ".join(out)
 # ---- pages
 for p in sorted(ROOT.rglob("*")):
     if not p.is_file() or p.suffix not in (".md", ".html"): continue
@@ -63,6 +70,7 @@ for p in sorted(ROOT.rglob("*")):
     elif rel.stem == "index": url = "/" if d == "." else "/" + d + "/"
     else: url = "/" + ("" if d == "." else d + "/") + rel.stem + ".html"
     heads = re.findall(r"(?m)^#{2,3}[ \t]+(.+)$", body) or re.findall(r"(?is)<h[23][^>]*>(.*?)</h[23]>", body)
+    if "redesign/timeline.html" in body: body = body + " " + timeline_text()       # the list on that page is drawn from _data/timeline.yml, so its text is added here
     add(title, url, GROUP.get(parts[0], "Site") if len(parts) > 1 else "Site", lead, " · ".join(plain(x) for x in heads), body)
 # ---- data: FAQ questions and answers (the one-line and the multi-line formats)
 faq = ROOT / "_data" / "faq.yml"

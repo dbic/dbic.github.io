@@ -624,3 +624,10 @@ dialog#qf::backdrop { background: rgba(3, 18, 11, .6); backdrop-filter: blur(3px
 .hs-dot:focus-visible, .hs-pause:focus-visible { outline: 2px solid #fff; outline-offset: 1px; border-radius: 6px; }
 @media (prefers-reduced-motion: reduce) { .hs-img { transition: none; } }
 @media print { .hero-show { display: none !important; } .hero-in.has-show { display: block; } }
+
+/* timeline: the columns follow the number of events; a vertical list for the History page */
+@media (min-width: 60.0625rem) { .timeline { grid-template-columns: repeat(var(--n, 5), 1fr); } }          /* wide screens only: the site's own phone layout (one column, below 60rem) must still win */
+.timeline.timeline--list { grid-template-columns: 1fr; padding-left: .4rem; max-width: 44rem; margin-bottom: 1.6rem; }
+.timeline--list::before { left: .5rem; right: auto; top: 0; bottom: 0; width: 3px; height: auto; }
+.timeline--list li { padding: 0 0 1.1rem 1.9rem; }
+.timeline--list span { font-size: 1rem; color: var(--ink); }

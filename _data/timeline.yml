@@ -1,0 +1,24 @@
+# The timeline of the center: ONE list, shown in two places: the strip on the home page and the full list on the History page.
+# Keep the events in date order, oldest first, and run "python check_timeline.py" after editing.
+#   year   the year, as text in quotes, for example "1999"
+#   short  one short line for the home page strip (plain text; about 80 characters at most)
+#   long   the fuller text for the History page; it may contain Markdown links, for example [Tor Wager](https://pbs.dartmouth.edu/people/tor-wager)
+#   home   optional: false leaves the event off the home page strip (it still appears on the History page)
+- year: "1999"
+  short: "DBIC opens under Scott Grafton with a 1.5T GE scanner."
+  long: "The DBIC opens under the direction of Scott Grafton, who directs it until 2006, with a 1.5T GE scanner."
+- year: "2004"
+  short: "Upgrade to a 3.0T Philips scanner."
+  long: "The DBIC upgrades to a 3.0T Philips scanner."
+- year: "2006"
+  short: "George Wolford is interim director, 2006 to 2007."
+  long: "Professor George Wolford serves as interim director in 2006 and 2007."
+- year: "2008"
+  short: "Jim Haxby joins Dartmouth and directs the center until 2021."
+  long: "[Jim Haxby](https://pbs.dartmouth.edu/people/james-v-haxby) joins Dartmouth in January and directs the DBIC until June 2021."
+- year: "2016"
+  short: "The current Siemens 3T Prisma is installed."
+  long: "In August, the DBIC upgrades to its current Siemens 3T Prisma scanner."
+- year: "2021"
+  short: "Tor Wager becomes director."
+  long: "In July, the DBIC welcomes [Tor Wager](https://pbs.dartmouth.edu/people/tor-wager) as its new director."
